@@ -1,18 +1,10 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	OS.window_size = Vector2(360, 640)
-	OS.window_position.y = 100
-	pass # Replace with function body.
+	OS.window_size = Vector2(360, 640) # this
+	OS.window_position.y = 100 # and this goes into main menu scene
+	$ChestScene.connect("showNewItem", self, "show_new_item")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func show_new_item():
+	$NewItemScene.show()

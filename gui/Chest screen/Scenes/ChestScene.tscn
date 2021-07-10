@@ -54,7 +54,7 @@ _data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=11]
 curve = SubResource( 10 )
 
-[sub_resource type="ParticlesMaterial" id=13]
+[sub_resource type="ParticlesMaterial" id=12]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
 flag_disable_z = true
@@ -75,7 +75,7 @@ scale_random = 0.75
 scale_curve = SubResource( 11 )
 color_ramp = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=13]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
 flag_disable_z = true
@@ -96,15 +96,18 @@ scale_random = 0.2
 scale_curve = SubResource( 11 )
 color_ramp = SubResource( 9 )
 
-[node name="ChestScene" type="Node2D"]
+[node name="ChestScene" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 240.0
+margin_bottom = 172.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 7 )
-animation = "open"
-centered = false
+[node name="helper" type="Node2D" parent="."]
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="helper"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 58.0
 margin_top = 37.0
@@ -114,18 +117,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 7 )
+animation = "open"
+centered = false
+
 [node name="ParticlesLeft" type="Particles2D" parent="."]
 position = Vector2( 138.98, 104.235 )
 emitting = false
 amount = 32
 lifetime = 2.0
 one_shot = true
-process_material = SubResource( 13 )
+process_material = SubResource( 12 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
-position = Vector2( 138.98, 104.235 )
+position = Vector2( 138.537, 104.235 )
 emitting = false
 amount = 32
 lifetime = 2.0
 one_shot = true
-process_material = SubResource( 12 )
+process_material = SubResource( 13 )
