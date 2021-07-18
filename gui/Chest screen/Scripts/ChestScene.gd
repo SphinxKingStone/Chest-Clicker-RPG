@@ -7,11 +7,6 @@ onready var AnimSprite = $AnimatedSprite
 func _ready():
 	pass
 
-func _input(event):
-	if event is InputEventScreenTouch or InputEventMouseButton and event.is_pressed():
-		if $helper/Panel.get_rect().has_point($helper.to_local(event.position)):
-			on_click()
-
 func on_click():
 	$ParticlesLeft.emitting = false
 	$ParticlesRight.emitting = false
@@ -21,3 +16,9 @@ func on_click():
 	$ParticlesRight.emitting = true
 	yield(get_tree().create_timer(0.55), "timeout")
 	emit_signal("showNewItem")
+
+
+func _on_ChestScene_gui_input(event):
+	if event is InputEventMouseButton or event is InputEventScreenTouch:
+		if event.is_pressed():
+			on_click()

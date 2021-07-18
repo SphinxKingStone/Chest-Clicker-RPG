@@ -109,10 +109,10 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="helper"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 58.0
-margin_top = 37.0
-margin_right = 225.0
-margin_bottom = 175.0
+margin_left = 199.279
+margin_top = 141.769
+margin_right = 366.279
+margin_bottom = 279.769
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -124,6 +124,7 @@ centered = false
 
 [node name="ParticlesLeft" type="Particles2D" parent="."]
 position = Vector2( 138.98, 104.235 )
+z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
@@ -132,8 +133,10 @@ process_material = SubResource( 12 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
 position = Vector2( 138.537, 104.235 )
+z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
 one_shot = true
 process_material = SubResource( 13 )
+[connection signal="gui_input" from="." to="." method="_on_ChestScene_gui_input"]
