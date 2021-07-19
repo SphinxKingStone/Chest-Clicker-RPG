@@ -98,7 +98,7 @@ color_ramp = SubResource( 9 )
 
 [node name="ChestScene" type="Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 240.0
+margin_right = 242.0
 margin_bottom = 172.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -109,10 +109,10 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="helper"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 199.279
-margin_top = 141.769
-margin_right = 366.279
-margin_bottom = 279.769
+margin_left = 58.0
+margin_top = 38.0
+margin_right = 225.0
+margin_bottom = 176.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,20 +123,18 @@ animation = "open"
 centered = false
 
 [node name="ParticlesLeft" type="Particles2D" parent="."]
-position = Vector2( 138.98, 104.235 )
+position = Vector2( 130, 105 )
 z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-one_shot = true
 process_material = SubResource( 12 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
-position = Vector2( 138.537, 104.235 )
+position = Vector2( 145, 105 )
 z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-one_shot = true
 process_material = SubResource( 13 )
-[connection signal="gui_input" from="." to="." method="_on_ChestScene_gui_input"]
+[connection signal="gui_input" from="helper/Panel" to="." method="_on_Panel_gui_input"]

@@ -22,9 +22,9 @@ __meta__ = {
 
 [node name="ChestScene" parent="." instance=ExtResource( 2 )]
 margin_left = 91.9627
-margin_top = 918.031
+margin_top = 938.031
 margin_right = 331.963
-margin_bottom = 1090.03
+margin_bottom = 1110.03
 rect_scale = Vector2( 2, 2 )
 
 [node name="NewItemScene" type="Panel" parent="."]
