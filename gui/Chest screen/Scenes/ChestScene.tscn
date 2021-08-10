@@ -137,4 +137,5 @@ emitting = false
 amount = 32
 lifetime = 2.0
 process_material = SubResource( 13 )
+
 [connection signal="gui_input" from="helper/Panel" to="." method="_on_Panel_gui_input"]

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://gui/Chest screen/Scripts/NewItemScene.gd" type="Script" id=3]
+[ext_resource path="res://gui/Chest screen/Scenes/NewItemScene.tscn" type="PackedScene" id=3]
 
 [node name="MainScene" type="Control"]
 anchor_right = 1.0
@@ -27,35 +27,5 @@ margin_right = 331.963
 margin_bottom = 1110.03
 rect_scale = Vector2( 2, 2 )
 
-[node name="NewItemScene" type="Panel" parent="."]
+[node name="NewItemScene" parent="." instance=ExtResource( 3 )]
 visible = false
-margin_top = 640.0
-margin_right = 720.0
-margin_bottom = 1280.0
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="NewItemScene"]
-margin_left = 10.0
-margin_top = 520.0
-margin_right = 710.0
-margin_bottom = 620.0
-custom_constants/separation = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SellButton" type="Button" parent="NewItemScene/HBoxContainer"]
-margin_right = 340.0
-margin_bottom = 100.0
-size_flags_horizontal = 3
-text = "Sell"
-
-[node name="EquipButton" type="Button" parent="NewItemScene/HBoxContainer"]
-margin_left = 360.0
-margin_right = 700.0
-margin_bottom = 100.0
-size_flags_horizontal = 3
-text = "Equip"

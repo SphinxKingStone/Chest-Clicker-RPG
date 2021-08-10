@@ -13,7 +13,11 @@ func on_click():
 	get_tree().create_timer(1.1).connect("timeout", self, 'show_item')
 
 func show_item():
-	get_parent().get_node("NewItemScene").show()
+	var item_scene = get_parent().get_node("NewItemScene")
+	var item = ItemGenerator.generate_item()
+	item_scene.get_node("NewItemTexture").texture = item.image
+	item_scene.get_node("NewItemName").text = item.code
+	item_scene.show()
 
 func set_frame_and_stop(aSprite, frame = 0):
 	if aSprite.is_playing():

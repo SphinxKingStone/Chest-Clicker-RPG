@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -19,10 +18,18 @@ config/name="Chest Clicker RPG"
 run/main_scene="res://gui/Chest screen/Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Items="*res://assets/data/Items.gd"
+ItemsStorage="*res://src/ItemsStorage.gd"
+ItemGenerator="*res://src/ItemGenerator.gd"
+
 [display]
 
 window/size/width=720
 window/size/height=1280
+window/dpi/allow_hidpi=true
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
