@@ -1,7 +1,41 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/NewItemScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/images/axes/axe_6.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="DynamicFont" id=4]
+size = 56
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 44
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="NewItemScene" type="Panel"]
 margin_top = 640.0
@@ -11,6 +45,11 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 720.0
+margin_bottom = 640.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 10.0
@@ -37,24 +76,167 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Equip"
 
-[node name="NewItemTexture" type="TextureRect" parent="."]
-margin_left = 171.761
-margin_top = 127.471
-margin_right = 543.761
-margin_bottom = 445.471
+[node name="ItemBackground" type="Panel" parent="."]
+margin_left = 24.0
+margin_top = 122.0
+margin_right = 248.0
+margin_bottom = 346.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="ItemTexture" type="TextureRect" parent="ItemBackground"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 208.0
+margin_bottom = 208.0
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewItemName" type="Label" parent="."]
-margin_left = 39.0175
-margin_top = 32.2904
-margin_right = 671.017
-margin_bottom = 112.29
-custom_fonts/font = ExtResource( 2 )
-text = "Test text test"
+[node name="ItemName" type="Label" parent="."]
+margin_left = 19.0
+margin_top = 15.0
+margin_right = 707.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Astral Axe"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 366.0
+margin_right = 300.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 1 )
+text = "One Handed"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 402.0
+margin_right = 220.0
+margin_bottom = 435.0
+custom_fonts/font = SubResource( 1 )
+text = "Common"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 438.0
+margin_right = 220.0
+margin_bottom = 471.0
+custom_fonts/font = SubResource( 1 )
+text = "3 Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BaseStats" type="VBoxContainer" parent="."]
+margin_left = 288.0
+margin_top = 118.0
+margin_right = 673.0
+margin_bottom = 163.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Label" parent="BaseStats"]
+margin_right = 385.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 5 )
+text = "Attack: 13.8"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="VBoxContainer" parent="."]
+margin_left = 288.0
+margin_top = 214.0
+margin_right = 673.0
+margin_bottom = 447.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Label" parent="Stats"]
+margin_right = 385.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Label" parent="Stats"]
+margin_top = 37.0
+margin_right = 385.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="3" type="Label" parent="Stats"]
+margin_top = 74.0
+margin_right = 385.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="4" type="Label" parent="Stats"]
+margin_top = 111.0
+margin_right = 385.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="5" type="Label" parent="Stats"]
+margin_top = 148.0
+margin_right = 385.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="6" type="Label" parent="Stats"]
+margin_top = 185.0
+margin_right = 385.0
+margin_bottom = 218.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

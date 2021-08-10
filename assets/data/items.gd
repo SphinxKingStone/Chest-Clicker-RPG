@@ -8,28 +8,26 @@ var weapons = {
 	# WHITE CATEGORY
 	simple_axe = {
 		code = "simple axe",
+		name = "Simple Axe",
 		image = load("res://assets/images/axes/axe_7.png"),
 		category = "One_Handed",
 		
 		base_stats = {
-			attack = 2,
-			bonus_rarity = 0.5,
+			attack = [2.5, 5],
 		},
 		rarity = "WHITE",
-		cost = 8,
 	},
 	
 	wooden_sword = {
 		code = "wooden sword",
+		name = "Wooden Sword",
 		image = load("res://assets/images/swords/sword_6.png"),
 		category = "One_Handed",
 		
 		base_stats = {
-			attack = 1.5,
-			bonus_rarity = 0.65,
+			attack = [1, 7],
 		},
 		rarity = "WHITE",
-		cost = 7,
 	},
 }
 
@@ -37,27 +35,41 @@ var armour = {
 	# WHITE CATEGORY
 	leather_chestplate = {
 		code = "leather chestplate",
+		name = "Leather Chestplate",
 		image = load("res://assets/images/armors/armor_17.png"),
 		category = "Body_Armour",
 		
 		base_stats = {
-			defense = 6,
-			bonus_rarity = 1.4,
+			defense = [4, 6],
 		},
 		rarity = "WHITE",
-		cost = 10,
 	},
 	
 	leather_hood = {
 		code = "leather hood",
+		name = "Leather Hood",
 		image = load("res://assets/images/helmets/helmet_83.png"),
 		category = "Helmet",
 		
 		base_stats = {
-			defense = 4,
-			bonus_rarity = 1.2,
+			defense = [3, 5], 
 		},
 		rarity = "WHITE",
-		cost = 8,
 	},
+}
+
+var jewelery = {
+	# WHITE CATEGORY
+	gold_ring = {
+		code = "gold ring",
+		name = "Gold Ring",
+		image = load("res://assets/images/rings/ring_16.png"),
+		category = "Ring",
+		
+		base_stats = {
+			attack = 5,
+		},
+		rarity = "WHITE",
+	},
+	
 }

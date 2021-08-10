@@ -15,9 +15,7 @@ func on_click():
 func show_item():
 	var item_scene = get_parent().get_node("NewItemScene")
 	var item = ItemGenerator.generate_item()
-	item_scene.get_node("NewItemTexture").texture = item.image
-	item_scene.get_node("NewItemName").text = item.code
-	item_scene.show()
+	item_scene.show_item(item)
 
 func set_frame_and_stop(aSprite, frame = 0):
 	if aSprite.is_playing():

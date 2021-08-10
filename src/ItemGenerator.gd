@@ -8,8 +8,6 @@ func _ready():
 
 func generate_item():
 	var rarity = "WHITE"
-	var category = 12
 	var my_random_number = rng.randi_range(0, ItemsStorage.white_items.size() - 1)
 	var item = ItemsStorage.white_items[my_random_number]
-	print_debug(item)
 	return item
