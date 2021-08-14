@@ -5,34 +5,34 @@
 [ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/images/axes/axe_6.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 56
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 44
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=5]
 size = 32
 use_filter = true
 font_data = ExtResource( 3 )
@@ -81,7 +81,7 @@ margin_left = 24.0
 margin_top = 122.0
 margin_right = 248.0
 margin_bottom = 346.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="ItemTexture" type="TextureRect" parent="ItemBackground"]
 margin_left = 16.0
@@ -100,7 +100,7 @@ margin_left = 19.0
 margin_top = 15.0
 margin_right = 707.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Astral Axe"
 align = 1
@@ -113,7 +113,7 @@ margin_left = 34.0
 margin_top = 366.0
 margin_right = 300.0
 margin_bottom = 399.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "One Handed"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -124,7 +124,7 @@ margin_left = 34.0
 margin_top = 402.0
 margin_right = 220.0
 margin_bottom = 435.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Common"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -135,7 +135,7 @@ margin_left = 34.0
 margin_top = 438.0
 margin_right = 220.0
 margin_bottom = 471.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "3 Gold"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,7 +154,7 @@ __meta__ = {
 [node name="1" type="Label" parent="BaseStats"]
 margin_right = 385.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "Attack: 13.8"
 align = 1
 __meta__ = {
@@ -173,7 +173,7 @@ __meta__ = {
 [node name="1" type="Label" parent="Stats"]
 margin_right = 385.0
 margin_bottom = 33.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Crit Chance: +10%"
 align = 1
@@ -185,7 +185,7 @@ __meta__ = {
 margin_top = 37.0
 margin_right = 385.0
 margin_bottom = 70.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Crit Chance: +10%"
 align = 1
@@ -197,7 +197,7 @@ __meta__ = {
 margin_top = 74.0
 margin_right = 385.0
 margin_bottom = 107.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Crit Chance: +10%"
 align = 1
@@ -209,7 +209,7 @@ __meta__ = {
 margin_top = 111.0
 margin_right = 385.0
 margin_bottom = 144.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Crit Chance: +10%"
 align = 1
@@ -221,7 +221,7 @@ __meta__ = {
 margin_top = 148.0
 margin_right = 385.0
 margin_bottom = 181.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Crit Chance: +10%"
 align = 1
@@ -233,7 +233,7 @@ __meta__ = {
 margin_top = 185.0
 margin_right = 385.0
 margin_bottom = 218.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Crit Chance: +10%"
 align = 1

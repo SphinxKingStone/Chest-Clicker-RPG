@@ -7,11 +7,19 @@ func _ready():
 	pass # Replace with function body.
 
 func show_item(item):
-	show()
+	self.show()
 	$ItemBackground/ItemTexture.texture = item.image
 	$ItemName.text = item.name
-	for s in item.base_stats:
-		print_debug(s)
+	for stat in item.base_stats:
+		var value = item.base_stats[stat]
+		print_debug(value)
+		if typeof(value) == TYPE_ARRAY:
+			value = stepify(ItemGenerator.rng.randf_range(value[0], value[1]), 0.1)
+		var text = stat + ": +" + str(value)
+		if stat == "rarity":
+			text += "%"
+		text[0] = text[0].to_upper()
+		get_node("BaseStats/1").text = text
 
 func sell_item():
 	hide()

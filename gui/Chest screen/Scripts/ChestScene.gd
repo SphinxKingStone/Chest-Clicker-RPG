@@ -7,6 +7,8 @@ func _ready():
 	pass
 
 func on_click():
+	var item = ItemGenerator.generate_item()
+#	match item.rarity:
 	handle_particles()
 	AnimSprite.play("open")
 	#yield(get_tree().create_timer(1.1), "timeout")
