@@ -2,6 +2,7 @@
 
 [ext_resource path="res://gui/Chest screen/Scripts/ChestScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/chests/Chest spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/particle materials/Green right.tres" type="Material" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -58,27 +59,6 @@ curve = SubResource( 10 )
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
 flag_disable_z = true
-direction = Vector3( -90, -90, 0 )
-spread = 30.0
-gravity = Vector3( 10, 70, 0 )
-initial_velocity = 150.0
-initial_velocity_random = 0.35
-angular_velocity = 45.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 35.0
-angle = 150.0
-angle_random = 0.2
-scale = 25.0
-scale_random = 0.75
-scale_curve = SubResource( 11 )
-color_ramp = SubResource( 9 )
-
-[sub_resource type="ParticlesMaterial" id=13]
-emission_shape = 2
-emission_box_extents = Vector3( 20, 10, 1 )
-flag_disable_z = true
 direction = Vector3( 90, -90, 0 )
 spread = 30.0
 gravity = Vector3( 10, 70, 0 )
@@ -128,7 +108,7 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 12 )
+process_material = ExtResource( 3 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
 position = Vector2( 145, 105 )
@@ -136,6 +116,6 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 13 )
+process_material = SubResource( 12 )
 
 [connection signal="gui_input" from="helper/Panel" to="." method="_on_Panel_gui_input"]

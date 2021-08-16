@@ -9,7 +9,7 @@ func _ready():
 
 func generate_item():
 	var rarity
-	if rng.randi_range(0, 15) >= 15:
+	if rng.randi_range(0, 15) >= 13:
 		rarity = "GREEN"
 	else:
 		rarity = "WHITE"
