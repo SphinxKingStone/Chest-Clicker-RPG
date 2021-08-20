@@ -8,7 +8,7 @@ func _ready():
 
 func show_item(item):
 	self.show()
-	$ItemBackground/ItemTexture.texture = item.image
+	$ItemBackground/ItemTexture.texture = item.texture
 	$ItemName.text = item.name
 	for stat in item.base_stats:
 		var value = item.base_stats[stat]
@@ -22,9 +22,10 @@ func show_item(item):
 		get_node("BaseStats/1").text = text
 
 func sell_item():
-	hide()
-	pass
-
+	self.hide()
+	
 func equip_item():
-	hide()
-	pass
+	self.hide()
+	Inventory.equip_item(ItemGenerator.item)
+	get_parent().get_node("InventoryScene").update_inventory()
+

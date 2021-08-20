@@ -9,14 +9,14 @@ func _ready():
 	pass
 
 func on_click():
-	if openning:
+	var item_scene = get_parent().get_node("NewItemScene")
+	if item_scene.visible or openning:
 		return
 	openning = true
 	ItemGenerator.generate_item()
 	emit_particles(ItemGenerator.item.rarity)
 	AnimSprite.play("open")
 	yield(get_tree().create_timer(1.2), "timeout")
-	var item_scene = get_parent().get_node("NewItemScene")
 	item_scene.show_item(ItemGenerator.item)
 	openning = false
 
@@ -51,6 +51,5 @@ func emit_particles(rarity):
 	left.emitting = false
 	right.emitting = false
 	yield(get_tree().create_timer(left.lifetime), "timeout")
-	print_debug("died")
 	left.queue_free()
 	right.queue_free()
