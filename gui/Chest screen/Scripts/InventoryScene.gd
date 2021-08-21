@@ -19,34 +19,44 @@ func sell_item():
 
 func update_inventory():
 	for slot in Inventory.gear:
+		var texture_node
 		match slot:
 			"helmet":
-				if Inventory.gear[slot] != null:
-					$GridContainer/Head/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/Head/Texture
 			"weapon_left":
-				if Inventory.gear[slot] != null:
-					$GridContainer/HandLeft/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/HandLeft/Texture
 			"weapon_right":
-				if Inventory.gear[slot] != null:
-					$GridContainer/HandRight/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/HandRight/Texture
 			"amulet":
-				if Inventory.gear[slot] != null:
-					$GridContainer/Amulet/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/Amulet/Texture
 			"ring_left":
-				if Inventory.gear[slot] != null:
-					$GridContainer/RingLeft/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/RingLeft/Texture
 			"ring_right":
-				if Inventory.gear[slot] != null:
-					$GridContainer/RingRight/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/RingRight/Texture
 			"body":
-				if Inventory.gear[slot] != null:
-					$GridContainer/Body/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/Body/Texture
 			"gloves":
-				if Inventory.gear[slot] != null:
-					$GridContainer/Gloves/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/Gloves/Texture
 			"accessory":
-				if Inventory.gear[slot] != null:
-					$GridContainer/Accessory/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/Accessory/Texture
 			"boots":
-				if Inventory.gear[slot] != null:
-					$GridContainer/Boots/Texture.texture = Inventory.gear[slot].texture
+				texture_node = $GridContainer/Boots/Texture
+		
+		# Set item sprite for current slot or remove old sprite if slot is empty
+		if Inventory.gear[slot] != null:
+			texture_node.texture = Inventory.gear[slot].texture
+		else:
+			texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/light_gray_item_bg.tres"))
+			texture_node.texture = null
+			continue
+		
+		# Manage slots BG color
+		match Inventory.gear[slot].rarity:
+			"WHITE": #gray
+				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
+			"GREEN":
+				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/green_item_bg.tres"))
+			
+
+func update_silver():
+	get_parent().get_node("TopSide/Silver/Amount").text = str(Inventory.silver)

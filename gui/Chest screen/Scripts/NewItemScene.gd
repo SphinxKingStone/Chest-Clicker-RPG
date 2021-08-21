@@ -12,7 +12,6 @@ func show_item(item):
 	$ItemName.text = item.name
 	for stat in item.base_stats:
 		var value = item.base_stats[stat]
-		print_debug(value)
 		if typeof(value) == TYPE_ARRAY:
 			value = stepify(ItemGenerator.rng.randf_range(value[0], value[1]), 0.1)
 		var text = stat + ": +" + str(value)
@@ -20,8 +19,11 @@ func show_item(item):
 			text += "%"
 		text[0] = text[0].to_upper()
 		get_node("BaseStats/1").text = text
+		$Cost.text = str(item.cost)
 
 func sell_item():
+	Inventory.silver += ItemGenerator.item.cost
+	get_parent().get_node("InventoryScene").update_silver()
 	self.hide()
 	
 func equip_item():

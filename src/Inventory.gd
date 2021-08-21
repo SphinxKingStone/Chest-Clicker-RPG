@@ -13,6 +13,7 @@ var gear = {
 	boots = null,
 }
 
+var silver = 0
 var inventory = []
 
 func _ready():
@@ -76,10 +77,10 @@ func equip_item(item, slot = ""):
 	else:
 		match item.category:
 			"Two_Handed":
-				if gear.weapon_left != null:
-					show_new_item(gear.weapon_left)
-				if gear.weapon_right != null:
-					show_new_item(gear.weapon_right)
+#				if gear.weapon_left != null:
+#					show_new_item(gear.weapon_left)
+#				elif gear.weapon_right != null:
+#					show_new_item(gear.weapon_right)
 				gear.weapon_left = item
 				gear.weapon_right = null
 			"One_Handed":
@@ -90,6 +91,19 @@ func equip_item(item, slot = ""):
 						pass
 #						show_new_item(gear.weapon_left)
 #						gear.weapon_right = item
+					else:
+						gear.weapon_right = item
 				elif (gear.weapon_left != null) and gear.weapon_right != null:
 					show_new_item(gear.weapon_left)
 					gear.weapon_left = item
+			"Ring":
+				if gear.ring_left == null:
+					gear.ring_left = item
+				elif gear.ring_right == null:
+					gear.ring_right = item
+				elif gear.ring_left != null:
+					show_new_item(gear.ring_left)
+					gear.ring_left = item
+				elif gear.ring_right != null:
+					show_new_item(gear.ring_right)
+					gear.ring_right = item
