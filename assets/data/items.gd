@@ -230,4 +230,18 @@ var jewelery = {
 		},
 		rarity = "GREEN",
 	},
+	
+	
+	# BLUE CATEGORY
+	sacred_scarab = {
+		code = "sacred_scarab",
+		name = tr("Sacred Scarab"),
+		texture = load("res://assets/images/accessory/sacred_scarab.png"),
+		category = "accessory",
+		
+		base_stats = {
+			rarity = [5, 5],
+		},
+		rarity = "BLUE",
+	},
 }
