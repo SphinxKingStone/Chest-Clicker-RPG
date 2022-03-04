@@ -41,8 +41,11 @@ func emit_particles(rarity):
 	
 	match rarity:
 		"GREEN":
-			left.set_process_material((load("res://assets/particle materials/Green left.tres")))
-			right.set_process_material((load("res://assets/particle materials/Green right.tres")))
+			left.set_process_material((load("res://assets/particle materials/green_left_particle.tres")))
+			right.set_process_material((load("res://assets/particle materials/green_right_particle.tres")))
+		"BLUE":
+			left.set_process_material((load("res://assets/particle materials/blue_left_particle.tres")))
+			right.set_process_material((load("res://assets/particle materials/blue_right_particle.tres")))
 	
 	right.get_process_material().direction.x = 90
 	left.emitting = true

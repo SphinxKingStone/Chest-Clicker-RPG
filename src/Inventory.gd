@@ -24,50 +24,50 @@ func show_new_item(item):
 
 func equip_item(item, slot = ""):
 	match item.category:
-		"Body_Armour":
+		"body_armour":
 			if gear.body != null:
 				show_new_item(gear.body)
 			gear.body = item
-		"Helmet":
+		"helmet":
 			if gear.helmet != null:
 				show_new_item(gear.helmet)
 			gear.helmet = item
-		"Gloves":
+		"gloves":
 			if gear.gloves != null:
 				show_new_item(gear.gloves)
 			gear.gloves = item
-		"Boots":
+		"boots":
 			if gear.boots != null:
 				show_new_item(gear.boots)
 			gear.boots = item
-		"Amulet":
+		"amulet":
 			if gear.amulet != null:
 				show_new_item(gear.amulet)
 			gear.amulet = item
-		"Accessory":
+		"accessory":
 			if gear.accessory != null:
 				show_new_item(gear.accessory)
 			gear.accessory = item
 	
 	if slot != "":
 		match slot:
-			"Left_Hand":
+			"left_hand":
 				if gear.weapon_left != null:
 					show_new_item(gear.weapon_left)
 				gear.weapon_left = item
-			"Right_Hand":
+			"right_hand":
 				if gear.weapon_right != null:
 					show_new_item(gear.weapon_right)
 				gear.weapon_right = item
-			"Left_Ring":
+			"left_ring":
 				if gear.ring_left != null:
 					show_new_item(gear.ring_left)
 				gear.ring_left = item
-			"Right_Ring":
+			"right_ring":
 				if gear.ring_right != gear.ring_right:
 					show_new_item(item)
 				gear.ring_right = item
-			"Two_Hands":
+			"two_hands":
 				if gear.weapon_left != null:
 					show_new_item(gear.weapon_left)
 				if gear.weapon_right != null:
@@ -76,18 +76,18 @@ func equip_item(item, slot = ""):
 				gear.weapon_right = null
 	else:
 		match item.category:
-			"Two_Handed":
+			"two_handed":
 #				if gear.weapon_left != null:
 #					show_new_item(gear.weapon_left)
 #				elif gear.weapon_right != null:
 #					show_new_item(gear.weapon_right)
 				gear.weapon_left = item
 				gear.weapon_right = null
-			"One_Handed":
+			"one_handed":
 				if gear.weapon_left == null:
 					gear.weapon_left = item
 				elif (gear.weapon_left != null) and gear.weapon_right == null:
-					if gear.weapon_left.category == "Two_Handed":
+					if gear.weapon_left.category == "two_handed":
 						pass
 #						show_new_item(gear.weapon_left)
 #						gear.weapon_right = item
@@ -96,7 +96,7 @@ func equip_item(item, slot = ""):
 				elif (gear.weapon_left != null) and gear.weapon_right != null:
 					show_new_item(gear.weapon_left)
 					gear.weapon_left = item
-			"Ring":
+			"ring":
 				if gear.ring_left == null:
 					gear.ring_left = item
 				elif gear.ring_right == null:

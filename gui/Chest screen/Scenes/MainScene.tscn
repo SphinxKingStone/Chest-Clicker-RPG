@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/Chest screen/Scenes/NewItemScene.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gui/Chest screen/Scenes/InventoryScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://gui/Chest screen/Scenes/AudioStreamPlayer.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -44,10 +45,6 @@ margin_bottom = 1110.03
 rect_scale = Vector2( 2, 2 )
 
 [node name="InventoryScene" parent="." instance=ExtResource( 4 )]
-margin_left = 27.0
-margin_top = 149.0
-margin_right = 378.0
-margin_bottom = 611.0
 
 [node name="NewItemScene" parent="." instance=ExtResource( 3 )]
 visible = false
@@ -90,3 +87,6 @@ text = "0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 6 )

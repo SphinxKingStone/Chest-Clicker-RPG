@@ -8,6 +8,16 @@ func _ready():
 
 func show_item(item):
 	self.show()
+	
+	# set new item color bg
+	match ItemGenerator.item.rarity:
+		"WHITE":
+			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
+		"GREEN":
+			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/green_item_bg.tres"))
+		"BLUE":
+			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/blue_item_bg.tres"))
+	
 	$ItemBackground/ItemTexture.texture = item.texture
 	$ItemName.text = item.name
 	for stat in item.base_stats:

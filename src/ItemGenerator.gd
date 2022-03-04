@@ -9,7 +9,11 @@ func _ready():
 
 func generate_item():
 	var rarity
-	if rng.randi_range(0, 15) >= 13:
+	var rng_number = rng.randi_range(0, 25)
+#	rarity = "BLUE"
+	if rng_number >= 19:
+		rarity = "BLUE"
+	elif rng_number >= 13:
 		rarity = "GREEN"
 	else:
 		rarity = "WHITE"
@@ -22,4 +26,8 @@ func generate_item():
 			var my_random_number = rng.randi_range(0, ItemsStorage.green_items.size() - 1)
 			item = ItemsStorage.green_items[my_random_number]
 			item.cost = rng.randi_range(15, 35)
+		"BLUE":
+			var my_random_number = rng.randi_range(0, ItemsStorage.blue_items.size() - 1)
+			item = ItemsStorage.blue_items[my_random_number]
+			item.cost = rng.randi_range(30, 35)
 	return item

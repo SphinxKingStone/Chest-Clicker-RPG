@@ -7,15 +7,15 @@ func _ready():
 func sell_item():
 	hide()
 	pass
-#	One_Handed = 0,
-#	Two_Handed = 0,
-#	Body_Armour = 0,
-#	Helmet = 0,
-#	Gloves = 0,
-#	Boots = 0,
-#	Ring = 0,
-#	Amulet = 0,
-#	Accessory = 0,
+#	one_handed = 0,
+#	two_handed = 0,
+#	body_armour = 0,
+#	helmet = 0,
+#	gloves = 0,
+#	boots = 0,
+#	ring = 0,
+#	amulet = 0,
+#	accessory = 0,
 
 func update_inventory():
 	for slot in Inventory.gear:
@@ -56,6 +56,8 @@ func update_inventory():
 				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
 			"GREEN":
 				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/green_item_bg.tres"))
+			"BLUE":
+				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/blue_item_bg.tres"))
 			
 
 func update_silver():
