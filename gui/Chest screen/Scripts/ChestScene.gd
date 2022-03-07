@@ -16,7 +16,11 @@ func on_click():
 	ItemGenerator.generate_item()
 	emit_particles(ItemGenerator.item.rarity)
 	AnimSprite.play("open")
-	yield(get_tree().create_timer(1.2), "timeout")
+	var creak = load("res://assets/Sounds/Sounds/creak1.wav")
+	get_parent().get_node("AudioStreamPlayer").play_sound(creak)
+#	var open: AudioStreamSample = load("res://assets/Sounds/Sounds/chest_open.wav")
+#	get_parent().get_node("AudioStreamPlayer").play_sound(open, 0.35)
+	yield(AnimSprite, "animation_finished")
 	item_scene.show_item(ItemGenerator.item)
 	openning = false
 
