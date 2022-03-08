@@ -166,18 +166,67 @@ var armour = {
 		},
 		rarity = "GREEN",
 	},
+	
+	# BLUE CATEGORY
+	ice_gloves = {
+		code = "ice_gloves",
+		name = tr("Ice Gloves"),
+		texture = load("res://assets/images/gloves/glove_19.png"),
+		category = "gloves",
+		
+		base_stats = {
+			defense = [6.5, 9.5],
+		},
+		rarity = "BLUE",
+	},
+	
+	ice_boots = {
+		code = "ice_boots",
+		name = tr("Ice Boots"),
+		texture = load("res://assets/images/shoes/shoe_5.png"),
+		category = "boots",
+		
+		base_stats = {
+			defense = [7, 10],
+		},
+		rarity = "BLUE",
+	},
+	
+	ice_helmet = {
+		code = "ice_helmet",
+		name = tr("Ice Helmet"),
+		texture = load("res://assets/images/helmets/helmet_64.png"),
+		category = "helmet",
+		
+		base_stats = {
+			defense = [8, 12],
+		},
+		rarity = "BLUE",
+	},
+	
+	ice_chestplate = {
+		code = "ice_chestplate",
+		name = tr("Ice Chestplate"),
+		texture = load("res://assets/images/armors/armor_83.png"),
+		category = "body_armour",
+		
+		base_stats = {
+			defense = [12, 18],
+		},
+		rarity = "BLUE",
+	},
 }
 
 var jewelery = {
 	# WHITE CATEGORY
-	gold_ring = {
-		code = "gold_ring",
-		name = tr("Gold Ring"),
+	copper_ring = {
+		code = "copper_ring",
+		name = tr("Copper Ring"),
 		texture = load("res://assets/images/rings/ring_16.png"),
 		category = "ring",
 		
 		base_stats = {
-			attack = 5,
+			attack = 3,
 		},
 		rarity = "WHITE",
 	},
@@ -214,7 +263,19 @@ var jewelery = {
 		category = "ring",
 		
 		base_stats = {
-			attack = 7,
+			attack = [5, 7],
+		},
+		rarity = "GREEN",
+	},
+	
+	gold_ring = {
+		code = "gold_ring",
+		name = tr("Gold Ring"),
+		texture = load("res://assets/images/rings/ring_1.png"),
+		category = "ring",
+		
+		base_stats = {
+			attack = [5, 7],
 		},
 		rarity = "GREEN",
 	},
@@ -241,6 +302,18 @@ var jewelery = {
 		
 		base_stats = {
 			rarity = [5, 5],
+		},
+		rarity = "BLUE",
+	},
+	
+	ice_pearl = {
+		code = "ice_pearl",
+		name = tr("Icy Pearl"),
+		texture = load("res://assets/images/amulets/amulet_5.png"),
+		category = "amulet",
+		
+		base_stats = {
+			defense = [2, 4.5],
 		},
 		rarity = "BLUE",
 	},

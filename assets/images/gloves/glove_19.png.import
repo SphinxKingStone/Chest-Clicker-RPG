@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile031.png-bfe9a69bda7d258008aedc91f8f873d1.stex"
+path="res://.import/glove_19.png-02dd9097cf37d9a486ad0f1dc7b2345b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/gloves/tile031.png"
-dest_files=[ "res://.import/tile031.png-bfe9a69bda7d258008aedc91f8f873d1.stex" ]
+source_file="res://assets/images/gloves/glove_19.png"
+dest_files=[ "res://.import/glove_19.png-02dd9097cf37d9a486ad0f1dc7b2345b.stex" ]
 
 [params]
 

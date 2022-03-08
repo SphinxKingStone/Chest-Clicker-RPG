@@ -11,9 +11,9 @@ func generate_item():
 	var rarity
 	var rng_number = rng.randi_range(0, 25)
 #	rarity = "BLUE"
-	if rng_number >= 19:
+	if rng_number >= 17:
 		rarity = "BLUE"
-	elif rng_number >= 13:
+	elif rng_number >= 9:
 		rarity = "GREEN"
 	else:
 		rarity = "WHITE"
