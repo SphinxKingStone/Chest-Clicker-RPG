@@ -12,17 +12,18 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [node name="InentoryScene" type="Panel"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 27.0
 margin_top = 149.0
-margin_right = 347.0
-margin_bottom = 579.0
+margin_right = 377.0
+margin_bottom = 614.0
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 margin_left = -15.0
 margin_top = -15.0
 margin_right = 335.0
@@ -45,8 +46,10 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 234.0
-margin_bottom = 312.0
+margin_left = 15.0
+margin_top = 17.5
+margin_right = 335.0
+margin_bottom = 447.5
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 3

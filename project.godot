@@ -25,6 +25,7 @@ ItemsStorage="*res://src/ItemsStorage.gd"
 ItemGenerator="*res://src/ItemGenerator.gd"
 Inventory="*res://src/Inventory.gd"
 Audio="*res://gui/Chest screen/Scripts/AudioStreamPlayer.gd"
+Stats="*res://src/Stats.gd"
 
 [display]
 

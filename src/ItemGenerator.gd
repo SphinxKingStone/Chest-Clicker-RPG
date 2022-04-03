@@ -30,4 +30,5 @@ func generate_item():
 			var my_random_number = rng.randi_range(0, ItemsStorage.blue_items.size() - 1)
 			item = ItemsStorage.blue_items[my_random_number]
 			item.cost = rng.randi_range(30, 35)
+	Stats.generate_stats(item)
 	return item

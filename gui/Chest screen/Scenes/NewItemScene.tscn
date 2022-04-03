@@ -161,6 +161,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="2" type="Label" parent="BaseStats"]
+margin_top = 45.0
+margin_right = 385.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 4 )
+text = "Attack: 13.8"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Stats" type="VBoxContainer" parent="."]
 margin_left = 288.0
 margin_top = 214.0

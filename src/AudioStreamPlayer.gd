@@ -21,4 +21,3 @@ func play_sound(sound, delay = 0):
 	
 	yield(player, "finished")
 	remove_child(player)
-	print_debug("Removed child")
