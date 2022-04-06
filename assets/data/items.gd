@@ -8,7 +8,7 @@ var weapons = {
 	# WHITE CATEGORY
 	simple_axe = {
 		code = "simple_axe",
-		name = tr("Simple Axe"),
+		name = "SIMPLE_AXE",
 		texture = load("res://assets/images/axes/axe_7.png"),
 		category = "one_handed",
 		
@@ -20,7 +20,7 @@ var weapons = {
 	
 	wooden_sword = {
 		code = "wooden_sword",
-		name = tr("Wooden Sword"),
+		name = "WOODEN_SWORD",
 		texture = load("res://assets/images/swords/sword_6.png"),
 		category = "one_handed",
 		
@@ -32,7 +32,7 @@ var weapons = {
 	
 	copper_dagger = {
 		code = "copper_dagger",
-		name = tr("Copper Dagger"),
+		name = "COPPER_DAGGER",
 		texture = load("res://assets/images/swords/sword_86.png"),
 		category = "one_handed",
 		
@@ -45,7 +45,7 @@ var weapons = {
 	# GREEN CATEGORY
 	iron_sword = {
 		code = "iron_sword",
-		name = tr("Iron Sword"),
+		name = "IRON_SWORD",
 		texture = load("res://assets/images/swords/sword_55.png"),
 		category = "two_handed",
 		
@@ -57,7 +57,7 @@ var weapons = {
 	
 	meteor_sword = {
 		code = "meteor_sword",
-		name = tr("Meteor Sword"),
+		name = "METEOR_SWORD",
 		texture = load("res://assets/images/swords/sword_60.png"),
 		category = "two_handed",
 		
@@ -72,7 +72,7 @@ var armour = {
 	# WHITE CATEGORY
 	leather_chestplate = {
 		code = "leather_chestplate",
-		name = tr("Leather Chestplate"),
+		name = "LEATHER_CHESTPLATE",
 		texture = load("res://assets/images/armors/armor_19.png"),
 		category = "body_armour",
 		
@@ -84,7 +84,7 @@ var armour = {
 	
 	leather_hood = {
 		code = "leather_hood",
-		name = tr("Leather Hood"),
+		name = "LEATHER_HOOD",
 		texture = load("res://assets/images/helmets/helmet_83.png"),
 		category = "helmet",
 		
@@ -96,7 +96,7 @@ var armour = {
 	
 	leather_gloves = {
 		code = "leather_gloves",
-		name = tr("Leather gloves"),
+		name = "LEATHER_GLOVES",
 		texture = load("res://assets/images/gloves/glove_1.png"),
 		category = "gloves",
 		
@@ -108,7 +108,7 @@ var armour = {
 	
 	leather_boots = {
 		code = "leather_boots",
-		name = tr("Leather boots"),
+		name = "LEATHER_BOOTS",
 		texture = load("res://assets/images/shoes/shoe_15.png"),
 		category = "boots",
 		
@@ -121,7 +121,7 @@ var armour = {
 	# GREEN CATEGORY
 	copper_chestplate = {
 		code = "copper_chestplate",
-		name = tr("Copper Chestplate"),
+		name = "COPPER_CHESTPLATE",
 		texture = load("res://assets/images/armors/armor_17.png"),
 		category = "body_armour",
 		
@@ -133,7 +133,7 @@ var armour = {
 	
 	copper_helmet = {
 		code = "copper_helmet",
-		name = tr("Copper Helmet"),
+		name = "COPPER_HELMET",
 		texture = load("res://assets/images/helmets/helmet_78.png"),
 		category = "helmet",
 		
@@ -145,7 +145,7 @@ var armour = {
 	
 	copper_gloves = {
 		code = "copper_gloves",
-		name = tr("Copper Gloves"),
+		name = "COPPER_GLOVES",
 		texture = load("res://assets/images/gloves/glove_4.png"),
 		category = "gloves",
 		
@@ -157,7 +157,7 @@ var armour = {
 	
 	copper_boots = {
 		code = "copper_boots",
-		name = tr("Copper Boots"),
+		name = "COPPER_BOOTS",
 		texture = load("res://assets/images/shoes/shoe_13.png"),
 		category = "boots",
 		
@@ -170,7 +170,7 @@ var armour = {
 	# BLUE CATEGORY
 	ice_gloves = {
 		code = "ice_gloves",
-		name = tr("Ice Gloves"),
+		name = "ICE_GLOVES",
 		texture = load("res://assets/images/gloves/glove_19.png"),
 		category = "gloves",
 		
@@ -182,7 +182,7 @@ var armour = {
 	
 	ice_boots = {
 		code = "ice_boots",
-		name = tr("Ice Boots"),
+		name = "ICE_BOOTS",
 		texture = load("res://assets/images/shoes/shoe_5.png"),
 		category = "boots",
 		
@@ -194,7 +194,7 @@ var armour = {
 	
 	ice_helmet = {
 		code = "ice_helmet",
-		name = tr("Ice Helmet"),
+		name = "ICE_HELMET",
 		texture = load("res://assets/images/helmets/helmet_64.png"),
 		category = "helmet",
 		
@@ -206,7 +206,7 @@ var armour = {
 	
 	ice_chestplate = {
 		code = "ice_chestplate",
-		name = tr("Ice Chestplate"),
+		name = "ICE_CHESTPLATE",
 		texture = load("res://assets/images/armors/armor_83.png"),
 		category = "body_armour",
 		
@@ -221,7 +221,7 @@ var jewelery = {
 	# WHITE CATEGORY
 	copper_ring = {
 		code = "copper_ring",
-		name = tr("Copper Ring"),
+		name = "COPPER_RING",
 		texture = load("res://assets/images/rings/ring_16.png"),
 		category = "ring",
 		
@@ -233,7 +233,7 @@ var jewelery = {
 	
 	old_medal = {
 		code = "old_medal",
-		name = tr("Old Medal"),
+		name = "OLD_MEDAL",
 		texture = load("res://assets/images/amulets/amulet_42.png"),
 		category = "amulet",
 		
@@ -245,7 +245,7 @@ var jewelery = {
 	
 	lit_torch = {
 		code = "lit_torch",
-		name = tr("Lit Torch"),
+		name = "LIT_TORCH",
 		texture = load("res://assets/images/misc/torch_2.png"),
 		category = "accessory",
 		
@@ -258,7 +258,7 @@ var jewelery = {
 	# GREEN CATEGORY
 	silver_ring = {
 		code = "silver_ring",
-		name = tr("Silver Ring"),
+		name = "SILVER_RING",
 		texture = load("res://assets/images/rings/ring_5.png"),
 		category = "ring",
 		
@@ -270,7 +270,7 @@ var jewelery = {
 	
 	gold_ring = {
 		code = "gold_ring",
-		name = tr("Gold Ring"),
+		name = "GOLD_RING",
 		texture = load("res://assets/images/rings/ring_1.png"),
 		category = "ring",
 		
@@ -282,7 +282,7 @@ var jewelery = {
 	
 	silver_skull_amulet1 = {
 		code = "silver_skull_amulet1",
-		name = tr("Cheap Skull Amulet"),
+		name = "SKULL_AMULET_1",
 		texture = load("res://assets/images/amulets/amulet_21.png"),
 		category = "amulet",
 		
@@ -296,7 +296,7 @@ var jewelery = {
 	# BLUE CATEGORY
 	sacred_scarab = {
 		code = "sacred_scarab",
-		name = tr("Sacred Scarab"),
+		name = "SACRED_SCARAB",
 		texture = load("res://assets/images/accessory/sacred_scarab.png"),
 		category = "accessory",
 		
@@ -308,7 +308,7 @@ var jewelery = {
 	
 	ice_pearl = {
 		code = "ice_pearl",
-		name = tr("Icy Pearl"),
+		name = "ICY_PEARL",
 		texture = load("res://assets/images/amulets/amulet_5.png"),
 		category = "amulet",
 		

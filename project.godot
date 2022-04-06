@@ -24,8 +24,8 @@ Items="*res://assets/data/Items.gd"
 ItemsStorage="*res://src/ItemsStorage.gd"
 ItemGenerator="*res://src/ItemGenerator.gd"
 Inventory="*res://src/Inventory.gd"
-Audio="*res://gui/Chest screen/Scripts/AudioStreamPlayer.gd"
 Stats="*res://src/Stats.gd"
+Audio="*res://src/AudioStreamPlayer.gd"
 
 [display]
 
@@ -58,6 +58,11 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[locale]
+
+translations=PoolStringArray( "res://assets/localization/local.en.translation", "res://assets/localization/local.ru.translation" )
+locale_filter=[ 0, [  ] ]
 
 [rendering]
 

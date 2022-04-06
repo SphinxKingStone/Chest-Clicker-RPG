@@ -61,20 +61,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SellButton" type="Button" parent="HBoxContainer"]
+[node name="EquipButton" type="Button" parent="HBoxContainer"]
 margin_right = 340.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Sell"
+text = "EQUIP_BTN"
 
-[node name="EquipButton" type="Button" parent="HBoxContainer"]
+[node name="SellButton" type="Button" parent="HBoxContainer"]
 margin_left = 360.0
 margin_right = 700.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Equip"
+text = "SELL_BTN"
 
 [node name="ItemBackground" type="Panel" parent="."]
 margin_left = 24.0

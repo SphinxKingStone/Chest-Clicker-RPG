@@ -1,37 +1,69 @@
 extends Node
 
-var stats = ["damage", "health", "defense", "strength", "dexterity", "endurance", "dodge", "critical", "block", "bonus_rarity"]
-var damage_values = {
-	1: [10, 20],
-	2: [20, 30],
-	3: [20, 30],
+var stats_names = ["damage", "health", "defense", "strength", "dexterity", "endurance", "dodge", "critical", "block", "bonus_rarity"]
+
+var stats_values = {
+	damage = {
+		1: {min = 4, max = 10},
+		2: {min = 11, max = 20},
+		3: {min = 21, max = 30},
+		4: {min = 31, max = 40},
+	}, 
+	health = {
+		1: {min = 2, max = 12},
+		2: {min = 13, max = 26},
+		3: {min = 27, max = 40},
+		4: {min = 41, max = 56},
+	}, 
+	defense = {
+		1: {min = 2, max = 12},
+		2: {min = 13, max = 26},
+		3: {min = 27, max = 40},
+		4: {min = 41, max = 56},
+	}, 
+	strength = {
+		1: {min = 1, max = 8},
+		2: {min = 9, max = 16},
+		3: {min = 17, max = 24},
+		4: {min = 25, max = 32},
+	}, 
+	dexterity = {
+		1: {min = 1, max = 8},
+		2: {min = 9, max = 16},
+		3: {min = 17, max = 24},
+		4: {min = 25, max = 32},
+	}, 
+	endurance = {
+		1: {min = 1, max = 8},
+		2: {min = 9, max = 16},
+		3: {min = 17, max = 24},
+		4: {min = 25, max = 32},
+	}, 
+	dodge = {
+		1: {min = 1, max = 3},
+		2: {min = 4, max = 6},
+		3: {min = 7, max = 9},
+		4: {min = 10, max = 12},
+	}, 
+	critical = {
+		1: {min = 1, max = 3},
+		2: {min = 4, max = 6},
+		3: {min = 7, max = 9},
+		4: {min = 10, max = 12},
+	}, 
+	block = {
+		1: {min = 1, max = 5},
+		2: {min = 6, max = 10},
+		3: {min = 11, max = 15},
+		4: {min = 16, max = 20},
+	}, 
+	bonus_rarity = {
+		1: {min = 1, max = 2},
+		2: {min = 3, max = 4},
+		3: {min = 5, max = 6},
+		4: {min = 7, max = 8},
+	}, 
 }
 
 func _ready():
 	pass 
-
-func generate_stats(item):
-	var item_level
-	match item.rarity:
-		"WHITE":
-			item_level = 1
-		"GREEN":
-			item_level = 2
-		"BLUE":
-			item_level = 3
-	var stats_count = ItemGenerator.rng.randi_range(1, item_level)
-	var generated_stats = []
-	for i in stats_count:
-		# TODO it should be not stats, it should be stats according to item base type
-		var stat_name = stats[ItemGenerator.rng.randi_range(0, stats.size() - 1)]
-		var stat_level = ItemGenerator.rng.randi_range(1, item_level)
-		if ItemGenerator.rng.randi_range(1, 10) == 10: #10 = CHANCE TO ROLL BONUS STAT LEVEL
-			stat_level += 1
-		
-		var stat_value = ItemGenerator.rng.randf_range(damage_values[stat_level][0], damage_values[stat_level][1])
-		stat_value = stepify(stat_value, 0.1)
-		var stat = [stat_name, stat_value]
-		print_debug(stat)
-		generated_stats.append(stat)
-	print_debug("-----------------------")
-	return generated_stats
