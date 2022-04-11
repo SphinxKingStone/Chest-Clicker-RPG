@@ -45,6 +45,7 @@ func generate_stats(item):
 			item_level = 3
 	var stats_count = ItemGenerator.rng.randi_range(1, item_level)
 	var generated_stats = []
+	print_debug(Stats.get(item.category+"_stats")) # how to do stats
 	for i in stats_count:
 		# TODO it should be not stats, it should be stats according to item base type
 		var stat_name = Stats.stats_names[ItemGenerator.rng.randi_range(0, Stats.stats_names.size() - 1)]
