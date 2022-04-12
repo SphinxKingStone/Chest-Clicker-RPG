@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_86.png-2519fabe97c69f7e08d08ba51005c97b.stex"
+path="res://.import/copper_chestplate.png-c80c6e19b4c2977c3153b4ee580170a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/swords/sword_86.png"
-dest_files=[ "res://.import/sword_86.png-2519fabe97c69f7e08d08ba51005c97b.stex" ]
+source_file="res://assets/images/armors/copper_chestplate.png"
+dest_files=[ "res://.import/copper_chestplate.png-c80c6e19b4c2977c3153b4ee580170a0.stex" ]
 
 [params]
 

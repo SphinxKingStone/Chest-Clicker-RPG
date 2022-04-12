@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/amulet_42.png-e87d2e6bb5d23451a1096e1ae5723633.stex"
+path="res://.import/wooden_sword.png-fd89a48518c2126757ff32b12c70e6a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/amulets/amulet_42.png"
-dest_files=[ "res://.import/amulet_42.png-e87d2e6bb5d23451a1096e1ae5723633.stex" ]
+source_file="res://assets/images/swords/wooden_sword.png"
+dest_files=[ "res://.import/wooden_sword.png-fd89a48518c2126757ff32b12c70e6a4.stex" ]
 
 [params]
 

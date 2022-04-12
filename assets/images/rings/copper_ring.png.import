@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_60.png-4a7c90cbac8775ed1f1d1722bda4b1e3.stex"
+path="res://.import/copper_ring.png-bf46917a817e4043f8853a48d4f97302.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/swords/sword_60.png"
-dest_files=[ "res://.import/sword_60.png-4a7c90cbac8775ed1f1d1722bda4b1e3.stex" ]
+source_file="res://assets/images/rings/copper_ring.png"
+dest_files=[ "res://.import/copper_ring.png-bf46917a817e4043f8853a48d4f97302.stex" ]
 
 [params]
 

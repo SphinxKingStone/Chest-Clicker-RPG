@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/torch_2.png-aa544c544ab99349edac559096bdd1b0.stex"
+path="res://.import/silver_skull_amulet1.png-c54e386c801123c9484854110fbd1a4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/misc/torch_2.png"
-dest_files=[ "res://.import/torch_2.png-aa544c544ab99349edac559096bdd1b0.stex" ]
+source_file="res://assets/images/amulets/silver_skull_amulet1.png"
+dest_files=[ "res://.import/silver_skull_amulet1.png-c54e386c801123c9484854110fbd1a4a.stex" ]
 
 [params]
 

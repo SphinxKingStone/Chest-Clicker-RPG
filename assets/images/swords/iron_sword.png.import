@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/glove_1.png-13b96cb715aedfd5c40925397f85551b.stex"
+path="res://.import/iron_sword.png-a1196e08dfa861f50d5091492cbfd942.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/gloves/glove_1.png"
-dest_files=[ "res://.import/glove_1.png-13b96cb715aedfd5c40925397f85551b.stex" ]
+source_file="res://assets/images/swords/iron_sword.png"
+dest_files=[ "res://.import/iron_sword.png-a1196e08dfa861f50d5091492cbfd942.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armor_83.png-564749d2abfd8e8c61f3f751a847cc53.stex"
+path="res://.import/simple_axe.png-a88f425e25d61179bc748abaeefebaf7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/armors/armor_83.png"
-dest_files=[ "res://.import/armor_83.png-564749d2abfd8e8c61f3f751a847cc53.stex" ]
+source_file="res://assets/images/axes/simple_axe.png"
+dest_files=[ "res://.import/simple_axe.png-a88f425e25d61179bc748abaeefebaf7.stex" ]
 
 [params]
 

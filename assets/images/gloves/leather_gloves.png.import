@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ring_1.png-bc20133c024a0acdba69d375e08d9cc7.stex"
+path="res://.import/leather_gloves.png-6cbf16622fd39a25bd4c7f0968b386d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/rings/ring_1.png"
-dest_files=[ "res://.import/ring_1.png-bc20133c024a0acdba69d375e08d9cc7.stex" ]
+source_file="res://assets/images/gloves/leather_gloves.png"
+dest_files=[ "res://.import/leather_gloves.png-6cbf16622fd39a25bd4c7f0968b386d5.stex" ]
 
 [params]
 

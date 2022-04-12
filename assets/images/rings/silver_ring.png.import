@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armor_17.png-ec7fa4ba63cb33bddf94f516e63d2f8d.stex"
+path="res://.import/silver_ring.png-f794cc1791f5f43aff2ea15ca05833bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/armors/armor_17.png"
-dest_files=[ "res://.import/armor_17.png-ec7fa4ba63cb33bddf94f516e63d2f8d.stex" ]
+source_file="res://assets/images/rings/silver_ring.png"
+dest_files=[ "res://.import/silver_ring.png-f794cc1791f5f43aff2ea15ca05833bb.stex" ]
 
 [params]
 

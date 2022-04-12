@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/helmet_64.png-4c0b1c253642d135617d50cc564ad9d0.stex"
+path="res://.import/ice_boots.png-c5bf2474262092b81872662736d17982.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/helmets/helmet_64.png"
-dest_files=[ "res://.import/helmet_64.png-4c0b1c253642d135617d50cc564ad9d0.stex" ]
+source_file="res://assets/images/shoes/ice_boots.png"
+dest_files=[ "res://.import/ice_boots.png-c5bf2474262092b81872662736d17982.stex" ]
 
 [params]
 

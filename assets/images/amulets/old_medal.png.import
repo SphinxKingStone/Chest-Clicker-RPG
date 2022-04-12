@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/armor_19.png-9d93094fde06acb39ab11450060ecfe5.stex"
+path="res://.import/old_medal.png-67da064a9889eeb5beee429301e2d885.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/armors/armor_19.png"
-dest_files=[ "res://.import/armor_19.png-9d93094fde06acb39ab11450060ecfe5.stex" ]
+source_file="res://assets/images/amulets/old_medal.png"
+dest_files=[ "res://.import/old_medal.png-67da064a9889eeb5beee429301e2d885.stex" ]
 
 [params]
 

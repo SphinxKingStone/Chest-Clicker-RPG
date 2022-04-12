@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/helmet_83.png-1f8c905847511cb17cb2671cf5eaf290.stex"
+path="res://.import/ice_pearl.png-c73a89551cbfe0ab8bb150d562c8df89.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/helmets/helmet_83.png"
-dest_files=[ "res://.import/helmet_83.png-1f8c905847511cb17cb2671cf5eaf290.stex" ]
+source_file="res://assets/images/amulets/ice_pearl.png"
+dest_files=[ "res://.import/ice_pearl.png-c73a89551cbfe0ab8bb150d562c8df89.stex" ]
 
 [params]
 

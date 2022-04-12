@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/amulet_5.png-51d93ccd1a87c7e84af5d6801809eca9.stex"
+path="res://.import/lit_torch.png-44aa7d18d1d2a6db2531d9d167a0ce8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/amulets/amulet_5.png"
-dest_files=[ "res://.import/amulet_5.png-51d93ccd1a87c7e84af5d6801809eca9.stex" ]
+source_file="res://assets/images/misc/lit_torch.png"
+dest_files=[ "res://.import/lit_torch.png-44aa7d18d1d2a6db2531d9d167a0ce8c.stex" ]
 
 [params]
 

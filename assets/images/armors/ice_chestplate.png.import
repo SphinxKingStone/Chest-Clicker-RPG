@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/axe_7.png-f81aa77f69921296a8f8b1be64aae7de.stex"
+path="res://.import/ice_chestplate.png-9cde84b1f9270151bb713a1359ee7bfb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/axes/axe_7.png"
-dest_files=[ "res://.import/axe_7.png-f81aa77f69921296a8f8b1be64aae7de.stex" ]
+source_file="res://assets/images/armors/ice_chestplate.png"
+dest_files=[ "res://.import/ice_chestplate.png-9cde84b1f9270151bb713a1359ee7bfb.stex" ]
 
 [params]
 
