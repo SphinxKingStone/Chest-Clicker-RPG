@@ -1,8 +1,10 @@
 extends Node
 
-
-func _init():
-	pass
+var ITEM_LEVEL = {
+	"WHITE": 1,
+	"GREEN": 2,
+	"BLUE": 3,
+}
 
 var weapons = {
 	# WHITE CATEGORY
@@ -318,3 +320,6 @@ var jewelery = {
 		rarity = "BLUE",
 	},
 }
+
+func _init():
+	pass

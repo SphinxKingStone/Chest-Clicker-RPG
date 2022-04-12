@@ -9,7 +9,7 @@ func show_item(item):
 	self.show()
 	
 	# Setting new item background color
-	match ItemGenerator.item.rarity:
+	match item.rarity:
 		"WHITE":
 			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
 		"GREEN":
