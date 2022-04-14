@@ -18,7 +18,7 @@ var green_items = []
 var blue_items = []
 
 func _init():
-	for i in Items.weapons.values():
+	for i in ItemsData.weapons.values():
 		items_in_category[i.category] += 1
 		match i.rarity:
 			"WHITE":
@@ -29,7 +29,7 @@ func _init():
 				blue_items.append(i)
 		
 	
-	for i in Items.armour.values():
+	for i in ItemsData.armour.values():
 		items_in_category[i.category] += 1
 		match i.rarity:
 			"WHITE":
@@ -40,7 +40,7 @@ func _init():
 				blue_items.append(i)
 		
 	
-	for i in Items.jewelery.values():
+	for i in ItemsData.jewelery.values():
 		items_in_category[i.category] += 1
 		match i.rarity:
 			"WHITE":

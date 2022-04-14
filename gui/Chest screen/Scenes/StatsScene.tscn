@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://gui/Chest screen/Scripts/StatsScene.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.364706, 0.168627, 0.168627, 0.627451 )
@@ -18,6 +19,7 @@ margin_top = 130.0
 margin_right = 715.0
 margin_bottom = 360.0
 custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,13 +45,13 @@ rect_min_size = Vector2( 190, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Damage"
 
-[node name="Damage" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="damage" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_right = 319.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 125, 0 )
 custom_fonts/font = SubResource( 2 )
-text = "1-2.5"
+text = "0"
 align = 2
 
 [node name="HealthName" type="Label" parent="ScrollContainer2/GridContainer"]
@@ -59,13 +61,13 @@ margin_bottom = 62.0
 custom_fonts/font = SubResource( 2 )
 text = "Health"
 
-[node name="Health" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="health" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 33.0
 margin_right = 319.0
 margin_bottom = 62.0
 custom_fonts/font = SubResource( 2 )
-text = "10"
+text = "0"
 align = 2
 
 [node name="DefenseName" type="Label" parent="ScrollContainer2/GridContainer"]
@@ -75,7 +77,7 @@ margin_bottom = 95.0
 custom_fonts/font = SubResource( 2 )
 text = "Defense"
 
-[node name="Defense" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="defense" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 66.0
 margin_right = 319.0
@@ -91,7 +93,7 @@ margin_bottom = 128.0
 custom_fonts/font = SubResource( 2 )
 text = "Strength"
 
-[node name="Strength" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="strength" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 99.0
 margin_right = 319.0
@@ -107,7 +109,7 @@ margin_bottom = 161.0
 custom_fonts/font = SubResource( 2 )
 text = "Dexterity"
 
-[node name="Dexterity" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="dexterity" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 132.0
 margin_right = 319.0
@@ -123,7 +125,7 @@ margin_bottom = 194.0
 custom_fonts/font = SubResource( 2 )
 text = "Endurance"
 
-[node name="Endurance" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="endurance" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 165.0
 margin_right = 319.0
@@ -139,7 +141,7 @@ margin_bottom = 227.0
 custom_fonts/font = SubResource( 2 )
 text = "Dodge Chance"
 
-[node name="Dodge" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="dodge" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 198.0
 margin_right = 319.0
@@ -155,7 +157,7 @@ margin_bottom = 260.0
 custom_fonts/font = SubResource( 2 )
 text = "Critical Chance"
 
-[node name="Critical" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="critical" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 231.0
 margin_right = 319.0
@@ -171,7 +173,7 @@ margin_bottom = 293.0
 custom_fonts/font = SubResource( 2 )
 text = "Block Chance"
 
-[node name="Block" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="block" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 264.0
 margin_right = 319.0
@@ -187,7 +189,7 @@ margin_bottom = 326.0
 custom_fonts/font = SubResource( 2 )
 text = "Bonus Rarity"
 
-[node name="BonusRarity" type="Label" parent="ScrollContainer2/GridContainer"]
+[node name="bonus_rarity" type="Label" parent="ScrollContainer2/GridContainer"]
 margin_left = 194.0
 margin_top = 297.0
 margin_right = 319.0

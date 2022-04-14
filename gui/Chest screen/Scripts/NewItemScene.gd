@@ -44,16 +44,16 @@ func show_item(item):
 	# Showing stats in new item window
 	var count = 1 # helps to iterate through new item stats labels
 	for stat in item.stats:
-		get_node("Stats/" + str(count)).text = stat[0] + ": " + str(stat[1])
+		get_node("Stats/" + str(count)).text = stat.name + ": " + str(stat.value)
 		count += 1
 
 func sell_item():
-	Inventory.silver += ItemGenerator.item.cost
+	Character.Inventory.silver += ItemGenerator.item.cost
 	get_parent().get_node("InventoryScene").update_silver()
 	self.hide()
 	
 func equip_item():
 	self.hide()
-	Inventory.equip_item(ItemGenerator.item)
+	Character.equip_item(ItemGenerator.item)
 	get_parent().get_node("InventoryScene").update_inventory()
 

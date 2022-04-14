@@ -20,12 +20,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Items="*res://assets/data/Items.gd"
+ItemsData="*res://assets/data/ItemsData.gd"
 ItemsStorage="*res://src/ItemsStorage.gd"
 ItemGenerator="*res://src/ItemGenerator.gd"
-Inventory="*res://src/Inventory.gd"
-Stats="*res://src/Stats.gd"
+StatsData="*res://assets/data/StatsData.gd"
 Audio="*res://src/AudioStreamPlayer.gd"
+Character="*res://src/Character.gd"
 
 [display]
 

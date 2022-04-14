@@ -18,10 +18,10 @@ func generate_item():
 	return item
 
 func generate_stats(item):
-	var item_level = Items.ITEM_LEVEL[item.rarity] # AKA rarity
+	var item_level = ItemsData.ITEM_LEVEL[item.rarity] # AKA rarity
 	var stats_count = ItemGenerator.rng.randi_range(1, item_level)
 	var generated_stats = []
-	var stats_pool = Stats.get(item.category+"_stats")
+	var stats_pool = StatsData.get(item.category+"_stats")
 	var generated_names:Array # helps to prevent rolling stat twice
 	
 	for i in stats_count:
@@ -42,7 +42,8 @@ func generate_stats(item):
 		var selected_stat = stats_pool[stat_name][stat_tier]
 		var stat_value = ItemGenerator.rng.randf_range(selected_stat.min, selected_stat.max)
 		stat_value = stepify(stat_value, 0.1)
-		var stat = [stat_name, stat_value]
+#		var stat = [stat_name, stat_value]
+		var stat = {"name": stat_name, "value": stat_value}
 		generated_stats.append(stat)
 	
 	return generated_stats

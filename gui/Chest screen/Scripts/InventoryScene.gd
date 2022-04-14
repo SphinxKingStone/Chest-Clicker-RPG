@@ -18,7 +18,7 @@ func sell_item():
 #	accessory = 0,
 
 func update_inventory():
-	for slot in Inventory.gear:
+	for slot in Character.Inventory.get_gear():
 		var texture_node
 		match slot:
 			"helmet":
@@ -43,15 +43,15 @@ func update_inventory():
 				texture_node = $GridContainer/Boots/Texture
 		
 		# Set item sprite for current slot or remove old sprite if slot is empty
-		if Inventory.gear[slot] != null:
-			texture_node.texture = Inventory.gear[slot].texture
+		if Character.Inventory.get_slot(slot) != null:
+			texture_node.texture = Character.Inventory.get_slot(slot).texture
 		else:
 			texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/light_gray_item_bg.tres"))
 			texture_node.texture = null
 			continue
 		
 		# Manage slots BG color
-		match Inventory.gear[slot].rarity:
+		match Character.Inventory.get_slot(slot).rarity:
 			"WHITE": #gray
 				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
 			"GREEN":
@@ -61,4 +61,4 @@ func update_inventory():
 			
 
 func update_silver():
-	get_parent().get_node("TopSide/Silver/Amount").text = str(Inventory.silver)
+	get_parent().get_node("TopSide/Silver/Amount").text = str(Character.Inventory.silver)

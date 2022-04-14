@@ -22,6 +22,13 @@ func _ready():
 func show_new_item(item):
 	pass
 
+func get_gear():
+	return gear
+
+func get_slot(slot):
+	if gear.has(slot):
+		return gear[slot]
+
 func equip_item(item, slot = ""):
 	match item.category:
 		"body_armour":
