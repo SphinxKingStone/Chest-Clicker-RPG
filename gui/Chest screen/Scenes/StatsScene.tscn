@@ -5,11 +5,16 @@
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.364706, 0.168627, 0.168627, 0.627451 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="DynamicFont" id=2]
 size = 28
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 

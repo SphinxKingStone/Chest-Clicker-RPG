@@ -26,6 +26,7 @@ ItemGenerator="*res://src/ItemGenerator.gd"
 StatsData="*res://assets/data/StatsData.gd"
 Audio="*res://src/AudioStreamPlayer.gd"
 Character="*res://src/Character.gd"
+ResourceManager="*res://src/ResourceManager.gd"
 
 [display]
 
