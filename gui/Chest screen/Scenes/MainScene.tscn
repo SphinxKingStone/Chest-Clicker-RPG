@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
@@ -8,11 +8,13 @@
 [ext_resource path="res://src/AudioStreamPlayer.gd" type="Script" id=6]
 [ext_resource path="res://gui/Chest screen/Scenes/StatsScene.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gui/Chest screen/Scenes/Buttons.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/StyleBoxes/equipment_bg_blueish.tres" type="StyleBox" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
 outline_size = 1
 outline_color = Color( 0.247059, 0.384314, 0.247059, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
 
@@ -20,6 +22,7 @@ font_data = ExtResource( 5 )
 size = 36
 outline_size = 1
 outline_color = Color( 0.290196, 0.454902, 0.290196, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
 
@@ -47,20 +50,27 @@ margin_bottom = 1110.03
 rect_scale = Vector2( 2, 2 )
 
 [node name="Buttons" parent="." instance=ExtResource( 8 )]
+margin_left = 365.0
+margin_top = 340.0
+margin_right = 715.0
+margin_bottom = 640.0
 
-[node name="InventoryScene" parent="." instance=ExtResource( 4 )]
+[node name="EquipmentScene" parent="." instance=ExtResource( 4 )]
 margin_left = 365.0
 margin_top = 70.0
 margin_right = 715.0
 margin_bottom = 535.0
+custom_styles/panel = ExtResource( 9 )
 
 [node name="StatsScene" parent="." instance=ExtResource( 7 )]
 margin_left = 6.6
 margin_top = 70.0
 margin_right = 356.6
 margin_bottom = 300.0
+custom_styles/panel = ExtResource( 9 )
 
 [node name="NewItemScene" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="TopSide" type="HBoxContainer" parent="."]
 margin_top = 5.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/battle_win.mp3-c4ff1bf9d8face1f6d2a59b0d2d55977.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Sounds/battle_win.mp3"
+dest_files=[ "res://.import/battle_win.mp3-c4ff1bf9d8face1f6d2a59b0d2d55977.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

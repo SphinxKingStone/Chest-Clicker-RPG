@@ -16,6 +16,7 @@ corner_radius_bottom_left = 16
 size = 56
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
@@ -23,17 +24,20 @@ font_data = ExtResource( 3 )
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 44
 outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 

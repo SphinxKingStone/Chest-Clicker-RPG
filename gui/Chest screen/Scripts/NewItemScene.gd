@@ -49,11 +49,11 @@ func show_item(item):
 
 func sell_item():
 	Character.Inventory.silver += ItemGenerator.item.cost
-	get_parent().get_node("InventoryScene").update_silver()
+	get_parent().get_node("EquipmentScene").update_silver()
 	self.hide()
 	
 func equip_item():
 	self.hide()
 	Character.equip_item(ItemGenerator.item)
-	get_parent().get_node("InventoryScene").update_inventory()
+	get_parent().get_node("EquipmentScene").update_inventory()
 
