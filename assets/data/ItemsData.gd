@@ -15,7 +15,7 @@ var weapons = {
 		category = "one_handed",
 		
 		base_stats = {
-			attack = [2.5, 5],
+			damage = [2.5, 5],
 		},
 		rarity = "WHITE",
 	},
@@ -27,7 +27,7 @@ var weapons = {
 		category = "one_handed",
 		
 		base_stats = {
-			attack = [1, 7],
+			damage = [1, 7],
 		},
 		rarity = "WHITE",
 	},
@@ -39,7 +39,7 @@ var weapons = {
 		category = "one_handed",
 		
 		base_stats = {
-			attack = [2, 4],
+			damage = [2, 4],
 		},
 		rarity = "WHITE",
 	},
@@ -52,7 +52,7 @@ var weapons = {
 		category = "two_handed",
 		
 		base_stats = {
-			attack = [6, 12],
+			damage = [6, 12],
 		},
 		rarity = "GREEN",
 	},
@@ -64,7 +64,7 @@ var weapons = {
 		category = "two_handed",
 		
 		base_stats = {
-			attack = [12, 18],
+			damage = [12, 18],
 		},
 		rarity = "BLUE",
 	},
@@ -228,7 +228,7 @@ var jewelery = {
 		category = "ring",
 		
 		base_stats = {
-			attack = 3,
+			damage = 3,
 		},
 		rarity = "WHITE",
 	},
@@ -265,7 +265,7 @@ var jewelery = {
 		category = "ring",
 		
 		base_stats = {
-			attack = [5, 7],
+			damage = [5, 7],
 		},
 		rarity = "GREEN",
 	},
@@ -277,7 +277,7 @@ var jewelery = {
 		category = "ring",
 		
 		base_stats = {
-			attack = [5, 7],
+			damage = [5, 7],
 		},
 		rarity = "GREEN",
 	},

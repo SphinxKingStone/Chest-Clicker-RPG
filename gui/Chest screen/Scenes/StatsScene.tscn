@@ -2,13 +2,7 @@
 
 [ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://gui/Chest screen/Scripts/StatsScene.gd" type="Script" id=2]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.364706, 0.168627, 0.168627, 1 )
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[ext_resource path="res://assets/StyleBoxes/equipment_bg_blueish.tres" type="StyleBox" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 28
@@ -19,17 +13,15 @@ use_filter = true
 font_data = ExtResource( 1 )
 
 [node name="StatsScene" type="Panel"]
-margin_left = 365.0
-margin_top = 130.0
-margin_right = 715.0
-margin_bottom = 360.0
-custom_styles/panel = SubResource( 1 )
+margin_right = 350.0
+margin_bottom = 230.0
+custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 margin_left = 5.0
 margin_top = 10.0
 margin_right = 346.0
@@ -38,167 +30,474 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer2"]
-margin_right = 319.0
-margin_bottom = 326.0
-columns = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_bottom = 290.0
+custom_constants/separation = 29
 
-[node name="DamageName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_right = 190.0
+[node name="damagePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+
+[node name="damageName" type="Label" parent="ScrollContainer/VBoxContainer/damagePanel"]
+margin_left = 5.0
+margin_right = 102.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+text = "Damage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damage" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/damagePanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="damageValue" type="Label" parent="ScrollContainer/VBoxContainer/damagePanel/damage"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+
+[node name="damageBonus" type="Label" parent="ScrollContainer/VBoxContainer/damagePanel/damage"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lifePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 29.0
+margin_bottom = 29.0
+
+[node name="lifeName" type="Label" parent="ScrollContainer/VBoxContainer/lifePanel"]
+margin_left = 5.0
+margin_right = 195.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 190, 0 )
 custom_fonts/font = SubResource( 2 )
-text = "Damage"
+text = "Life"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="damage" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_right = 319.0
+[node name="life" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/lifePanel"]
+margin_left = 125.0
+margin_right = 325.0
 margin_bottom = 29.0
-rect_min_size = Vector2( 125, 0 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lifeValue" type="Label" parent="ScrollContainer/VBoxContainer/lifePanel/life"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="HealthName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 33.0
-margin_right = 190.0
-margin_bottom = 62.0
+[node name="lifeBonus" type="Label" parent="ScrollContainer/VBoxContainer/lifePanel/life"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
-text = "Health"
-
-[node name="health" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 33.0
-margin_right = 319.0
-margin_bottom = 62.0
-custom_fonts/font = SubResource( 2 )
-text = "0"
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="DefenseName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 66.0
-margin_right = 190.0
-margin_bottom = 95.0
+[node name="defensePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 58.0
+margin_bottom = 58.0
+
+[node name="defenseName" type="Label" parent="ScrollContainer/VBoxContainer/defensePanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Defense"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="defense" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 66.0
-margin_right = 319.0
-margin_bottom = 95.0
+[node name="defense" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/defensePanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="defenseValue" type="Label" parent="ScrollContainer/VBoxContainer/defensePanel/defense"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="StrengthName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 99.0
-margin_right = 190.0
-margin_bottom = 128.0
+[node name="defenseBonus" type="Label" parent="ScrollContainer/VBoxContainer/defensePanel/defense"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="strengthPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 87.0
+margin_bottom = 87.0
+
+[node name="strengthName" type="Label" parent="ScrollContainer/VBoxContainer/strengthPanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Strength"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="strength" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 99.0
-margin_right = 319.0
-margin_bottom = 128.0
+[node name="strength" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/strengthPanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="strengthValue" type="Label" parent="ScrollContainer/VBoxContainer/strengthPanel/strength"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="DexterityName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 132.0
-margin_right = 190.0
-margin_bottom = 161.0
+[node name="strengthBonus" type="Label" parent="ScrollContainer/VBoxContainer/strengthPanel/strength"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dexterityPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 116.0
+margin_bottom = 116.0
+
+[node name="dexterityName" type="Label" parent="ScrollContainer/VBoxContainer/dexterityPanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Dexterity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="dexterity" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 132.0
-margin_right = 319.0
-margin_bottom = 161.0
+[node name="dexterity" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/dexterityPanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dexterityValue" type="Label" parent="ScrollContainer/VBoxContainer/dexterityPanel/dexterity"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="EnduranceName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 165.0
-margin_right = 190.0
-margin_bottom = 194.0
+[node name="dexterityBonus" type="Label" parent="ScrollContainer/VBoxContainer/dexterityPanel/dexterity"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="endurancePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 145.0
+margin_bottom = 145.0
+
+[node name="enduranceName" type="Label" parent="ScrollContainer/VBoxContainer/endurancePanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
 custom_fonts/font = SubResource( 2 )
 text = "Endurance"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="endurance" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 165.0
-margin_right = 319.0
-margin_bottom = 194.0
+[node name="endurance" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/endurancePanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enduranceValue" type="Label" parent="ScrollContainer/VBoxContainer/endurancePanel/endurance"]
+margin_left = 182.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="DodgeName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 198.0
-margin_right = 190.0
-margin_bottom = 227.0
+[node name="enduranceBonus" type="Label" parent="ScrollContainer/VBoxContainer/endurancePanel/endurance"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
-text = "Dodge Chance"
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="dodge" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 198.0
-margin_right = 319.0
-margin_bottom = 227.0
+[node name="dodgePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 174.0
+margin_bottom = 174.0
+
+[node name="dodgeName" type="Label" parent="ScrollContainer/VBoxContainer/dodgePanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Dodge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dodge" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/dodgePanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dodgeValue" type="Label" parent="ScrollContainer/VBoxContainer/dodgePanel/dodge"]
+margin_left = 163.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0%"
 align = 2
 
-[node name="CriticalName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 231.0
-margin_right = 190.0
-margin_bottom = 260.0
+[node name="dodgeBonus" type="Label" parent="ScrollContainer/VBoxContainer/dodgePanel/dodge"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
-text = "Critical Chance"
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="critical" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 231.0
-margin_right = 319.0
-margin_bottom = 260.0
+[node name="criticalPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 203.0
+margin_bottom = 203.0
+
+[node name="criticalName" type="Label" parent="ScrollContainer/VBoxContainer/criticalPanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Critical"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="critical" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/criticalPanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="criticalValue" type="Label" parent="ScrollContainer/VBoxContainer/criticalPanel/critical"]
+margin_left = 163.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0%"
 align = 2
 
-[node name="BlockName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 264.0
-margin_right = 190.0
-margin_bottom = 293.0
+[node name="criticalBonus" type="Label" parent="ScrollContainer/VBoxContainer/criticalPanel/critical"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
-text = "Block Chance"
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="block" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 264.0
-margin_right = 319.0
-margin_bottom = 293.0
+[node name="blockPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 232.0
+margin_bottom = 232.0
+
+[node name="blockName" type="Label" parent="ScrollContainer/VBoxContainer/blockPanel"]
+margin_left = 5.0
+margin_right = 195.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 190, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Block"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="block" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/blockPanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blockValue" type="Label" parent="ScrollContainer/VBoxContainer/blockPanel/block"]
+margin_left = 163.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0%"
 align = 2
 
-[node name="BonusRarityName" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_top = 297.0
-margin_right = 190.0
-margin_bottom = 326.0
+[node name="blockBonus" type="Label" parent="ScrollContainer/VBoxContainer/blockPanel/block"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_rarityPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 261.0
+margin_bottom = 261.0
+
+[node name="bonus_rarityName" type="Label" parent="ScrollContainer/VBoxContainer/bonus_rarityPanel"]
+margin_left = 5.0
+margin_right = 159.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "Bonus Rarity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="bonus_rarity" type="Label" parent="ScrollContainer2/GridContainer"]
-margin_left = 194.0
-margin_top = 297.0
-margin_right = 319.0
-margin_bottom = 326.0
+[node name="bonus_rarity" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/bonus_rarityPanel"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_rarityValue" type="Label" parent="ScrollContainer/VBoxContainer/bonus_rarityPanel/bonus_rarity"]
+margin_left = 163.0
+margin_right = 196.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 2 )
 text = "0%"
 align = 2
+
+[node name="bonus_rarityBonus" type="Label" parent="ScrollContainer/VBoxContainer/bonus_rarityPanel/bonus_rarity"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="filler_idk" type="Panel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 290.0
+margin_bottom = 290.0
+
+[node name="bonus_rarityName" type="Label" parent="ScrollContainer/VBoxContainer/filler_idk"]
+margin_left = 5.0
+margin_right = 159.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+text = "Bonus Rarity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_rarity" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/filler_idk"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 29.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bonus_rarityValue" type="Label" parent="ScrollContainer/VBoxContainer/filler_idk/bonus_rarity"]
+margin_left = 163.0
+margin_right = 196.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+text = "0%"
+align = 2
+
+[node name="bonus_rarityBonus" type="Label" parent="ScrollContainer/VBoxContainer/filler_idk/bonus_rarity"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0588235, 1, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,6 +1,6 @@
 extends Node
 
-var stats_names = ["damage", "health", "defense", "strength", "dexterity", "endurance", "dodge", "critical", "block", "bonus_rarity"]
+var stats_names = ["damage", "life", "defense", "strength", "dexterity", "endurance", "dodge", "critical", "block", "bonus_rarity"]
 
 var reference_stats = {
 	damage = {
@@ -13,7 +13,7 @@ var reference_stats = {
 		7: {min = 71, max = 100},
 		8: {min = 101, max = 130},
 	}, 
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -106,7 +106,7 @@ var reference_stats = {
 }
 
 var helmet_stats = {
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -345,7 +345,7 @@ var two_handed_stats = {
 }
 
 var body_armour_stats = {
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -428,7 +428,7 @@ var gloves_stats = {
 		7: {min = 71, max = 100},
 		8: {min = 101, max = 130},
 	}, 
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -521,7 +521,7 @@ var gloves_stats = {
 }
 
 var boots_stats = {
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -594,7 +594,7 @@ var ring_stats = {
 		7: {min = 71, max = 100},
 		8: {min = 101, max = 130},
 	}, 
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -657,7 +657,7 @@ var amulet_stats = {
 		7: {min = 71, max = 100},
 		8: {min = 101, max = 130},
 	}, 
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},
@@ -730,7 +730,7 @@ var accessory_stats = {
 		7: {min = 71, max = 100},
 		8: {min = 101, max = 130},
 	}, 
-	health = {
+	life = {
 		1: {min = 2, max = 12},
 		2: {min = 13, max = 26},
 		3: {min = 27, max = 40},

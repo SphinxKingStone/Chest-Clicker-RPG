@@ -4,7 +4,7 @@ var Inventory = preload("res://src/Inventory.gd").new()
 
 var stats = {
 	"damage": 0, 
-	"health": 0,  
+	"life": 0,  
 	"defense": 0,  
 	"strength": 0,  
 	"dexterity": 0,  
@@ -17,7 +17,7 @@ var stats = {
 
 signal stats_updated
 
-func get_stat(stat):
+func get_stat_value(stat):
 	if !stats.has(stat):
 		return false
 	
@@ -34,11 +34,36 @@ func equip_item(item):
 func update_stats():
 	for key in stats:
 		stats[key] = 0
+	
 	# iterating through all out equiped gear and updating stats
 	for item in Inventory.get_gear().values():
 		if item != null:
 			for stat in item.stats:
 				stats[stat.name] += stat.value
+
+# return only stats that will change if item is equpped 
+# TODO Function seems to not work when same items are dropping. Equip function in inv works flawlesy so it's only visual bug
+func stats_if_equipped(equip_item):
+	# our stats if we will equip new item
+	var if_equipped_stats = stats.duplicate(true)
+	
+	# "unequipping" old item
+	for current_item in Inventory.get_gear().values():
+		if current_item != null:
+			if current_item.category == equip_item.category:
+				for stat in current_item.stats:
+					if_equipped_stats[stat.name] -= stat.value
+	
+	# "equipping" new item
+#	for current_item in Inventory.get_gear().values():
+#		if current_item != null:
+#			if current_item.category == equip_item.category:
+	for stat in equip_item.stats:
+		if_equipped_stats[stat.name] += stat.value
+	
+	print_debug(stats)
+	print_debug(if_equipped_stats)
+	return if_equipped_stats
 
 func _ready():
 	pass 

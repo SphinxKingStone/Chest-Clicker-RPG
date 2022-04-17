@@ -50,7 +50,7 @@ func generate_stats(item):
 
 func roll_rarity():
 	var rarity
-	var rng_number = rng.randi_range(0, 25)
+	var rng_number = rng.randi_range(17, 25)
 	if rng_number >= 17:
 		rarity = "BLUE"
 	elif rng_number >= 9:
