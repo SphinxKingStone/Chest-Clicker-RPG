@@ -27,7 +27,7 @@ func get_stats():
 	return stats
 
 func equip_item(item):
-	Inventory.equip_item(item)
+	Inventory.equip_item(item.duplicate(true))
 	update_stats()
 	emit_signal("stats_updated")
 
@@ -42,7 +42,6 @@ func update_stats():
 				stats[stat.name] += stat.value
 
 # return only stats that will change if item is equpped 
-# TODO Function seems to not work when same items are dropping. Equip function in inv works flawlesy so it's only visual bug
 func stats_if_equipped(equip_item):
 	# our stats if we will equip new item
 	var if_equipped_stats = stats.duplicate(true)

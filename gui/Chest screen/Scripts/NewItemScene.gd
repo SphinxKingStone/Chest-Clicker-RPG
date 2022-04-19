@@ -60,14 +60,14 @@ func show_item(item):
 			var bonus_text
 			if current_stat > stats_if_equipped[eq_stat]: 
 				difference = current_stat - stats_if_equipped[eq_stat]
-				# TODO make text red
+				bonus_node.set("custom_colors/font_color", ResourceManager.Colors.bonus_text_red)
 				if eq_stat in ["dodge", "critical", "block", "bonus_rarity"]:
 					bonus_text = " (-" + str(difference) + "%)"
 				else:
 					bonus_text = " (-" + str(difference) + ")"
 			else:
-				difference = current_stat + stats_if_equipped[eq_stat]
-				# TODO make text green
+				difference = stats_if_equipped[eq_stat] - current_stat
+				bonus_node.set("custom_colors/font_color", ResourceManager.Colors.bonus_text_green)
 				if eq_stat in ["dodge", "critical", "block", "bonus_rarity"]:
 					bonus_text = " (+" + str(difference) + "%)"
 				else:
