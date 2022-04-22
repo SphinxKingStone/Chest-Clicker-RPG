@@ -18,36 +18,14 @@ var green_items = []
 var blue_items = []
 
 func _init():
-	for i in ItemsData.weapons.values():
-		items_in_category[i.category] += 1
-		match i.rarity:
-			"WHITE":
-				white_items.append(i)
-			"GREEN":
-				green_items.append(i)
-			"BLUE":
-				blue_items.append(i)
-		
-	
-	for i in ItemsData.armour.values():
-		items_in_category[i.category] += 1
-		match i.rarity:
-			"WHITE":
-				white_items.append(i)
-			"GREEN":
-				green_items.append(i)
-			"BLUE":
-				blue_items.append(i)
-		
-	
-	for i in ItemsData.jewelery.values():
-		items_in_category[i.category] += 1
-		match i.rarity:
-			"WHITE":
-				white_items.append(i)
-			"GREEN":
-				green_items.append(i)
-			"BLUE":
-				blue_items.append(i)
-		
-	
+	for category in ItemsData.ITEM_CATEGORY:
+		for item in ItemsData.get(category).values():
+			items_in_category[category] += 1
+#			self.get(item.rarity.to_lower()+"_items").append(item) # it's the same as match but fancy (It's probably less effective)
+			match item.rarity:
+				"WHITE":
+					white_items.append(item)
+				"GREEN":
+					green_items.append(item)
+				"BLUE":
+					blue_items.append(item)

@@ -2,6 +2,7 @@ extends Node
 
 var item # it holds last generated item
 var rng = RandomNumberGenerator.new()
+var min_number = 1
 
 func _ready():
 	rng.randomize()
@@ -16,6 +17,12 @@ func generate_item():
 	#generating stats
 	item.stats = generate_stats(item)
 	return item
+
+func update_min_number():
+	min_number = 1
+	for item in Character.Inventory.get_gear().values():
+		if item != null:
+			min_number += ItemsData.ITEM_LEVEL[item.rarity]
 
 func generate_stats(item):
 	var item_level = ItemsData.ITEM_LEVEL[item.rarity] # AKA rarity
@@ -49,11 +56,12 @@ func generate_stats(item):
 	return generated_stats
 
 func roll_rarity():
+	var rng_number = rng.randi_range(min_number, 60)
+	
 	var rarity
-	var rng_number = rng.randi_range(17, 25)
-	if rng_number >= 17:
+	if rng_number >= 55:
 		rarity = "BLUE"
-	elif rng_number >= 9:
+	elif rng_number >= 40:
 		rarity = "GREEN"
 	else:
 		rarity = "WHITE"

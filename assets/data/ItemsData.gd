@@ -6,7 +6,19 @@ var ITEM_LEVEL = {
 	"BLUE": 3,
 }
 
-var weapons = {
+var ITEM_CATEGORY = [
+	"one_handed",
+	"two_handed",
+	"body_armour",
+	"helmet",
+	"gloves",
+	"boots",
+	"ring",
+	"amulet",
+	"accessory",
+]
+
+var one_handed = {
 	# WHITE CATEGORY
 	simple_axe = {
 		code = "simple_axe",
@@ -43,7 +55,9 @@ var weapons = {
 		},
 		rarity = "WHITE",
 	},
-	
+}
+
+var two_handed = {
 	# GREEN CATEGORY
 	iron_sword = {
 		code = "iron_sword",
@@ -57,6 +71,7 @@ var weapons = {
 		rarity = "GREEN",
 	},
 	
+	# BLUE CATEGORY
 	meteor_sword = {
 		code = "meteor_sword",
 		name = "METEOR_SWORD",
@@ -70,7 +85,7 @@ var weapons = {
 	},
 }
 
-var armour = {
+var body_armour = {
 	# WHITE CATEGORY
 	leather_chestplate = {
 		code = "leather_chestplate",
@@ -80,42 +95,6 @@ var armour = {
 		
 		base_stats = {
 			defense = [4, 6],
-		},
-		rarity = "WHITE",
-	},
-	
-	leather_hood = {
-		code = "leather_hood",
-		name = "LEATHER_HOOD",
-		texture = load("res://assets/images/helmets/leather_hood.png"),
-		category = "helmet",
-		
-		base_stats = {
-			defense = [3, 5], 
-		},
-		rarity = "WHITE",
-	},
-	
-	leather_gloves = {
-		code = "leather_gloves",
-		name = "LEATHER_GLOVES",
-		texture = load("res://assets/images/gloves/leather_gloves.png"),
-		category = "gloves",
-		
-		base_stats = {
-			defense = [0.5, 1.5], 
-		},
-		rarity = "WHITE",
-	},
-	
-	leather_boots = {
-		code = "leather_boots",
-		name = "LEATHER_BOOTS",
-		texture = load("res://assets/images/shoes/leather_boots.png"),
-		category = "boots",
-		
-		base_stats = {
-			defense = [1, 3], 
 		},
 		rarity = "WHITE",
 	},
@@ -133,6 +112,35 @@ var armour = {
 		rarity = "GREEN",
 	},
 	
+	# BLUE CATEGORY
+	ice_chestplate = {
+		code = "ice_chestplate",
+		name = "ICE_CHESTPLATE",
+		texture = load("res://assets/images/armors/ice_chestplate.png"),
+		category = "body_armour",
+		
+		base_stats = {
+			defense = [12, 18],
+		},
+		rarity = "BLUE",
+	},
+}
+
+var helmet = {
+	# WHITE CATEGORY
+	leather_hood = {
+		code = "leather_hood",
+		name = "LEATHER_HOOD",
+		texture = load("res://assets/images/helmets/leather_hood.png"),
+		category = "helmet",
+		
+		base_stats = {
+			defense = [3, 5], 
+		},
+		rarity = "WHITE",
+	},
+	
+	# GREEN CATEGORY
 	copper_helmet = {
 		code = "copper_helmet",
 		name = "COPPER_HELMET",
@@ -145,23 +153,40 @@ var armour = {
 		rarity = "GREEN",
 	},
 	
+	# BLUE CATEGORY
+	ice_helmet = {
+		code = "ice_helmet",
+		name = "ICE_HELMET",
+		texture = load("res://assets/images/helmets/ice_helmet.png"),
+		category = "helmet",
+		
+		base_stats = {
+			defense = [8, 12],
+		},
+		rarity = "BLUE",
+	},
+}
+
+var gloves = {
+	# WHITE CATEGORY
+	leather_gloves = {
+		code = "leather_gloves",
+		name = "LEATHER_GLOVES",
+		texture = load("res://assets/images/gloves/leather_gloves.png"),
+		category = "gloves",
+		
+		base_stats = {
+			defense = [0.5, 1.5], 
+		},
+		rarity = "WHITE",
+	},
+	
+	# GREEN CATEGORY
 	copper_gloves = {
 		code = "copper_gloves",
 		name = "COPPER_GLOVES",
 		texture = load("res://assets/images/gloves/copper_gloves.png"),
 		category = "gloves",
-		
-		base_stats = {
-			defense = [4, 6],
-		},
-		rarity = "GREEN",
-	},
-	
-	copper_boots = {
-		code = "copper_boots",
-		name = "COPPER_BOOTS",
-		texture = load("res://assets/images/shoes/copper_boots.png"),
-		category = "boots",
 		
 		base_stats = {
 			defense = [4, 6],
@@ -181,7 +206,36 @@ var armour = {
 		},
 		rarity = "BLUE",
 	},
+}
+
+var boots = {
+	# WHITE CATEGORY
+	leather_boots = {
+		code = "leather_boots",
+		name = "LEATHER_BOOTS",
+		texture = load("res://assets/images/shoes/leather_boots.png"),
+		category = "boots",
+		
+		base_stats = {
+			defense = [1, 3], 
+		},
+		rarity = "WHITE",
+	},
 	
+	# GREEN CATEGORY
+	copper_boots = {
+		code = "copper_boots",
+		name = "COPPER_BOOTS",
+		texture = load("res://assets/images/shoes/copper_boots.png"),
+		category = "boots",
+		
+		base_stats = {
+			defense = [4, 6],
+		},
+		rarity = "GREEN",
+	},
+	
+	# BLUE CATEGORY
 	ice_boots = {
 		code = "ice_boots",
 		name = "ICE_BOOTS",
@@ -193,33 +247,9 @@ var armour = {
 		},
 		rarity = "BLUE",
 	},
-	
-	ice_helmet = {
-		code = "ice_helmet",
-		name = "ICE_HELMET",
-		texture = load("res://assets/images/helmets/ice_helmet.png"),
-		category = "helmet",
-		
-		base_stats = {
-			defense = [8, 12],
-		},
-		rarity = "BLUE",
-	},
-	
-	ice_chestplate = {
-		code = "ice_chestplate",
-		name = "ICE_CHESTPLATE",
-		texture = load("res://assets/images/armors/ice_chestplate.png"),
-		category = "body_armour",
-		
-		base_stats = {
-			defense = [12, 18],
-		},
-		rarity = "BLUE",
-	},
 }
 
-var jewelery = {
+var ring = {
 	# WHITE CATEGORY
 	copper_ring = {
 		code = "copper_ring",
@@ -229,30 +259,6 @@ var jewelery = {
 		
 		base_stats = {
 			damage = 3,
-		},
-		rarity = "WHITE",
-	},
-	
-	old_medal = {
-		code = "old_medal",
-		name = "OLD_MEDAL",
-		texture = load("res://assets/images/amulets/old_medal.png"),
-		category = "amulet",
-		
-		base_stats = {
-			defense = [1, 2.5],
-		},
-		rarity = "WHITE",
-	},
-	
-	lit_torch = {
-		code = "lit_torch",
-		name = "LIT_TORCH",
-		texture = load("res://assets/images/misc/lit_torch.png"),
-		category = "accessory",
-		
-		base_stats = {
-			rarity = [1, 2],
 		},
 		rarity = "WHITE",
 	},
@@ -282,6 +288,47 @@ var jewelery = {
 		rarity = "GREEN",
 	},
 	
+	# BLUE CATEGORY
+	icy_ring = {
+		code = "icy_ring",
+		name = "ICY_RING",
+		texture = load("res://assets/images/rings/icy_ring.png"),
+		category = "ring",
+		
+		base_stats = {
+			damage = [8, 10],
+		},
+		rarity = "BLUE",
+	},
+	
+	meteor_ring = {
+		code = "meteor_ring",
+		name = "METEOR_RING",
+		texture = load("res://assets/images/rings/meteor_ring.png"),
+		category = "ring",
+		
+		base_stats = {
+			damage = [8, 10],
+		},
+		rarity = "BLUE",
+	},
+}
+
+var amulet = {
+	# WHITE CATEGORY
+	old_medal = {
+		code = "old_medal",
+		name = "OLD_MEDAL",
+		texture = load("res://assets/images/amulets/old_medal.png"),
+		category = "amulet",
+		
+		base_stats = {
+			defense = [1, 2.5],
+		},
+		rarity = "WHITE",
+	},
+	
+	# GREEN CATEGORY
 	silver_skull_amulet1 = {
 		code = "silver_skull_amulet1",
 		name = "SKULL_AMULET_1",
@@ -294,6 +341,46 @@ var jewelery = {
 		rarity = "GREEN",
 	},
 	
+	# BLUE CATEGORY
+	ice_pearl = {
+		code = "ice_pearl",
+		name = "ICY_PEARL",
+		texture = load("res://assets/images/amulets/ice_pearl.png"),
+		category = "amulet",
+		
+		base_stats = {
+			defense = [2, 4.5],
+		},
+		rarity = "BLUE",
+	},
+}
+
+var accessory = {
+	# WHITE CATEGORY
+	lit_torch = {
+		code = "lit_torch",
+		name = "LIT_TORCH",
+		texture = load("res://assets/images/accessory/lit_torch.png"),
+		category = "accessory",
+		
+		base_stats = {
+			rarity = [1, 2],
+		},
+		rarity = "WHITE",
+	},
+	
+	# GREEN CATEGORY
+	skull = {
+		code = "skull",
+		name = "SKULL",
+		texture = load("res://assets/images/accessory/skull.png"),
+		category = "accessory",
+		
+		base_stats = {
+			rarity = [3, 4],
+		},
+		rarity = "GREEN",
+	},
 	
 	# BLUE CATEGORY
 	sacred_scarab = {
@@ -304,18 +391,6 @@ var jewelery = {
 		
 		base_stats = {
 			rarity = [5, 5],
-		},
-		rarity = "BLUE",
-	},
-	
-	ice_pearl = {
-		code = "ice_pearl",
-		name = "ICY_PEARL",
-		texture = load("res://assets/images/amulets/ice_pearl.png"),
-		category = "amulet",
-		
-		base_stats = {
-			defense = [2, 4.5],
 		},
 		rarity = "BLUE",
 	},

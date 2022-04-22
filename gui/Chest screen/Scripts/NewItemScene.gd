@@ -80,8 +80,6 @@ func show_item(item):
 			get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(stat.value) + ")" 
 		if stat.name == "life": # change stat value to calculated health
 			get_parent().get_node("AverageStats/Health/HealthBonus").text = " (+" + str(stat.value) + ")"
-	
-	
 
 func sell_item():
 	clear_stats()

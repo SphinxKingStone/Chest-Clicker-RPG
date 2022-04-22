@@ -29,6 +29,7 @@ func get_stats():
 func equip_item(item):
 	Inventory.equip_item(item.duplicate(true))
 	update_stats()
+	ItemGenerator.update_min_number()
 	emit_signal("stats_updated")
 
 func update_stats():
@@ -60,8 +61,6 @@ func stats_if_equipped(equip_item):
 	for stat in equip_item.stats:
 		if_equipped_stats[stat.name] += stat.value
 	
-	print_debug(stats)
-	print_debug(if_equipped_stats)
 	return if_equipped_stats
 
 func _ready():
