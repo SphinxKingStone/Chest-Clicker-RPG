@@ -2,20 +2,16 @@ extends Panel
 
 
 func _ready():
+	#warning-ignore:return_value_discarded
 	$HBoxContainer/SellButton.connect("pressed", self, "sell_item")
+	#warning-ignore:return_value_discarded
 	$HBoxContainer/EquipButton.connect("pressed", self, "equip_item")
 
 func show_item(item):
 	self.show()
 	
 	# Setting new item background color
-	match item.rarity:
-		"WHITE":
-			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
-		"GREEN":
-			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/green_item_bg.tres"))
-		"BLUE":
-			$ItemBackground.set("custom_styles/panel", load("res://assets/StyleBoxes/blue_item_bg.tres"))
+	$ItemBackground.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])
 	
 	# Setting new items texture and name
 	$ItemBackground/ItemTexture.texture = item.texture

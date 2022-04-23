@@ -43,15 +43,12 @@ func emit_particles(rarity):
 	self.add_child(left)
 	self.add_child(right)
 	
-	match rarity:
-		"GREEN":
-			left.set_process_material((load("res://assets/particle materials/green_left_particle.tres")))
-			right.set_process_material((load("res://assets/particle materials/green_right_particle.tres")))
-		"BLUE":
-			left.set_process_material((load("res://assets/particle materials/blue_left_particle.tres")))
-			right.set_process_material((load("res://assets/particle materials/blue_right_particle.tres")))
+	left.get("process_material").set("color_ramp", ResourceManager.PARTICLES_COLORS[rarity])
+	right.get("process_material").set("color_ramp", ResourceManager.PARTICLES_COLORS[rarity])
 	
+	left.get_process_material().direction.x = -90
 	right.get_process_material().direction.x = 90
+	
 	left.emitting = true
 	right.emitting = true
 	yield(get_tree().create_timer(2), "timeout")

@@ -16,6 +16,7 @@ var items_in_category = {
 var white_items = []
 var green_items = []
 var blue_items = []
+var purple_items = []
 
 func _init():
 	for category in ItemsData.ITEM_CATEGORY:
@@ -29,3 +30,5 @@ func _init():
 					green_items.append(item)
 				"BLUE":
 					blue_items.append(item)
+				"PURPLE":
+					purple_items.append(item)

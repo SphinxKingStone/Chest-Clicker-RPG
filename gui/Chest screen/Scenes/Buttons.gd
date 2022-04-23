@@ -2,6 +2,7 @@ extends Panel
 
 
 func _ready():
+	#warning-ignore:return_value_discarded
 	$Equipment.connect("pressed", self, "toggle_button", [$Equipment])
 
 func toggle_button(button):

@@ -4,6 +4,7 @@ var ITEM_LEVEL = {
 	"WHITE": 1,
 	"GREEN": 2,
 	"BLUE": 3,
+	"PURPLE": 4,
 }
 
 var ITEM_CATEGORY = [
@@ -123,6 +124,19 @@ var body_armour = {
 			defense = [12, 18],
 		},
 		rarity = "BLUE",
+	},
+	
+	# PURPLE CATEGORY
+	brass_dome = {
+		code = "brass_dome",
+		name = "BRASS_DOME",
+		texture = load("res://assets/images/armors/brass_dome.png"),
+		category = "body_armour",
+		
+		base_stats = {
+			defense = [19, 22],
+		},
+		rarity = "PURPLE",
 	},
 }
 

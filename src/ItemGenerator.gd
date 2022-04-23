@@ -15,21 +15,21 @@ func generate_item():
 	roll_item_base(rarity)
 	
 	#generating stats
-	item.stats = generate_stats(item)
+	item.stats = generate_stats()
 	return item
 
 func update_min_number():
 	min_number = 1
-	for item in Character.Inventory.get_gear().values():
-		if item != null:
+	for equipped_item in Character.Inventory.get_gear().values():
+		if equipped_item != null:
 			min_number += ItemsData.ITEM_LEVEL[item.rarity]
 
-func generate_stats(item):
+func generate_stats():
 	var item_level = ItemsData.ITEM_LEVEL[item.rarity] # AKA rarity
 	var stats_count = ItemGenerator.rng.randi_range(1, item_level)
 	var generated_stats = []
 	var stats_pool = StatsData.get(item.category+"_stats")
-	var generated_names:Array # helps to prevent rolling stat twice
+	var generated_names = [] # helps to prevent rolling stat twice
 	
 	for i in stats_count:
 		var stat_name = stats_pool.keys()[ItemGenerator.rng.randi_range(0, stats_pool.size() - 1)] 
@@ -59,7 +59,9 @@ func roll_rarity():
 	var rng_number = rng.randi_range(min_number, 60)
 	
 	var rarity
-	if rng_number >= 55:
+	if rng_number >= 58:
+		rarity = "PURPLE"
+	elif rng_number >= 55:
 		rarity = "BLUE"
 	elif rng_number >= 40:
 		rarity = "GREEN"
@@ -81,4 +83,8 @@ func roll_item_base(rarity):
 			var my_random_number = rng.randi_range(0, ItemsStorage.blue_items.size() - 1)
 			item = ItemsStorage.blue_items[my_random_number]
 			item.cost = rng.randi_range(30, 35)
+		"PURPLE":
+			var my_random_number = rng.randi_range(0, ItemsStorage.purple_items.size() - 1)
+			item = ItemsStorage.purple_items[my_random_number]
+			item.cost = rng.randi_range(40, 75)
 	

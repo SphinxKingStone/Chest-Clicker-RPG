@@ -46,19 +46,12 @@ func update_inventory():
 		if Character.Inventory.get_slot(slot) != null:
 			texture_node.texture = Character.Inventory.get_slot(slot).texture
 		else:
-			texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/light_gray_item_bg.tres"))
+			texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS["GREY"])
 			texture_node.texture = null
 			continue
 		
 		# Manage slots BG color
-		match Character.Inventory.get_slot(slot).rarity:
-			"WHITE": #gray
-				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/gray_item_bg.tres"))
-			"GREEN":
-				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/green_item_bg.tres"))
-			"BLUE":
-				texture_node.get_parent().set("custom_styles/panel", load("res://assets/StyleBoxes/blue_item_bg.tres"))
-			
+		texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[Character.Inventory.get_slot(slot).rarity])
 
 func update_silver():
 	get_parent().get_node("TopSide/Silver/Amount").text = str(Character.Inventory.silver)
