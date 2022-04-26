@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 
 func _ready():
 	var music: AudioStreamOGGVorbis = preload("res://assets/Sounds/Music/bg1.ogg")
-#	play_music(music)
+	play_music(music)
 
 func play_music(music):
 	set_stream(music)

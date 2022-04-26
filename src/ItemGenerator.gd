@@ -56,6 +56,7 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
+	min_number = 40
 	var rng_number = rng.randi_range(min_number, 60)
 	
 	var rarity

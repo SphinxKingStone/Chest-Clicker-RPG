@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/ChestScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/chests/Chest spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://assets/particle materials/green_right_particle.tres" type="Material" id=3]
+[ext_resource path="res://assets/particle materials/green_color_ramp.tres" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -42,6 +42,33 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Curve" id=12]
+_data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 10, 1 )
+flag_disable_z = true
+direction = Vector3( 90, -90, 0 )
+spread = 30.0
+gravity = Vector3( 10, 70, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.35
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 35.0
+angle = 150.0
+angle_random = 0.2
+scale = 25.0
+scale_random = 0.75
+scale_curve = SubResource( 13 )
+color_ramp = ExtResource( 3 )
+
 [sub_resource type="Gradient" id=8]
 offsets = PoolRealArray( 0, 0.303704, 0.496296, 0.740741, 1 )
 colors = PoolColorArray( 0.239029, 0.941406, 0.250004, 1, 0.0392157, 0.756863, 0.133333, 0.219608, 0.694051, 0.824219, 0.157761, 1, 0.709804, 0.792157, 0.145098, 0.513726, 0.0392157, 0.756863, 0.133333, 1 )
@@ -55,7 +82,7 @@ _data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 
 [sub_resource type="CurveTexture" id=11]
 curve = SubResource( 10 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=15]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
 flag_disable_z = true
@@ -108,7 +135,7 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = ExtResource( 3 )
+process_material = SubResource( 14 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
 position = Vector2( 145, 105 )
@@ -116,6 +143,6 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 12 )
+process_material = SubResource( 15 )
 
 [connection signal="gui_input" from="helper/Panel" to="." method="_on_Panel_gui_input"]

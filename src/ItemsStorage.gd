@@ -4,6 +4,7 @@ extends Node
 var items_in_category = {
 	one_handed = 0,
 	two_handed = 0,
+	shield = 0,
 	body_armour = 0,
 	helmet = 0,
 	gloves = 0,

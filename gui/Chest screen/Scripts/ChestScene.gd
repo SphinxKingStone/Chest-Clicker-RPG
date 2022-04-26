@@ -43,8 +43,10 @@ func emit_particles(rarity):
 	self.add_child(left)
 	self.add_child(right)
 	
-	left.get("process_material").set("color_ramp", ResourceManager.PARTICLES_COLORS[rarity])
-	right.get("process_material").set("color_ramp", ResourceManager.PARTICLES_COLORS[rarity])
+	var new_mat = left.get("process_material").duplicate()
+	new_mat.set("color_ramp", ResourceManager.PARTICLES_COLORS[rarity])
+	left.set("process_material", new_mat)
+	right.set("process_material", new_mat.duplicate()) # I need duplication here so that later I can change direction separately
 	
 	left.get_process_material().direction.x = -90
 	right.get_process_material().direction.x = 90

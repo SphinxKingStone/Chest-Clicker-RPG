@@ -7,15 +7,6 @@ func _ready():
 func sell_item():
 	hide()
 	pass
-#	one_handed = 0,
-#	two_handed = 0,
-#	body_armour = 0,
-#	helmet = 0,
-#	gloves = 0,
-#	boots = 0,
-#	ring = 0,
-#	amulet = 0,
-#	accessory = 0,
 
 func update_inventory():
 	for slot in Character.Inventory.get_gear():
