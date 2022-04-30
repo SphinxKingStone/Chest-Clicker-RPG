@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/images/ui/buttons/main_menu_button_pressed.png" type="Texture" id=1]
-[ext_resource path="res://assets/images/ui/buttons/main_menu_button_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/buttons/main_menu_button_pressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/buttons/main_menu_button_normal.png" type="Texture" id=2]
 [ext_resource path="res://gui/Main menu/MainMenu.gd" type="Script" id=3]
 
 [node name="MainMenu" type="Control"]
