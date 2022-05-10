@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bg_main_menu.ogg-9e4d4bf9d99d1f350455f6b2363a3d0c.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

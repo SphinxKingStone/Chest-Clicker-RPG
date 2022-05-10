@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bg4.ogg-e60687c7df546abe5afda4e75bd2ef5b.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

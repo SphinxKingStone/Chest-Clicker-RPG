@@ -28,7 +28,7 @@ var one_handed = {
 		texture = load("res://assets/images/axes/simple_axe.png"),
 		category = "one_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [2.5, 5],
 		},
 		rarity = "WHITE",
@@ -40,7 +40,7 @@ var one_handed = {
 		texture = load("res://assets/images/swords/wooden_sword.png"),
 		category = "one_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [1, 7],
 		},
 		rarity = "WHITE",
@@ -52,7 +52,7 @@ var one_handed = {
 		texture = load("res://assets/images/swords/copper_dagger.png"),
 		category = "one_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [2, 4],
 		},
 		rarity = "WHITE",
@@ -65,7 +65,7 @@ var one_handed = {
 		texture = load("res://assets/images/axes/astral_axe.png"),
 		category = "one_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [11, 16],
 		},
 		rarity = "PURPLE",
@@ -80,7 +80,7 @@ var two_handed = {
 		texture = load("res://assets/images/swords/iron_sword.png"),
 		category = "two_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [6, 12],
 		},
 		rarity = "GREEN",
@@ -93,7 +93,7 @@ var two_handed = {
 		texture = load("res://assets/images/swords/meteor_sword.png"),
 		category = "two_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [12, 18],
 		},
 		rarity = "BLUE",
@@ -106,7 +106,7 @@ var two_handed = {
 		texture = load("res://assets/images/axes/astral_battle_axe.png"),
 		category = "two_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [19, 27],
 		},
 		rarity = "PURPLE",
@@ -122,7 +122,7 @@ var shield = {
 		texture = load("res://assets/images/shields/astral_shield.png"),
 		category = "one_handed",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [8, 14],
 		},
 		rarity = "PURPLE",
@@ -137,7 +137,7 @@ var body_armour = {
 		texture = load("res://assets/images/armors/leather_chestplate.png"),
 		category = "body_armour",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [4, 6],
 		},
 		rarity = "WHITE",
@@ -150,7 +150,7 @@ var body_armour = {
 		texture = load("res://assets/images/armors/copper_chestplate.png"),
 		category = "body_armour",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [4, 6],
 		},
 		rarity = "GREEN",
@@ -163,7 +163,7 @@ var body_armour = {
 		texture = load("res://assets/images/armors/ice_chestplate.png"),
 		category = "body_armour",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [12, 18],
 		},
 		rarity = "BLUE",
@@ -176,7 +176,7 @@ var body_armour = {
 		texture = load("res://assets/images/armors/brass_dome.png"),
 		category = "body_armour",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [19, 22],
 		},
 		rarity = "PURPLE",
@@ -191,7 +191,7 @@ var helmet = {
 		texture = load("res://assets/images/helmets/leather_hood.png"),
 		category = "helmet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [3, 5], 
 		},
 		rarity = "WHITE",
@@ -204,7 +204,7 @@ var helmet = {
 		texture = load("res://assets/images/helmets/copper_helmet.png"),
 		category = "helmet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [4, 6],
 		},
 		rarity = "GREEN",
@@ -217,7 +217,7 @@ var helmet = {
 		texture = load("res://assets/images/helmets/ice_helmet.png"),
 		category = "helmet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [8, 12],
 		},
 		rarity = "BLUE",
@@ -230,7 +230,7 @@ var helmet = {
 		texture = load("res://assets/images/helmets/brass_helmet.png"),
 		category = "helmet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [13, 15],
 		},
 		rarity = "PURPLE",
@@ -245,7 +245,7 @@ var gloves = {
 		texture = load("res://assets/images/gloves/leather_gloves.png"),
 		category = "gloves",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [0.5, 1.5], 
 		},
 		rarity = "WHITE",
@@ -258,7 +258,7 @@ var gloves = {
 		texture = load("res://assets/images/gloves/copper_gloves.png"),
 		category = "gloves",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [4, 6],
 		},
 		rarity = "GREEN",
@@ -271,7 +271,7 @@ var gloves = {
 		texture = load("res://assets/images/gloves/ice_gloves.png"),
 		category = "gloves",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [6.5, 9.5],
 		},
 		rarity = "BLUE",
@@ -284,7 +284,7 @@ var gloves = {
 		texture = load("res://assets/images/gloves/deadly_gloves.png"),
 		category = "gloves",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [10, 14],
 		},
 		rarity = "PURPLE",
@@ -300,7 +300,7 @@ var boots = {
 		texture = load("res://assets/images/boots/leather_boots.png"),
 		category = "boots",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [1, 3], 
 		},
 		rarity = "WHITE",
@@ -313,7 +313,7 @@ var boots = {
 		texture = load("res://assets/images/boots/copper_boots.png"),
 		category = "boots",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [4, 6],
 		},
 		rarity = "GREEN",
@@ -326,7 +326,7 @@ var boots = {
 		texture = load("res://assets/images/boots/ice_boots.png"),
 		category = "boots",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [7, 10],
 		},
 		rarity = "BLUE",
@@ -339,7 +339,7 @@ var boots = {
 		texture = load("res://assets/images/boots/brass_boots.png"),
 		category = "boots",
 
-		base_stats = {
+		base_stats_data = {
 			defense = [11, 15],
 		},
 		rarity = "PURPLE",
@@ -354,7 +354,7 @@ var ring = {
 		texture = load("res://assets/images/rings/copper_ring.png"),
 		category = "ring",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = 3,
 		},
 		rarity = "WHITE",
@@ -367,7 +367,7 @@ var ring = {
 		texture = load("res://assets/images/rings/silver_ring.png"),
 		category = "ring",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [5, 7],
 		},
 		rarity = "GREEN",
@@ -379,7 +379,7 @@ var ring = {
 		texture = load("res://assets/images/rings/gold_ring.png"),
 		category = "ring",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [5, 7],
 		},
 		rarity = "GREEN",
@@ -392,7 +392,7 @@ var ring = {
 		texture = load("res://assets/images/rings/icy_ring.png"),
 		category = "ring",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [8, 10],
 		},
 		rarity = "BLUE",
@@ -404,7 +404,7 @@ var ring = {
 		texture = load("res://assets/images/rings/meteor_ring.png"),
 		category = "ring",
 		
-		base_stats = {
+		base_stats_data = {
 			damage = [8, 10],
 		},
 		rarity = "BLUE",
@@ -417,7 +417,7 @@ var ring = {
 		texture = load("res://assets/images/rings/amber_ring.png"),
 		category = "ring",
 
-		base_stats = {
+		base_stats_data = {
 			defense = [11, 14],
 		},
 		rarity = "PURPLE",
@@ -432,7 +432,7 @@ var amulet = {
 		texture = load("res://assets/images/amulets/old_medal.png"),
 		category = "amulet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [1, 2.5],
 		},
 		rarity = "WHITE",
@@ -445,7 +445,7 @@ var amulet = {
 		texture = load("res://assets/images/amulets/silver_skull_amulet1.png"),
 		category = "amulet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [1.5, 3.5],
 		},
 		rarity = "GREEN",
@@ -458,7 +458,7 @@ var amulet = {
 		texture = load("res://assets/images/amulets/ice_pearl.png"),
 		category = "amulet",
 		
-		base_stats = {
+		base_stats_data = {
 			defense = [2, 4.5],
 		},
 		rarity = "BLUE",
@@ -471,7 +471,7 @@ var amulet = {
 		texture = load("res://assets/images/amulets/amber_amulet.png"),
 		category = "amulet",
 
-		base_stats = {
+		base_stats_data = {
 			defense = [5, 7],
 		},
 		rarity = "PURPLE",
@@ -486,8 +486,8 @@ var accessory = {
 		texture = load("res://assets/images/accessory/lit_torch.png"),
 		category = "accessory",
 		
-		base_stats = {
-			rarity = [1, 2],
+		base_stats_data = {
+			bonus_rarity = [1, 2],
 		},
 		rarity = "WHITE",
 	},
@@ -499,8 +499,8 @@ var accessory = {
 		texture = load("res://assets/images/accessory/skull.png"),
 		category = "accessory",
 		
-		base_stats = {
-			rarity = [3, 4],
+		base_stats_data = {
+			bonus_rarity = [3, 4],
 		},
 		rarity = "GREEN",
 	},
@@ -512,8 +512,8 @@ var accessory = {
 		texture = load("res://assets/images/accessory/sacred_scarab.png"),
 		category = "accessory",
 		
-		base_stats = {
-			rarity = [5, 5],
+		base_stats_data = {
+			bonus_rarity = [5, 5],
 		},
 		rarity = "BLUE",
 	},
@@ -525,8 +525,8 @@ var accessory = {
 		texture = load("res://assets/images/accessory/golden_tooth.png"),
 		category = "accessory",
 
-		base_stats = {
-			rarity = [6, 7],
+		base_stats_data = {
+			bonus_rarity = [6, 7],
 		},
 		rarity = "PURPLE",
 	},
