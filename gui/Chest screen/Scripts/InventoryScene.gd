@@ -1,8 +1,8 @@
 extends Panel
 
 func _ready():
-	pass 
-
+	for ch in $GridContainer.get_children():
+		ch.connect("gui_input", self, "on_click", [ch])
 
 func sell_item():
 	hide()
@@ -13,17 +13,17 @@ func update_inventory():
 		var texture_node
 		match slot:
 			"helmet":
-				texture_node = $GridContainer/Head/Texture
+				texture_node = $GridContainer/Helmet/Texture
 			"weapon_left":
-				texture_node = $GridContainer/HandLeft/Texture
+				texture_node = $GridContainer/Weapon_Left/Texture
 			"weapon_right":
-				texture_node = $GridContainer/HandRight/Texture
+				texture_node = $GridContainer/Weapon_Right/Texture
 			"amulet":
 				texture_node = $GridContainer/Amulet/Texture
 			"ring_left":
-				texture_node = $GridContainer/RingLeft/Texture
+				texture_node = $GridContainer/Ring_Left/Texture
 			"ring_right":
-				texture_node = $GridContainer/RingRight/Texture
+				texture_node = $GridContainer/Ring_Right/Texture
 			"body":
 				texture_node = $GridContainer/Body/Texture
 			"gloves":
@@ -46,3 +46,14 @@ func update_inventory():
 
 func update_silver():
 	get_parent().get_node("TopSide/Silver/Amount").text = str(Character.Inventory.silver)
+
+func on_click(event, node):
+	if event is InputEventMouseButton or event is InputEventScreenTouch:
+		if !event.is_pressed():
+			if Character.Inventory.get_slot(node.name.to_lower()) == null:
+				return
+			var itemPreview = get_parent().get_node("ItemPreview")
+			itemPreview.update_stats(Character.Inventory.get_slot(node.name.to_lower()))
+			itemPreview.visible = !get_parent().get_node("ItemPreview").visible
+			itemPreview.rect_position = get_viewport().get_mouse_position()
+			itemPreview.rect_position.x -= itemPreview.rect_size.x

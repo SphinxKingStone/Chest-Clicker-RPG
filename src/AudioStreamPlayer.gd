@@ -6,6 +6,7 @@ var sounds_volume = -10
 
 func _ready():
 	self.connect("finished", self, "play_random_music")
+	music_volume = -100
 	pass
 
 func play_music(music):

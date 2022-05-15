@@ -120,7 +120,7 @@ var shield = {
 		code = "astral_shield",
 		name = "ASTRAL_SHIELD",
 		texture = load("res://assets/images/shields/astral_shield.png"),
-		category = "one_handed",
+		category = "shield",
 		
 		base_stats = {
 			defense = [8, 14],

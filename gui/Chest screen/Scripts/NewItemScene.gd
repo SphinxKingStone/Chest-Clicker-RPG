@@ -25,7 +25,7 @@ func show_item(item):
 	for stat in item.base_stats:
 		var value = stat.value
 		var text = stat.name + ": " + str(value)
-		if stat.name == "rarity":
+		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
 		text[0] = text[0].to_upper()
 		get_node("BaseStats/1").text = text
@@ -40,6 +40,8 @@ func show_item(item):
 	for stat in item.stats:
 		var text = stat.name + ": " + str(stat.value)
 		text[0] = text[0].to_upper()
+		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
+			text += "%"
 		get_node("Stats/" + str(count)).text = text
 		count += 1
 	
@@ -76,6 +78,8 @@ func show_item(item):
 			get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(stat.value) + ")" 
 		if stat.name == "life": # change stat value to calculated health
 			get_parent().get_node("AverageStats/Health/HealthBonus").text = " (+" + str(stat.value) + ")"
+	
+	get_parent().get_node("ItemPreview").update_stats(item)
 
 func sell_item():
 	clear_stats()

@@ -53,6 +53,9 @@ __meta__ = {
 margin_right = 720.0
 margin_bottom = 640.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 10.0
@@ -85,6 +88,9 @@ margin_top = 122.0
 margin_right = 248.0
 margin_bottom = 346.0
 custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ItemTexture" type="TextureRect" parent="ItemBackground"]
 margin_left = 16.0
@@ -99,10 +105,10 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="."]
-margin_left = 19.0
-margin_top = 15.0
-margin_right = 707.0
-margin_bottom = 80.0
+margin_left = 15.0
+margin_top = 20.0
+margin_right = 703.0
+margin_bottom = 85.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "Astral Axe"

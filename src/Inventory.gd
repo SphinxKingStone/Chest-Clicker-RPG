@@ -114,3 +114,7 @@ func equip_item(item, slot = ""):
 				elif gear.ring_right != null:
 					show_new_item(gear.ring_right)
 					gear.ring_right = item
+			"shield":
+				if gear.weapon_right != null:
+					show_new_item(gear.weapon_right)
+				gear.weapon_right = item

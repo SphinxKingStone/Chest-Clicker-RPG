@@ -36,8 +36,6 @@ custom_constants/separation = 29
 
 [node name="damagePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 330.0
-margin_bottom = 35.0
 
 [node name="damageName" type="Label" parent="ScrollContainer/VBoxContainer/damagePanel"]
 margin_left = 5.0
@@ -80,8 +78,7 @@ __meta__ = {
 [node name="lifePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 29.0
-margin_right = 330.0
-margin_bottom = 64.0
+margin_bottom = 29.0
 
 [node name="lifeName" type="Label" parent="ScrollContainer/VBoxContainer/lifePanel"]
 margin_left = 5.0
@@ -125,8 +122,7 @@ __meta__ = {
 [node name="defensePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 58.0
-margin_right = 330.0
-margin_bottom = 93.0
+margin_bottom = 58.0
 
 [node name="defenseName" type="Label" parent="ScrollContainer/VBoxContainer/defensePanel"]
 margin_left = 5.0
@@ -170,8 +166,7 @@ __meta__ = {
 [node name="strengthPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 87.0
-margin_right = 330.0
-margin_bottom = 122.0
+margin_bottom = 87.0
 
 [node name="strengthName" type="Label" parent="ScrollContainer/VBoxContainer/strengthPanel"]
 margin_left = 5.0
@@ -215,8 +210,7 @@ __meta__ = {
 [node name="dexterityPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 116.0
-margin_right = 330.0
-margin_bottom = 151.0
+margin_bottom = 116.0
 
 [node name="dexterityName" type="Label" parent="ScrollContainer/VBoxContainer/dexterityPanel"]
 margin_left = 5.0
@@ -260,8 +254,7 @@ __meta__ = {
 [node name="endurancePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 145.0
-margin_right = 330.0
-margin_bottom = 180.0
+margin_bottom = 145.0
 
 [node name="enduranceName" type="Label" parent="ScrollContainer/VBoxContainer/endurancePanel"]
 margin_left = 5.0
@@ -305,8 +298,7 @@ __meta__ = {
 [node name="dodgePanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 174.0
-margin_right = 330.0
-margin_bottom = 209.0
+margin_bottom = 174.0
 
 [node name="dodgeName" type="Label" parent="ScrollContainer/VBoxContainer/dodgePanel"]
 margin_left = 5.0
@@ -350,8 +342,7 @@ __meta__ = {
 [node name="criticalPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 203.0
-margin_right = 330.0
-margin_bottom = 238.0
+margin_bottom = 203.0
 
 [node name="criticalName" type="Label" parent="ScrollContainer/VBoxContainer/criticalPanel"]
 margin_left = 5.0
@@ -395,8 +386,7 @@ __meta__ = {
 [node name="blockPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 232.0
-margin_right = 330.0
-margin_bottom = 267.0
+margin_bottom = 232.0
 
 [node name="blockName" type="Label" parent="ScrollContainer/VBoxContainer/blockPanel"]
 margin_left = 5.0
@@ -440,8 +430,7 @@ __meta__ = {
 [node name="bonus_rarityPanel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 261.0
-margin_right = 330.0
-margin_bottom = 296.0
+margin_bottom = 261.0
 
 [node name="bonus_rarityName" type="Label" parent="ScrollContainer/VBoxContainer/bonus_rarityPanel"]
 margin_left = 5.0
@@ -484,8 +473,7 @@ __meta__ = {
 [node name="filler_idk" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 290.0
-margin_right = 330.0
-margin_bottom = 325.0
+margin_bottom = 290.0
 
 [node name="bonus_rarityName" type="Label" parent="ScrollContainer/VBoxContainer/filler_idk"]
 margin_left = 5.0
