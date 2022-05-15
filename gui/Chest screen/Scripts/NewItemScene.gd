@@ -23,11 +23,9 @@ func show_item(item):
 	
 	# Showing base stats in new item window
 	for stat in item.base_stats:
-		var value = item.base_stats[stat]
-		if typeof(value) == TYPE_ARRAY:
-			value = stepify(ItemGenerator.rng.randf_range(value[0], value[1]), 0.1)
-		var text = stat + ": +" + str(value)
-		if stat == "rarity":
+		var value = stat.value
+		var text = stat.name + ": " + str(value)
+		if stat.name == "rarity":
 			text += "%"
 		text[0] = text[0].to_upper()
 		get_node("BaseStats/1").text = text
@@ -40,7 +38,9 @@ func show_item(item):
 	# Showing stats in new item window
 	var count = 1 # helps to iterate through new item stats labels
 	for stat in item.stats:
-		get_node("Stats/" + str(count)).text = stat.name + ": " + str(stat.value)
+		var text = stat.name + ": " + str(stat.value)
+		text[0] = text[0].to_upper()
+		get_node("Stats/" + str(count)).text = text
 		count += 1
 	
 	# Clearing bonus text in stats
@@ -82,6 +82,7 @@ func sell_item():
 	
 	Character.Inventory.silver += ItemGenerator.item.cost
 	get_parent().get_node("EquipmentScene").update_silver()
+	Audio.play_sound(ResourceManager.SOUNDS["COINS" + str(ItemGenerator.rng.randi_range(1, 10))])
 	self.hide()
 	
 func equip_item():
@@ -89,6 +90,7 @@ func equip_item():
 	
 	Character.equip_item(ItemGenerator.item)
 	get_parent().get_node("EquipmentScene").update_inventory()
+	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	self.hide()
 
 func clear_stats():

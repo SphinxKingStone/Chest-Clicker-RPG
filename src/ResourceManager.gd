@@ -16,5 +16,27 @@ const PARTICLES_COLORS = {
 	"PURPLE": preload("res://assets/particle materials/purple_color_ramp.tres"),
 }
 
+const SOUNDS = {
+	"COINS1": preload("res://assets/Sounds/Sounds/coins/coins1.wav"),
+	"COINS2": preload("res://assets/Sounds/Sounds/coins/coins2.wav"),
+	"COINS3": preload("res://assets/Sounds/Sounds/coins/coins3.wav"), # https://soundimage.org/attribution-info/
+	"COINS4": preload("res://assets/Sounds/Sounds/coins/coins4.wav"), # https://soundimage.org/attribution-info/
+	"COINS5": preload("res://assets/Sounds/Sounds/coins/coins5.wav"), # https://soundimage.org/attribution-info/
+	"COINS6": preload("res://assets/Sounds/Sounds/coins/coins6.wav"), # https://soundimage.org/attribution-info/
+	"COINS7": preload("res://assets/Sounds/Sounds/coins/coins7.wav"), # https://soundimage.org/attribution-info/
+	"COINS8": preload("res://assets/Sounds/Sounds/coins/coins8.wav"), # https://soundimage.org/attribution-info/
+	"COINS9": preload("res://assets/Sounds/Sounds/coins/coins9.wav"), # https://soundimage.org/attribution-info/
+	"COINS10": preload("res://assets/Sounds/Sounds/coins/coins10.wav"), # https://soundimage.org/attribution-info/
+	"EQUIP":preload("res://assets/Sounds/Sounds/equip.wav"),
+}
+
+const MUSIC = {
+	"BACKGROUND_MENU": preload("res://assets/Sounds/Music/bg_main_menu.ogg"),
+	"BACKGROUND1": preload("res://assets/Sounds/Music/bg1.ogg"),
+	"BACKGROUND2": preload("res://assets/Sounds/Music/bg2.ogg"),
+	"BACKGROUND3": preload("res://assets/Sounds/Music/bg3.ogg"),
+	"BACKGROUND4": preload("res://assets/Sounds/Music/bg4.ogg"),
+}
+
 func _ready():
 	pass

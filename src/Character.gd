@@ -36,9 +36,11 @@ func update_stats():
 	for key in stats:
 		stats[key] = 0
 	
-	# iterating through all out equiped gear and updating stats
+	# iterating through all our equiped gear and updating stats
 	for item in Inventory.get_gear().values():
 		if item != null:
+			for base_stat in item.base_stats:
+				stats[base_stat.name] += base_stat.value
 			for stat in item.stats:
 				stats[stat.name] += stat.value
 
@@ -53,12 +55,16 @@ func stats_if_equipped(equip_item):
 			if current_item.category == equip_item.category:
 				for stat in current_item.stats:
 					if_equipped_stats[stat.name] -= stat.value
+				for stat in current_item.base_stats:
+					if_equipped_stats[stat.name] -= stat.value
 	
 	# "equipping" new item
 #	for current_item in Inventory.get_gear().values():
 #		if current_item != null:
 #			if current_item.category == equip_item.category:
 	for stat in equip_item.stats:
+		if_equipped_stats[stat.name] += stat.value
+	for stat in equip_item.base_stats:
 		if_equipped_stats[stat.name] += stat.value
 	
 	return if_equipped_stats

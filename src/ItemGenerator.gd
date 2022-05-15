@@ -16,6 +16,7 @@ func generate_item():
 	
 	#generating stats
 	item.stats = generate_stats()
+	item.base_stats = generate_base_stats()
 	return item
 
 func update_min_number():
@@ -23,6 +24,17 @@ func update_min_number():
 	for equipped_item in Character.Inventory.get_gear().values():
 		if equipped_item != null:
 			min_number += ItemsData.ITEM_LEVEL[item.rarity]
+
+func generate_base_stats():
+	var generated_stats = []
+	for stat in item.base_stats_data:
+		var stat_name = stat
+		var stat_value = ItemGenerator.rng.randf_range(item.base_stats_data[stat][0], item.base_stats_data[stat][1])
+		stat_value = stepify(stat_value, 0.1)
+		var r_stat = {"name": stat_name, "value": stat_value}
+		generated_stats.append(r_stat)
+	
+	return generated_stats
 
 func generate_stats():
 	var item_level = ItemsData.ITEM_LEVEL[item.rarity] # AKA rarity

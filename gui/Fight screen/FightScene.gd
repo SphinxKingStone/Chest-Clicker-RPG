@@ -103,4 +103,4 @@ func distance_to_enemy():
 	var char_right_pos = $Character.position.x + (character_frame_size[0]/2)
 	var enemy_left_pos = $Enemy.position.x - (enemy_frame_size[0]/2)
 	
-	return enemy_left_pos - char_right_pos + 75
+	return enemy_left_pos - char_right_pos + 90
