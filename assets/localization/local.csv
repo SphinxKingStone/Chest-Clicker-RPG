@@ -24,6 +24,33 @@ GOLD_RING,Gold Ring,Золотое Кольцо
 SKULL_AMULET_1,Skull Amulet,Амулет с Черепом
 SACRED_SCARAB,Sacred Scarab,Священный Скарабей
 ICY_PEARL,Icy Pearl,Ледяная Жемчужина
+ASTRAL_AXE,Astral Axe,Астральный Топор
+ASTRAL_BATTLE_AXE,Astral Battle Axe,Астральный Боевой Топор
+ASTRAL_SHIELD,Astral Shield,Астральный Щит
+BRASS_DOME,Brass Dome,Латунный Доспех
+BRASS_HELMET,Brass Helmet,Латунный Шлем
+BRASS_BOOTS,Brass Boots,Латунные Ботинки
+DEADLY_GLOVES,Deadly Gloves,Смертоносные Перчатки
+AMBER_RING,Amber Ring,Янтарное Кольцо
+AMBER_AMULET,Amber Amulet,Янтарный Амулет
+GOLDEN_TOOTH,Golden Tooth,Золотой Зуб
+METEOR_RING,Meteor Ring,Метеоритное Кольцо
+,,
+LIFE,Life,Здоровье
+HEALTH,Health,Живучесть
+DEFENSE,Defense,Защита
+STRENGTH,Strength,Сила
+DEXTERITY,Dexterity,Ловкость
+ENDURANCE,Endurance,Выносливость
+DODGE,Dodge,Уклонение
+CRITICAL,Critical,Критический Урон
+BLOCK,Block,Блок
+BONUS_RARITY,Rarity,Редкость
+DAMAGE,Damage,Урон
+ATTACK,Attack,Средний Урон
+,,
+,,
+,,
 ,,
 SELL_BTN,Sell,Продать
 EQUIP_BTN,Equip,Надеть
