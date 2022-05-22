@@ -1,5 +1,6 @@
 extends Node
 
+var Equipment = preload("res://src/Equipment.gd").new()
 var Inventory = preload("res://src/Inventory.gd").new()
 
 var stats = {
@@ -27,17 +28,18 @@ func get_stats():
 	return stats
 
 func equip_item(item):
-	Inventory.equip_item(item.duplicate(true))
+	Equipment.equip_item(item.duplicate(true))
 	update_stats()
 	ItemGenerator.update_min_number()
 	emit_signal("stats_updated")
+
 
 func update_stats():
 	for key in stats:
 		stats[key] = 0
 	
 	# iterating through all our equiped gear and updating stats
-	for item in Inventory.get_gear().values():
+	for item in Equipment.get_gear().values():
 		if item != null:
 			for base_stat in item.base_stats:
 				stats[base_stat.name] += base_stat.value
@@ -50,7 +52,7 @@ func stats_if_equipped(equip_item):
 	var if_equipped_stats = stats.duplicate(true)
 	
 	# "unequipping" old item
-	for current_item in Inventory.get_gear().values():
+	for current_item in Equipment.get_gear().values():
 		if current_item != null:
 			if current_item.category == equip_item.category:
 				for stat in current_item.stats:
@@ -59,7 +61,7 @@ func stats_if_equipped(equip_item):
 					if_equipped_stats[stat.name] -= stat.value
 	
 	# "equipping" new item
-#	for current_item in Inventory.get_gear().values():
+#	for current_item in Equipment.get_gear().values():
 #		if current_item != null:
 #			if current_item.category == equip_item.category:
 	for stat in equip_item.stats:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/StyleBoxes/item_light_gray_bg.tres" type="StyleBox" id=1]
-[ext_resource path="res://gui/Chest screen/Scripts/InventoryScene.gd" type="Script" id=2]
+[ext_resource path="res://gui/Chest screen/Scripts/EquipmentScene.gd" type="Script" id=2]
 [ext_resource path="res://assets/StyleBoxes/equipment_bg_blueish.tres" type="StyleBox" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]

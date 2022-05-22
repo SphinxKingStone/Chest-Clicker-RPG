@@ -1,59 +1,50 @@
 extends Panel
 
-func _ready():
-	for ch in $GridContainer.get_children():
-		ch.connect("gui_input", self, "on_click", [ch])
+var last_mouse_pos
+var selected_slot
+var childs = []
 
-func sell_item():
-	hide()
-	pass
+func _ready():
+	for bt in $Menu/HBox.get_children():
+		bt.connect("pressed", self, "menu_button_pressed", [bt])
 
 func update_inventory():
-	for slot in Character.Inventory.get_gear():
-		var texture_node
-		match slot:
-			"helmet":
-				texture_node = $GridContainer/Helmet/Texture
-			"weapon_left":
-				texture_node = $GridContainer/Weapon_Left/Texture
-			"weapon_right":
-				texture_node = $GridContainer/Weapon_Right/Texture
-			"amulet":
-				texture_node = $GridContainer/Amulet/Texture
-			"ring_left":
-				texture_node = $GridContainer/Ring_Left/Texture
-			"ring_right":
-				texture_node = $GridContainer/Ring_Right/Texture
-			"body":
-				texture_node = $GridContainer/Body/Texture
-			"gloves":
-				texture_node = $GridContainer/Gloves/Texture
-			"accessory":
-				texture_node = $GridContainer/Accessory/Texture
-			"boots":
-				texture_node = $GridContainer/Boots/Texture
-		
-		# Set item sprite for current slot or remove old sprite if slot is empty
-		if Character.Inventory.get_slot(slot) != null:
-			texture_node.texture = Character.Inventory.get_slot(slot).texture
-		else:
-			texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS["GREY"])
-			texture_node.texture = null
-			continue
-		
-		# Manage slots BG color
-		texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[Character.Inventory.get_slot(slot).rarity])
+	# clear all slots
+	for slot in $ScrollContainer/GridContainer.get_children():
+		if slot.visible:
+			$ScrollContainer/GridContainer.remove_child(slot)
+	
+	# adding items without sorting
+	for item in Character.Inventory.get_inventory():
+		var new_slot = $ScrollContainer/GridContainer/Slot.duplicate()
+		new_slot.connect("gui_input", self, "slot_input", [new_slot])
+		new_slot.set_meta("item", item)
+		new_slot.visible = true
+		$ScrollContainer/GridContainer.add_child(new_slot)
+		new_slot.get_node("Texture").texture = item.texture
+		new_slot.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])
 
-func update_silver():
-	get_parent().get_node("TopSide/Silver/Amount").text = str(Character.Inventory.silver)
+func slot_input(event, slot):
+	if event is InputEventScreenTouch and event.is_pressed():
+		last_mouse_pos = get_global_mouse_position()
+		selected_slot = slot
+		$Menu.visible = !$Menu.visible
+#		$Menu.rect_position = last_mouse_pos
 
-func on_click(event, node):
-	if event is InputEventMouseButton or event is InputEventScreenTouch:
-		if !event.is_pressed():
-			if Character.Inventory.get_slot(node.name.to_lower()) == null:
+func clear_childs():
+	for i in childs:
+		get_parent().remove_child(i)
+		childs.erase(i)
+
+func menu_button_pressed(button):
+	match button.name:
+		"Info":
+			if childs.size() > 0:
+				clear_childs()
 				return
-			var itemPreview = get_parent().get_node("ItemPreview")
-			itemPreview.update_stats(Character.Inventory.get_slot(node.name.to_lower()))
-			itemPreview.visible = !get_parent().get_node("ItemPreview").visible
-			itemPreview.rect_position = get_viewport().get_mouse_position()
-			itemPreview.rect_position.x -= itemPreview.rect_size.x
+			var itemPreview = ResourceManager.NODES["ITEM_PREVIEW"].instance()
+			get_parent().add_child(itemPreview)
+			childs.append(itemPreview)
+			itemPreview.set_item_data(selected_slot.get_meta("item"))
+			itemPreview.rect_position = last_mouse_pos
+			$Menu.visible = false

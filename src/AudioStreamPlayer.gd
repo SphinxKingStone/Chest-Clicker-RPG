@@ -4,10 +4,9 @@ var prev_music = ""
 var music_volume = -20
 var sounds_volume = -10
 
-func _ready():
+func _init():
 	self.connect("finished", self, "play_random_music")
 	music_volume = -100
-	pass
 
 func play_music(music):
 	self.set_stream(music)

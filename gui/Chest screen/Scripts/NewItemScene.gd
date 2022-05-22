@@ -6,6 +6,8 @@ func _ready():
 	$HBoxContainer/SellButton.connect("pressed", self, "sell_item")
 	#warning-ignore:return_value_discarded
 	$HBoxContainer/EquipButton.connect("pressed", self, "equip_item")
+	#warning-ignore:return_value_discarded
+	$HBoxContainer/SaveButton.connect("pressed", self, "save_item")
 
 func show_item(item):
 	self.show()
@@ -24,7 +26,7 @@ func show_item(item):
 	# Showing base stats in new item window
 	for stat in item.base_stats:
 		var value = stat.value
-		var text = stat.name + ": " + str(value)
+		var text = tr(stat.name.to_upper()) + ": " + str(value)
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
 		text[0] = text[0].to_upper()
@@ -38,7 +40,7 @@ func show_item(item):
 	# Showing stats in new item window
 	var count = 1 # helps to iterate through new item stats labels
 	for stat in item.stats:
-		var text = stat.name + ": " + str(stat.value)
+		var text = tr(stat.name.to_upper()) + ": " + str(stat.value)
 		text[0] = text[0].to_upper()
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
@@ -79,7 +81,6 @@ func show_item(item):
 		if stat.name == "life": # change stat value to calculated health
 			get_parent().get_node("AverageStats/Health/HealthBonus").text = " (+" + str(stat.value) + ")"
 	
-	get_parent().get_node("ItemPreview").update_stats(item)
 
 func sell_item():
 	clear_stats()
@@ -93,8 +94,16 @@ func equip_item():
 	clear_stats()
 	
 	Character.equip_item(ItemGenerator.item)
-	get_parent().get_node("EquipmentScene").update_inventory()
+	get_parent().get_node("EquipmentScene").update_equipment()
 	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
+	self.hide()
+
+func save_item():
+	clear_stats()
+	
+	Character.Inventory.add_item(ItemGenerator.item)
+#	get_parent().get_node("EquipmentScene").update_equipment()
+#	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	self.hide()
 
 func clear_stats():

@@ -355,7 +355,7 @@ var ring = {
 		category = "ring",
 		
 		base_stats_data = {
-			damage = 3,
+			damage = [3, 3],
 		},
 		rarity = "WHITE",
 	},

@@ -38,5 +38,9 @@ const MUSIC = {
 	"BACKGROUND4": preload("res://assets/Sounds/Music/bg4.ogg"),
 }
 
+const NODES = {
+	"ITEM_PREVIEW": preload("res://gui/UI/Scenes/ItemPreview.tscn")
+}
+
 func _ready():
 	pass

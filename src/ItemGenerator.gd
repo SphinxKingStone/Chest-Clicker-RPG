@@ -4,7 +4,7 @@ var item # it holds last generated item
 var rng = RandomNumberGenerator.new()
 var min_number = 1
 
-func _ready():
+func _init():
 	rng.randomize()
 
 func generate_item():
@@ -21,7 +21,7 @@ func generate_item():
 
 func update_min_number():
 	min_number = 1
-	for equipped_item in Character.Inventory.get_gear().values():
+	for equipped_item in Character.Equipment.get_gear().values():
 		if equipped_item != null:
 			min_number += ItemsData.ITEM_LEVEL[item.rarity]
 
@@ -68,7 +68,7 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
-	min_number = 40
+	min_number = 22
 	var rng_number = rng.randi_range(min_number, 60)
 	
 	var rarity

@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/StyleBoxes/equipment_bg_blueish.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/StyleBoxes/item_light_gray_bg.tres" type="StyleBox" id=2]
+[ext_resource path="res://gui/Chest screen/Scripts/InventoryScene.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/images/armors/armor_197.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/coins/coins_5.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.313726, 0.337255, 0.352941, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="InventoryScene" type="Panel"]
+margin_left = 10.0
+margin_right = 710.0
+margin_bottom = 600.0
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlaceForButtons" type="Panel" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 695.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 10.0
+margin_top = 85.0
+margin_right = 690.0
+margin_bottom = 590.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+custom_constants/vseparation = 13
+custom_constants/hseparation = 13
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot" type="Panel" parent="ScrollContainer/GridContainer"]
+visible = false
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = ExtResource( 2 )
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/GridContainer/Slot"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.921569 )
+margin_left = 88.5079
+margin_top = 121.09
+margin_right = 388.508
+margin_bottom = 351.09
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="VBoxContainer" parent="Menu"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 223.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Button" parent="Menu/HBox"]
+margin_right = 290.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = SubResource( 2 )
+custom_constants/hseparation = 0
+text = "INFO"
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu/HBox/Info"]
+margin_right = 64.0
+margin_bottom = 60.0
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equip" type="Button" parent="Menu/HBox"]
+margin_top = 70.0
+margin_right = 290.0
+margin_bottom = 130.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = SubResource( 2 )
+custom_constants/hseparation = 0
+text = "EQUIP"
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu/HBox/Equip"]
+margin_right = 64.0
+margin_bottom = 60.0
+texture = ExtResource( 5 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sell" type="Button" parent="Menu/HBox"]
+margin_top = 140.0
+margin_right = 290.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = SubResource( 2 )
+custom_constants/hseparation = 0
+text = "SELL"
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu/HBox/Sell"]
+margin_top = 3.0
+margin_right = 64.0
+margin_bottom = 57.0
+texture = ExtResource( 6 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}

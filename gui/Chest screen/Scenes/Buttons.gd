@@ -3,22 +3,37 @@ extends Panel
 
 func _ready():
 	#warning-ignore:return_value_discarded
-	$Equipment.connect("pressed", self, "toggle_button", [$Equipment])
+	for ch in get_children():
+		ch.connect("pressed", self, "toggle_button", [ch])
+	toggle_button($Equipment)
 
 func toggle_button(button):
 	if button.pressed:
-		get_parent().get_node("EquipmentScene").show()
-		var bg = button.get_node("Background")
+		match button.name:
+			"Equipment":
+				get_parent().get_node("EquipmentScene").show()
+			"Inventory":
+				get_parent().get_node("InventoryScene").update_inventory()
+				get_parent().get_node("InventoryScene").show()
+		
 		#makes bg darker
+		var bg = button.get_node("Background")
 		bg.set("custom_styles/panel", load("res://assets/StyleBoxes/button_background_pressed.tres"))
+		
 		#shifts icon down
 		button.rect_position += Vector2(2, 2)
 		bg.rect_position -= Vector2(2, 2)
 	else:
-		get_parent().get_node("EquipmentScene").hide()
-		var bg = button.get_node("Background")
+		match button.name:
+			"Equipment":
+				get_parent().get_node("EquipmentScene").hide()
+			"Inventory":
+				get_parent().get_node("InventoryScene").hide()
+		
 		#makes bg lighter
+		var bg = button.get_node("Background")
 		bg.set("custom_styles/panel", load("res://assets/StyleBoxes/button_background_normal.tres"))
+		
 		#shifts icon back up
 		button.rect_position -= Vector2(2, 2)
 		bg.rect_position += Vector2(2, 2)

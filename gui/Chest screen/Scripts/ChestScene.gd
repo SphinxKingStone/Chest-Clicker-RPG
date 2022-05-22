@@ -30,7 +30,7 @@ func set_frame_and_stop(aSprite, frame = 0):
 	aSprite.frame = frame
 
 func _on_Panel_gui_input(event):
-	if event is InputEventMouseButton or event is InputEventScreenTouch:
+	if event is InputEventScreenTouch:
 		if !event.is_pressed():
 			on_click()
 
