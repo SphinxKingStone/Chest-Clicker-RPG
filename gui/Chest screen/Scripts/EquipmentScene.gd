@@ -1,7 +1,5 @@
 extends Panel
 
-var childs = []
-
 func _ready():
 	for ch in $GridContainer.get_children():
 		ch.connect("gui_input", self, "on_click", [ch])
@@ -54,17 +52,12 @@ func on_click(event, node):
 		if !event.is_pressed():
 			if Character.Equipment.get_slot(node.name.to_lower()) == null:
 				return
-			if childs.size() > 0:
-				clear_childs()
+			if ResourceManager.item_info_children.size() > 0:
+				ResourceManager.clear_item_info_children()
 				return
 			var itemPreview = ResourceManager.NODES["ITEM_PREVIEW"].instance()
 			get_parent().add_child(itemPreview)
-			childs.append(itemPreview)
+			ResourceManager.item_info_children.append(itemPreview)
 			itemPreview.set_item_data(Character.Equipment.get_slot(node.name.to_lower()))
 			itemPreview.rect_position = get_global_mouse_position()
 			itemPreview.rect_position.x -= itemPreview.rect_size.x
-
-func clear_childs():
-	for i in childs:
-		get_parent().remove_child(i)
-		childs.erase(i)

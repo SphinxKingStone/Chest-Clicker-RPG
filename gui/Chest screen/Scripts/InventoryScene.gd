@@ -2,7 +2,6 @@ extends Panel
 
 var last_mouse_pos
 var selected_slot
-var childs = []
 
 func _ready():
 	for bt in $Menu/HBox.get_children():
@@ -26,25 +25,29 @@ func update_inventory():
 
 func slot_input(event, slot):
 	if event is InputEventScreenTouch and event.is_pressed():
-		last_mouse_pos = get_global_mouse_position()
+		last_mouse_pos = get_local_mouse_position()
 		selected_slot = slot
 		$Menu.visible = !$Menu.visible
-#		$Menu.rect_position = last_mouse_pos
-
-func clear_childs():
-	for i in childs:
-		get_parent().remove_child(i)
-		childs.erase(i)
+		$Menu.rect_position = last_mouse_pos
+		
+		# moving info menu to the left if it's going to spawn outside of  the screen
+		if last_mouse_pos.x > self.rect_size.x / 2:
+			$Menu.rect_position.x -= $Menu.rect_size.x
 
 func menu_button_pressed(button):
 	match button.name:
 		"Info":
-			if childs.size() > 0:
-				clear_childs()
+			if ResourceManager.item_info_children.size() > 0:
+				ResourceManager.clear_item_info_children()
 				return
 			var itemPreview = ResourceManager.NODES["ITEM_PREVIEW"].instance()
 			get_parent().add_child(itemPreview)
-			childs.append(itemPreview)
+			ResourceManager.item_info_children.append(itemPreview)
 			itemPreview.set_item_data(selected_slot.get_meta("item"))
-			itemPreview.rect_position = last_mouse_pos
+			itemPreview.rect_position = $Local_node.to_global(last_mouse_pos)
+			
+			# moving item info to the left if it's going to spawn outside of  the screen
+			if last_mouse_pos.x + itemPreview.rect_size.x > self.rect_size.x:
+				itemPreview.rect_position.x -= itemPreview.rect_size.x
+			
 			$Menu.visible = false

@@ -153,3 +153,5 @@ stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Local_node" type="Node2D" parent="."]

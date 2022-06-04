@@ -42,5 +42,12 @@ const NODES = {
 	"ITEM_PREVIEW": preload("res://gui/UI/Scenes/ItemPreview.tscn")
 }
 
+var item_info_children = []
+
 func _ready():
 	pass
+
+func clear_item_info_children():
+	for i in item_info_children:
+		i.get_parent().remove_child(i)
+		item_info_children.erase(i)
