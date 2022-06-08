@@ -2,12 +2,12 @@ extends Node
 
 var gear = {
 	helmet = null,
-	weapon_left = null,
-	weapon_right = null,
+	left_hand = null,
+	right_hand = null,
 	amulet = null,
-	ring_left = null,
-	ring_right = null,
-	body = null,
+	left_ring = null,
+	right_ring = null,
+	body_armour = null,
 	gloves = null,
 	accessory = null,
 	boots = null,
@@ -26,92 +26,40 @@ func get_slot(slot):
 	if gear.has(slot):
 		return gear[slot]
 
-func equip_item(item, slot = ""):
-	match item.category:
-		"body_armour":
-			if gear.body != null:
-				show_new_item(gear.body)
-			gear.body = item
-		"helmet":
-			if gear.helmet != null:
-				show_new_item(gear.helmet)
-			gear.helmet = item
-		"gloves":
-			if gear.gloves != null:
-				show_new_item(gear.gloves)
-			gear.gloves = item
-		"boots":
-			if gear.boots != null:
-				show_new_item(gear.boots)
-			gear.boots = item
-		"amulet":
-			if gear.amulet != null:
-				show_new_item(gear.amulet)
-			gear.amulet = item
-		"accessory":
-			if gear.accessory != null:
-				show_new_item(gear.accessory)
-			gear.accessory = item
+# equips item and return items that were previously equipped 
+func equip_item(item):
+	var old_items = [] # needs to be an array because we can unequip one handed AND shield at once
+	var slot = figure_out_slot(item)
+	if gear[slot] != null:
+		old_items.append(gear[slot].duplicate(true))
 	
-	if slot != "":
-		match slot:
-			"left_hand":
-				if gear.weapon_left != null:
-					show_new_item(gear.weapon_left)
-				gear.weapon_left = item
-			"right_hand":
-				if gear.weapon_right != null:
-					show_new_item(gear.weapon_right)
-				gear.weapon_right = item
-			"left_ring":
-				if gear.ring_left != null:
-					show_new_item(gear.ring_left)
-				gear.ring_left = item
-			"right_ring":
-				if gear.ring_right != gear.ring_right:
-					show_new_item(item)
-				gear.ring_right = item
-			"two_hands":
-				if gear.weapon_left != null:
-					show_new_item(gear.weapon_left)
-				if gear.weapon_right != null:
-					show_new_item(gear.weapon_right)
-				gear.weapon_left = item
-				gear.weapon_right = null
+	# equipping item
+	gear[slot] = item
+	
+	# unequipping shield if two handed
+	if item.category == "two_handed":
+		if gear["right_hand"] != null:
+			old_items.append(gear["right_hand"])
+		gear["right_hand"] = null
+	
+	return old_items
+
+# returns gear slot name depending on item category and slot availability
+func figure_out_slot(item):
+	var slot
+	if gear.has(item.category):
+		slot = item.category
 	else:
 		match item.category:
-			"two_handed":
-#				if gear.weapon_left != null:
-#					show_new_item(gear.weapon_left)
-#				elif gear.weapon_right != null:
-#					show_new_item(gear.weapon_right)
-				gear.weapon_left = item
-				gear.weapon_right = null
 			"one_handed":
-				if gear.weapon_left == null:
-					gear.weapon_left = item
-				elif (gear.weapon_left != null) and gear.weapon_right == null:
-					if gear.weapon_left.category == "two_handed":
-						pass
-#						show_new_item(gear.weapon_left)
-#						gear.weapon_right = item
-					else:
-						gear.weapon_right = item
-				elif (gear.weapon_left != null) and gear.weapon_right != null:
-					show_new_item(gear.weapon_left)
-					gear.weapon_left = item
-			"ring":
-				if gear.ring_left == null:
-					gear.ring_left = item
-				elif gear.ring_right == null:
-					gear.ring_right = item
-				elif gear.ring_left != null:
-					show_new_item(gear.ring_left)
-					gear.ring_left = item
-				elif gear.ring_right != null:
-					show_new_item(gear.ring_right)
-					gear.ring_right = item
+				slot = "left_hand"
+			"two_handed":
+				slot = "left_hand"
 			"shield":
-				if gear.weapon_right != null:
-					show_new_item(gear.weapon_right)
-				gear.weapon_right = item
+				slot = "right_hand"
+			"ring":
+				if gear["left_ring"] == null:
+					slot = "left_ring"
+				else:
+					slot = "right_ring"
+	return slot

@@ -11,3 +11,5 @@ func _input(event):
 	if event is InputEventScreenTouch:
 		if !event.is_pressed():
 			ResourceManager.clear_item_info_children()
+			if !$InventoryScene/Menu/HBox/Info.pressed:
+				$InventoryScene/Menu.hide()

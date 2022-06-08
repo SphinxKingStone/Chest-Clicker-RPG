@@ -16,7 +16,7 @@ var stats = {
 	"bonus_rarity": 0, 
 }
 
-signal stats_updated
+signal item_equipped
 
 func get_stat_value(stat):
 	if !stats.has(stat):
@@ -28,10 +28,12 @@ func get_stats():
 	return stats
 
 func equip_item(item):
-	Equipment.equip_item(item.duplicate(true))
+	var unequipped_items = Equipment.equip_item(item.duplicate(true))
+	for unequipped_item in unequipped_items:
+		Character.Inventory.add_item(unequipped_item)
 	update_stats()
-	ItemGenerator.update_min_number()
-	emit_signal("stats_updated")
+	ItemGenerator.update_min_number() # rng boost thing
+	emit_signal("item_equipped")
 
 
 func update_stats():

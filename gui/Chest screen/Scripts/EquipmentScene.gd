@@ -3,6 +3,7 @@ extends Panel
 func _ready():
 	for ch in $GridContainer.get_children():
 		ch.connect("gui_input", self, "on_click", [ch])
+	Character.connect("item_equipped", self, "update_equipment")
 
 func sell_item():
 	hide()
@@ -14,18 +15,18 @@ func update_equipment():
 		match slot:
 			"helmet":
 				texture_node = $GridContainer/Helmet/Texture
-			"weapon_left":
-				texture_node = $GridContainer/Weapon_Left/Texture
-			"weapon_right":
-				texture_node = $GridContainer/Weapon_Right/Texture
+			"left_hand":
+				texture_node = $GridContainer/left_hand/Texture
+			"right_hand":
+				texture_node = $GridContainer/right_hand/Texture
 			"amulet":
 				texture_node = $GridContainer/Amulet/Texture
-			"ring_left":
-				texture_node = $GridContainer/Ring_Left/Texture
-			"ring_right":
-				texture_node = $GridContainer/Ring_Right/Texture
-			"body":
-				texture_node = $GridContainer/Body/Texture
+			"left_ring":
+				texture_node = $GridContainer/left_ring/Texture
+			"right_ring":
+				texture_node = $GridContainer/right_ring/Texture
+			"body_armour":
+				texture_node = $GridContainer/body_armour/Texture
 			"gloves":
 				texture_node = $GridContainer/Gloves/Texture
 			"accessory":

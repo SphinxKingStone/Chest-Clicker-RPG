@@ -2,7 +2,7 @@ extends Panel
 
 func _ready():
 	#warning-ignore:return_value_discarded
-	Character.connect("stats_updated", self, "update_stats")
+	Character.connect("item_equipped", self, "update_stats")
 	pass 
 
 func update_stats():

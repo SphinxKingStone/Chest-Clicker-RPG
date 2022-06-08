@@ -110,6 +110,7 @@ align = 2
 [node name="TextureRect" type="TextureRect" parent="Menu/HBox/Info"]
 margin_right = 64.0
 margin_bottom = 60.0
+mouse_filter = 2
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,6 +129,7 @@ align = 2
 [node name="TextureRect" type="TextureRect" parent="Menu/HBox/Equip"]
 margin_right = 64.0
 margin_bottom = 60.0
+mouse_filter = 2
 texture = ExtResource( 5 )
 stretch_mode = 6
 __meta__ = {
@@ -148,10 +150,9 @@ align = 2
 margin_top = 3.0
 margin_right = 64.0
 margin_bottom = 57.0
+mouse_filter = 2
 texture = ExtResource( 6 )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Local_node" type="Node2D" parent="."]

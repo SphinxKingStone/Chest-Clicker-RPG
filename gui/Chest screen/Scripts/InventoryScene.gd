@@ -24,30 +24,37 @@ func update_inventory():
 		new_slot.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])
 
 func slot_input(event, slot):
-	if event is InputEventScreenTouch and event.is_pressed():
+	if event is InputEventScreenTouch and !event.is_pressed():
 		last_mouse_pos = get_local_mouse_position()
 		selected_slot = slot
-		$Menu.visible = !$Menu.visible
+		$Menu.show()
 		$Menu.rect_position = last_mouse_pos
 		
-		# moving info menu to the left if it's going to spawn outside of  the screen
+		# moving info menu it's going to spawn outside of the screen
 		if last_mouse_pos.x > self.rect_size.x / 2:
 			$Menu.rect_position.x -= $Menu.rect_size.x
+		if $Menu.rect_size.y + last_mouse_pos.y > self.rect_size.y:
+			$Menu.rect_position.y -= $Menu.rect_size.y
 
 func menu_button_pressed(button):
 	match button.name:
 		"Info":
-			if ResourceManager.item_info_children.size() > 0:
-				ResourceManager.clear_item_info_children()
-				return
 			var itemPreview = ResourceManager.NODES["ITEM_PREVIEW"].instance()
-			get_parent().add_child(itemPreview)
+			self.add_child(itemPreview)
 			ResourceManager.item_info_children.append(itemPreview)
-			itemPreview.set_item_data(selected_slot.get_meta("item"))
-			itemPreview.rect_position = $Local_node.to_global(last_mouse_pos)
+			var item = selected_slot.get_meta("item")
+			itemPreview.set_item_data(item)
+			itemPreview.rect_position = last_mouse_pos
 			
-			# moving item info to the left if it's going to spawn outside of  the screen
+			# moving item info if it's going to spawn outside of  the screen
 			if last_mouse_pos.x + itemPreview.rect_size.x > self.rect_size.x:
 				itemPreview.rect_position.x -= itemPreview.rect_size.x
-			
-			$Menu.visible = false
+			if itemPreview.rect_size.y + last_mouse_pos.y > self.rect_size.y:
+				itemPreview.rect_position.y -= itemPreview.rect_size.y
+			print_debug(itemPreview.rect_position)
+			$Menu.hide()
+		"Equip":
+			var item = selected_slot.get_meta("item")
+			Character.equip_item(item)
+			Character.Inventory.remove_item(item)
+			update_inventory()
