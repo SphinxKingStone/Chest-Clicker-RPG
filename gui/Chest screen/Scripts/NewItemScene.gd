@@ -101,7 +101,7 @@ func equip_item():
 func save_item():
 	clear_stats()
 	
-	Character.Inventory.add_item(ItemGenerator.item)
+	Character.add_item(ItemGenerator.item)
 #	get_parent().get_node("EquipmentScene").update_equipment()
 #	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	self.hide()

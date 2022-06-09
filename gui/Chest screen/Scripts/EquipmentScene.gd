@@ -10,7 +10,7 @@ func sell_item():
 	pass
 
 func update_equipment():
-	for slot in Character.Equipment.get_gear():
+	for slot in Character.Equipment.get_equipment():
 		var texture_node
 		match slot:
 			"helmet":

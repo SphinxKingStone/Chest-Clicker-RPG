@@ -14,7 +14,7 @@ func update_inventory():
 			$ScrollContainer/GridContainer.remove_child(slot)
 	
 	# adding items without sorting
-	for item in Character.Inventory.get_inventory():
+	for item in Character.get_inventory():
 		var new_slot = $ScrollContainer/GridContainer/Slot.duplicate()
 		new_slot.connect("gui_input", self, "slot_input", [new_slot])
 		new_slot.set_meta("item", item)
@@ -56,5 +56,5 @@ func menu_button_pressed(button):
 		"Equip":
 			var item = selected_slot.get_meta("item")
 			Character.equip_item(item)
-			Character.Inventory.remove_item(item)
+			Character.remove_item(item)
 			update_inventory()

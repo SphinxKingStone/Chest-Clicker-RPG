@@ -19,8 +19,11 @@ func _ready():
 func show_new_item(item):
 	pass
 
-func get_gear():
+func get_equipment():
 	return gear
+
+func set_equipment(eq):
+	gear = eq
 
 func get_slot(slot):
 	if gear.has(slot):

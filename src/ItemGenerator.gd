@@ -21,9 +21,9 @@ func generate_item():
 
 func update_min_number():
 	min_number = 1
-	for equipped_item in Character.Equipment.get_gear().values():
+	for equipped_item in Character.Equipment.get_equipment().values():
 		if equipped_item != null:
-			min_number += ItemsData.ITEM_LEVEL[item.rarity]
+			min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]
 
 func generate_base_stats():
 	var generated_stats = []

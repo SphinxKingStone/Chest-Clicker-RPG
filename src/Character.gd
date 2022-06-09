@@ -27,21 +27,35 @@ func get_stat_value(stat):
 func get_stats():
 	return stats
 
+func get_inventory():
+	return Inventory.get_inventory()
+
+func set_equipment(eq):
+	Equipment.set_equipment(eq)
+
+func get_equipment():
+	return Equipment.get_equipment()
+
 func equip_item(item):
 	var unequipped_items = Equipment.equip_item(item.duplicate(true))
 	for unequipped_item in unequipped_items:
-		Character.Inventory.add_item(unequipped_item)
+		Character.add_item(unequipped_item)
 	update_stats()
 	ItemGenerator.update_min_number() # rng boost thing
 	emit_signal("item_equipped")
 
+func add_item(item):
+	Inventory.add_item(item)
+
+func remove_item(item):
+	Inventory.remove_item(item)
 
 func update_stats():
 	for key in stats:
 		stats[key] = 0
 	
 	# iterating through all our equiped gear and updating stats
-	for item in Equipment.get_gear().values():
+	for item in Equipment.get_equipment().values():
 		if item != null:
 			for base_stat in item.base_stats:
 				stats[base_stat.name] += base_stat.value
@@ -54,7 +68,7 @@ func stats_if_equipped(equip_item):
 	var if_equipped_stats = stats.duplicate(true)
 	
 	# "unequipping" old item
-	for current_item in Equipment.get_gear().values():
+	for current_item in Equipment.get_equipment().values():
 		if current_item != null:
 			if current_item.category == equip_item.category:
 				for stat in current_item.stats:
@@ -63,7 +77,7 @@ func stats_if_equipped(equip_item):
 					if_equipped_stats[stat.name] -= stat.value
 	
 	# "equipping" new item
-#	for current_item in Equipment.get_gear().values():
+#	for current_item in Equipment.get_equipment().values():
 #		if current_item != null:
 #			if current_item.category == equip_item.category:
 	for stat in equip_item.stats:
