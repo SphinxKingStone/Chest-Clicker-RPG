@@ -15,6 +15,14 @@ func update_inventory(sort_method = "sort_rarity", item_categories = []):
 	# clearing all slots
 	clear_inventory()
 	
+	# checking out buttons
+	for bt in $PlaceForButtons/HBoxContainer.get_children():
+		if bt.name != "all" and bt.pressed:
+			item_categories.append(bt.name)
+	if item_categories.size() == 0:
+		clear_inventory()
+		return
+	
 	# sorting items
 	var sorted_inventory = Character.sort_inventory(sort_method, item_categories)
 	
@@ -79,22 +87,25 @@ func sort_button_pressed(button):
 					bt.pressed = false
 			clear_inventory()
 			return
-		
+	
 	# if it's not an "all" button being unpressed then we should unpress "all"
 	if !button.pressed:
 		$PlaceForButtons/HBoxContainer/all.pressed = false
 	
-	var selected_categories = []
+	# if all buttons pressed "all" button should be pressed as well
+	var all_pressed = true
 	for bt in $PlaceForButtons/HBoxContainer.get_children():
-		if bt.name != "all" and bt.pressed:
-			selected_categories.append(bt.name)
-	if selected_categories.size() > 0:
-		update_inventory("sort_rarity", selected_categories)
-	else:
-		clear_inventory()
+		if bt.name != "all" and !bt.pressed:
+			all_pressed = false
+			break
+	if all_pressed:
+		$PlaceForButtons/HBoxContainer/all.pressed = true
+	
+	update_inventory()
 
 func clear_inventory():
 	# clearing all slots
 	for slot in $ScrollContainer/GridContainer.get_children():
 		if slot.visible:
 			$ScrollContainer/GridContainer.remove_child(slot)
+			slot.queue_free()

@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/images/helmets/helmet_60.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/rings/gold_ring.png" type="Texture" id=16]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -25,14 +25,14 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.313726, 0.337255, 0.352941, 1 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -74,7 +74,7 @@ margin_left = 25.0
 margin_right = 80.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_pressed = Color( 0.521569, 0.521569, 0.521569, 1 )
 toggle_mode = true
 pressed = true
@@ -140,7 +140,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="body_armor" type="Button" parent="PlaceForButtons/HBoxContainer"]
+[node name="body_armour" type="Button" parent="PlaceForButtons/HBoxContainer"]
 margin_left = 265.0
 margin_right = 320.0
 margin_bottom = 55.0
@@ -148,7 +148,7 @@ rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
 pressed = true
 
-[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/body_armor"]
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/body_armour"]
 modulate = Color( 0, 0, 0, 0.501961 )
 margin_left = 5.0
 margin_top = 5.0
@@ -323,7 +323,7 @@ margin_left = 88.5079
 margin_top = 121.09
 margin_right = 388.508
 margin_bottom = 351.09
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -342,7 +342,7 @@ __meta__ = {
 margin_right = 290.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_constants/hseparation = 0
 text = "INFO"
 align = 2
@@ -361,7 +361,7 @@ margin_top = 70.0
 margin_right = 290.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 0, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_constants/hseparation = 0
 text = "EQUIP"
 align = 2
@@ -381,7 +381,7 @@ margin_top = 140.0
 margin_right = 290.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 60 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_constants/hseparation = 0
 text = "SELL"
 align = 2

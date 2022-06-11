@@ -1,6 +1,6 @@
 extends Control
 
-var save_files = ["user://inventory.save", "user://equipment.save"]
+var save_files = ["user://inventory.save", "user://equipment.save", "user://properties.save"]
 const autosave_timer = 30
 
 func _init():
@@ -8,7 +8,7 @@ func _init():
 	OS.window_position.y = 100 # and this goes into main menu scene
 	TranslationServer.set_locale("en")
 	Audio.play_random_music()
-	clear_save()
+#	clear_save()
 	load_game()
 	self.connect("tree_exiting", self, "save_game")
 
@@ -32,45 +32,53 @@ func _input(event):
 func save_game():
 	for file in save_files:
 		# open file
-		var save_game = File.new()
-		save_game.open(file, File.WRITE)
+		var save_game_file = File.new()
+		save_game_file.open(file, File.WRITE)
 		
 		# save stuff
 		match file:
 			# save inventory
 			"user://inventory.save":
 				for item in Character.get_inventory():
-					save_game.store_var(item, true)
+					save_game_file.store_var(item, true)
 			
 			# save equipment
 			"user://equipment.save":
-				save_game.store_var(Character.get_equipment(), true)
+				save_game_file.store_var(Character.get_equipment(), true)
+			
+			# save global properties
+			"user://properties.save":
+				save_game_file.store_var(ItemGenerator.generated_items_amount)
 		
 		# close file
-		save_game.close()
+		save_game_file.close()
 
 func load_game():
 	for file in save_files:
 		# open file
-		var save_game = File.new()
-		if not save_game.file_exists(file):
+		var save_game_file = File.new()
+		if not save_game_file.file_exists(file):
 			return # Error! We don't have a save to load.
-		save_game.open(file, File.READ)
+		save_game_file.open(file, File.READ)
 		
 		# load stuff
 		match file:
 			# load inventory
 			"user://inventory.save":
-				while save_game.get_position() < save_game.get_len():
-					var item = save_game.get_var(true)
+				while save_game_file.get_position() < save_game_file.get_len():
+					var item = save_game_file.get_var(true)
 					Character.add_item(item)
 			
 			# load equipment
 			"user://equipment.save":
-				Character.set_equipment(save_game.get_var(true))
+				Character.set_equipment(save_game_file.get_var(true))
+			
+			# load global properties
+			"user://properties.save":
+				ItemGenerator.generated_items_amount = save_game_file.get_var()
 		
 		# close file
-		save_game.close()
+		save_game_file.close()
 
 # deletes all saved data
 func clear_save():

@@ -21,11 +21,11 @@ func add_item(item):
 		return
 	inventory.append(item)
 
-func remove_item(item):
-#	var t1 = inventory[0]
-#	var t2 = item
-#	print_debug(t1 == t2) # why false???
-	inventory.erase(item)
+func remove_item(item_to_remove):
+	for item in inventory:
+		if item.id == item_to_remove.id:
+			inventory.erase(item)
+			return
 
 func sort_inventory(sort_method = "sort_rarity", item_categories = []):
 	var sorted_inventory = inventory.duplicate(true)

@@ -3,6 +3,7 @@ extends Node
 var item # it holds last generated item
 var rng = RandomNumberGenerator.new()
 var min_number = 1
+var generated_items_amount = 0
 
 func _init():
 	rng.randomize()
@@ -17,6 +18,11 @@ func generate_item():
 	#generating stats
 	item.stats = generate_stats()
 	item.base_stats = generate_base_stats()
+	
+	#unique id to help compare items with different references
+	item.id = generated_items_amount
+	generated_items_amount += 1
+	
 	return item
 
 func update_min_number():
