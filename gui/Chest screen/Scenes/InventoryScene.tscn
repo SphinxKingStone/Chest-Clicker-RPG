@@ -77,6 +77,7 @@ rect_min_size = Vector2( 55, 55 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_pressed = Color( 0.521569, 0.521569, 0.521569, 1 )
 toggle_mode = true
+pressed = true
 text = "ALL"
 
 [node name="two_handed" type="Button" parent="PlaceForButtons/HBoxContainer"]
@@ -85,6 +86,7 @@ margin_right = 140.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/two_handed"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -104,6 +106,7 @@ margin_right = 200.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/one_handed"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -123,6 +126,7 @@ margin_right = 260.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/shield"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -142,6 +146,7 @@ margin_right = 320.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/body_armor"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -161,6 +166,7 @@ margin_right = 380.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/helmet"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -180,6 +186,7 @@ margin_right = 440.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/gloves"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -199,6 +206,7 @@ margin_right = 500.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/boots"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -218,6 +226,7 @@ margin_right = 560.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/ring"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -237,6 +246,7 @@ margin_right = 620.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/amulet"]
 modulate = Color( 0, 0, 0, 0.501961 )
@@ -256,6 +266,7 @@ margin_right = 680.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
+pressed = true
 
 [node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/accessory"]
 modulate = Color( 0, 0, 0, 0.501961 )

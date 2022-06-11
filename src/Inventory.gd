@@ -22,6 +22,9 @@ func add_item(item):
 	inventory.append(item)
 
 func remove_item(item):
+#	var t1 = inventory[0]
+#	var t2 = item
+#	print_debug(t1 == t2) # why false???
 	inventory.erase(item)
 
 func sort_inventory(sort_method = "sort_rarity", item_categories = []):

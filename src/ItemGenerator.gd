@@ -100,4 +100,3 @@ func roll_item_base(rarity):
 			var my_random_number = rng.randi_range(0, ItemsStorage.purple_items.size() - 1)
 			item = ItemsStorage.purple_items[my_random_number]
 			item.cost = rng.randi_range(40, 75)
-	
