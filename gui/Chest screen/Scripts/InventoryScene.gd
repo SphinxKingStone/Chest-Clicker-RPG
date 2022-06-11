@@ -6,15 +6,22 @@ var selected_slot
 func _ready():
 	for bt in $Menu/HBox.get_children():
 		bt.connect("pressed", self, "menu_button_pressed", [bt])
+	
+	for bt in $PlaceForButtons/HBoxContainer.get_children():
+		bt.connect("pressed", self, "sort_button_pressed", [bt])
 
-func update_inventory():
+# clears inventory, sorts items and shows them
+func update_inventory(sort_method = "sort_rarity", item_categories = []):
 	# clear all slots
 	for slot in $ScrollContainer/GridContainer.get_children():
 		if slot.visible:
 			$ScrollContainer/GridContainer.remove_child(slot)
 	
-	# adding items without sorting
-	for item in Character.get_inventory():
+	# sorting items
+	var sorted_inventory = Character.sort_inventory(sort_method, item_categories)
+	
+	# adding sorted items to inventory
+	for item in sorted_inventory:
 		var new_slot = $ScrollContainer/GridContainer/Slot.duplicate()
 		new_slot.connect("gui_input", self, "slot_input", [new_slot])
 		new_slot.set_meta("item", item)
@@ -58,3 +65,12 @@ func menu_button_pressed(button):
 			Character.equip_item(item)
 			Character.remove_item(item)
 			update_inventory()
+
+func sort_button_pressed(button):
+	# "all" button functionality
+	if button.name == "all":
+		for bt in $PlaceForButtons/HBoxContainer.get_children():
+			if bt.name != "all":
+				bt.pressed = button.pressed
+	
+	

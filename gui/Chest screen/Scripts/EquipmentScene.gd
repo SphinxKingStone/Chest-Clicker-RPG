@@ -36,8 +36,10 @@ func update_equipment():
 		
 		# Set item sprite for current slot or remove old sprite if slot is empty
 		if Character.Equipment.get_slot(slot) != null:
+			texture_node.get_parent().get_node("shadow").visible = false
 			texture_node.texture = Character.Equipment.get_slot(slot).texture
 		else:
+			texture_node.get_parent().get_node("shadow").visible = true
 			texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS["GREY"])
 			texture_node.texture = null
 			continue

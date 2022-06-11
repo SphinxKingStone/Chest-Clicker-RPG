@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/StyleBoxes/item_light_gray_bg.tres" type="StyleBox" id=1]
 [ext_resource path="res://gui/Chest screen/Scripts/EquipmentScene.gd" type="Script" id=2]
 [ext_resource path="res://assets/StyleBoxes/equipment_bg_blueish.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/images/shields/shield_32.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/boots/shoe_33.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/amulets/amber_amulet.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/armors/armor_136.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/accessory/lit_torch.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/swords/sword_35.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/gloves/copper_gloves.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/helmets/helmet_118.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/rings/gold_ring.png" type="Texture" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.364706, 0.168627, 0.168627, 1 )
@@ -81,6 +90,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="shadow" type="TextureRect" parent="GridContainer/Helmet"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Empty2" type="Panel" parent="GridContainer"]
 margin_left = 220.0
 margin_right = 320.0
@@ -118,6 +141,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="shadow" type="TextureRect" parent="GridContainer/left_ring"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Amulet" type="Panel" parent="GridContainer"]
 margin_left = 110.0
 margin_top = 110.0
@@ -131,6 +168,20 @@ margin_top = 5.0
 margin_right = 95.0
 margin_bottom = 95.0
 rect_min_size = Vector2( 90, 90 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadow" type="TextureRect" parent="GridContainer/Amulet"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -157,6 +208,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="shadow" type="TextureRect" parent="GridContainer/right_ring"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="left_hand" type="Panel" parent="GridContainer"]
 margin_top = 220.0
 margin_right = 100.0
@@ -169,6 +234,20 @@ margin_top = 5.0
 margin_right = 95.0
 margin_bottom = 95.0
 rect_min_size = Vector2( 90, 90 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadow" type="TextureRect" parent="GridContainer/left_hand"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 9 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -189,6 +268,20 @@ margin_top = 5.0
 margin_right = 95.0
 margin_bottom = 95.0
 rect_min_size = Vector2( 90, 90 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadow" type="TextureRect" parent="GridContainer/body_armour"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -218,6 +311,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="shadow" type="TextureRect" parent="GridContainer/right_hand"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Gloves" type="Panel" parent="GridContainer"]
 margin_top = 330.0
 margin_right = 100.0
@@ -231,6 +338,20 @@ margin_top = 5.0
 margin_right = 95.0
 margin_bottom = 95.0
 rect_min_size = Vector2( 90, 90 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shadow" type="TextureRect" parent="GridContainer/Gloves"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 10 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -257,6 +378,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="shadow" type="TextureRect" parent="GridContainer/Accessory"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Boots" type="Panel" parent="GridContainer"]
 margin_left = 220.0
 margin_top = 330.0
@@ -277,4 +412,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="gui_input" from="GridContainer/Helmet" to="." method="_on_Head_gui_input"]
+[node name="shadow" type="TextureRect" parent="GridContainer/Boots"]
+modulate = Color( 0, 0, 0, 0.196078 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 95.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 90, 90 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}

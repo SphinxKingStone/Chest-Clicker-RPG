@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield_14.png-378688692f2fb6c4b6f1ad917d9b1c52.stex"
+path="res://.import/copper_shield.png-6ad5edfb551e840920041ce04be0bc72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/shields/shield_14.png"
-dest_files=[ "res://.import/shield_14.png-378688692f2fb6c4b6f1ad917d9b1c52.stex" ]
+source_file="res://assets/images/shields/copper_shield.png"
+dest_files=[ "res://.import/copper_shield.png-6ad5edfb551e840920041ce04be0bc72.stex" ]
 
 [params]
 

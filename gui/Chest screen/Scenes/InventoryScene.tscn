@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/StyleBoxes/equipment_bg_blueish.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/StyleBoxes/item_light_gray_bg.tres" type="StyleBox" id=2]
@@ -6,6 +6,24 @@
 [ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/images/armors/armor_197.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/coins/coins_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/boots/shoe_23.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/swords/iron_sword.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/swords/copper_dagger.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/shields/astral_shield.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/amulets/amber_amulet.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/armors/armor_136.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/accessory/lit_torch.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/gloves/copper_gloves.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/helmets/helmet_60.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/rings/gold_ring.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.313726, 0.337255, 0.352941, 1 )
@@ -36,6 +54,217 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 695.0
 margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlaceForButtons"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 685.0
+margin_bottom = 60.0
+custom_constants/separation = 5
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="all" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 25.0
+margin_right = 80.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_pressed = Color( 0.521569, 0.521569, 0.521569, 1 )
+toggle_mode = true
+text = "ALL"
+
+[node name="two_handed" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 85.0
+margin_right = 140.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/two_handed"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 8 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="one_handed" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 145.0
+margin_right = 200.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/one_handed"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 9 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shield" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 205.0
+margin_right = 260.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/shield"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 10 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body_armor" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 265.0
+margin_right = 320.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/body_armor"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 12 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="helmet" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 325.0
+margin_right = 380.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/helmet"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 15 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gloves" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 385.0
+margin_right = 440.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/gloves"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 14 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boots" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 445.0
+margin_right = 500.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/boots"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 7 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ring" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 505.0
+margin_right = 560.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/ring"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 16 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="amulet" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 565.0
+margin_right = 620.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/amulet"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 11 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accessory" type="Button" parent="PlaceForButtons/HBoxContainer"]
+margin_left = 625.0
+margin_right = 680.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 55, 55 )
+toggle_mode = true
+
+[node name="shadow" type="TextureRect" parent="PlaceForButtons/HBoxContainer/accessory"]
+modulate = Color( 0, 0, 0, 0.501961 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 13 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }

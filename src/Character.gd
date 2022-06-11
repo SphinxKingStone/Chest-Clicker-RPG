@@ -50,6 +50,9 @@ func add_item(item):
 func remove_item(item):
 	Inventory.remove_item(item)
 
+func sort_inventory(sort_method = "sort_rarity", item_categories = []):
+	return Inventory.sort_inventory(sort_method, item_categories)
+
 func update_stats():
 	for key in stats:
 		stats[key] = 0
@@ -86,6 +89,3 @@ func stats_if_equipped(equip_item):
 		if_equipped_stats[stat.name] += stat.value
 	
 	return if_equipped_stats
-
-func _ready():
-	pass 

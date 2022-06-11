@@ -8,8 +8,8 @@ var ITEM_LEVEL = {
 }
 
 var ITEM_CATEGORY = [
-	"one_handed",
 	"two_handed",
+	"one_handed",
 	"shield",
 	"body_armour",
 	"helmet",
@@ -46,6 +46,7 @@ var one_handed = {
 		rarity = "WHITE",
 	},
 	
+	# GREEN CATEGORY
 	copper_dagger = {
 		code = "copper_dagger",
 		name = "COPPER_DAGGER",
@@ -53,9 +54,22 @@ var one_handed = {
 		category = "one_handed",
 		
 		base_stats_data = {
-			damage = [2, 4],
+			damage = [5, 8],
 		},
-		rarity = "WHITE",
+		rarity = "GREEN",
+	},
+	
+	# BLUE CATEGORY
+	iron_rapier = {
+		code = "iron_rapier",
+		name = "IRON_RAPIER",
+		texture = load("res://assets/images/swords/iron_rapier.png"),
+		category = "one_handed",
+		
+		base_stats_data = {
+			damage = [7, 10],
+		},
+		rarity = "BLUE",
 	},
 	
 	# PURPLE CATEGORY
@@ -67,6 +81,60 @@ var one_handed = {
 		
 		base_stats_data = {
 			damage = [11, 16],
+		},
+		rarity = "PURPLE",
+	},
+}
+
+var shield = {
+	# WHITE CATEGORY
+	mahogany_shield = {
+		code = "mahogany_shield",
+		name = "MAHOGANY_SHIELD",
+		texture = load("res://assets/images/shields/mahogany_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [4, 6],
+		},
+		rarity = "WHITE",
+	},
+	
+	# GREEN CATEGORY
+	copper_shield = {
+		code = "copper_shield",
+		name = "COPPER_SHIELD",
+		texture = load("res://assets/images/shields/copper_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [6, 9],
+		},
+		rarity = "GREEN",
+	},
+	
+	# BLUE CATEGORY
+	light_silver_shield = {
+		code = "light_silver_shield",
+		name = "LIGHT_SILVER_SHIELD",
+		texture = load("res://assets/images/shields/light_silver_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [9, 14],
+		},
+		rarity = "BLUE",
+	},
+	
+	# PURPLE CATEGORY
+	astral_shield = {
+		code = "astral_shield",
+		name = "ASTRAL_SHIELD",
+		texture = load("res://assets/images/shields/astral_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [8, 14],
 		},
 		rarity = "PURPLE",
 	},
@@ -108,22 +176,6 @@ var two_handed = {
 		
 		base_stats_data = {
 			damage = [19, 27],
-		},
-		rarity = "PURPLE",
-	},
-}
-
-var shield = {
-	
-	# PURPLE CATEGORY
-	astral_shield = {
-		code = "astral_shield",
-		name = "ASTRAL_SHIELD",
-		texture = load("res://assets/images/shields/astral_shield.png"),
-		category = "one_handed",
-		
-		base_stats_data = {
-			defense = [8, 14],
 		},
 		rarity = "PURPLE",
 	},
