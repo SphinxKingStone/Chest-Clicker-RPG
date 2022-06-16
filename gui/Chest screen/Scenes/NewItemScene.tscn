@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/NewItemScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=2]
@@ -40,6 +40,12 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
@@ -264,8 +270,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Stats"]
+visible = false
+margin_right = 512.0
+margin_bottom = 33.0
+alignment = 1
+
+[node name="stat" type="Label" parent="Stats/HBoxContainer"]
+margin_left = 109.0
+margin_right = 363.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "Crit Chance: +10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tier" type="Label" parent="Stats/HBoxContainer"]
+margin_left = 367.0
+margin_top = 4.0
+margin_right = 403.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+text = "(t2)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="1" type="Label" parent="Stats"]
-margin_right = 385.0
+margin_right = 512.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
@@ -277,7 +314,7 @@ __meta__ = {
 
 [node name="2" type="Label" parent="Stats"]
 margin_top = 37.0
-margin_right = 385.0
+margin_right = 512.0
 margin_bottom = 70.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
@@ -289,7 +326,7 @@ __meta__ = {
 
 [node name="3" type="Label" parent="Stats"]
 margin_top = 74.0
-margin_right = 385.0
+margin_right = 512.0
 margin_bottom = 107.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
@@ -301,7 +338,7 @@ __meta__ = {
 
 [node name="4" type="Label" parent="Stats"]
 margin_top = 111.0
-margin_right = 385.0
+margin_right = 512.0
 margin_bottom = 144.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
@@ -313,7 +350,7 @@ __meta__ = {
 
 [node name="5" type="Label" parent="Stats"]
 margin_top = 148.0
-margin_right = 385.0
+margin_right = 512.0
 margin_bottom = 181.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
@@ -325,7 +362,7 @@ __meta__ = {
 
 [node name="6" type="Label" parent="Stats"]
 margin_top = 185.0
-margin_right = 385.0
+margin_right = 512.0
 margin_bottom = 218.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )

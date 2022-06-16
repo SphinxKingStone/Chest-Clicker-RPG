@@ -8,6 +8,7 @@ func _init():
 	OS.window_position.y = 100 # and this goes into main menu scene
 	TranslationServer.set_locale("en")
 	Audio.play_random_music()
+#	Audio.music_volume = -100
 #	clear_save()
 	load_game()
 	self.connect("tree_exiting", self, "save_game")

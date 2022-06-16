@@ -6,7 +6,6 @@ var sounds_volume = -10
 
 func _init():
 	self.connect("finished", self, "play_random_music")
-	music_volume = -100
 
 func play_music(music):
 	self.set_stream(music)
@@ -33,3 +32,4 @@ func play_sound(sound, delay = 0):
 	
 	yield(player, "finished")
 	remove_child(player)
+	player.queue_free()

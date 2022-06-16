@@ -2,6 +2,7 @@ extends Node
 
 var Equipment = preload("res://src/Equipment.gd").new()
 var Inventory = preload("res://src/Inventory.gd").new()
+var Progress
 
 var stats = {
 	"damage": 0, 
@@ -40,6 +41,7 @@ func equip_item(item):
 	var unequipped_items = Equipment.equip_item(item.duplicate(true))
 	for unequipped_item in unequipped_items:
 		Character.add_item(unequipped_item)
+	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	update_stats()
 	ItemGenerator.update_min_number() # rng boost thing
 	emit_signal("item_equipped")

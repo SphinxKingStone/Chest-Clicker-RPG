@@ -28,6 +28,7 @@ Audio="*res://src/AudioStreamPlayer.gd"
 Character="*res://src/Character.gd"
 ResourceManager="*res://src/ResourceManager.gd"
 EnemyData="*res://assets/data/EnemyData.gd"
+Progress="*res://src/Progress.gd"
 
 [display]
 

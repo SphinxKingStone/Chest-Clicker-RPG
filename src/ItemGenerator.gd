@@ -68,7 +68,7 @@ func generate_stats():
 		var stat_value = ItemGenerator.rng.randf_range(selected_stat.min, selected_stat.max)
 		stat_value = stepify(stat_value, 0.1)
 #		var stat = [stat_name, stat_value]
-		var stat = {"name": stat_name, "value": stat_value}
+		var stat = {"name": stat_name, "value": stat_value, "tier": stat_tier}
 		generated_stats.append(stat)
 	
 	return generated_stats

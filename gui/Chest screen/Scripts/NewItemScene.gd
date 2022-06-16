@@ -12,6 +12,17 @@ func _ready():
 func show_item(item):
 	self.show()
 	
+	# Temporary audio part
+	if item.rarity == "BLUE":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/win3.wav"))
+	elif item.rarity == "PURPLE":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/win1.wav"))
+#	elif item.rarity == "GREEN":
+#		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
+	
+	# Temporary progress check
+	Progress.check_item(item)
+	
 	# Setting new item background color
 	$ItemBackground.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])
 	
@@ -44,6 +55,10 @@ func show_item(item):
 		text[0] = text[0].to_upper()
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
+		
+		# adding tier into label
+#		text += " t" + str(stat.tier) + ""
+		
 		get_node("Stats/" + str(count)).text = text
 		count += 1
 	
@@ -95,16 +110,12 @@ func equip_item():
 	
 	Character.equip_item(ItemGenerator.item)
 	get_parent().get_node("EquipmentScene").update_equipment()
-	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	self.hide()
 
 func save_item():
 	clear_stats()
 	
 	Character.add_item(ItemGenerator.item)
-	for i in (500):
-		ItemGenerator.generate_item()
-		Character.add_item(ItemGenerator.item)
 #	get_parent().get_node("EquipmentScene").update_equipment()
 #	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	self.hide()

@@ -69,6 +69,7 @@ func move_character(speed, direction):
 	tw.interpolate_property($Character, "position", start_pos, new_pos, speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	yield(tw, "tween_completed")
 	remove_child(tw)
+	tw.queue_free()
 
 func move_enemy(enemy_start_position, speed, direction):
 	var tw = Tween.new()
@@ -84,6 +85,7 @@ func move_enemy(enemy_start_position, speed, direction):
 	tw.interpolate_property($Enemy, "position", start_pos, new_pos, speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	yield(tw, "tween_completed")
 	remove_child(tw)
+	tw.queue_free()
 
 func _on_Button_pressed():
 	enemy_start_position = $Enemy.position
