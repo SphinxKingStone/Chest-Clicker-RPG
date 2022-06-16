@@ -18,7 +18,7 @@ func update_stats():
 	# updating avg stats
 	for key in stats:
 		if key == "damage":
-			get_parent().get_node("AverageStats/Attack/AttackValue").text = str(stats[key])
+			get_parent().get_node("AverageStats/Attack/AttackValue").text = str(Character.get_average_damage(Character.stats))
 		if key == "life":
 			get_parent().get_node("AverageStats/Health/HealthValue").text = str(stats[key])
 

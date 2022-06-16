@@ -93,3 +93,23 @@ func stats_if_equipped(equip_item):
 		if_equipped_stats[stat.name] += stat.value
 	
 	return if_equipped_stats
+
+# base crit % = 150%
+# crit_chance = stats["critical"] / 100 + 150%
+# str gives bonus to damage that equals str/20 and applies after crit bonus if it's a crit
+# str increases base crit % by str/10. So with 100 strength crit bonus = 150% + 10% = 160%
+func get_average_damage(use_stats):
+	var damage = use_stats["damage"]
+	var bonus_dmg_to_crit = 1.5
+	bonus_dmg_to_crit += (use_stats["strength"] / 10) / 100
+	var crit_chance = (use_stats["critical"] / 100)
+	var bonus_dmg = use_stats["strength"] / 20
+	
+	var crit_dmg = (damage * bonus_dmg_to_crit) * crit_chance
+	
+	damage += bonus_dmg
+	
+	var avg_damage = damage + crit_dmg
+	
+	return stepify(avg_damage, 0.1)
+

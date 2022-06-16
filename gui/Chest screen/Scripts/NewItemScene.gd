@@ -94,11 +94,21 @@ func show_item(item):
 			bonus_node.text = bonus_text
 	
 	# Show difference if item equipped in avg stats
-	for stat in item.stats:
-		if stat.name == "damage": # change stat value to calculated attack
-			get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(stat.value) + ")" 
-		if stat.name == "life": # change stat value to calculated health
-			get_parent().get_node("AverageStats/Health/HealthBonus").text = " (+" + str(stat.value) + ")"
+	var current_avg_dmg =  Character.get_average_damage(Character.stats)
+	var if_equipped_avg_dmg = Character.get_average_damage(stats_if_equipped)
+	if current_avg_dmg < if_equipped_avg_dmg:
+		var diff = if_equipped_avg_dmg - current_avg_dmg
+		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(diff) + ")" 
+		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.Colors.bonus_text_green)
+	elif current_avg_dmg > if_equipped_avg_dmg:
+		var diff = current_avg_dmg - if_equipped_avg_dmg
+		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (-" + str(diff) + ")" 
+		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.Colors.bonus_text_red)
+#	for stat in item.stats:
+#		if stat.name == "damage": # change stat value to calculated attack
+#			get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(stat.value) + ")" 
+#		if stat.name == "life": # change stat value to calculated health
+#			get_parent().get_node("AverageStats/Health/HealthBonus").text = " (+" + str(stat.value) + ")"
 	
 
 func sell_item():
