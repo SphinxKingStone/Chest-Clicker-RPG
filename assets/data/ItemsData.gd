@@ -1,13 +1,13 @@
 extends Node
 
-var ITEM_LEVEL = {
+const ITEM_LEVEL = {
 	"WHITE": 1,
 	"GREEN": 2,
 	"BLUE": 3,
 	"PURPLE": 4,
 }
 
-var ITEM_CATEGORY = [
+const ITEM_CATEGORY = [
 	"two_handed",
 	"one_handed",
 	"shield",

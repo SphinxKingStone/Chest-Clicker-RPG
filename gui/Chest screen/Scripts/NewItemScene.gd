@@ -26,13 +26,16 @@ func show_item(item):
 	# Setting new item background color
 	$ItemBackground.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])
 	
-	# Setting new items texture and name
+	# Setting new items texture, name and other stuff
 	$ItemBackground/ItemTexture.texture = item.texture
 	$ItemName.text = item.name
+	$Cost.text = str(item.cost)
+	$ItemCategoy.text = item.category.to_upper()
+	$ItemRarity.text = item.rarity.to_upper()
 	
-	# Clearing base stats
-	for node in get_node("BaseStats").get_children():
-		node.text = ""
+	
+	# Clearing base and main stats
+	clear_stats()
 	
 	# Showing base stats in new item window
 	for stat in item.base_stats:
@@ -41,25 +44,26 @@ func show_item(item):
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
 		text[0] = text[0].to_upper()
-		get_node("BaseStats/1").text = text
-		$Cost.text = str(item.cost)
-	
-	# Clearing stats and avg stats
-	for node in get_node("Stats").get_children():
-		node.text = ""
+		
+		var new_stat_node = $BaseStats/HBoxContainer.duplicate()
+		new_stat_node.visible = true
+		new_stat_node.get_node("stat").text = text
+		$BaseStats.add_child(new_stat_node)
 	
 	# Showing stats in new item window
 	var count = 1 # helps to iterate through new item stats labels
 	for stat in item.stats:
 		var text = tr(stat.name.to_upper()) + ": " + str(stat.value)
-		text[0] = text[0].to_upper()
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
+		text[0] = text[0].to_upper()
 		
-		# adding tier into label
-#		text += " t" + str(stat.tier) + ""
+		var new_stat_node = $Stats/HBoxContainer.duplicate()
+		new_stat_node.visible = true
+		new_stat_node.get_node("stat").text = text
+		new_stat_node.get_node("tier").text = "(t" + str(stat.tier) + ")"
+		$Stats.add_child(new_stat_node)
 		
-		get_node("Stats/" + str(count)).text = text
 		count += 1
 	
 	# Clearing bonus text in stats
@@ -98,7 +102,7 @@ func show_item(item):
 	
 
 func sell_item():
-	clear_stats()
+	clear_comparison_stats()
 	
 	Character.Inventory.silver += ItemGenerator.item.cost
 	get_parent().get_node("EquipmentScene").update_silver()
@@ -106,24 +110,33 @@ func sell_item():
 	self.hide()
 	
 func equip_item():
-	clear_stats()
+	clear_comparison_stats()
 	
 	Character.equip_item(ItemGenerator.item)
 	get_parent().get_node("EquipmentScene").update_equipment()
 	self.hide()
 
 func save_item():
-	clear_stats()
+	clear_comparison_stats()
 	
 	Character.add_item(ItemGenerator.item)
 #	get_parent().get_node("EquipmentScene").update_equipment()
 #	Audio.play_sound(ResourceManager.SOUNDS["EQUIP"])
 	self.hide()
 
-func clear_stats():
+func clear_comparison_stats():
 	# clear bonus avg stats
 	get_parent().get_node("AverageStats/Attack/AttackBonus").text = ""
 	get_parent().get_node("AverageStats/Health/HealthBonus").text = ""
 	
 	# Clearing bonus text in stats
 	get_parent().get_node("StatsScene").clear_bonus_text()
+
+func clear_stats():
+	var to_remove = []
+	for child in $Stats.get_children():
+		if child.visible:
+			child.queue_free()
+	for child in $BaseStats.get_children():
+		if child.visible:
+			child.queue_free()

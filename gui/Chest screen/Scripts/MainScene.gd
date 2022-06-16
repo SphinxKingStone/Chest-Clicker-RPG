@@ -6,7 +6,7 @@ const autosave_timer = 30
 func _init():
 	OS.window_size = Vector2(360*1.5, 640*1.5) # this
 	OS.window_position.y = 100 # and this goes into main menu scene
-	TranslationServer.set_locale("en")
+	TranslationServer.set_locale("ru")
 	Audio.play_random_music()
 #	Audio.music_volume = -100
 #	clear_save()

@@ -6,10 +6,7 @@ func _ready():
 
 func set_item_data(item):
 	# Clearing data
-	for ch in get_node("Stats").get_children():
-		ch.text = ""
-	for ch in get_node("BaseStats").get_children():
-		ch.text = ""
+	clear_stats()
 	
 	# Showing name
 	var ff = get_node("ItemName").get("custom_fonts/font")
@@ -27,7 +24,12 @@ func set_item_data(item):
 		text[0] = text[0].to_upper()
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
-		get_node("BaseStats/"+str(count)).text = text
+		
+		var new_stat_node = $BaseStats/HBoxContainer.duplicate()
+		new_stat_node.visible = true
+		new_stat_node.get_node("stat").text = text
+		$BaseStats.add_child(new_stat_node)
+		
 		count += 1
 	
 	# Showing stats
@@ -37,5 +39,20 @@ func set_item_data(item):
 		text[0] = text[0].to_upper()
 		if stat.name in ["dodge", "critical", "block", "bonus_rarity"]:
 			text += "%"
-		get_node("Stats/"+str(count)).text = text
+			
+		var new_stat_node = $Stats/HBoxContainer.duplicate()
+		new_stat_node.visible = true
+		new_stat_node.get_node("stat").text = text
+		new_stat_node.get_node("tier").text = "(t" + str(stat.tier) + ")"
+		$Stats.add_child(new_stat_node)
+		
 		count += 1
+
+func clear_stats():
+	var to_remove = []
+	for child in $Stats.get_children():
+		if child.visible:
+			child.queue_free()
+	for child in $BaseStats.get_children():
+		if child.visible:
+			child.queue_free()

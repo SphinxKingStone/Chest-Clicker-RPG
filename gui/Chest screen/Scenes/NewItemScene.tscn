@@ -97,7 +97,7 @@ __meta__ = {
 margin_right = 223.0
 margin_bottom = 100.0
 custom_fonts/font = ExtResource( 2 )
-text = "Save"
+text = "SAVE_BTN"
 align = 1
 valign = 1
 __meta__ = {
@@ -197,7 +197,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="2" type="Label" parent="."]
+[node name="ItemCategoy" type="Label" parent="."]
 margin_left = 34.0
 margin_top = 366.0
 margin_right = 300.0
@@ -208,7 +208,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="3" type="Label" parent="."]
+[node name="ItemRarity" type="Label" parent="."]
 margin_left = 34.0
 margin_top = 402.0
 margin_right = 220.0
@@ -240,20 +240,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="1" type="Label" parent="BaseStats"]
-margin_right = 385.0
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseStats"]
+visible = false
+margin_right = 577.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 4 )
-text = "Attack: 13.8"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+alignment = 1
 
-[node name="2" type="Label" parent="BaseStats"]
-margin_top = 45.0
-margin_right = 385.0
-margin_bottom = 90.0
+[node name="stat" type="Label" parent="BaseStats/HBoxContainer"]
+margin_left = 177.0
+margin_right = 400.0
+margin_bottom = 45.0
 custom_fonts/font = SubResource( 4 )
 text = "Attack: 13.8"
 align = 1
@@ -296,77 +292,6 @@ margin_bottom = 29.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
 text = "(t2)"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1" type="Label" parent="Stats"]
-margin_right = 512.0
-margin_bottom = 33.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
-text = "Crit Chance: +10%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="2" type="Label" parent="Stats"]
-margin_top = 37.0
-margin_right = 512.0
-margin_bottom = 70.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
-text = "Crit Chance: +10%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="3" type="Label" parent="Stats"]
-margin_top = 74.0
-margin_right = 512.0
-margin_bottom = 107.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
-text = "Crit Chance: +10%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="4" type="Label" parent="Stats"]
-margin_top = 111.0
-margin_right = 512.0
-margin_bottom = 144.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
-text = "Crit Chance: +10%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="5" type="Label" parent="Stats"]
-margin_top = 148.0
-margin_right = 512.0
-margin_bottom = 181.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
-text = "Crit Chance: +10%"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="6" type="Label" parent="Stats"]
-margin_top = 185.0
-margin_right = 512.0
-margin_bottom = 218.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
-text = "Crit Chance: +10%"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -37,8 +37,8 @@ func generate_base_stats():
 		var stat_name = stat
 		var stat_value = ItemGenerator.rng.randf_range(item.base_stats_data[stat][0], item.base_stats_data[stat][1])
 		stat_value = stepify(stat_value, 0.1)
-		var r_stat = {"name": stat_name, "value": stat_value}
-		generated_stats.append(r_stat)
+		var base_stat = {"name": stat_name, "value": stat_value}
+		generated_stats.append(base_stat)
 	
 	return generated_stats
 
@@ -74,7 +74,7 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
-	min_number = 32
+	min_number = 38
 	var rng_number = rng.randi_range(min_number, 60)
 	
 	var rarity

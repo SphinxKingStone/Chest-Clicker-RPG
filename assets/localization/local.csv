@@ -37,10 +37,10 @@ GOLDEN_TOOTH,Golden Tooth,Золотой Зуб
 METEOR_RING,Meteor Ring,Метеоритное Кольцо
 ICY_RING,Icy Ring,Ледяное Кольцо
 SKULL,Skull,Череп
-,,
-,,
-,,
-,,
+IRON_RAPIER,Iron Rapier,Железная Рапира
+MAHOGANY_SHIELD,Mahogany Shield,Щит из Красного Дерева
+COPPER_SHIELD,Copper Shield,Медный Щит
+LIGHT_SILVER_SHIELD,Light Silver Shield,Лёгкий Серебряный Щит
 ,,
 ,,
 ,,
@@ -71,3 +71,26 @@ ATTACK,Attack,Средний Урон
 ,,
 SELL_BTN,Sell,Продать
 EQUIP_BTN,Equip,Надеть
+SAVE_BTN,Save,Сохранить
+,,
+,,
+,,
+WHITE,Common,Обычный
+GREEN,Rare,Редкий
+BLUE,Magic,Магический
+PURPLE,Epic,Эпический
+YELLOW,Legendary,Легендарный
+RED,Heroic,Героический
+,,
+,,
+,,
+TWO_HANDED,Two Handed,Двуручное
+ONE_HANDED,One Handed,Одноручное
+SHIELD,Shield,Щит
+BODY_ARMOUR,Body Armour,Доспех
+HELMET,Helmet,Шлем
+GLOVES,Gloves,Перчатки
+BOOTS,Boots,Ботинки
+RING,Ring,Кольцо
+AMULET,Amulet,Амулет
+ACCESSORY,Accessory,Аксессуар
