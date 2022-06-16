@@ -4,6 +4,7 @@ func _ready():
 	for ch in $GridContainer.get_children():
 		ch.connect("gui_input", self, "on_click", [ch])
 	Character.connect("item_equipped", self, "update_equipment")
+	update_equipment()
 
 func sell_item():
 	hide()

@@ -10,3 +10,4 @@ func check_item(item):
 		Input.vibrate_handheld(50)
 		highest_rarity = ItemsData.ITEM_LEVEL[item.rarity]
 		print_debug("New Rarity!")
+

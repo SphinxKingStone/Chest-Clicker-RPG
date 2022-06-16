@@ -14,9 +14,9 @@ func show_item(item):
 	
 	# Temporary audio part
 	if item.rarity == "BLUE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/win3.wav"))
-	elif item.rarity == "PURPLE":
 		Audio.play_sound(load("res://assets/Sounds/Sounds/win1.wav"))
+	elif item.rarity == "PURPLE":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/win3.wav"))
 #	elif item.rarity == "GREEN":
 #		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
 	

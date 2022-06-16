@@ -29,6 +29,7 @@ Character="*res://src/Character.gd"
 ResourceManager="*res://src/ResourceManager.gd"
 EnemyData="*res://assets/data/EnemyData.gd"
 Progress="*res://src/Progress.gd"
+SaveManager="*res://src/SaveManager.gd"
 
 [display]
 

@@ -122,3 +122,11 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
 script = ExtResource( 6 )
+
+[node name="clr_save" type="Button" parent="."]
+margin_left = 673.2
+margin_top = 24.0
+margin_right = 705.2
+margin_bottom = 51.0
+
+[connection signal="pressed" from="clr_save" to="." method="_on_clr_save_pressed"]

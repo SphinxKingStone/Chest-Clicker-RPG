@@ -2,7 +2,6 @@ extends Node
 
 var Equipment = preload("res://src/Equipment.gd").new()
 var Inventory = preload("res://src/Inventory.gd").new()
-var Progress
 
 var stats = {
 	"damage": 0, 
@@ -18,6 +17,9 @@ var stats = {
 }
 
 signal item_equipped
+
+func _ready():
+	update_stats()
 
 func get_stat_value(stat):
 	if !stats.has(stat):
