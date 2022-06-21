@@ -1,13 +1,15 @@
 extends Node
 
-var save_files = ["user://inventory.save", "user://equipment.save", "user://progress.save"]
+var save_files = ["user://inventory.save", "user://equipment.save", "user://progress.save", "user://achievements.save"]
 const autosave_timer = 30
 
 func _init():
-	load_game()
+#	load_game()
+	pass
 
 func _ready():
 	# timer that autosaves game
+	load_game()
 	var timer = Timer.new()
 	timer.set_wait_time(autosave_timer)
 	timer.connect("timeout", self, "save_game")
@@ -35,6 +37,10 @@ func save_game():
 			"user://progress.save":
 				save_game_file.store_var(ItemGenerator.generated_items_amount)
 				save_game_file.store_var(Character.Inventory.silver)
+			
+			# save achievements progress
+			"user://achievements.save":
+				save_game_file.store_var(Achievements.completed_achievements)
 		
 		# close file
 		save_game_file.close()
@@ -63,6 +69,10 @@ func load_game():
 			"user://progress.save":
 				ItemGenerator.generated_items_amount = save_game_file.get_var()
 				Character.Inventory.silver = save_game_file.get_var()
+			
+			# load achievement progress
+			"user://achievements.save":
+				Achievements.completed_achievements = save_game_file.get_var()
 		
 		# close file
 		save_game_file.close()

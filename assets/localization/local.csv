@@ -47,12 +47,6 @@ LIGHT_SILVER_SHIELD,Light Silver Shield,Лёгкий Серебряный Щит
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
 LIFE,Life,Здоровье
 HEALTH,Health,Живучесть
 DEFENSE,Defense,Защита
@@ -64,14 +58,15 @@ CRITICAL,Critical,Критический Урон
 BLOCK,Block,Блок
 BONUS_RARITY,Rarity,Редкость
 DAMAGE,Damage,Урон
-ATTACK,Attack,Средний Урон
+ATTACK,Attack,Ср. Урон
 ,,
 ,,
 ,,
-,,
-SELL_BTN,Sell,Продать
-EQUIP_BTN,Equip,Надеть
-SAVE_BTN,Save,Сохранить
+INFO,Info,Информация
+SELL,Sell,Продать
+EQUIP,Equip,Надеть
+SAVE,Save,Сохранить
+ACHIEVEMENT!,Achievement!,Достижение!
 ,,
 ,,
 ,,
@@ -94,3 +89,28 @@ BOOTS,Boots,Ботинки
 RING,Ring,Кольцо
 AMULET,Amulet,Амулет
 ACCESSORY,Accessory,Аксессуар
+,,
+,,
+,,
+GREEN_1,First Rare,Первый Редкий
+GREEN_1_DESCRIPTION,Get Your First Rare Item,Получить Первый Редкий Предмет
+BLUE_1,First Magic,Первый Магический
+BLUE_1_DESCRIPTION,Get Your First Magic Item,Получить Первый Магический Предмет
+PURPLE_1,First Epic,Первый Эпический
+PURPLE_1_DESCRIPTION,Get Your First Epic Item,Получить Первый Эпический Предмет
+CHESTS_10,Novice,Новичок
+CHESTS_10_DESCRIPTION,Open 10 Chests,Открыть 10 Сундуков
+CHESTS_100,Apprentice,Ученик
+CHESTS_100_DESCRIPTION,Open 100 Chests,Открыть 100 Сундуков
+CHESTS_500,Adept,Адепт
+CHESTS_500_DESCRIPTION,Open 500 Chests,Открыть 500 Сундуков
+CHESTS_1000,Expert,Эксперт
+CHESTS_1000_DESCRIPTION,Open 1000 Chests,Открыть 1000 Сундуков
+EQUIPMENT_WHITE,Common Set,Обычный Сет
+EQUIPMENT_WHITE_DESCRIPTION,Equip Common Items In Each Slot,Надеть Обычные Предметы В Каждый Слот
+EQUIPMENT_GREEN,Rare Set,Редкий Сет
+EQUIPMENT_GREEN_DESCRIPTION,Equip Rare Items In Each Slot,Надеть Редкие Предметы В Каждый Слот
+EQUIPMENT_BLUE,Magic Set,Магический Сет
+EQUIPMENT_BLUE_DESCRIPTION,Equip Magic  Items In Each Slot,Надеть Магические Предметы В Каждый Слот
+EQUIPMENT_PURPLE,Epic Set,Эпический Сет
+EQUIPMENT_PURPLE_DESCRIPTION,Equip Epic Items In Each Slot,Надеть Эпические Предметы В Каждый Слот

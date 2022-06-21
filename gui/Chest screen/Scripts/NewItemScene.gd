@@ -24,6 +24,7 @@ func show_item(item = ItemGenerator.item):
 	
 	# Temporary progress check
 	Progress.track_item(item)
+	Achievements.check_achievements()
 	
 	# Setting new item background color
 	$ItemBackground.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])

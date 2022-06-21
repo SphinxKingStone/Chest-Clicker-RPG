@@ -11,6 +11,7 @@ func _ready():
 	$EquipmentScene.update_equipment()
 	$TopSide/Silver/Amount.text = str(Character.Inventory.silver)
 	Audio.play_random_music()
+	Achievements.connect("new_achievement", self, "new_achievement")
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -21,3 +22,11 @@ func _input(event):
 
 func _on_clr_save_pressed():
 	SaveManager.clear_save()
+
+func new_achievement(ach):
+	var pop_up = ResourceManager.NODES["ACHIEVEMENTPOPUP"].instance()
+	pop_up.body_text = str(tr(ach.name) + ": " + tr(ach.description).to_lower() + ".")
+	add_child(pop_up)
+	pop_up.rect_position.y -= pop_up.rect_size.y
+	pop_up.rect_position.x = 100
+	pop_up.appear()

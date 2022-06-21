@@ -31,6 +31,8 @@ EnemyData="*res://assets/data/EnemyData.gd"
 Progress="*res://src/Progress.gd"
 SaveManager="*res://src/SaveManager.gd"
 Settings="*res://src/Settings.gd"
+AchievementsData="*res://assets/data/AchievementsData.gd"
+Achievements="*res://src/Achievements.gd"
 
 [display]
 

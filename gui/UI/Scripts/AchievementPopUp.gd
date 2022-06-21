@@ -1,11 +1,15 @@
 extends Panel
 
+var body_text = ""
 
 func _ready():
 	pass
 
 # this scene goes down by self.rect_size.y + 15 pixels and vanishes after 5 seconds
 func appear():
+	$Body.text = body_text
+#	$Panel/Head.text = head_text
+	
 	var tween = get_node("Tween")
 	var new_pos = self.rect_position + Vector2(0, self.rect_size.y + 15)
 	tween.interpolate_property(self, "rect_position",

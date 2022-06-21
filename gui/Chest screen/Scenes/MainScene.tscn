@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://gui/Chest screen/Scenes/Buttons.tscn" type="PackedScene" id=8]
 [ext_resource path="res://gui/Chest screen/Scenes/InventoryScene.tscn" type="PackedScene" id=9]
 [ext_resource path="res://gui/Chest screen/Scenes/AverageStats.tscn" type="PackedScene" id=10]
-[ext_resource path="res://gui/UI/Scenes/AchievementPopUp.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -129,11 +128,9 @@ margin_left = 673.2
 margin_top = 24.0
 margin_right = 705.2
 margin_bottom = 51.0
-
-[node name="AchievementPopUp" parent="." instance=ExtResource( 11 )]
-margin_left = 100.0
-margin_top = -100.0
-margin_right = -100.0
-margin_bottom = -1277.0
+text = "clr"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="clr_save" to="." method="_on_clr_save_pressed"]
