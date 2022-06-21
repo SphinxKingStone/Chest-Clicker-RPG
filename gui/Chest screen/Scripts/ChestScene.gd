@@ -2,6 +2,8 @@ extends Panel
 
 onready var AnimSprite = $AnimatedSprite
 
+signal chest_opened
+
 var openning = false
 
 func _ready():
@@ -13,16 +15,15 @@ func on_click():
 	if item_scene.visible or openning:
 		return
 	openning = true
-	ItemGenerator.generate_item()
-	emit_particles(ItemGenerator.item.rarity)
+	var new_item = ItemGenerator.generate_item()
+	emit_particles(new_item.rarity)
 	AnimSprite.play("open")
 	var creak = load("res://assets/Sounds/Sounds/creak1.wav")
-	get_parent().get_node("AudioStreamPlayer").play_sound(creak)
-#	var open: AudioStreamSample = load("res://assets/Sounds/Sounds/chest_open.wav")
-#	get_parent().get_node("AudioStreamPlayer").play_sound(open, 0.35)
+	Audio.play_sound(creak)
 	yield(AnimSprite, "animation_finished")
-	item_scene.show_item(ItemGenerator.item)
 	openning = false
+	emit_signal("chest_opened")
+	Progress.increase_total_chests()
 
 func set_frame_and_stop(aSprite, frame = 0):
 	if aSprite.is_playing():

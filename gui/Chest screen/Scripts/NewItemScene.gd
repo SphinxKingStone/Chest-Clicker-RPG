@@ -8,8 +8,10 @@ func _ready():
 	$HBoxContainer/EquipButton.connect("pressed", self, "equip_item")
 	#warning-ignore:return_value_discarded
 	$HBoxContainer/SaveButton.connect("pressed", self, "save_item")
+	
+	get_parent().get_node("ChestScene").connect("chest_opened", self, "show_item")
 
-func show_item(item):
+func show_item(item = ItemGenerator.item):
 	self.show()
 	
 	# Temporary audio part
@@ -21,7 +23,7 @@ func show_item(item):
 #		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
 	
 	# Temporary progress check
-	Progress.check_item(item)
+	Progress.track_item(item)
 	
 	# Setting new item background color
 	$ItemBackground.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item.rarity])

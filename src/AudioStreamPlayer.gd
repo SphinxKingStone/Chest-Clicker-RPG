@@ -1,15 +1,13 @@
 extends AudioStreamPlayer
 
 var prev_music = ""
-var music_volume = -20
-var sounds_volume = -10
 
 func _init():
 	self.connect("finished", self, "play_random_music")
 
 func play_music(music):
 	self.set_stream(music)
-	self.set_volume_db(music_volume)
+	self.set_volume_db(Settings.music_volume)
 	self.play()
 
 func play_random_music():
@@ -26,7 +24,7 @@ func play_sound(sound, delay = 0):
 	var player = AudioStreamPlayer.new()
 	player.autoplay = false
 	player.set_stream(sound)
-	player.set_volume_db(sounds_volume)
+	player.set_volume_db(Settings.sounds_volume)
 	player.play()
 	add_child(player)
 	
