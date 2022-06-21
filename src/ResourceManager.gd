@@ -40,7 +40,8 @@ const MUSIC = {
 }
 
 const NODES = {
-	"ITEM_PREVIEW": preload("res://gui/UI/Scenes/ItemPreview.tscn")
+	"ITEM_PREVIEW": preload("res://gui/UI/Scenes/ItemPreview.tscn"),
+	"ACHIEVEMENTPOPUP": preload("res://gui/UI/Scenes/AchievementPopUp.tscn"),
 }
 
 var item_info_children = []

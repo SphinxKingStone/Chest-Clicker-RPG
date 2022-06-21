@@ -104,12 +104,11 @@ func show_item(item):
 		var diff = current_avg_dmg - if_equipped_avg_dmg
 		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (-" + str(diff) + ")" 
 		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.Colors.bonus_text_red)
-#	for stat in item.stats:
-#		if stat.name == "damage": # change stat value to calculated attack
-#			get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(stat.value) + ")" 
-#		if stat.name == "life": # change stat value to calculated health
-#			get_parent().get_node("AverageStats/Health/HealthBonus").text = " (+" + str(stat.value) + ")"
 	
+#	var t = ResourceManager.NODES["ACHIEVEMENTPOPUP"].instance()
+#	get_parent().add_child(t)
+#	t.rect_position = Vector2(100, -100)
+#	t.appear()
 
 func sell_item():
 	clear_comparison_stats()
