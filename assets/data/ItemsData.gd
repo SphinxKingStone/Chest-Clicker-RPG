@@ -5,6 +5,7 @@ const ITEM_LEVEL = {
 	"GREEN": 2,
 	"BLUE": 3,
 	"PURPLE": 4,
+	"YELLOW": 5,
 }
 
 const ITEM_CATEGORY = [
@@ -84,6 +85,19 @@ var one_handed = {
 		},
 		rarity = "PURPLE",
 	},
+	
+	# YELLOW CATEGORY
+	chlorophyte_broadaxe = {
+		code = "chlorophyte_broadaxe",
+		name = "CHLOROPHYTE_BROADAXE",
+		texture = load("res://assets/images/axes/chlorophyte_broadaxe.png"),
+		category = "one_handed",
+		
+		base_stats_data = {
+			damage = [17, 25],
+		},
+		rarity = "YELLOW",
+	},
 }
 
 var shield = {
@@ -138,6 +152,19 @@ var shield = {
 		},
 		rarity = "PURPLE",
 	},
+	
+	# YELLOW CATEGORY
+	chlorophyte_shield = {
+		code = "chlorophyte_shield",
+		name = "CHLOROPHYTE_SHIELD",
+		texture = load("res://assets/images/shields/chlorophyte_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [15, 24],
+		},
+		rarity = "YELLOW",
+	},
 }
 
 var two_handed = {
@@ -178,6 +205,19 @@ var two_handed = {
 			damage = [19, 27],
 		},
 		rarity = "PURPLE",
+	},
+	
+	# YELLOW CATEGORY
+	chlorophyte_giant_axe = {
+		code = "chlorophyte_giant_axe",
+		name = "CHLOROPHYTE_GIANT_AXE",
+		texture = load("res://assets/images/axes/chlorophyte_giant_axe.png"),
+		category = "two_handed",
+		
+		base_stats_data = {
+			damage = [28, 40],
+		},
+		rarity = "YELLOW",
 	},
 }
 
@@ -233,6 +273,19 @@ var body_armour = {
 		},
 		rarity = "PURPLE",
 	},
+	
+	# YELLOW CATEGORY
+	borilla_armour = {
+		code = "borilla_armour",
+		name = "BORILLA_ARMOUR",
+		texture = load("res://assets/images/armors/borilla_armour.png"),
+		category = "body_armour",
+		
+		base_stats_data = {
+			defense = [23, 30],
+		},
+		rarity = "YELLOW",
+	},
 }
 
 var helmet = {
@@ -286,6 +339,19 @@ var helmet = {
 			defense = [13, 15],
 		},
 		rarity = "PURPLE",
+	},
+	
+	# YELLOW CATEGORY
+	borilla_helmet = {
+		code = "borilla_helmet",
+		name = "BORILLA_HELMET",
+		texture = load("res://assets/images/helmets/borilla_helmet.png"),
+		category = "helmet",
+		
+		base_stats_data = {
+			defense = [16, 22],
+		},
+		rarity = "YELLOW",
 	},
 }
 
@@ -342,6 +408,18 @@ var gloves = {
 		rarity = "PURPLE",
 	},
 	
+	# YELLOW CATEGORY
+	borilla_gloves = {
+		code = "borilla_gloves",
+		name = "BORILLA_GLOVES",
+		texture = load("res://assets/images/gloves/borilla_gloves.png"),
+		category = "gloves",
+		
+		base_stats_data = {
+			defense = [15, 22],
+		},
+		rarity = "YELLOW",
+	},
 }
 
 var boots = {
@@ -395,6 +473,19 @@ var boots = {
 			defense = [11, 15],
 		},
 		rarity = "PURPLE",
+	},
+	
+	# YELLOW CATEGORY
+	borilla_boots = {
+		code = "borilla_boots",
+		name = "BORILLA_BOOTS",
+		texture = load("res://assets/images/boots/borilla_boots.png"),
+		category = "boots",
+
+		base_stats_data = {
+			defense = [16, 23],
+		},
+		rarity = "YELLOW",
 	},
 }
 
@@ -474,6 +565,19 @@ var ring = {
 		},
 		rarity = "PURPLE",
 	},
+	
+	# YELLOW CATEGORY
+	snake_eye_ring = {
+		code = "snake_eye_ring",
+		name = "SNAKE_EYE_RING",
+		texture = load("res://assets/images/rings/snake_eye_ring.png"),
+		category = "ring",
+
+		base_stats_data = {
+			damage = [6, 12],
+		},
+		rarity = "YELLOW",
+	},
 }
 
 var amulet = {
@@ -522,11 +626,24 @@ var amulet = {
 		name = "AMBER_AMULET",
 		texture = load("res://assets/images/amulets/amber_amulet.png"),
 		category = "amulet",
-
+		
 		base_stats_data = {
 			defense = [5, 7],
 		},
 		rarity = "PURPLE",
+	},
+	
+	# YELLOW CATEGORY
+	snake_eye_amulet = {
+		code = "snake_eye_amulet",
+		name = "SNAKE_EYE_AMULET",
+		texture = load("res://assets/images/amulets/snake_eye_amulet.png"),
+		category = "amulet",
+		
+		base_stats_data = {
+			damage = [8, 15],
+		},
+		rarity = "YELLOW",
 	},
 }
 
@@ -581,6 +698,19 @@ var accessory = {
 			bonus_rarity = [6, 7],
 		},
 		rarity = "PURPLE",
+	},
+	
+	# YELLOW CATEGORY
+	silver_starfish = {
+		code = "silver_starfish",
+		name = "SILVER_STARFISH",
+		texture = load("res://assets/images/accessory/silver_starfish.png"),
+		category = "accessory",
+
+		base_stats_data = {
+			bonus_rarity = [8, 12],
+		},
+		rarity = "YELLOW",
 	},
 }
 

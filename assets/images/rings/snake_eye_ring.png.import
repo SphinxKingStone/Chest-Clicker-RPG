@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/amulet_14.png-81ca13b83c0312899437b7946b447242.stex"
+path="res://.import/snake_eye_ring.png-4b9382612e3adce75e146a53e350b3ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/amulets/amulet_14.png"
-dest_files=[ "res://.import/amulet_14.png-81ca13b83c0312899437b7946b447242.stex" ]
+source_file="res://assets/images/rings/snake_eye_ring.png"
+dest_files=[ "res://.import/snake_eye_ring.png-4b9382612e3adce75e146a53e350b3ae.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ring_8.png-f2ce6e786f94d8308bc74b3adc2f6a17.stex"
+path="res://.import/borilla_gloves.png-8dd7fa46b2d1cce89385db77e15a434a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/rings/ring_8.png"
-dest_files=[ "res://.import/ring_8.png-f2ce6e786f94d8308bc74b3adc2f6a17.stex" ]
+source_file="res://assets/images/gloves/borilla_gloves.png"
+dest_files=[ "res://.import/borilla_gloves.png-8dd7fa46b2d1cce89385db77e15a434a.stex" ]
 
 [params]
 

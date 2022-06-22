@@ -8,12 +8,14 @@ const ITEM_BACKGROUNDS = {
 	"GREEN": preload("res://assets/StyleBoxes/item_green_bg.tres"),
 	"BLUE": preload("res://assets/StyleBoxes/item_blue_bg.tres"),
 	"PURPLE": preload("res://assets/StyleBoxes/item_purple_bg.tres"),
+	"YELLOW": preload("res://assets/StyleBoxes/item_yellow_bg.tres"),
 }
 
 const PARTICLES_COLORS = {
 	"GREEN": preload("res://assets/particle materials/green_color_ramp.tres"),
 	"BLUE": preload("res://assets/particle materials/blue_color_ramp.tres"),
 	"PURPLE": preload("res://assets/particle materials/purple_color_ramp.tres"),
+	"YELLOW": preload("res://assets/particle materials/yellow_color_ramp.tres"),
 }
 
 const SOUNDS = {

@@ -19,6 +19,8 @@ func show_item(item = ItemGenerator.item):
 		Audio.play_sound(load("res://assets/Sounds/Sounds/win1.wav"))
 	elif item.rarity == "PURPLE":
 		Audio.play_sound(load("res://assets/Sounds/Sounds/win3.wav"))
+	elif item.rarity == "YELLOW":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
 #	elif item.rarity == "GREEN":
 #		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
 	

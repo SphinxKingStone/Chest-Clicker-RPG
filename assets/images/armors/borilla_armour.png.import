@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield_94.png-3015928ba3785d6275c3b0f0c9a3ae0f.stex"
+path="res://.import/borilla_armour.png-1b3f0e7a5c780141b06f5528950c3ef6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/shields/shield_94.png"
-dest_files=[ "res://.import/shield_94.png-3015928ba3785d6275c3b0f0c9a3ae0f.stex" ]
+source_file="res://assets/images/armors/borilla_armour.png"
+dest_files=[ "res://.import/borilla_armour.png-1b3f0e7a5c780141b06f5528950c3ef6.stex" ]
 
 [params]
 

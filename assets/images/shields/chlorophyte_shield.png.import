@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile086.png-d35a099642c40545ace9296c1ae917bf.stex"
+path="res://.import/chlorophyte_shield.png-20fdcfe1ce254d9b57fd2b9f7a6e9bd5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/helmets/tile086.png"
-dest_files=[ "res://.import/tile086.png-d35a099642c40545ace9296c1ae917bf.stex" ]
+source_file="res://assets/images/shields/chlorophyte_shield.png"
+dest_files=[ "res://.import/chlorophyte_shield.png-20fdcfe1ce254d9b57fd2b9f7a6e9bd5.stex" ]
 
 [params]
 

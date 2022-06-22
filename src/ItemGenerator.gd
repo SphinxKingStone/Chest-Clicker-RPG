@@ -77,12 +77,14 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
-	min_number = 66
+	min_number = 88
 	var rng_number = rng.randi_range(1, 100)
 	rng_number += min_number
 	
 	var rarity
-	if rng_number > 123:
+	if rng_number > 131:
+		rarity = "YELLOW"
+	elif rng_number > 123:
 		rarity = "PURPLE"
 	elif rng_number > 113:
 		rarity = "BLUE"
@@ -110,3 +112,7 @@ func roll_item_base(rarity):
 			var my_random_number = rng.randi_range(0, ItemsStorage.purple_items.size() - 1)
 			item = ItemsStorage.purple_items[my_random_number]
 			item.cost = rng.randi_range(40, 75)
+		"YELLOW":
+			var my_random_number = rng.randi_range(0, ItemsStorage.yellow_items.size() - 1)
+			item = ItemsStorage.yellow_items[my_random_number]
+			item.cost = rng.randi_range(80, 125)
