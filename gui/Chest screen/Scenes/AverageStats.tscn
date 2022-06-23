@@ -23,8 +23,7 @@ __meta__ = {
 }
 
 [node name="AttackName" type="Label" parent="."]
-margin_left = 5.0
-margin_right = 165.0
+margin_right = 160.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 1 )
 text = "ATTACK"
@@ -33,8 +32,8 @@ __meta__ = {
 }
 
 [node name="Attack" type="HBoxContainer" parent="."]
-margin_left = 125.0
-margin_right = 345.0
+margin_left = 120.0
+margin_right = 340.0
 margin_bottom = 40.0
 alignment = 2
 __meta__ = {
@@ -66,9 +65,8 @@ __meta__ = {
 }
 
 [node name="DefenseName" type="Label" parent="."]
-margin_left = 5.0
 margin_top = 40.0
-margin_right = 165.0
+margin_right = 160.0
 margin_bottom = 73.0
 custom_fonts/font = SubResource( 1 )
 text = "HEALTH"
@@ -77,9 +75,9 @@ __meta__ = {
 }
 
 [node name="Health" type="HBoxContainer" parent="."]
-margin_left = 125.0
+margin_left = 120.0
 margin_top = 40.0
-margin_right = 345.0
+margin_right = 340.0
 margin_bottom = 80.0
 alignment = 2
 __meta__ = {
