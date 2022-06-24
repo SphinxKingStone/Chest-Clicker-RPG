@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://gui/Chest screen/Scenes/Buttons.tscn" type="PackedScene" id=8]
 [ext_resource path="res://gui/Chest screen/Scenes/InventoryScene.tscn" type="PackedScene" id=9]
 [ext_resource path="res://gui/Chest screen/Scenes/AverageStats.tscn" type="PackedScene" id=10]
-[ext_resource path="res://gui/Chest screen/Scripts/GearLevelBar.gd" type="Script" id=11]
+[ext_resource path="res://gui/Chest screen/Scenes/GearLevel.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -24,29 +24,6 @@ font_data = ExtResource( 5 )
 size = 36
 outline_size = 1
 outline_color = Color( 0.290196, 0.454902, 0.290196, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 5 )
-
-[sub_resource type="Gradient" id=3]
-offsets = PoolRealArray( 0.533333 )
-colors = PoolColorArray( 1, 1, 1, 0.25098 )
-
-[sub_resource type="GradientTexture" id=4]
-gradient = SubResource( 3 )
-
-[sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 )
-colors = PoolColorArray( 0.807843, 0.807843, 0.807843, 1, 0.0392157, 0.756863, 0.133333, 1, 0.0509804, 0.388235, 0.823529, 1, 0.47451, 0.0509804, 0.823529, 1, 0.921569, 0.866667, 0.0588235, 1, 0.813477, 0.139971, 0.0555973, 1 )
-
-[sub_resource type="GradientTexture" id=6]
-gradient = SubResource( 5 )
-width = 300
-
-[sub_resource type="DynamicFont" id=7]
-size = 40
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
@@ -68,10 +45,10 @@ __meta__ = {
 }
 
 [node name="ChestScene" parent="." instance=ExtResource( 2 )]
-margin_left = 91.9627
-margin_top = 938.031
-margin_right = 331.963
-margin_bottom = 1110.03
+margin_left = 82.0
+margin_top = 930.0
+margin_right = 322.0
+margin_bottom = 1102.0
 rect_scale = Vector2( 2, 2 )
 
 [node name="Buttons" parent="." instance=ExtResource( 8 )]
@@ -159,40 +136,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GearLevelBar" type="TextureProgress" parent="."]
-margin_left = 15.0
-margin_top = 425.0
-margin_right = 325.0
-margin_bottom = 433.0
-max_value = 10.0
-texture_under = SubResource( 4 )
-texture_progress = SubResource( 6 )
-nine_patch_stretch = true
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GearLevelText" type="Label" parent="."]
-margin_left = 15.0
-margin_top = 375.0
-margin_right = 236.0
-margin_bottom = 416.0
-custom_fonts/font = SubResource( 7 )
-text = "Gear Level:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GearLevelNumber" type="Label" parent="."]
-margin_left = 215.0
-margin_top = 375.0
-margin_right = 235.0
-margin_bottom = 416.0
-custom_fonts/font = SubResource( 7 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="GearLevel" parent="." instance=ExtResource( 11 )]
 
 [connection signal="pressed" from="clr_save" to="." method="_on_clr_save_pressed"]

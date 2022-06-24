@@ -88,7 +88,7 @@ position = Vector2( 560, 344 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 flip_h = true
 
@@ -97,6 +97,7 @@ position = Vector2( 180, 330 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="character_health" type="TextureProgress" parent="."]

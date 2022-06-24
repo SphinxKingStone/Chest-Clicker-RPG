@@ -38,6 +38,15 @@ func show_item(item = ItemGenerator.item):
 	$ItemCategoy.text = item.category.to_upper()
 	$ItemRarity.text = item.rarity.to_upper()
 	
+	var part = $ItemBackground/Particles2D
+	var amount = (ItemsData.ITEM_LEVEL[item.rarity]-3) * 4
+	if amount > 0:
+		part.emitting = true
+		part.self_modulate.a = 1
+		part.amount = amount
+	else:
+		part.emitting = false
+		part.self_modulate.a = 0
 	
 	# Clearing base and main stats
 	clear_stats()
@@ -110,10 +119,6 @@ func show_item(item = ItemGenerator.item):
 		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (-" + str(diff) + ")" 
 		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.Colors.bonus_text_red)
 	
-#	var t = ResourceManager.NODES["ACHIEVEMENTPOPUP"].instance()
-#	get_parent().add_child(t)
-#	t.rect_position = Vector2(100, -100)
-#	t.appear()
 
 func sell_item():
 	clear_comparison_stats()

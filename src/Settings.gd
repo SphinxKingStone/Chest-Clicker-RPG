@@ -11,3 +11,4 @@ var language = "en"
 func _ready():
 	if test_mode:
 		music_volume = -100
+		sounds_volume = -15

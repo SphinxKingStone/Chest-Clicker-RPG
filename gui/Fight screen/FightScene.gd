@@ -5,6 +5,8 @@ var enemy_start_position
 var enemy_name = "skeleton" # will be just enemy.name
 
 func _ready():
+	OS.window_size = Vector2(360*1.5, 640*1.5) # this
+	OS.window_position.y = 100 # and this goes into main menu scene
 	character_start_position = $Character.position
 	$Character.connect("frame_changed", self, "player_attack_frame")
 	$Enemy.connect("frame_changed", self, "enemy_attack_frame")

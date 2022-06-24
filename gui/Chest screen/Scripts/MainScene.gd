@@ -25,7 +25,9 @@ func _on_clr_save_pressed():
 
 func new_achievement(ach):
 	var pop_up = ResourceManager.NODES["ACHIEVEMENTPOPUP"].instance()
-	pop_up.body_text = str(tr(ach.name) + ": " + tr(ach.description).to_lower() + ".")
+#	pop_up.body_text = str(tr(ach.name) + ": " + tr(ach.description).to_lower())
+	pop_up.head_text = tr(ach.name)
+	pop_up.body_text = tr(ach.description)
 	add_child(pop_up)
 	pop_up.rect_position.y -= pop_up.rect_size.y
 	pop_up.rect_position.x = 100
