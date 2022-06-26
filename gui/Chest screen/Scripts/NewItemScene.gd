@@ -82,6 +82,9 @@ func show_item(item = ItemGenerator.item):
 		new_stat_node.visible = true
 		new_stat_node.get_node("stat").text = text
 		new_stat_node.get_node("tier").text = "(t" + str(stat.tier) + ")"
+		if stat.tier > 6:
+			new_stat_node.get_node("stat").set("custom_colors/font_color", ResourceManager.bonus_text_purple)
+			new_stat_node.get_node("tier").set("custom_colors/font_color", ResourceManager.bonus_text_purple)
 		$Stats.add_child(new_stat_node)
 		
 		count += 1
@@ -99,14 +102,14 @@ func show_item(item = ItemGenerator.item):
 			var bonus_text
 			if current_stat > stats_if_equipped[eq_stat]: 
 				difference = current_stat - stats_if_equipped[eq_stat]
-				bonus_node.set("custom_colors/font_color", ResourceManager.Colors.bonus_text_red)
+				bonus_node.set("custom_colors/font_color", ResourceManager.bonus_text_red)
 				if eq_stat in ["dodge", "critical", "block", "bonus_rarity"]:
 					bonus_text = " (-" + str(difference) + "%)"
 				else:
 					bonus_text = " (-" + str(difference) + ")"
 			else:
 				difference = stats_if_equipped[eq_stat] - current_stat
-				bonus_node.set("custom_colors/font_color", ResourceManager.Colors.bonus_text_green)
+				bonus_node.set("custom_colors/font_color", ResourceManager.bonus_text_green)
 				if eq_stat in ["dodge", "critical", "block", "bonus_rarity"]:
 					bonus_text = " (+" + str(difference) + "%)"
 				else:
@@ -119,11 +122,11 @@ func show_item(item = ItemGenerator.item):
 	if current_avg_dmg < if_equipped_avg_dmg:
 		var diff = if_equipped_avg_dmg - current_avg_dmg
 		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(diff) + ")" 
-		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.Colors.bonus_text_green)
+		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.bonus_text_green)
 	elif current_avg_dmg > if_equipped_avg_dmg:
 		var diff = current_avg_dmg - if_equipped_avg_dmg
 		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (-" + str(diff) + ")" 
-		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.Colors.bonus_text_red)
+		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.bonus_text_red)
 	
 
 func sell_item():

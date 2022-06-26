@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ring_7.png-0ed634426ed3249a78c0ed5a264cfa3b.stex"
+path="res://.import/royal_boots.png-1b6eef728c66ea7a2081c10e848f83f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/rings/ring_7.png"
-dest_files=[ "res://.import/ring_7.png-0ed634426ed3249a78c0ed5a264cfa3b.stex" ]
+source_file="res://assets/images/boots/royal_boots.png"
+dest_files=[ "res://.import/royal_boots.png-1b6eef728c66ea7a2081c10e848f83f0.stex" ]
 
 [params]
 

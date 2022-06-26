@@ -20,7 +20,6 @@ width = 300
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
-outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
@@ -98,6 +97,8 @@ margin_left = 16.0
 margin_right = 237.0
 margin_bottom = 41.0
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 0.807843 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Gear Level:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -108,6 +109,8 @@ margin_left = 216.0
 margin_right = 236.0
 margin_bottom = 41.0
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 0.807843 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false

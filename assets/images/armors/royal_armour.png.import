@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield_141.png-bf7d5d7db5e704440a66ad6ddf446f46.stex"
+path="res://.import/royal_armour.png-0441f743de3b68675c5cb3a9e4dbaf01.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/shields/shield_141.png"
-dest_files=[ "res://.import/shield_141.png-bf7d5d7db5e704440a66ad6ddf446f46.stex" ]
+source_file="res://assets/images/armors/royal_armour.png"
+dest_files=[ "res://.import/royal_armour.png-0441f743de3b68675c5cb3a9e4dbaf01.stex" ]
 
 [params]
 

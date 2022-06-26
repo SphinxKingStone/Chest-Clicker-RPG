@@ -129,6 +129,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/SaveButton"]
 margin_right = 223.0
 margin_bottom = 100.0
+mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
 text = "SAVE"
 align = 1
@@ -158,6 +159,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/SellButton"]
 margin_right = 223.0
 margin_bottom = 100.0
+mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
 text = "SELL"
 align = 1
@@ -187,6 +189,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/EquipButton"]
 margin_right = 223.0
 margin_bottom = 100.0
+mouse_filter = 1
 custom_fonts/font = ExtResource( 2 )
 text = "EQUIP"
 align = 1
@@ -303,19 +306,21 @@ margin_left = 288.0
 margin_top = 214.0
 margin_right = 673.0
 margin_bottom = 447.0
+mouse_filter = 2
+size_flags_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Stats"]
 visible = false
-margin_right = 512.0
+margin_right = 385.0
 margin_bottom = 33.0
 alignment = 1
 
 [node name="stat" type="Label" parent="Stats/HBoxContainer"]
-margin_left = 109.0
-margin_right = 363.0
+margin_left = 45.0
+margin_right = 299.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
@@ -326,9 +331,9 @@ __meta__ = {
 }
 
 [node name="tier" type="Label" parent="Stats/HBoxContainer"]
-margin_left = 367.0
+margin_left = 303.0
 margin_top = 4.0
-margin_right = 403.0
+margin_right = 339.0
 margin_bottom = 29.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )

@@ -9,6 +9,7 @@ var total_rarities = {
 	"BLUE": 0,
 	"PURPLE": 0,
 	"YELLOW": 0,
+	"RED": 0,
 }
  
 func _ready():

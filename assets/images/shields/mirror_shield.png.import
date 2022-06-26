@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_165.png-893c402c52a57d53876234d26b0b9d73.stex"
+path="res://.import/mirror_shield.png-da85030528bbff1c8e26877225c77d6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/swords/sword_165.png"
-dest_files=[ "res://.import/sword_165.png-893c402c52a57d53876234d26b0b9d73.stex" ]
+source_file="res://assets/images/shields/mirror_shield.png"
+dest_files=[ "res://.import/mirror_shield.png-da85030528bbff1c8e26877225c77d6e.stex" ]
 
 [params]
 

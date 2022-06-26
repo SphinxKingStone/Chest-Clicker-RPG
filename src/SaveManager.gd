@@ -37,6 +37,10 @@ func save_game():
 			"user://progress.save":
 				save_game_file.store_var(ItemGenerator.generated_items_amount)
 				save_game_file.store_var(Character.Inventory.silver)
+				save_game_file.store_var(Progress.highest_rarity)
+				save_game_file.store_var(Progress.total_chests)
+				save_game_file.store_var(Progress.total_items)
+				save_game_file.store_var(Progress.total_rarities)
 			
 			# save achievements progress
 			"user://achievements.save":
@@ -69,6 +73,10 @@ func load_game():
 			"user://progress.save":
 				ItemGenerator.generated_items_amount = save_game_file.get_var()
 				Character.Inventory.silver = save_game_file.get_var()
+				Progress.highest_rarity = save_game_file.get_var()
+				Progress.total_chests = save_game_file.get_var()
+				Progress.total_items = save_game_file.get_var()
+				Progress.total_rarities = save_game_file.get_var()
 			
 			# load achievement progress
 			"user://achievements.save":

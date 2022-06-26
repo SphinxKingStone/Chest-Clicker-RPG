@@ -13,7 +13,7 @@
 [ext_resource path="res://assets/images/amulets/amber_amulet.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/armors/armor_136.png" type="Texture" id=12]
 [ext_resource path="res://assets/images/accessory/lit_torch.png" type="Texture" id=13]
-[ext_resource path="res://assets/images/gloves/copper_gloves.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/shadows/copper_gloves.png" type="Texture" id=14]
 [ext_resource path="res://assets/images/helmets/helmet_60.png" type="Texture" id=15]
 [ext_resource path="res://assets/images/rings/gold_ring.png" type="Texture" id=16]
 
@@ -34,7 +34,8 @@ corner_radius_bottom_left = 6
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
-outline_color = Color( 0, 0, 0, 1 )
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.615686 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 4 )
@@ -317,7 +318,6 @@ __meta__ = {
 }
 
 [node name="Menu" type="Panel" parent="."]
-visible = false
 self_modulate = Color( 1, 1, 1, 0.921569 )
 margin_left = 88.5079
 margin_top = 121.09

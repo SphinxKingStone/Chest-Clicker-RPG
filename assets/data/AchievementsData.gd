@@ -61,6 +61,21 @@ var achievements = {
 		}]
 	},
 	
+	red_1 = {
+		name = "RED_1",
+		description = "RED_1_DESCRIPTION",
+		reqs = [{
+			category = "progress",
+			variable = "total_rarities",
+			field = "RED",
+			amount = 1
+		}],
+		rewards = [{
+			type = "silver",
+			amount = 5000
+		}]
+	},
+	
 	chests_10 = {
 		name = "CHESTS_10", # chests lover
 		description = "CHESTS_10_DESCRIPTION", # open 100 chests
@@ -72,6 +87,20 @@ var achievements = {
 		rewards = [{
 			type = "silver",
 			amount = 10
+		}]
+	},
+	
+	chests_50 = {
+		name = "CHESTS_50",
+		description = "CHESTS_50_DESCRIPTION",
+		reqs = [{
+			category = "progress",
+			variable = "total_chests",
+			amount = 50
+		}],
+		rewards = [{
+			type = "silver",
+			amount = 50
 		}]
 	},
 	
@@ -114,6 +143,20 @@ var achievements = {
 		rewards = [{
 			type = "silver",
 			amount = 1000
+		}]
+	},
+	
+	chests_10000 = {
+		name = "CHESTS_10000", 
+		description = "CHESTS_10000_DESCRIPTION", 
+		reqs = [{
+			category = "progress",
+			variable = "total_chests",
+			amount = 10000
+		}],
+		rewards = [{
+			type = "silver",
+			amount = 10000
 		}]
 	},
 	
@@ -189,6 +232,21 @@ var achievements = {
 		rewards = [{
 			type = "silver",
 			amount = 8500
+		}]
+	},
+	
+	equipment_red = {
+		name = "EQUIPMENT_RED",
+		description = "EQUIPMENT_RED_DESCRIPTION",
+		reqs = [{
+			category = "equipment",
+			variable = "gear",
+			amount = "all",
+			rarity = "RED"
+		}],
+		rewards = [{
+			type = "silver",
+			amount = 20000
 		}]
 	},
 }

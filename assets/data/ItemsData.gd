@@ -6,6 +6,7 @@ const ITEM_LEVEL = {
 	"BLUE": 3,
 	"PURPLE": 4,
 	"YELLOW": 5,
+	"RED": 6,
 }
 
 const ITEM_CATEGORY = [
@@ -98,6 +99,19 @@ var one_handed = {
 		},
 		rarity = "YELLOW",
 	},
+	
+	# RED CATEGORY
+	shark_sword = {
+		code = "shark_sword",
+		name = "SHARK_SWORD",
+		texture = load("res://assets/images/swords/shark_sword.png"),
+		category = "one_handed",
+		
+		base_stats_data = {
+			damage = [26, 39],
+		},
+		rarity = "RED",
+	},
 }
 
 var shield = {
@@ -165,6 +179,19 @@ var shield = {
 		},
 		rarity = "YELLOW",
 	},
+	
+	# RED CATEGORY
+	mirror_shield = {
+		code = "mirror_shield",
+		name = "MIRROR_SHIELD",
+		texture = load("res://assets/images/shields/mirror_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [25, 39],
+		},
+		rarity = "RED",
+	},
 }
 
 var two_handed = {
@@ -218,6 +245,19 @@ var two_handed = {
 			damage = [28, 40],
 		},
 		rarity = "YELLOW",
+	},
+	
+	# RED CATEGORY
+	wide_sword = {
+		code = "wide_sword",
+		name = "WIDE_SWORD",
+		texture = load("res://assets/images/swords/wide_sword.png"),
+		category = "two_handed",
+		
+		base_stats_data = {
+			damage = [41, 58],
+		},
+		rarity = "RED",
 	},
 }
 
@@ -286,6 +326,19 @@ var body_armour = {
 		},
 		rarity = "YELLOW",
 	},
+	
+	# RED CATEGORY
+	royal_armour = {
+		code = "royal_armour",
+		name = "ROYAL_ARMOUR",
+		texture = load("res://assets/images/armors/royal_armour.png"),
+		category = "body_armour",
+		
+		base_stats_data = {
+			defense = [31, 40],
+		},
+		rarity = "RED",
+	},
 }
 
 var helmet = {
@@ -352,6 +405,19 @@ var helmet = {
 			defense = [16, 22],
 		},
 		rarity = "YELLOW",
+	},
+	
+	# RED CATEGORY
+	royal_helmet = {
+		code = "royal_helmet",
+		name = "ROYAL_HELMET",
+		texture = load("res://assets/images/helmets/royal_helmet.png"),
+		category = "helmet",
+		
+		base_stats_data = {
+			defense = [23, 30],
+		},
+		rarity = "RED",
 	},
 }
 
@@ -420,6 +486,19 @@ var gloves = {
 		},
 		rarity = "YELLOW",
 	},
+	
+	# RED CATEGORY
+	royal_gloves = {
+		code = "royal_gloves",
+		name = "ROYAL_GLOVES",
+		texture = load("res://assets/images/gloves/royal_gloves.png"),
+		category = "gloves",
+		
+		base_stats_data = {
+			defense = [23, 30],
+		},
+		rarity = "RED",
+	},
 }
 
 var boots = {
@@ -486,6 +565,19 @@ var boots = {
 			defense = [16, 23],
 		},
 		rarity = "YELLOW",
+	},
+	
+	# RED CATEGORY
+	royal_boots = {
+		code = "royal_boots",
+		name = "ROYAL_BOOTS",
+		texture = load("res://assets/images/boots/royal_boots.png"),
+		category = "boots",
+
+		base_stats_data = {
+			defense = [24, 30],
+		},
+		rarity = "RED",
 	},
 }
 
@@ -561,7 +653,7 @@ var ring = {
 		category = "ring",
 
 		base_stats_data = {
-			defense = [11, 14],
+			defense = [2, 5],
 		},
 		rarity = "PURPLE",
 	},
@@ -577,6 +669,31 @@ var ring = {
 			damage = [6, 12],
 		},
 		rarity = "YELLOW",
+	},
+	
+	chlorophyte_ring = {
+		code = "chlorophyte_ring",
+		name = "CHLOROPHYTE_RING",
+		texture = load("res://assets/images/rings/chlorophyte_ring.png"),
+		category = "ring",
+
+		base_stats_data = {
+			defense = [6, 9],
+		},
+		rarity = "YELLOW",
+	},
+	
+	# RED CATEGORY
+	ring_of_sight = {
+		code = "ring_of_sight",
+		name = "RING_OF_SIGHT",
+		texture = load("res://assets/images/rings/ring_of_sight.png"),
+		category = "ring",
+
+		base_stats_data = {
+			damage = [13, 22],
+		},
+		rarity = "RED",
 	},
 }
 
@@ -645,6 +762,19 @@ var amulet = {
 		},
 		rarity = "YELLOW",
 	},
+	
+	# RED CATEGORY
+	royal_amulet = {
+		code = "royal_amulet",
+		name = "ROYAL_AMULET",
+		texture = load("res://assets/images/amulets/royal_amulet.png"),
+		category = "amulet",
+		
+		base_stats_data = {
+			damage = [16, 27],
+		},
+		rarity = "RED",
+	},
 }
 
 var accessory = {
@@ -711,6 +841,19 @@ var accessory = {
 			bonus_rarity = [8, 12],
 		},
 		rarity = "YELLOW",
+	},
+	
+	# RED CATEGORY
+	ancient_coin = {
+		code = "ancient_coin",
+		name = "ANCIENT_COIN",
+		texture = load("res://assets/images/accessory/ancient_coin.png"),
+		category = "accessory",
+
+		base_stats_data = {
+			bonus_rarity = [13, 20],
+		},
+		rarity = "RED",
 	},
 }
 

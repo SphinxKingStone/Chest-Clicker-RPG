@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/amulet_13.png-eb2c23efa714f2de8a26b99bb80227cd.stex"
+path="res://.import/wide_sword.png-7d1ef4000afde98aac5a2384c11efef7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/amulets/amulet_13.png"
-dest_files=[ "res://.import/amulet_13.png-eb2c23efa714f2de8a26b99bb80227cd.stex" ]
+source_file="res://assets/images/swords/wide_sword.png"
+dest_files=[ "res://.import/wide_sword.png-7d1ef4000afde98aac5a2384c11efef7.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile100.png-00dfe8d93cd86bb4996fe34e8cd26180.stex"
+path="res://.import/ancient_coin.png-fff84c69f344375f438cdf0f01dd6a98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/accessory/tile100.png"
-dest_files=[ "res://.import/tile100.png-00dfe8d93cd86bb4996fe34e8cd26180.stex" ]
+source_file="res://assets/images/accessory/ancient_coin.png"
+dest_files=[ "res://.import/ancient_coin.png-fff84c69f344375f438cdf0f01dd6a98.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile067.png-6681a78ed4d5519a321f5a466e616a6a.stex"
+path="res://.import/royal_gloves.png-75e0ff99e1e893b86fdbd15929466bf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/boots/tile067.png"
-dest_files=[ "res://.import/tile067.png-6681a78ed4d5519a321f5a466e616a6a.stex" ]
+source_file="res://assets/images/gloves/royal_gloves.png"
+dest_files=[ "res://.import/royal_gloves.png-75e0ff99e1e893b86fdbd15929466bf0.stex" ]
 
 [params]
 

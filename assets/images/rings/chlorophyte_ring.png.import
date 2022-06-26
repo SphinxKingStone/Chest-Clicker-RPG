@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/helmet_167.png-9c3e60bf1bf87abf05c5976a1e1e9108.stex"
+path="res://.import/chlorophyte_ring.png-709ca198acb9433b1b00b2fd850d1380.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/helmets/helmet_167.png"
-dest_files=[ "res://.import/helmet_167.png-9c3e60bf1bf87abf05c5976a1e1e9108.stex" ]
+source_file="res://assets/images/rings/chlorophyte_ring.png"
+dest_files=[ "res://.import/chlorophyte_ring.png-709ca198acb9433b1b00b2fd850d1380.stex" ]
 
 [params]
 

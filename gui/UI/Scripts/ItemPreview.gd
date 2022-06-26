@@ -44,6 +44,9 @@ func set_item_data(item):
 		new_stat_node.visible = true
 		new_stat_node.get_node("stat").text = text
 		new_stat_node.get_node("tier").text = "(t" + str(stat.tier) + ")"
+		if stat.tier > 6:
+			new_stat_node.get_node("stat").set("custom_colors/font_color", ResourceManager.bonus_text_purple)
+			new_stat_node.get_node("tier").set("custom_colors/font_color", ResourceManager.bonus_text_purple)
 		$Stats.add_child(new_stat_node)
 		
 		count += 1

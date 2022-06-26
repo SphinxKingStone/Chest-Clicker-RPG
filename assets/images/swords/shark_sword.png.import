@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ring_19.png-fcbcf65528d508050c295973ecb48de4.stex"
+path="res://.import/shark_sword.png-746362169b3568275669b8a07fa66e66.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/rings/ring_19.png"
-dest_files=[ "res://.import/ring_19.png-fcbcf65528d508050c295973ecb48de4.stex" ]
+source_file="res://assets/images/swords/shark_sword.png"
+dest_files=[ "res://.import/shark_sword.png-746362169b3568275669b8a07fa66e66.stex" ]
 
 [params]
 

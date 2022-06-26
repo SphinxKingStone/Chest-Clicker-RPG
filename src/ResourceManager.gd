@@ -1,6 +1,20 @@
 extends Node
 
-const Colors = preload("res://assets/data/Colors.gd")
+const button_background_normal = Color("0eab00")
+const button_background_pressed = Color("075400")
+const bonus_text_green = Color("0fff00")
+const bonus_text_red = Color("ff0000")
+#const bonus_text_purple = Color("790dd2")
+const bonus_text_purple = Color("7f5399")
+
+const rarity_color = {
+	0: Color("cececece"),
+	1: Color("0ac122"),
+	2: Color("0d63d2"),
+	3: Color("790dd2"),
+	4: Color("ebdd0f"),
+	5: Color("cf240e"),
+}
 
 const ITEM_BACKGROUNDS = {
 	"GREY": preload("res://assets/StyleBoxes/item_light_gray_bg.tres"), # for no item
@@ -9,6 +23,7 @@ const ITEM_BACKGROUNDS = {
 	"BLUE": preload("res://assets/StyleBoxes/item_blue_bg.tres"),
 	"PURPLE": preload("res://assets/StyleBoxes/item_purple_bg.tres"),
 	"YELLOW": preload("res://assets/StyleBoxes/item_yellow_bg.tres"),
+	"RED": preload("res://assets/StyleBoxes/item_red_bg.tres"),
 }
 
 const PARTICLES_COLORS = {
@@ -16,6 +31,7 @@ const PARTICLES_COLORS = {
 	"BLUE": preload("res://assets/particle materials/blue_color_ramp.tres"),
 	"PURPLE": preload("res://assets/particle materials/purple_color_ramp.tres"),
 	"YELLOW": preload("res://assets/particle materials/yellow_color_ramp.tres"),
+	"RED": preload("res://assets/particle materials/red_color_ramp.tres"),
 }
 
 const SOUNDS = {
