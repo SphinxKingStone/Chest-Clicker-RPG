@@ -49,7 +49,7 @@ func update_equipment():
 		texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[Character.Equipment.get_slot(slot).rarity])
 
 func update_silver():
-	get_parent().get_node("TopSide/Silver/Amount").text = str(Character.Inventory.silver)
+	get_parent().get_node("Amount").text = str(Character.Inventory.silver)
 
 func on_click(event, node):
 	if event is InputEventScreenTouch:

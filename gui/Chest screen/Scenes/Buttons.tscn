@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/images/bags/bag_12.png" type="Texture" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/Buttons.gd" type="Script" id=2]
 [ext_resource path="res://assets/StyleBoxes/button_background_normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://assets/images/helmets/helmet_178.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/accessory/chalice.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/accessory/tile002.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.486275, 0.486275, 0.486275, 0 )
@@ -91,6 +92,30 @@ show_behind_parent = true
 margin_left = -3.0
 margin_top = -6.0
 margin_right = 73.0
+margin_bottom = 70.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exploring" type="TextureButton" parent="."]
+margin_top = 220.0
+margin_right = 64.0
+margin_bottom = 284.0
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Exploring"]
+show_behind_parent = true
+margin_left = -6.0
+margin_top = -6.0
+margin_right = 70.0
 margin_bottom = 70.0
 mouse_filter = 2
 custom_styles/panel = ExtResource( 3 )

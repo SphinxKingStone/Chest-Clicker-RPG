@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/enemy_animation/skeleton_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://assets/enemy_animation/character_frames.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/ui/progress_bars/life_progress.png" type="Texture" id=3]
 [ext_resource path="res://assets/ui/progress_bars/life_over.png" type="Texture" id=4]
+[ext_resource path="res://assets/forest_icon.png" type="Texture" id=5]
 [ext_resource path="res://gui/Fight screen/FightScene.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -29,6 +30,17 @@ __meta__ = {
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 720.0
 margin_bottom = 1280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.658824 )
+margin_right = 720.0
+margin_bottom = 477.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -88,7 +100,7 @@ position = Vector2( 560, 344 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 4
+frame = 1
 playing = true
 flip_h = true
 
@@ -97,7 +109,7 @@ position = Vector2( 180, 330 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="character_health" type="TextureProgress" parent="."]

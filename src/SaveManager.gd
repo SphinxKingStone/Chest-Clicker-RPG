@@ -1,7 +1,7 @@
 extends Node
 
 var save_files = ["user://inventory.save", "user://equipment.save", "user://progress.save", "user://achievements.save"]
-const autosave_timer = 30
+const autosave_timer = 10
 
 func _init():
 #	load_game()

@@ -14,6 +14,12 @@ func _ready():
 func show_item(item = ItemGenerator.item):
 	self.show()
 	
+	# disable "equip" button if you have two handed and got shield
+	$HBoxContainer/EquipButton.disabled = false
+	if item.category == "shield":
+		if Character.get_equipment()["left_hand"] != null:
+			$HBoxContainer/EquipButton.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
+	
 	# Temporary audio part
 	if item.rarity == "BLUE":
 		Audio.play_sound(load("res://assets/Sounds/Sounds/win1.wav"))

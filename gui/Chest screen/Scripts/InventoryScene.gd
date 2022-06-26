@@ -39,9 +39,15 @@ func update_inventory(sort_method = "sort_rarity", item_categories = []):
 func slot_input(event, slot):
 	if event is InputEventScreenTouch and !event.is_pressed():
 		last_mouse_pos = get_local_mouse_position()
-		selected_slot = slot
 		$Menu.show()
 		$Menu.rect_position = last_mouse_pos
+		$Menu/HBox/Equip.disabled = false
+		selected_slot = slot
+		
+		# disable "equip" button if you have two handed and got shield
+		if slot.get_meta("item").category == "shield":
+			if Character.get_equipment()["left_hand"] != null:
+				$Menu/HBox/Equip.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 		
 		# moving info menu it's going to spawn outside of the screen
 		if last_mouse_pos.x > self.rect_size.x / 2:

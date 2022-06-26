@@ -17,6 +17,8 @@ func update_bar():
 	for item in Character.get_equipment().values():
 		if item != null:
 			item_level += ItemsData.ITEM_LEVEL[item.rarity]
+			if item.category == "two_handed":
+				item_level += ItemsData.ITEM_LEVEL[item.rarity]
 	gear_level = floor(item_level/10)
 	
 	var old_value = get_node("GearLevelBar").value

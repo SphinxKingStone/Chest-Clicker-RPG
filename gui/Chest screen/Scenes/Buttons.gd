@@ -16,6 +16,8 @@ func toggle_button(button):
 				get_parent().get_node("InventoryScene").update_inventory()
 				get_parent().get_node("InventoryScene").show()
 				Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"])
+			"Exploring":
+				get_tree().change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 		
 		#makes bg darker
 		var bg = button.get_node("Background")

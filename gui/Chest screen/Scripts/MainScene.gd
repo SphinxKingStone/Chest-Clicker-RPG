@@ -9,7 +9,7 @@ func _init():
 
 func _ready():
 	$EquipmentScene.update_equipment()
-	$TopSide/Silver/Amount.text = str(Character.Inventory.silver)
+	$Amount.text = str(Character.Inventory.silver)
 	Audio.play_random_music()
 	Achievements.connect("new_achievement", self, "new_achievement")
 
