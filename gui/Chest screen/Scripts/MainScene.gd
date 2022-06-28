@@ -12,6 +12,7 @@ func _ready():
 	$Amount.text = str(Character.Inventory.silver)
 	Audio.play_random_music()
 	Achievements.connect("new_achievement", self, "new_achievement")
+	ItemGenerator.update_min_number()
 
 func _input(event):
 	if event is InputEventScreenTouch:

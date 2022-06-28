@@ -4,6 +4,7 @@ var item # it holds last generated item
 var rng = RandomNumberGenerator.new()
 var min_number = 0
 var generated_items_amount = 0
+var gold_chest = false
 
 func _init():
 	rng.randomize()
@@ -12,8 +13,19 @@ func _ready():
 	update_min_number()
 
 func generate_item():
-	#rolling item rarity
+	# rolling item rarity
 	var rarity = roll_rarity()
+	
+	# acting if gold_chest
+	if gold_chest:
+		var second_r
+		for i in 5:
+			second_r = roll_rarity()
+			if ItemsData.ITEM_LEVEL[second_r] >  ItemsData.ITEM_LEVEL[rarity]:
+				rarity = second_r
+				gold_chest = false
+				break
+			gold_chest = false
 	
 	# rolling item base
 	roll_item_base(rarity)
@@ -26,13 +38,19 @@ func generate_item():
 	item.id = generated_items_amount
 	generated_items_amount += 1
 	
+	# testing for gold_chest
+	if rng.randi_range(1, 100) > 80:
+		gold_chest = true
+	
 	return item
 
 func update_min_number():
-	min_number = 0
+	min_number = 5
 	for equipped_item in Character.Equipment.get_equipment().values():
 		if equipped_item != null:
 			min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]
+			if equipped_item.category == "two_handed":
+				min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]
 
 func generate_base_stats():
 	var generated_stats = []
@@ -77,20 +95,20 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
-	min_number = 5
-	var rng_number = rng.randi_range(1, 100)
+#	min_number = 5
+	var rng_number = rng.randi_range(1, 100) # 1 and 100 are both possible
 	rng_number += min_number
 	
 	var rarity
-	if rng_number > 138:
+	if rng_number > 143:
 		rarity = "RED"
-	elif rng_number > 131:
+	elif rng_number > 133:
 		rarity = "YELLOW"
 	elif rng_number > 123:
 		rarity = "PURPLE"
-	elif rng_number > 113:
+	elif rng_number > 113: # 7% at all greens
 		rarity = "BLUE"
-	elif rng_number > 95:
+	elif rng_number > 95: # 5%
 		rarity = "GREEN"
 	else:
 		rarity = "WHITE"

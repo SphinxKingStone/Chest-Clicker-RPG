@@ -17,13 +17,17 @@ func on_click():
 	openning = true
 	var new_item = ItemGenerator.generate_item()
 	emit_particles(new_item.rarity)
-	AnimSprite.play("open")
+	AnimSprite.play()
 	var creak = load("res://assets/Sounds/Sounds/creak1.wav")
 	Audio.play_sound(creak)
 	yield(AnimSprite, "animation_finished")
 	openning = false
 	emit_signal("chest_opened")
 	Progress.increase_total_chests()
+	if ItemGenerator.gold_chest:
+		AnimSprite.animation = "open_gold"
+	else:
+		AnimSprite.animation = "open"
 
 func set_frame_and_stop(aSprite, frame = 0):
 	if aSprite.is_playing():
