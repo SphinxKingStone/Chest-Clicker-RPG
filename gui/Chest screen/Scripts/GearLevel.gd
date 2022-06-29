@@ -41,6 +41,6 @@ func update_bar():
 	
 	get_node("GearLevelNumber").text = str(gear_level)
 	get_node("GearLevelNumber").set("custom_colors/font_color", ResourceManager.rarity_color[int(gear_level)])
-	get_node("GearLevelText").set("custom_colors/font_color", ResourceManager.rarity_color[int(gear_level)] )
+	get_node("GearLevelText").set("custom_colors/font_color", ResourceManager.rarity_color[int(gear_level)])
 #	$GearLevelBar.value = new_value
 #	get_node("GearLevelBar").value = item_level % 10

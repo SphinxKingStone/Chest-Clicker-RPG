@@ -14,7 +14,7 @@ func toggle_button(button):
 				get_parent().get_node("EquipmentScene").show()
 			"Inventory":
 				get_parent().get_node("InventoryScene").update_inventory()
-				get_parent().get_node("InventoryScene").show()
+				get_parent().get_node("InventoryScene").show_inventory()
 				Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"])
 			"Exploring":
 				get_tree().change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
@@ -32,6 +32,7 @@ func toggle_button(button):
 				get_parent().get_node("EquipmentScene").hide()
 			"Inventory":
 				get_parent().get_node("InventoryScene").hide()
+				get_parent().get_node("EquipmentScene").disable_ring_selection()
 		
 		#makes bg lighter
 		var bg = button.get_node("Background")

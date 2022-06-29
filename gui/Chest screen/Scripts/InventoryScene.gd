@@ -50,8 +50,8 @@ func slot_input(event, slot):
 				$Menu/HBox/Equip.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 		
 		# enable ring selection
-		if slot.get_meta("item").category == "ring":
-			get_parent().get_node("EquipmentScene").enable_ring_selection()
+#		if slot.get_meta("item").category == "ring":
+#		get_parent().get_node("EquipmentScene").enable_ring_selection()
 		
 		# moving info menu it's going to spawn outside of the screen
 		if last_mouse_pos.x > self.rect_size.x / 2:
@@ -119,3 +119,7 @@ func clear_inventory():
 		if slot.visible:
 			$ScrollContainer/GridContainer.remove_child(slot)
 			slot.queue_free()
+
+func show_inventory():
+	show()
+	get_parent().get_node("EquipmentScene").enable_ring_selection()

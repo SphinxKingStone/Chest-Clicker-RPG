@@ -49,9 +49,11 @@ func update_equipment():
 		
 		# Manage slots BG color
 		texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[Character.Equipment.get_slot(slot).rarity])
-		
-		$GridContainer/left_ring/SelectionPanel.visible = false
-		$GridContainer/right_ring/SelectionPanel.visible = false
+
+func disable_ring_selection():
+	ring_selection = false
+	$GridContainer/left_ring/SelectionPanel.visible = false
+	$GridContainer/right_ring/SelectionPanel.visible = false
 
 func update_silver():
 	get_parent().get_node("Amount").text = str(Character.Inventory.silver)
@@ -61,11 +63,14 @@ func on_click(event, node):
 		if !event.is_pressed():
 			# ring selection part
 			if ring_selection:
-				$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
-				$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
-				if node.name == "left_ring" or node.name == "right_ring":
+				if node.name == "left_ring":
+					$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
+					$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
 					Character.Equipment.selected_ring = node.name
-					node.get_node("SelectionPanel").set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
+				if node.name == "right_ring":
+					$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
+					$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
+					Character.Equipment.selected_ring = node.name
 			
 			if Character.Equipment.get_slot(node.name.to_lower()) == null:
 				return
@@ -83,11 +88,9 @@ func enable_ring_selection():
 	ring_selection = true
 	$GridContainer/left_ring/SelectionPanel.visible = true
 	$GridContainer/right_ring/SelectionPanel.visible = true
-	if Character.Equipment.get_slot("left_ring") == null:
-		Character.Equipment.selected_ring = "left_ring"
-		$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
-		$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
-	else:
-		Character.Equipment.selected_ring = "right_ring"
+	if Character.Equipment.selected_ring == "right_ring":
 		$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
 		$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
+	else:
+		$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
+		$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))

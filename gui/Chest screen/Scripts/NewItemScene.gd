@@ -138,7 +138,7 @@ func sell_item():
 	Character.Inventory.silver += ItemGenerator.item.cost
 	get_parent().get_node("EquipmentScene").update_silver()
 	Audio.play_sound(ResourceManager.SOUNDS["COINS" + str(ItemGenerator.rng.randi_range(1, 10))])
-	get_parent().get_node("EquipmentScene").ring_selection = false
+	get_parent().get_node("EquipmentScene").disable_ring_selection()
 	self.hide()
 	
 func equip_item():
@@ -146,7 +146,7 @@ func equip_item():
 	
 	Character.equip_item(ItemGenerator.item)
 	get_parent().get_node("EquipmentScene").update_equipment()
-	get_parent().get_node("EquipmentScene").ring_selection = false
+	get_parent().get_node("EquipmentScene").disable_ring_selection()
 	self.hide()
 
 func save_item():
@@ -154,7 +154,7 @@ func save_item():
 	
 	Character.add_item(ItemGenerator.item)
 #	Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"]) 
-	get_parent().get_node("EquipmentScene").ring_selection = false
+	get_parent().get_node("EquipmentScene").disable_ring_selection()
 	self.hide()
 
 func clear_comparison_stats():

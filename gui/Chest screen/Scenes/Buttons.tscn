@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/images/bags/bag_12.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/accessory/backpack.png" type="Texture" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/Buttons.gd" type="Script" id=2]
 [ext_resource path="res://assets/StyleBoxes/button_background_normal.tres" type="StyleBox" id=3]
 [ext_resource path="res://assets/images/helmets/helmet_178.png" type="Texture" id=4]

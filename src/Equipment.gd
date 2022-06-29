@@ -1,6 +1,6 @@
 extends Node
 
-var selected_ring = ""
+var selected_ring = "left_ring"
 
 var gear = {
 	helmet = null,

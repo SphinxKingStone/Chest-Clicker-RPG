@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile017.png-bf01bd68e53f781c9939fe8334737b57.stex"
+path="res://.import/backpack.png-fe59e7c51d6770b2cb7263ecc4d199ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/accessory/tile017.png"
-dest_files=[ "res://.import/tile017.png-bf01bd68e53f781c9939fe8334737b57.stex" ]
+source_file="res://assets/images/accessory/backpack.png"
+dest_files=[ "res://.import/backpack.png-fe59e7c51d6770b2cb7263ecc4d199ee.stex" ]
 
 [params]
 
