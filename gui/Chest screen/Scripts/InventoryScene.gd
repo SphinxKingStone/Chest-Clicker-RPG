@@ -49,6 +49,10 @@ func slot_input(event, slot):
 			if Character.get_equipment()["left_hand"] != null:
 				$Menu/HBox/Equip.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 		
+		# enable ring selection
+		if slot.get_meta("item").category == "ring":
+			get_parent().get_node("EquipmentScene").enable_ring_selection()
+		
 		# moving info menu it's going to spawn outside of the screen
 		if last_mouse_pos.x > self.rect_size.x / 2:
 			$Menu.rect_position.x -= $Menu.rect_size.x

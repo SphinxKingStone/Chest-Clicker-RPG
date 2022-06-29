@@ -1,5 +1,7 @@
 extends Node
 
+var selected_ring = ""
+
 var gear = {
 	helmet = null,
 	left_hand = null,
@@ -61,8 +63,8 @@ func figure_out_slot(item):
 			"shield":
 				slot = "right_hand"
 			"ring":
-				if gear["left_ring"] == null:
-					slot = "left_ring"
-				else:
+				if selected_ring == "":
 					slot = "right_ring"
+					print_debug("selected_ring is null warning")
+				slot = selected_ring
 	return slot
