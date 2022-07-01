@@ -65,14 +65,14 @@ margin_top = 5.0
 margin_right = 685.0
 margin_bottom = 60.0
 custom_constants/separation = 5
-alignment = 2
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="all" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 25.0
-margin_right = 80.0
+margin_left = 12.0
+margin_right = 67.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 custom_fonts/font = SubResource( 1 )
@@ -82,8 +82,8 @@ pressed = true
 text = "ALL"
 
 [node name="two_handed" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 85.0
-margin_right = 140.0
+margin_left = 72.0
+margin_right = 127.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -102,8 +102,8 @@ __meta__ = {
 }
 
 [node name="one_handed" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 145.0
-margin_right = 200.0
+margin_left = 132.0
+margin_right = 187.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -122,8 +122,8 @@ __meta__ = {
 }
 
 [node name="shield" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 205.0
-margin_right = 260.0
+margin_left = 192.0
+margin_right = 247.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -142,8 +142,8 @@ __meta__ = {
 }
 
 [node name="body_armour" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 265.0
-margin_right = 320.0
+margin_left = 252.0
+margin_right = 307.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -162,8 +162,8 @@ __meta__ = {
 }
 
 [node name="helmet" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 325.0
-margin_right = 380.0
+margin_left = 312.0
+margin_right = 367.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -182,8 +182,8 @@ __meta__ = {
 }
 
 [node name="gloves" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 385.0
-margin_right = 440.0
+margin_left = 372.0
+margin_right = 427.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -202,8 +202,8 @@ __meta__ = {
 }
 
 [node name="boots" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 445.0
-margin_right = 500.0
+margin_left = 432.0
+margin_right = 487.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -222,8 +222,8 @@ __meta__ = {
 }
 
 [node name="ring" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 505.0
-margin_right = 560.0
+margin_left = 492.0
+margin_right = 547.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -242,8 +242,8 @@ __meta__ = {
 }
 
 [node name="amulet" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 565.0
-margin_right = 620.0
+margin_left = 552.0
+margin_right = 607.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -262,8 +262,8 @@ __meta__ = {
 }
 
 [node name="accessory" type="Button" parent="PlaceForButtons/HBoxContainer"]
-margin_left = 625.0
-margin_right = 680.0
+margin_left = 612.0
+margin_right = 667.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
 toggle_mode = true
@@ -318,6 +318,7 @@ __meta__ = {
 }
 
 [node name="Menu" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0.921569 )
 margin_left = 88.5079
 margin_top = 121.09

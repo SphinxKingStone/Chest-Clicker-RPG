@@ -13,6 +13,9 @@ func _ready():
 	Audio.play_random_music()
 	Achievements.connect("new_achievement", self, "new_achievement")
 	ItemGenerator.update_min_number()
+	$GearLevel.update_bar()
+	Character.update_stats()
+	$StatsScene.update_stats()
 
 func _input(event):
 	if event is InputEventScreenTouch:
