@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield_17.png-3085f2921bad9fb697afb0849378f80a.stex"
+path="res://.import/wooden_mallet.png-98c799dd6520cac7cb82dbf92fa4e0c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/shields/shield_17.png"
-dest_files=[ "res://.import/shield_17.png-3085f2921bad9fb697afb0849378f80a.stex" ]
+source_file="res://assets/images/hammers/wooden_mallet.png"
+dest_files=[ "res://.import/wooden_mallet.png-98c799dd6520cac7cb82dbf92fa4e0c7.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

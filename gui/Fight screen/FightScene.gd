@@ -3,6 +3,7 @@ extends Control
 var character_start_position
 var enemy_start_position
 var enemy_name = "skeleton" # will be just enemy.name
+var enemy = EnemyData.enemies["skeleton"]
 
 func _ready():
 	OS.window_size = Vector2(360*1.5, 640*1.5) # this
@@ -15,15 +16,24 @@ func _ready():
 	$attack_down.connect("pressed", self, "attack_button_pressed", [$attack_down])
 	
 	# example of sprite setup
-	$Enemy.frames = EnemyData.enemies[enemy_name].frames
+	$Enemy.frames = enemy.frames
 	play_enemy_animation("idle")
+	
+	# test fighting
+	Fighting.initiate_fight(Character, enemy)
+	$enemy_health/Label.text = str(enemy.stats.life) + "/" + str(enemy.stats.life)
 
 func attack_button_pressed(button):
+	Fighting.attack(Fighting.player, Fighting.enemy, "top")
+	
 	$Character.play(button.name)
 	move_character(0.2, "forward")
 	yield($Character, "animation_finished")
 	move_character(0.2, "backwards")
 	$Character.play("idle")
+	
+	$enemy_health/Label.text = str(Fighting.get_hp("enemy")) + "/" + str(enemy.stats.life)
+	$enemy_health.value = Fighting.get_hp("enemy") / enemy.stats.life * 1000
 
 func player_attack_frame():
 	match $Character.animation:

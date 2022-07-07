@@ -123,7 +123,19 @@ var shield = {
 		category = "shield",
 		
 		base_stats_data = {
-			defense = [4, 6],
+			defense = [3, 6],
+		},
+		rarity = "WHITE",
+	}, 
+	
+	reinforced_wooden_shield = {
+		code = "reinforced_wooden_shield",
+		name = "REINFORCED_WOODEN_SHIELD",
+		texture = load("res://assets/images/shields/reinforced_wooden_shield.png"),
+		category = "shield",
+		
+		base_stats_data = {
+			defense = [4, 5],
 		},
 		rarity = "WHITE",
 	},
@@ -195,6 +207,31 @@ var shield = {
 }
 
 var two_handed = {
+	# WHIRE CATEGORY
+	wooden_mallet = {
+		code = "wooden_mallet",
+		name = "WOODEN_MALLET",
+		texture = load("res://assets/images/hammers/wooden_mallet.png"),
+		category = "two_handed",
+		
+		base_stats_data = {
+			damage = [4, 10],
+		},
+		rarity = "WHITE",
+	},
+	
+	wooden_spear = {
+		code = "wooden_spear",
+		name = "WOODEN_SPEAR",
+		texture = load("res://assets/images/misc-weapons/wooden_spear.png"),
+		category = "two_handed",
+		
+		base_stats_data = {
+			damage = [5, 8],
+		},
+		rarity = "WHITE",
+	},
+	
 	# GREEN CATEGORY
 	iron_sword = {
 		code = "iron_sword",
@@ -203,7 +240,7 @@ var two_handed = {
 		category = "two_handed",
 		
 		base_stats_data = {
-			damage = [6, 12],
+			damage = [8, 12],
 		},
 		rarity = "GREEN",
 	},

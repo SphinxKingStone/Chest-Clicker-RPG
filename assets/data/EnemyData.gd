@@ -4,7 +4,18 @@ var enemies = {
 	skeleton = {
 		code = "sleleton",
 		name = "SKELETON",
-		stats = {},
+		stats = {
+			"damage": 10, 
+			"life": 1000,  
+			"defense": 10,  
+			"strength": 0,  
+			"dexterity": 0,  
+			"endurance": 0, 
+			"dodge": 5, 
+			"critical": 10,  
+			"block": 5, 
+#			"bonus_rarity": 0, 
+		},
 		
 		frames = preload("res://assets/enemy_animation/skeleton_frames.tres"),
 		sprite_properties = {

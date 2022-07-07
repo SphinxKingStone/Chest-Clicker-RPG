@@ -33,6 +33,7 @@ SaveManager="*res://src/SaveManager.gd"
 Settings="*res://src/Settings.gd"
 AchievementsData="*res://assets/data/AchievementsData.gd"
 Achievements="*res://src/Achievements.gd"
+Fighting="*res://src/Fighting.gd"
 
 [display]
 

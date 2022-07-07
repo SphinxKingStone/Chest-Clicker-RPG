@@ -16,6 +16,7 @@ func _ready():
 	$GearLevel.update_bar()
 	Character.update_stats()
 	$StatsScene.update_stats()
+	
 
 func _input(event):
 	if event is InputEventScreenTouch:
