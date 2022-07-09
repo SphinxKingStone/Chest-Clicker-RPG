@@ -6,7 +6,6 @@ func _ready():
 	for ch in $GridContainer.get_children():
 		ch.connect("gui_input", self, "on_click", [ch])
 	Character.connect("item_equipped", self, "update_equipment")
-	update_equipment()
 
 func sell_item():
 	hide()
@@ -15,32 +14,14 @@ func sell_item():
 func update_equipment():
 	for slot in Character.Equipment.get_equipment():
 		var texture_node
-		match slot:
-			"helmet":
-				texture_node = $GridContainer/Helmet/Texture
-			"left_hand":
-				texture_node = $GridContainer/left_hand/Texture
-			"right_hand":
-				texture_node = $GridContainer/right_hand/Texture
-			"amulet":
-				texture_node = $GridContainer/Amulet/Texture
-			"left_ring":
-				texture_node = $GridContainer/left_ring/Texture
-			"right_ring":
-				texture_node = $GridContainer/right_ring/Texture
-			"body_armour":
-				texture_node = $GridContainer/body_armour/Texture
-			"gloves":
-				texture_node = $GridContainer/Gloves/Texture
-			"accessory":
-				texture_node = $GridContainer/Accessory/Texture
-			"boots":
-				texture_node = $GridContainer/Boots/Texture
+		texture_node = get_node(str("GridContainer/" + slot + "/Texture"))
+		texture_node.modulate.a = 1.0
 		
 		# Set item sprite for current slot or remove old sprite if slot is empty
-		if Character.Equipment.get_slot(slot) != null:
+		var item_in_slot = Character.Equipment.get_slot(slot)
+		if item_in_slot != null:
 			texture_node.get_parent().get_node("shadow").visible = false
-			texture_node.texture = Character.Equipment.get_slot(slot).texture
+			texture_node.texture = item_in_slot.texture
 		else:
 			texture_node.get_parent().get_node("shadow").visible = true
 			texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS["GREY"])
@@ -49,6 +30,14 @@ func update_equipment():
 		
 		# Manage slots BG color
 		texture_node.get_parent().set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[Character.Equipment.get_slot(slot).rarity])
+	
+	var item_in_slot = Character.Equipment.get_slot("left_hand")
+	if item_in_slot != null:
+		if item_in_slot.category == "two_handed":
+			$GridContainer/right_hand/shadow.visible = false
+			$GridContainer/right_hand/Texture.texture = item_in_slot.texture
+			$GridContainer/right_hand.set("custom_styles/panel", ResourceManager.ITEM_BACKGROUNDS[item_in_slot.rarity])
+			$GridContainer/right_hand/Texture.modulate.a = 0.47
 
 func disable_ring_selection():
 	ring_selection = false

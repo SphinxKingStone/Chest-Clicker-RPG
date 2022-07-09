@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/enemy_animation/skeleton_frames.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://gui/Exploring screen/Scripts/EnemyScene.gd" type="Script" id=2]
+
+[node name="EnemyScene" type="Control"]
+margin_right = 1.0
+margin_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 5, 5 )
+frames = ExtResource( 1 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.168627 )
+margin_right = 120.0
+margin_bottom = 160.0

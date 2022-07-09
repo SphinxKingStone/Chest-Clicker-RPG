@@ -14,6 +14,7 @@ const rarity_color = {
 	3: Color("790dd2"),
 	4: Color("ebdd0f"),
 	5: Color("cf240e"),
+	6: Color("0fded2"), # all reds
 }
 
 const ITEM_BACKGROUNDS = {
@@ -60,6 +61,7 @@ const MUSIC = {
 const NODES = {
 	"ITEM_PREVIEW": preload("res://gui/UI/Scenes/ItemPreview.tscn"),
 	"ACHIEVEMENTPOPUP": preload("res://gui/UI/Scenes/AchievementPopUp.tscn"),
+	"ENEMY": preload("res://gui/Exploring screen/Scenes/EnemyScene.tscn"),
 }
 
 var item_info_children = []

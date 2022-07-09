@@ -64,7 +64,7 @@ func play_enemy_animation(anim):
 	var prev_pos_offset = EnemyData.enemies[enemy_name].sprite_properties[prev_animation].position_offset
 	var current_pos_offset = EnemyData.enemies[enemy_name].sprite_properties[anim].position_offset
 	$Enemy.play(anim)
-	$Enemy.scale = EnemyData.enemies[enemy_name].sprite_properties[$Enemy.animation].scale
+	$Enemy.scale = EnemyData.enemies[enemy_name].sprite_properties[$Enemy.animation].fight_scale
 	$Enemy.position += current_pos_offset - prev_pos_offset
 #	$Enemy.position -= prev_pos_offset
 

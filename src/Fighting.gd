@@ -15,8 +15,8 @@ func calculate_attack(entity):
 	var stats = entity.stats
 	var damage = stats["damage"]
 	var bonus_dmg_to_crit = 1.5
-	bonus_dmg_to_crit += (stats["strength"] / 10) / 100
-	var bonus_dmg = stats["strength"] / 20
+	bonus_dmg_to_crit += (stats["strength"] / 8) / 100
+	var bonus_dmg = stats["strength"] / 10
 	damage += ItemGenerator.rng.randf_range(-0.1, 0.1) * damage # some rng for attack value
 	
 	var crit_dmg = 0
@@ -31,7 +31,7 @@ func calculate_attack(entity):
 
 func calculate_damage_taken(entity, recieving_damage):
 	var stats = entity.stats
-	var defense_negate = recieving_damage * stats["defense"] / 100.0
+	var defense_negate = recieving_damage * stats["defense"] / 1000.0
 	defense_negate += ItemGenerator.rng.randf_range(-0.15, 0.15) * defense_negate # some rng for attack value
 	var damage_taken = recieving_damage
 	damage_taken -= defense_negate
