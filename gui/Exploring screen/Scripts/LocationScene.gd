@@ -12,7 +12,7 @@ func _ready():
 	generate_enemies()
 
 func on_back_pressed():
-	get_tree().change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
+	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 
 func generate_enemies():
 	var enemy_amount = 6

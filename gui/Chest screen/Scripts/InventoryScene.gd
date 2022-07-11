@@ -121,5 +121,21 @@ func clear_inventory():
 			slot.queue_free()
 
 func show_inventory():
+	var tw = Tween.new()
+	add_child(tw) 
+	tw.start()
+	tw.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	show()
+	yield(tw, "tween_all_completed")
+	remove_child(tw)
 	get_parent().get_node("EquipmentScene").enable_ring_selection()
+
+func hide_inventory():
+	get_parent().get_node("EquipmentScene").disable_ring_selection()
+	var tw = Tween.new()
+	add_child(tw) 
+	tw.start()
+	tw.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	yield(tw, "tween_all_completed")
+	hide()
+	remove_child(tw)

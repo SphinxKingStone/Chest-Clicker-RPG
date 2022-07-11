@@ -34,6 +34,7 @@ Settings="*res://src/Settings.gd"
 AchievementsData="*res://assets/data/AchievementsData.gd"
 Achievements="*res://src/Achievements.gd"
 Fighting="*res://src/Fighting.gd"
+SceneTransition="*res://gui/UI/Scenes/SceneTransition.tscn"
 
 [display]
 

@@ -15,5 +15,5 @@ func _ready():
 
 func enemy_input(event):
 	if event is InputEventScreenTouch and !event.is_pressed():
-		get_tree().change_scene("res://gui/Fight screen/FightScene.tscn")
+		SceneTransition.change_scene("res://gui/Fight screen/FightScene.tscn")
 		

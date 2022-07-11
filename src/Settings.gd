@@ -1,8 +1,9 @@
 extends Node
 
-var music_volume = -20
+var music_volume = -25
 var sounds_volume = -10
 var test_mode = true
+#var test_mode = false
 var language = "en"
 #var language = "ru"
 
