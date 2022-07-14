@@ -83,3 +83,17 @@ func enable_ring_selection():
 	else:
 		$GridContainer/left_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_green.tres"))
 		$GridContainer/right_ring/SelectionPanel.set("custom_styles/panel", load("res://assets/StyleBoxes/ring_selection_red.tres"))
+
+func set_equipment_visability(equpment_visability):
+	var tw = Tween.new()
+	add_child(tw) 
+	tw.start()
+	if equpment_visability:
+		tw.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.06, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		show()
+	else:
+		tw.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.06, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	yield(tw, "tween_all_completed")
+	if !equpment_visability:
+		hide()
+	remove_child(tw)

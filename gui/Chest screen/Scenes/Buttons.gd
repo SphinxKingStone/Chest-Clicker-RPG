@@ -11,10 +11,10 @@ func toggle_button(button):
 	if button.pressed:
 		match button.name:
 			"Equipment":
-				get_parent().get_node("EquipmentScene").show()
+				get_parent().get_node("EquipmentScene").set_equipment_visability(true)
 			"Inventory":
 				get_parent().get_node("InventoryScene").update_inventory()
-				get_parent().get_node("InventoryScene").show_inventory()
+				get_parent().get_node("InventoryScene").set_inventory_visability(true)
 				Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"])
 			"Exploring":
 				SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
@@ -29,9 +29,9 @@ func toggle_button(button):
 	else:
 		match button.name:
 			"Equipment":
-				get_parent().get_node("EquipmentScene").hide()
+				get_parent().get_node("EquipmentScene").set_equipment_visability(false)
 			"Inventory":
-				get_parent().get_node("InventoryScene").hide_inventory()
+				get_parent().get_node("InventoryScene").set_inventory_visability(false)
 		
 		#makes bg lighter
 		var bg = button.get_node("Background")

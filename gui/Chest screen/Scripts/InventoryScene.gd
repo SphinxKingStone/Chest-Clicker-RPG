@@ -120,22 +120,16 @@ func clear_inventory():
 			$ScrollContainer/GridContainer.remove_child(slot)
 			slot.queue_free()
 
-func show_inventory():
+func set_inventory_visability(inventory_visability):
 	var tw = Tween.new()
 	add_child(tw) 
 	tw.start()
-	tw.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	show()
+	if inventory_visability:
+		tw.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		show()
+	else:
+		tw.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	yield(tw, "tween_all_completed")
-	remove_child(tw)
-	get_parent().get_node("EquipmentScene").enable_ring_selection()
-
-func hide_inventory():
-	get_parent().get_node("EquipmentScene").disable_ring_selection()
-	var tw = Tween.new()
-	add_child(tw) 
-	tw.start()
-	tw.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	yield(tw, "tween_all_completed")
-	hide()
+	if !inventory_visability:
+		hide()
 	remove_child(tw)
