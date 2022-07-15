@@ -5,7 +5,7 @@ var enemies = {
 		code = "sleleton",
 		name = "SKELETON",
 		stats = {
-			"damage": 10, 
+			"damage": 33, 
 			"life": 1000,  
 			"defense": 100, # 10% neg
 			"strength": 0,  
@@ -35,7 +35,7 @@ var enemies = {
 				fight_scale = Vector2(7, 7),
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)
-				position_offset = Vector2(-49, -21)
+				position_offset = Vector2(-49, -16)
 			}
 		}
 	},

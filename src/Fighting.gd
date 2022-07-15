@@ -3,13 +3,19 @@ extends Node
 var player
 var enemy
 
+signal turn_change
+
 func _ready():
 	pass
 
 func initiate_fight(player, enemy):
 	
-	self.player = {"stats": player.stats} # making a copy of player but taking only stats for now
+	self.player = {"stats": player.stats.duplicate(true)} # making a copy of player but taking only stats for now
 	self.enemy = enemy.duplicate(true)
+	if ItemGenerator.rng.randi() % 2:
+		emit_signal("turn_change", ["player"])
+	else:
+		emit_signal("turn_change", ["enemy"])
 
 func calculate_attack(entity):
 	var stats = entity.stats
@@ -60,7 +66,7 @@ func attack(attacking, receiving, attack_type):
 
 
 func get_hp(entity):
-	if entity == "character":
+	if entity == "player":
 		return stepify(player.stats.life, 1.0)
 	if entity == "enemy":
 		return stepify(enemy.stats.life, 1.0)

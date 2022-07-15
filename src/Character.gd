@@ -5,7 +5,7 @@ var Inventory = preload("res://src/Inventory.gd").new()
 
 var stats = {
 	"damage": 0, 
-	"life": 0,  
+	"life": 100,  
 	"defense": 0,  
 	"strength": 0,  
 	"dexterity": 0,  
@@ -60,6 +60,8 @@ func sort_inventory(sort_method = "sort_rarity", item_categories = []):
 func update_stats():
 	for key in stats:
 		stats[key] = 0
+		if key == "life":
+			stats[key] = 100
 	
 	# iterating through all our equiped gear and updating stats
 	for item in Equipment.get_equipment().values():
