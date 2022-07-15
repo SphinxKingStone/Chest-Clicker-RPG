@@ -42,7 +42,7 @@ func check_req_equipment(req):
 		if req.amount == "all":
 			for eq in Character.get_equipment().values():
 				if eq != null:
-					if eq.rarity != "GREEN":
+					if eq.rarity != req.rarity:
 						return false
 				else:
 					return false

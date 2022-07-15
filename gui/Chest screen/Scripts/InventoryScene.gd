@@ -130,6 +130,8 @@ func set_inventory_visability(inventory_visability):
 	else:
 		tw.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	yield(tw, "tween_all_completed")
+	get_parent().get_node("EquipmentScene").enable_ring_selection()
 	if !inventory_visability:
 		hide()
+		get_parent().get_node("EquipmentScene").disable_ring_selection()
 	remove_child(tw)

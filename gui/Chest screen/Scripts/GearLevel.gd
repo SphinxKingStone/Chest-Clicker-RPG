@@ -37,7 +37,7 @@ func update_bar():
 		$Tween.interpolate_property($GearLevelBar, "value", old_value, 0, anim_speed * (old_value / 100), Tween.TRANS_CUBIC, Tween.EASE_OUT)
 		yield($Tween, "tween_completed")
 		$Tween.interpolate_property($GearLevelBar, "value", 1000, new_value, anim_speed * ((1000 - new_value) / 100), Tween.TRANS_CUBIC, Tween.EASE_OUT)
-	else:
+	elif new_gear_level != 6:
 		if old_value > new_value: # decresing
 			$Tween.interpolate_property($GearLevelBar, "value", old_value, new_value,  anim_speed * ((old_value - new_value) / 100 ), Tween.TRANS_CUBIC, Tween.EASE_OUT)
 		else: # increasing

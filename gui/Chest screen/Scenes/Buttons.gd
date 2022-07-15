@@ -16,6 +16,8 @@ func toggle_button(button):
 				get_parent().get_node("InventoryScene").update_inventory()
 				get_parent().get_node("InventoryScene").set_inventory_visability(true)
 				Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"])
+			"Achievements":
+				SceneTransition.change_scene("res://gui/UI/Scenes/AchievementsScene.tscn")
 			"Exploring":
 				SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 		
