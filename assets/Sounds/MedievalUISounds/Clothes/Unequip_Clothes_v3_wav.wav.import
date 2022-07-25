@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Unequip_Clothes_v3_wav.wav-4497584ba3c8d46d646071a3a17a5588.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Clothes/Unequip_Clothes_v3_wav.wav"
+dest_files=[ "res://.import/Unequip_Clothes_v3_wav.wav-4497584ba3c8d46d646071a3a17a5588.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

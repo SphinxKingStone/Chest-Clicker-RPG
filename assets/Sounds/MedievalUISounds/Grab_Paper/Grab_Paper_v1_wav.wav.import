@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Grab_Paper_v1_wav.wav-48e28f0599e5e57f4c12410507c4b072.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Grab_Paper/Grab_Paper_v1_wav.wav"
+dest_files=[ "res://.import/Grab_Paper_v1_wav.wav-48e28f0599e5e57f4c12410507c4b072.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

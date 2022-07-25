@@ -11,11 +11,13 @@ func toggle_button(button):
 	if button.pressed:
 		match button.name:
 			"Equipment":
-				get_parent().get_node("EquipmentScene").set_equipment_visability(true)
+				get_parent().set_scene_visability(get_parent().get_node("EquipmentScene"), true)
 			"Inventory":
 				get_parent().get_node("InventoryScene").update_inventory()
-				get_parent().get_node("InventoryScene").set_inventory_visability(true)
 				Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"])
+				get_parent().set_scene_visability(get_parent().get_node("ChestScene"), false)
+				yield(get_parent().set_scene_visability(get_parent().get_node("InventoryScene"), true), "completed")
+				get_parent().get_node("EquipmentScene").set_ring_selection_visability(true)
 			"Achievements":
 				SceneTransition.change_scene("res://gui/UI/Scenes/AchievementsScene.tscn")
 			"Exploring":
@@ -31,9 +33,11 @@ func toggle_button(button):
 	else:
 		match button.name:
 			"Equipment":
-				get_parent().get_node("EquipmentScene").set_equipment_visability(false)
+				get_parent().set_scene_visability(get_parent().get_node("EquipmentScene"), false)
 			"Inventory":
-				get_parent().get_node("InventoryScene").set_inventory_visability(false)
+				get_parent().set_scene_visability(get_parent().get_node("ChestScene"), true)
+				yield(get_parent().set_scene_visability(get_parent().get_node("InventoryScene"), false), "completed")
+				get_parent().get_node("EquipmentScene").set_ring_selection_visability(false)
 		
 		#makes bg lighter
 		var bg = button.get_node("Background")

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Check_Box_Mark_v2_wav.wav-9f51ad533de687ae777d072bc391e73d.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/CheckBox/Check_Box_Mark_v2_wav.wav"
+dest_files=[ "res://.import/Check_Box_Mark_v2_wav.wav-9f51ad533de687ae777d072bc391e73d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

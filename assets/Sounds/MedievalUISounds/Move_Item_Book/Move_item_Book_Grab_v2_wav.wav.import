@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Move_item_Book_Grab_v2_wav.wav-e3cedf354c0301e66564f8b56996c370.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Move_Item_Book/Move_item_Book_Grab_v2_wav.wav"
+dest_files=[ "res://.import/Move_item_Book_Grab_v2_wav.wav-e3cedf354c0301e66564f8b56996c370.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

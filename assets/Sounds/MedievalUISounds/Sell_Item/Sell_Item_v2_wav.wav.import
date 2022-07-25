@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sell_Item_v2_wav.wav-68313532061e1c7198cd75ab7ae666c6.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Sell_Item/Sell_Item_v2_wav.wav"
+dest_files=[ "res://.import/Sell_Item_v2_wav.wav-68313532061e1c7198cd75ab7ae666c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

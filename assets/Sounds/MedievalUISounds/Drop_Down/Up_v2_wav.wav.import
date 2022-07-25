@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Up_v2_wav.wav-f498b2f432df45c31e19d9cb0491a14e.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Drop_Down/Up_v2_wav.wav"
+dest_files=[ "res://.import/Up_v2_wav.wav-f498b2f432df45c31e19d9cb0491a14e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

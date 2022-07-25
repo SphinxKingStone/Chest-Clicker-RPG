@@ -34,20 +34,22 @@ const PARTICLES_COLORS = {
 	"YELLOW": preload("res://assets/particle materials/yellow_color_ramp.tres"),
 	"RED": preload("res://assets/particle materials/red_color_ramp.tres"),
 }
-
+# https://soundimage.org/attribution-info/ (not needed but saving it up just in case)
 const SOUNDS = {
 	"COINS1": preload("res://assets/Sounds/Sounds/coins/coins1.wav"),
 	"COINS2": preload("res://assets/Sounds/Sounds/coins/coins2.wav"),
-	"COINS3": preload("res://assets/Sounds/Sounds/coins/coins3.wav"), # https://soundimage.org/attribution-info/
-	"COINS4": preload("res://assets/Sounds/Sounds/coins/coins4.wav"), # https://soundimage.org/attribution-info/
-	"COINS5": preload("res://assets/Sounds/Sounds/coins/coins5.wav"), # https://soundimage.org/attribution-info/
-	"COINS6": preload("res://assets/Sounds/Sounds/coins/coins6.wav"), # https://soundimage.org/attribution-info/
-	"COINS7": preload("res://assets/Sounds/Sounds/coins/coins7.wav"), # https://soundimage.org/attribution-info/
-	"COINS8": preload("res://assets/Sounds/Sounds/coins/coins8.wav"), # https://soundimage.org/attribution-info/
-	"COINS9": preload("res://assets/Sounds/Sounds/coins/coins9.wav"), # https://soundimage.org/attribution-info/
-	"COINS10": preload("res://assets/Sounds/Sounds/coins/coins10.wav"), # https://soundimage.org/attribution-info/
-	"EQUIP":preload("res://assets/Sounds/Sounds/equip.wav"),
-	"OPEN_INVENTORY": preload("res://assets/Sounds/Sounds/open_inventory.wav")
+	"COINS3": preload("res://assets/Sounds/Sounds/coins/coins3.wav"), # from here
+	"COINS4": preload("res://assets/Sounds/Sounds/coins/coins4.wav"), 
+	"COINS5": preload("res://assets/Sounds/Sounds/coins/coins5.wav"), 
+	"COINS6": preload("res://assets/Sounds/Sounds/coins/coins6.wav"), # sounds from Brazil
+	"COINS7": preload("res://assets/Sounds/Sounds/coins/coins7.wav"), 
+	"COINS8": preload("res://assets/Sounds/Sounds/coins/coins8.wav"),
+	"COINS9": preload("res://assets/Sounds/Sounds/coins/coins9.wav"),
+	"COINS10": preload("res://assets/Sounds/Sounds/coins/coins10.wav"), # to here
+	"EQUIP": preload("res://assets/Sounds/Sounds/equip.wav"),
+	"OPEN_INVENTORY": preload("res://assets/Sounds/Sounds/open_inventory.wav"),
+	"MARK1": preload("res://assets/Sounds/Sounds/Check_Box_Mark_1.wav"),
+	"UNMARK1": preload("res://assets/Sounds/Sounds/Check_Box_UnMark_1.wav"),
 }
 
 const MUSIC = {

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Unequip_Potion_v1_wav.wav-e3605291ed84571ba831aa5b2217f43c.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Equip_Potion/Unequip_Potion_v1_wav.wav"
+dest_files=[ "res://.import/Unequip_Potion_v1_wav.wav-e3605291ed84571ba831aa5b2217f43c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

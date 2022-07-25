@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Grab_Sword_v2_wav.wav-8b809727066be08a3deb625f1c284581.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Equip_Sword/Grab_Sword_v2_wav.wav"
+dest_files=[ "res://.import/Grab_Sword_v2_wav.wav-8b809727066be08a3deb625f1c284581.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

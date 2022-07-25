@@ -49,10 +49,6 @@ func slot_input(event, slot):
 			if Character.get_equipment()["left_hand"] != null:
 				$Menu/HBox/Equip.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 		
-		# enable ring selection
-#		if slot.get_meta("item").category == "ring":
-#		get_parent().get_node("EquipmentScene").enable_ring_selection()
-		
 		# moving info menu it's going to spawn outside of the screen
 		if last_mouse_pos.x > self.rect_size.x / 2:
 			$Menu.rect_position.x -= $Menu.rect_size.x
@@ -90,12 +86,14 @@ func sort_button_pressed(button):
 				if bt.name != "all":
 					bt.pressed = button.pressed
 			update_inventory()
+			Audio.play_sound(ResourceManager.SOUNDS.get("MARK1"))
 			return
 		else:
 			for bt in $PlaceForButtons/HBoxContainer.get_children():
 				if bt.name != "all":
 					bt.pressed = false
 			clear_inventory()
+			Audio.play_sound(ResourceManager.SOUNDS.get("UNMARK1"))
 			return
 	
 	# if it's not an "all" button being unpressed then we should unpress "all"
@@ -111,6 +109,11 @@ func sort_button_pressed(button):
 	if all_pressed:
 		$PlaceForButtons/HBoxContainer/all.pressed = true
 	
+	if button.pressed:
+		Audio.play_sound(ResourceManager.SOUNDS.get("MARK1"))
+	else:
+		Audio.play_sound(ResourceManager.SOUNDS.get("UNMARK1"))
+	
 	update_inventory()
 
 func clear_inventory():
@@ -119,19 +122,3 @@ func clear_inventory():
 		if slot.visible:
 			$ScrollContainer/GridContainer.remove_child(slot)
 			slot.queue_free()
-
-func set_inventory_visability(inventory_visability):
-	var tw = Tween.new()
-	add_child(tw) 
-	tw.start()
-	if inventory_visability:
-		tw.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		show()
-	else:
-		tw.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.075, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	yield(tw, "tween_all_completed")
-	get_parent().get_node("EquipmentScene").enable_ring_selection()
-	if !inventory_visability:
-		hide()
-		get_parent().get_node("EquipmentScene").disable_ring_selection()
-	remove_child(tw)

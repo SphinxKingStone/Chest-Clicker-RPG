@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Move_Item_Equipment_v1_wav.wav-5ff59f157b7dfd1aa0245d95d93580a4.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Move_Item_Equipment/Move_Item_Equipment_v1_wav.wav"
+dest_files=[ "res://.import/Move_Item_Equipment_v1_wav.wav-5ff59f157b7dfd1aa0245d95d93580a4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

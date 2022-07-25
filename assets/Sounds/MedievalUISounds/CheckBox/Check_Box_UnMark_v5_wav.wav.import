@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Check_Box_UnMark_v5_wav.wav-d5e456bcf92a168743edbc7f1a49f90c.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/CheckBox/Check_Box_UnMark_v5_wav.wav"
+dest_files=[ "res://.import/Check_Box_UnMark_v5_wav.wav-d5e456bcf92a168743edbc7f1a49f90c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

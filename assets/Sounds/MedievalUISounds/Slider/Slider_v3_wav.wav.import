@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Slider_v3_wav.wav-0c37fafc7323a100a5f17faa4721dd75.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Slider/Slider_v3_wav.wav"
+dest_files=[ "res://.import/Slider_v3_wav.wav-0c37fafc7323a100a5f17faa4721dd75.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

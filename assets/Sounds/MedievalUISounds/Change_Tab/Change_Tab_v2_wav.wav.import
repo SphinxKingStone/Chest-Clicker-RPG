@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Change_Tab_v2_wav.wav-987372b8f4a7461a3f05c82010363925.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Change_Tab/Change_Tab_v2_wav.wav"
+dest_files=[ "res://.import/Change_Tab_v2_wav.wav-987372b8f4a7461a3f05c82010363925.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Timer_v3_wav.wav-5cd68dd958ffab7fe8bc112158d5df3d.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Timer/Timer_v3_wav.wav"
+dest_files=[ "res://.import/Timer_v3_wav.wav-5cd68dd958ffab7fe8bc112158d5df3d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

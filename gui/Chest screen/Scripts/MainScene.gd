@@ -1,7 +1,7 @@
 extends Control
 
 func _init():
-	OS.window_size = Vector2(360*1.5, 640*1.5) # this
+	OS.window_size = Vector2(360*2.2, 640*2.2) # this
 	OS.window_position.y = 100 # and this goes into main menu scene
 	TranslationServer.set_locale(Settings.language)
 	
@@ -36,3 +36,17 @@ func new_achievement(ach):
 	pop_up.rect_position.y -= pop_up.rect_size.y
 	pop_up.rect_position.x = 100
 	pop_up.appear()
+
+func set_scene_visability(scene, visability, speed = 0.075):
+	var tw = Tween.new()
+	add_child(tw) 
+	tw.start()
+	if visability:
+		tw.interpolate_property(scene, "modulate", Color(1,1,1,0), Color(1,1,1,1), speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		scene.show()
+	else:
+		tw.interpolate_property(scene, "modulate", Color(1,1,1,1), Color(1,1,1,0), speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	yield(tw, "tween_all_completed")
+	if !visability:
+		scene.hide()
+	remove_child(tw)

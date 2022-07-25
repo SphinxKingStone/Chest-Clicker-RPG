@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Buy_v8_wav.wav-efeedf4186d5ef43a9152634ed655fb2.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Buy/Buy_v8_wav.wav"
+dest_files=[ "res://.import/Buy_v8_wav.wav-efeedf4186d5ef43a9152634ed655fb2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

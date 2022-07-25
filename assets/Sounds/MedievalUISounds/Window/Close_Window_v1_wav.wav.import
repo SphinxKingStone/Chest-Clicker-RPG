@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Close_Window_v1_wav.wav-1a40145317088f915e77e956c6d20d5c.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Window/Close_Window_v1_wav.wav"
+dest_files=[ "res://.import/Close_Window_v1_wav.wav-1a40145317088f915e77e956c6d20d5c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

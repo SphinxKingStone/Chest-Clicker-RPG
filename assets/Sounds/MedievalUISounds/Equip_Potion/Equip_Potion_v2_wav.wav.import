@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Equip_Potion_v2_wav.wav-0924c00090a8729afc81769b5dc3c80d.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Equip_Potion/Equip_Potion_v2_wav.wav"
+dest_files=[ "res://.import/Equip_Potion_v2_wav.wav-0924c00090a8729afc81769b5dc3c80d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

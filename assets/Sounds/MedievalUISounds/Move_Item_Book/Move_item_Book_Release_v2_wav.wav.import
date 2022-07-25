@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Move_item_Book_Release_v2_wav.wav-921adb979b7b4f1835c90b0ba268dd55.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Move_Item_Book/Move_item_Book_Release_v2_wav.wav"
+dest_files=[ "res://.import/Move_item_Book_Release_v2_wav.wav-921adb979b7b4f1835c90b0ba268dd55.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

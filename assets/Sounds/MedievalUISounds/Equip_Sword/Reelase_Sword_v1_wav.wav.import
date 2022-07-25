@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Reelase_Sword_v1_wav.wav-9bce2deda47822f511446fc7ca1aa154.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/MedievalUISounds/Equip_Sword/Reelase_Sword_v1_wav.wav"
+dest_files=[ "res://.import/Reelase_Sword_v1_wav.wav-9bce2deda47822f511446fc7ca1aa154.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
