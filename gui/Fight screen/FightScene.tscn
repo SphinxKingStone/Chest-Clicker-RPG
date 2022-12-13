@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/enemy_animation/skeleton_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://assets/enemy_animation/character_frames.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://assets/ui/progress_bars/life_progress.png" type="Texture" id=3]
 [ext_resource path="res://assets/ui/progress_bars/life_over.png" type="Texture" id=4]
 [ext_resource path="res://assets/forest_icon.png" type="Texture" id=5]
+[ext_resource path="res://gui/UI/Scenes/DamageText.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gui/Fight screen/FightScene.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -108,7 +109,7 @@ position = Vector2( 180, 335 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="player_health" type="TextureProgress" parent="."]
@@ -131,9 +132,6 @@ custom_fonts/font = SubResource( 3 )
 text = "100/100"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="enemy_health" type="TextureProgress" parent="."]
 margin_left = 410.0
@@ -158,3 +156,6 @@ custom_fonts/font = SubResource( 2 )
 text = "100/100"
 align = 1
 valign = 1
+
+[node name="DamageTextPopUp" parent="." instance=ExtResource( 6 )]
+position = Vector2( 166, 256 )

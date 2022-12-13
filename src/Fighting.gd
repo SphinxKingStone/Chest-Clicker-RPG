@@ -2,8 +2,13 @@ extends Node
 
 var player
 var enemy
+var last_damage_calculated_data = {
+	"damage": 0,
+	"type": "none"
+}
 
 signal turn_change
+signal defeat
 
 func _ready():
 	pass
@@ -44,14 +49,19 @@ func calculate_damage_taken(entity, recieving_damage):
 	
 	if ItemGenerator.rng.randi_range(1, 100) < stats.dodge:
 		damage_taken = 0
+		last_damage_calculated_data.type = "dodged"
 		print_debug("dodged")
 	elif ItemGenerator.rng.randi_range(1, 100) < stats.block:
 		damage_taken -= damage_taken * (0.2 + (stats.endurance / 10) / 100) 
+		last_damage_calculated_data.type = "blocked"
 		print_debug("blocked")
 		# it was blocked
 	
 	if damage_taken < 0:
 		damage_taken = 0
+	
+	last_damage_calculated_data.damage = stepify(damage_taken, 1.0)
+	last_damage_calculated_data.type = "none"
 	
 	return stepify(damage_taken, 0.1)
 
@@ -62,7 +72,7 @@ func attack(attacking, receiving, attack_type):
 	receiving.stats.life -= calc_dmg_taken
 	if receiving.stats.life < 0:
 		receiving.stats.life = 0
-		print_debug("dead")
+		emit_signal("defeat")
 
 
 func get_hp(entity):

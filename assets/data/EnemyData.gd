@@ -58,16 +58,19 @@ var enemies = {
 		frames = preload("res://assets/enemy_animation/fire_worm_frames.tres"),
 		sprite_properties = {
 			idle = {
+				fight_scale = Vector2(5, 5),
 				location_scale = Vector2(3, 3),
 #				position = Vector2(560, 344)
 				position_offset = Vector2(0, 0)
 			},
 			hit = {
+				fight_scale = Vector2(5, 5),
 				location_scale = Vector2(3, 3),
 #				position = Vector2(581, 344)
 				position_offset = Vector2(21, 0)
 			},
 			attack = {
+				fight_scale = Vector2(5, 5),
 				location_scale = Vector2(3, 3),
 #				position = Vector2(511, 323)
 				position_offset = Vector2(-49, -21)

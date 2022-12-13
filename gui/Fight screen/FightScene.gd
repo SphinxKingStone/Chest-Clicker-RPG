@@ -2,8 +2,8 @@ extends Control
 
 var character_start_position
 var enemy_start_position
-var enemy_name = "skeleton" # will be just enemy.name
-var enemy = EnemyData.enemies["skeleton"]
+var enemy_name = "fire_worm" # will be just enemy.name
+var enemy = EnemyData.enemies["fire_worm"]
 var turn = ""
 
 signal player_finished_attacking
@@ -23,6 +23,7 @@ func _ready():
 	self.connect("enemy_finished_attacking", self, "on_enemy_finished_attacking")
 	self.connect("player_got_hit", self, "on_player_got_hit")
 	self.connect("enemy_got_hit", self, "on_enemy_got_hit")
+	Fighting.connect("defeat", self, "defeat")
 	
 	start_fight()
 
@@ -119,27 +120,41 @@ func player_attack_frame():
 		"attack_down":
 			if $Player.frame == 2:
 				play_enemy_animation("hit")
+				show_damage_number("enemy", Fighting.last_damage_calculated_data.damage)
 				yield($Enemy, "animation_finished")
 				emit_signal("enemy_got_hit")
 				play_enemy_animation("idle")
 		"attack_mid":
 			if $Player.frame == 1:
 				play_enemy_animation("hit")
+				show_damage_number("enemy", Fighting.last_damage_calculated_data.damage)
 				yield($Enemy, "animation_finished")
 				emit_signal("enemy_got_hit")
 				play_enemy_animation("idle")
 		"attack_up":
 			if $Player.frame == 2:
 				play_enemy_animation("hit")
+				show_damage_number("enemy", Fighting.last_damage_calculated_data.damage)
 				yield($Enemy, "animation_finished")
 				emit_signal("enemy_got_hit")
 				play_enemy_animation("idle")
+
+func show_damage_number(entity, number):
+	if entity == "enemy":
+		$DamageTextPopUp.position = Vector2(562, 256)
+		$DamageTextPopUp/DamageText.text = str(number)
+		$DamageTextPopUp/DamageText/AnimationPlayer.play("TextShowUp")
+	elif entity == "character":
+		$DamageTextPopUp.position = Vector2(142, 256)
+		$DamageTextPopUp/DamageText.text = str(number)
+		$DamageTextPopUp/DamageText/AnimationPlayer.play("TextShowUp")
 
 # Animation
 func enemy_attack_frame():
 	# only for skeleton
 	if $Enemy.animation == "attack" and $Enemy.frame == 8:
 		$Player.play("hit")
+		show_damage_number("character", Fighting.last_damage_calculated_data.damage)
 		yield($Player, "animation_finished")
 		emit_signal("player_got_hit")
 		$Player.play("idle")
@@ -203,3 +218,6 @@ func turn_changed(turn):
 	if turn.empty():
 		return
 	self.turn = turn[0]
+
+func defeat():
+	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/LocationScene.tscn")

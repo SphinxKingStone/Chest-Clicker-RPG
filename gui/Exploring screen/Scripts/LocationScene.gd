@@ -19,6 +19,7 @@ func generate_enemies():
 	var positions = []
 	for i in enemy_amount:
 		var enemy = ResourceManager.NODES.ENEMY.instance()
+		enemy.setup_enemy("fire_worm")
 		$map_bg/ScrollContainer/map.add_child(enemy)
 		
 		# randomize enemy position

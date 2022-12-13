@@ -1,7 +1,7 @@
 extends Control
 
 func _init():
-	OS.window_size = Vector2(360*2.2, 640*2.2) # this
+	OS.window_size = Vector2(360*1.5, 640*1.5) # this
 	OS.window_position.y = 100 # and this goes into main menu scene
 	TranslationServer.set_locale(Settings.language)
 	
