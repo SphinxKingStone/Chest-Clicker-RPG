@@ -95,8 +95,7 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
-	var rng_number = rng.randi_range(111, 100 + min_number) # 1 and 100 are both possible
-	min_number = 1145
+	var rng_number = rng.randi_range(1, 100 + min_number) # 1 and 100 are both possible
 	rng_number += min_number
 	
 	var rarity

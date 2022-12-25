@@ -35,50 +35,50 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1210, 0, 242, 172 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 242, 172 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 4 )
 region = Rect2( 242, 0, 242, 172 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 4 )
 region = Rect2( 484, 0, 242, 172 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 4 )
 region = Rect2( 726, 0, 242, 172 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 4 )
 region = Rect2( 968, 0, 242, 172 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 4 )
 region = Rect2( 1210, 0, 242, 172 )
 
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": false,
 "name": "open",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "open_gold",
 "speed": 5.0
 } ]
 
-[sub_resource type="Curve" id=29]
+[sub_resource type="Curve" id=14]
 _data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=30]
-curve = SubResource( 29 )
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
 
-[sub_resource type="ParticlesMaterial" id=31]
+[sub_resource type="ParticlesMaterial" id=16]
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
 flag_disable_z = true
@@ -96,7 +96,7 @@ angle = 150.0
 angle_random = 0.2
 scale = 25.0
 scale_random = 0.75
-scale_curve = SubResource( 30 )
+scale_curve = SubResource( 15 )
 color_ramp = ExtResource( 3 )
 
 [sub_resource type="Gradient" id=17]
@@ -155,7 +155,7 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 28 )
+frames = SubResource( 13 )
 animation = "open"
 centered = false
 
@@ -165,7 +165,7 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 31 )
+process_material = SubResource( 16 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
 position = Vector2( 145, 105 )

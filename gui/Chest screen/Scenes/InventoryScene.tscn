@@ -26,7 +26,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.313726, 0.337255, 0.352941, 1 )
+bg_color = Color( 0.14902, 0.156863, 0.219608, 1 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -75,8 +75,8 @@ margin_left = 12.0
 margin_right = 67.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
-custom_colors/font_color_pressed = Color( 0.521569, 0.521569, 0.521569, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_pressed = Color( 0.521569, 0.521569, 0.521569, 1 )
 toggle_mode = true
 pressed = true
 text = "ALL"
@@ -318,12 +318,11 @@ __meta__ = {
 }
 
 [node name="Menu" type="Panel" parent="."]
-visible = false
 self_modulate = Color( 1, 1, 1, 0.921569 )
 margin_left = 88.5079
 margin_top = 121.09
 margin_right = 388.508
-margin_bottom = 351.09
+margin_bottom = 331.09
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -343,8 +342,8 @@ __meta__ = {
 margin_right = 290.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
-custom_constants/hseparation = 0
 custom_fonts/font = SubResource( 3 )
+custom_constants/hseparation = 0
 text = "INFO"
 align = 2
 
@@ -362,8 +361,8 @@ margin_top = 70.0
 margin_right = 290.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 0, 60 )
-custom_constants/hseparation = 0
 custom_fonts/font = SubResource( 3 )
+custom_constants/hseparation = 0
 text = "EQUIP"
 align = 2
 
@@ -382,8 +381,8 @@ margin_top = 140.0
 margin_right = 290.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 60 )
-custom_constants/hseparation = 0
 custom_fonts/font = SubResource( 3 )
+custom_constants/hseparation = 0
 text = "SELL"
 align = 2
 
