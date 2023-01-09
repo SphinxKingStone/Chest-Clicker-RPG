@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+uniform vec4 topleft:hint_color;
+uniform vec4 topright:hint_color;
+uniform vec4 bottomleft:hint_color;
+uniform vec4 bottomright:hint_color;
+
+void fragment() {
+	vec2 uv_corner = vec3(UV, 0.0).xy;
+	vec4 top = mix(topleft, topright, uv_corner.x);
+	vec4 bottom = mix(bottomleft, bottomright, uv_corner.x);
+	COLOR =  mix(top, bottom, uv_corner.y);
+}"
+
+[resource]
+shader = SubResource( 4 )
+shader_param/topleft = Color( 0, 0, 0, 1 )
+shader_param/topright = Color( 0, 0, 0, 1 )
+shader_param/bottomleft = Color( 0, 0, 0, 1 )
+shader_param/bottomright = Color( 0, 0, 0, 1 )
