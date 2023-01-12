@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/images/coins/coins_5.png" type="Texture" id=12]
 [ext_resource path="res://assets/Shaders/4CornerGradientForBackground.tres" type="Material" id=13]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 36
 outline_size = 1
 outline_color = Color( 0.290196, 0.454902, 0.290196, 1 )
@@ -96,7 +96,7 @@ margin_left = 70.0
 margin_top = 20.0
 margin_right = 232.0
 margin_bottom = 57.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 0

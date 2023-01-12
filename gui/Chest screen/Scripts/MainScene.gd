@@ -26,20 +26,20 @@ func _input(event):
 
 func _on_clr_save_pressed():
 	SaveManager.clear_save()
+	
+	# testing shader
 	var tw = Tween.new()
 	add_child(tw) 
 	tw.start()
-#	var qqq = $Background.material
-#	qqq.set_shader_param('topright', Color(0,0,0,0))
 	while true:
 		var corners = ["shader_param/topright", "shader_param/topleft", "shader_param/bottomright", "shader_param/bottomleft"]
 		var corner = corners[ItemGenerator.rng.randi_range(0, 3)]
 		
 		var speed = ItemGenerator.rng.randi_range(2.5, 6)
-		tw.interpolate_property($Background.get_material(), corner, Color(0,0,0,1), Color(0,0,0,0.15), speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tw.interpolate_property($Background.get_material(), corner, Color(0,0,0,1), Color(0,0,0,0.75), speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		yield(tw, "tween_completed")
 		speed = ItemGenerator.rng.randi_range(2.5, 6)
-		tw.interpolate_property($Background.get_material(), corner, Color(0,0,0,0.15), Color(0,0,0,1), speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tw.interpolate_property($Background.get_material(), corner, Color(0,0,0,0.75), Color(0,0,0,1), speed, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		yield(tw, "tween_completed")
 	remove_child(tw)
 

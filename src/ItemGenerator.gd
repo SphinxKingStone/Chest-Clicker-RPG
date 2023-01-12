@@ -39,7 +39,7 @@ func generate_item():
 	generated_items_amount += 1
 	
 	# testing for gold_chest
-	if rng.randi_range(1, 100) > 80:
+	if rng.randi_range(1, 100) > 95:
 		gold_chest = true
 	
 	return item

@@ -21,14 +21,16 @@ func show_item(item = ItemGenerator.item):
 			$HBoxContainer/EquipButton.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 	
 	# Temporary audio part
-	if item.rarity == "BLUE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/win1.wav"))
+	if item.rarity == "GREEN":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/okay.wav"))
+	elif item.rarity == "BLUE":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/decent.wav"))
 	elif item.rarity == "PURPLE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/win3.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/goodish.wav"))
 	elif item.rarity == "YELLOW":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
-#	elif item.rarity == "GREEN":
-#		Audio.play_sound(load("res://assets/Sounds/Sounds/win2.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/good.wav"))
+	elif item.rarity == "RED":
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/very good.wav"))
 	
 	# Temporary progress check
 	Progress.track_item(item)
