@@ -2,8 +2,8 @@ extends Control
 
 var character_start_position
 var enemy_start_position
-var enemy_name = "fire_worm" # will be just enemy.name
-var enemy = EnemyData.enemies["fire_worm"]
+var enemy_name = "nature_skeleton" # will be just enemy.name
+var enemy = EnemyData.enemies[enemy_name]
 var turn = ""
 
 signal player_finished_attacking
@@ -31,6 +31,7 @@ func _ready():
 func start_fight():
 	# example of sprite setup
 	$Enemy.frames = enemy.frames
+	$Enemy.self_modulate = enemy.shade
 	play_enemy_animation("idle")
 	
 	# test fighting

@@ -1,12 +1,6 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackButton.connect("pressed", self, "on_back_pressed")
 	var tw = Tween.new()

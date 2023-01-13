@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/item7.wav-f6c929f2cb26708413818efb9888d1a4.sample"
+path="res://.import/meh.wav-eaa10e2c1e09ab1861e89720c14c1597.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/Sounds/items/item7.wav"
-dest_files=[ "res://.import/item7.wav-f6c929f2cb26708413818efb9888d1a4.sample" ]
+source_file="res://assets/Sounds/Sounds/items/meh.wav"
+dest_files=[ "res://.import/meh.wav-eaa10e2c1e09ab1861e89720c14c1597.sample" ]
 
 [params]
 

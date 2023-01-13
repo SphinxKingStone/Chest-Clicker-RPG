@@ -89,6 +89,9 @@ margin_left = 5.0
 margin_top = 155.0
 margin_right = 484.0
 margin_bottom = 274.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="EnemyInfo"]
 margin_left = 10.748

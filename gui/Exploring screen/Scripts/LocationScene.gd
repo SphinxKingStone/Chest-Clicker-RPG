@@ -1,12 +1,7 @@
 extends Panel
 
+var selected_location = "forest"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackButton.connect("pressed", self, "on_back_pressed")
 	generate_enemies()
@@ -15,11 +10,12 @@ func on_back_pressed():
 	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 
 func generate_enemies():
-	var enemy_amount = 6
+	var enemy_amount = ItemGenerator.rng.randi_range(4, 7)
 	var positions = []
 	for i in enemy_amount:
 		var enemy = ResourceManager.NODES.ENEMY.instance()
-		enemy.setup_enemy("fire_worm")
+		var enemy_rand = ItemGenerator.rng.randi_range(0, LocationData.locations[selected_location].enemies.size()-1)
+		enemy.setup_enemy(LocationData.locations[selected_location].enemies[enemy_rand])
 		$map_bg/ScrollContainer/map.add_child(enemy)
 		
 		# randomize enemy position

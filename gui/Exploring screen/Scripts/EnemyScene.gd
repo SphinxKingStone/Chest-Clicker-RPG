@@ -15,6 +15,7 @@ func enemy_input(event):
 func setup_enemy(code):
 	$AnimatedSprite.frames = EnemyData.enemies[code].frames
 	$AnimatedSprite.scale = EnemyData.enemies[code].sprite_properties.idle.location_scale
+	$AnimatedSprite.self_modulate = EnemyData.enemies[code].shade
 	
 	$AnimatedSprite.position = Vector2(0, 0)
 	var enemy_texture = $AnimatedSprite.frames.get_frame("idle", 0)

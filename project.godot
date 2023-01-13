@@ -35,6 +35,7 @@ AchievementsData="*res://assets/data/AchievementsData.gd"
 Achievements="*res://src/Achievements.gd"
 Fighting="*res://src/Fighting.gd"
 SceneTransition="*res://gui/UI/Scenes/SceneTransition.tscn"
+LocationData="*res://assets/data/LocationData.gd"
 
 [display]
 

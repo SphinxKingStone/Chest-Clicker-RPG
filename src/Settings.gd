@@ -1,7 +1,7 @@
 extends Node
 
-var music_volume = -28
-var sounds_volume = -10
+var music_volume = -30
+var sounds_volume = -5
 var test_mode = true
 #var test_mode = false
 var language = "en"
@@ -12,4 +12,4 @@ var language = "en"
 func _ready():
 	if test_mode:
 		music_volume = -100
-		sounds_volume = -15
+		sounds_volume = -100

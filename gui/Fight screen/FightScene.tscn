@@ -11,7 +11,7 @@
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/STIXTwoText-VariableFont_wght.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 24
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -19,7 +19,7 @@ use_mipmaps = true
 use_filter = true
 font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -100,7 +100,7 @@ position = Vector2( 560, 344 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 flip_h = true
 
@@ -109,7 +109,7 @@ position = Vector2( 180, 335 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="player_health" type="TextureProgress" parent="."]
@@ -128,7 +128,7 @@ nine_patch_stretch = true
 margin_top = 13.0
 margin_right = 300.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "100/100"
 align = 1
 valign = 1
@@ -152,7 +152,7 @@ __meta__ = {
 margin_top = 13.0
 margin_right = 300.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "100/100"
 align = 1
 valign = 1
