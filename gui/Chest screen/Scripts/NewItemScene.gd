@@ -133,6 +133,12 @@ func show_item(item = ItemGenerator.item):
 	# Check for ring selection
 	if item.category == "ring":
 		get_parent().get_node("EquipmentScene").set_ring_selection_visability(true)
+	
+	$ItemBackground/ItemTexture.material = load("res://assets/Shaders/ShiningEffect.tres")
+#	$ItemBackground/ItemTexture.material.set_shader_param("tint", ResourceManager.rarity_color2[item.rarity])
+	yield(get_tree().create_timer(2.1), "timeout")
+	$ItemBackground/ItemTexture.material = null
+	
 
 func sell_item():
 	clear_comparison_stats()

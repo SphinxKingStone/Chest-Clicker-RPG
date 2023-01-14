@@ -17,6 +17,15 @@ const rarity_color = {
 	6: Color("0fded2"), # all reds
 }
 
+const rarity_color2 = {
+	"WHITE": Color("cececece"),
+	"GREEN": Color("0ac122"),
+	"BLUE": Color("0d63d2"),
+	"PURPLE": Color("790dd2"),
+	"YELLOw": Color("ebdd0f"),
+	"RED": Color("b30101"),
+}
+
 const ITEM_BACKGROUNDS = {
 	"GREY": preload("res://assets/StyleBoxes/item_light_gray_bg.tres"), # for no item
 	"WHITE": preload("res://assets/StyleBoxes/item_gray_bg.tres"),
