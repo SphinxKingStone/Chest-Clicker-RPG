@@ -46,6 +46,9 @@ script = ExtResource( 4 )
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 720.0
 margin_bottom = 1280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
@@ -62,12 +65,12 @@ margin_right = 710.0
 margin_bottom = 158.0
 custom_constants/separation = 10
 
-[node name="Panel" type="Panel" parent="ScrollContainer/VBoxContainer"]
+[node name="Forest" type="Panel" parent="ScrollContainer/VBoxContainer"]
 margin_right = 710.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 710, 74 )
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Panel"]
+[node name="Icon" type="TextureRect" parent="ScrollContainer/VBoxContainer/Forest"]
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 69.0
@@ -79,7 +82,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Panel"]
+[node name="Name" type="Label" parent="ScrollContainer/VBoxContainer/Forest"]
 margin_left = 90.0
 margin_top = 5.0
 margin_right = 450.0
@@ -90,7 +93,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Panel"]
+[node name="Discription" type="Label" parent="ScrollContainer/VBoxContainer/Forest"]
 margin_left = 90.0
 margin_top = 40.0
 margin_right = 450.0
@@ -102,7 +105,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Panel"]
+[node name="VisitButton" type="Button" parent="ScrollContainer/VBoxContainer/Forest"]
 margin_left = 485.0
 margin_top = 6.0
 margin_right = 705.0
@@ -113,13 +116,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel2" type="Panel" parent="ScrollContainer/VBoxContainer"]
+[node name="Bushes" type="Panel" parent="ScrollContainer/VBoxContainer"]
 margin_top = 84.0
 margin_right = 710.0
 margin_bottom = 158.0
 rect_min_size = Vector2( 710, 74 )
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Panel2"]
+[node name="Icon" type="TextureRect" parent="ScrollContainer/VBoxContainer/Bushes"]
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 69.0
@@ -131,7 +134,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Panel2"]
+[node name="Name" type="Label" parent="ScrollContainer/VBoxContainer/Bushes"]
 margin_left = 90.0
 margin_top = 5.0
 margin_right = 450.0
@@ -142,7 +145,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/Panel2"]
+[node name="Discription" type="Label" parent="ScrollContainer/VBoxContainer/Bushes"]
 margin_left = 90.0
 margin_top = 39.6225
 margin_right = 450.0
@@ -154,7 +157,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/Panel2"]
+[node name="VisitButton" type="Button" parent="ScrollContainer/VBoxContainer/Bushes"]
 margin_left = 485.0
 margin_top = 6.0
 margin_right = 705.0
@@ -172,5 +175,3 @@ margin_right = 160.0
 margin_bottom = 70.0
 custom_fonts/font = SubResource( 4 )
 text = "Back"
-
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Panel/Button" to="." method="_on_Button_pressed"]

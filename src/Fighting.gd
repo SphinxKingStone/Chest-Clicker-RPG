@@ -14,7 +14,6 @@ func _ready():
 	pass
 
 func initiate_fight(player, enemy):
-	
 	self.player = {"stats": player.stats.duplicate(true)} # making a copy of player but taking only stats for now
 	self.enemy = enemy.duplicate(true)
 	if ItemGenerator.rng.randi() % 2:

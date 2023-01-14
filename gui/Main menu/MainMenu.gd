@@ -14,4 +14,4 @@ func on_button_pressed(button):
 		"OptionsButton":
 			print_debug("Options")
 		"ContactButton":
-			print_debug("ContactButton")
+			print_debug("Contact")

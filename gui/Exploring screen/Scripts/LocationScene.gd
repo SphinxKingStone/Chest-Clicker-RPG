@@ -9,6 +9,13 @@ func _ready():
 func on_back_pressed():
 	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 
+func on_enemy_pressed(enemy):
+	$EnemyInfo/Name.text = enemy.name
+	$EnemyInfo/Level.text = str(tr("LEVEL"), " ", enemy.level)
+	$EnemyInfo/Icon.self_modulate = enemy.shade
+	Fighting.enemy = enemy
+	SceneTransition.change_scene("res://gui/Fight screen/FightScene.tscn")
+
 func generate_enemies():
 	var enemy_amount = ItemGenerator.rng.randi_range(4, 7)
 	var positions = []
@@ -16,6 +23,7 @@ func generate_enemies():
 		var enemy = ResourceManager.NODES.ENEMY.instance()
 		var enemy_rand = ItemGenerator.rng.randi_range(0, LocationData.locations[selected_location].enemies.size()-1)
 		enemy.setup_enemy(LocationData.locations[selected_location].enemies[enemy_rand])
+		enemy.connect("pressed", self, "on_enemy_pressed")
 		$map_bg/ScrollContainer/map.add_child(enemy)
 		
 		# randomize enemy position

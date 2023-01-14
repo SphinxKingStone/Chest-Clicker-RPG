@@ -15,7 +15,7 @@ __meta__ = {
 scale = Vector2( 5, 5 )
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 10
+frame = 2
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

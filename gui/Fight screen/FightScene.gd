@@ -2,8 +2,8 @@ extends Control
 
 var character_start_position
 var enemy_start_position
-var enemy_name = "nature_skeleton" # will be just enemy.name
-var enemy = EnemyData.enemies[enemy_name]
+#var enemy_name = "wood_skeleton" # will be just enemy.name
+var enemy = Fighting.enemy
 var turn = ""
 
 signal player_finished_attacking
@@ -163,10 +163,10 @@ func enemy_attack_frame():
 # Animation
 func play_enemy_animation(anim):
 	var prev_animation = $Enemy.animation
-	var prev_pos_offset = EnemyData.enemies[enemy_name].sprite_properties[prev_animation].position_offset
-	var current_pos_offset = EnemyData.enemies[enemy_name].sprite_properties[anim].position_offset
+	var prev_pos_offset = enemy.sprite_properties[prev_animation].position_offset
+	var current_pos_offset = enemy.sprite_properties[anim].position_offset
 	$Enemy.play(anim)
-	$Enemy.scale = EnemyData.enemies[enemy_name].sprite_properties[$Enemy.animation].fight_scale
+	$Enemy.scale = enemy.sprite_properties[$Enemy.animation].fight_scale
 	$Enemy.position += current_pos_offset - prev_pos_offset
 #	$Enemy.position -= prev_pos_offset
 
