@@ -142,9 +142,9 @@ func player_attack_frame():
 
 func show_damage_number(entity, number):
 	if entity == "enemy":
-		$DamageTextPopUp.position = Vector2(562, 256)
-		$DamageTextPopUp/DamageText.text = str(number)
-		$DamageTextPopUp/DamageText/AnimationPlayer.play("TextShowUp")
+		$DamageTextPopUp2.position = Vector2(562, 256)
+		$DamageTextPopUp2/DamageText.text = str(number)
+		$DamageTextPopUp2/DamageText/AnimationPlayer.play("TextShowUp")
 	elif entity == "character":
 		$DamageTextPopUp.position = Vector2(142, 256)
 		$DamageTextPopUp/DamageText.text = str(number)

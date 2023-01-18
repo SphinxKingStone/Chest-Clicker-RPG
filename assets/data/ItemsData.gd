@@ -9,6 +9,15 @@ const ITEM_LEVEL = {
 	"RED": 6,
 }
 
+const ITEM_RARITY = [
+	"WHITE",
+	"GREEN",
+	"BLUE",
+	"PURPLE",
+	"YELLOW",
+	"RED",
+]
+
 const ITEM_CATEGORY = [
 	"two_handed",
 	"one_handed",

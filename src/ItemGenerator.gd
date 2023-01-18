@@ -26,6 +26,10 @@ func generate_item():
 				gold_chest = false
 				break
 			gold_chest = false
+		if ItemsData.ITEM_LEVEL[rarity] <= Character.get_gear_level(): # if we didn't roll anything good guaranties rarity = grear level
+			rarity = ItemsData.ITEM_RARITY[Character.get_gear_level()]
+		if rarity == "WHITE": # when no items guarantees a green item
+			rarity = "GREEN"
 	
 	# rolling item base
 	roll_item_base(rarity)
@@ -39,7 +43,7 @@ func generate_item():
 	generated_items_amount += 1
 	
 	# testing for gold_chest
-	if rng.randi_range(1, 100) > 95:
+	if rng.randi_range(1, 1000) > 990: #950
 		gold_chest = true
 	
 	return item
@@ -95,8 +99,9 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
+#	min_number = 43
+	update_min_number()
 	var rng_number = rng.randi_range(1, 100 + min_number) # 1 and 100 are both possible
-#	rng_number += min_number
 	
 	var rarity
 	if rng_number > 150:

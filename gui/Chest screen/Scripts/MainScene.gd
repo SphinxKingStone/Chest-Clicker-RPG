@@ -1,4 +1,7 @@
 extends Control
+# Ravster and PrincessLily and LinkJason10j want to try the game out
+
+# @Farmsan: my game is called "Chest Clicker RPG". I'm a big fan of Diablo, PoE and other games in this genre and I wanted to make something similar but without complicated gameplay when you have to run cast million spells and kill hundreds of mobs in 2 seconds because it's not suited for mobile imo. So to farm loot you just o
 
 func _init():
 	OS.window_size = Vector2(360*1.5, 640*1.5) # this
@@ -10,8 +13,8 @@ func _init():
 func _ready():
 	$EquipmentScene.update_equipment()
 	$Amount.text = str(Character.Inventory.silver)
-	Audio.play_random_music()
 	Achievements.connect("new_achievement", self, "new_achievement")
+	Audio.play_random_music()
 	ItemGenerator.update_min_number()
 	$GearLevel.update_bar()
 	Character.update_stats()
@@ -66,3 +69,12 @@ func set_scene_visability(scene, visability, speed = 0.075):
 	if !visability:
 		scene.hide()
 	remove_child(tw)
+
+
+func _on_clr_save2_pressed(): # sfx
+	Settings.sounds_volume = -100
+
+
+func _on_clr_save3_pressed(): # music
+	Settings.music_volume = -100
+	Audio.play_random_music()

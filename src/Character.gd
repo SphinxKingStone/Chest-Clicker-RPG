@@ -115,3 +115,22 @@ func get_average_damage(use_stats):
 	
 	return stepify(avg_damage, 0.1)
 
+func get_gear_level():
+	var item_level = 0
+	var gear_level = 0
+	for item in Equipment.get_equipment().values():
+		if item != null:
+			item_level += ItemsData.ITEM_LEVEL[item.rarity]
+			if item.category == "two_handed":
+				item_level += ItemsData.ITEM_LEVEL[item.rarity]
+	gear_level = floor(item_level/10)
+	return gear_level
+	
+func get_items_level():
+	var item_level = 0
+	for item in Equipment.get_equipment().values():
+		if item != null:
+			item_level += ItemsData.ITEM_LEVEL[item.rarity]
+			if item.category == "two_handed":
+				item_level += ItemsData.ITEM_LEVEL[item.rarity]
+	return item_level

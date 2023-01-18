@@ -14,14 +14,8 @@ func _ready():
 func update_bar():
 	$GearLevelText.material = null
 	$GearLevelBar.material = null
-	var item_level = 0
-	var new_gear_level = 0
-	for item in Character.get_equipment().values():
-		if item != null:
-			item_level += ItemsData.ITEM_LEVEL[item.rarity]
-			if item.category == "two_handed":
-				item_level += ItemsData.ITEM_LEVEL[item.rarity]
-	new_gear_level = floor(item_level/10)
+	var item_level = Character.get_items_level()
+	var new_gear_level = Character.get_gear_level()
 	
 	var old_value = get_node("GearLevelBar").value
 	var new_value = (item_level % 10) * 100

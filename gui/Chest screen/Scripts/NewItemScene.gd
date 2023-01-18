@@ -11,6 +11,9 @@ func _ready():
 	
 	get_parent().get_node("ChestScene").connect("chest_opened", self, "show_item")
 
+var remove_shader = false # helps to remove shader if item window is oppened for too long
+var my_time = 0
+
 func show_item(item = ItemGenerator.item):
 	self.show()
 	
@@ -21,16 +24,17 @@ func show_item(item = ItemGenerator.item):
 			$HBoxContainer/EquipButton.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 	
 	# Temporary audio part
+	var adj = -8
 	if item.rarity == "GREEN":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/okay.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/okay.wav"), 0, adj)
 	elif item.rarity == "BLUE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/decent.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/decent.wav"), 0, adj)
 	elif item.rarity == "PURPLE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/goodish.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/goodish.wav"), 0, adj)
 	elif item.rarity == "YELLOW":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/good.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/good.wav"), 0, adj)
 	elif item.rarity == "RED":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/very good.wav"))
+		Audio.play_sound(load("res://assets/Sounds/Sounds/items/very good.wav"), 0, adj)
 	
 	# Temporary progress check
 	Progress.track_item(item)
@@ -134,11 +138,20 @@ func show_item(item = ItemGenerator.item):
 	if item.category == "ring":
 		get_parent().get_node("EquipmentScene").set_ring_selection_visability(true)
 	
-	$ItemBackground/ItemTexture.material = load("res://assets/Shaders/ShiningEffect.tres")
+	my_time = 0
+	$ItemBackground/ItemTexture.material = load("res://assets/Shaders/ShiningEffect2.tres")
 #	$ItemBackground/ItemTexture.material.set_shader_param("tint", ResourceManager.rarity_color2[item.rarity])
+#	$ItemBackground/ItemTexture.material.set_shader_param("cur_time", OS.get_ticks_msec())
+	remove_shader = true
 	yield(get_tree().create_timer(2.1), "timeout")
-	$ItemBackground/ItemTexture.material = null
-	
+	if remove_shader and my_time > 2:
+		$ItemBackground/ItemTexture.material = null
+		remove_shader = false
+
+func _process(delta):
+	if $ItemBackground/ItemTexture.material != null:
+		$ItemBackground/ItemTexture.material.set_shader_param("my_time", my_time)
+	my_time += delta
 
 func sell_item():
 	clear_comparison_stats()
@@ -147,7 +160,7 @@ func sell_item():
 	get_parent().get_node("EquipmentScene").update_silver()
 	Audio.play_sound(ResourceManager.SOUNDS["COINS" + str(ItemGenerator.rng.randi_range(1, 10))])
 	get_parent().get_node("EquipmentScene").set_ring_selection_visability(false)
-	self.hide()
+	hide_window()
 	
 func equip_item():
 	clear_comparison_stats()
@@ -155,7 +168,7 @@ func equip_item():
 	Character.equip_item(ItemGenerator.item)
 	get_parent().get_node("EquipmentScene").update_equipment()
 	get_parent().get_node("EquipmentScene").set_ring_selection_visability(false)
-	self.hide()
+	hide_window()
 
 func save_item():
 	clear_comparison_stats()
@@ -163,7 +176,7 @@ func save_item():
 	Character.add_item(ItemGenerator.item)
 #	Audio.play_sound(ResourceManager.SOUNDS["OPEN_INVENTORY"]) 
 	get_parent().get_node("EquipmentScene").set_ring_selection_visability(false)
-	self.hide()
+	hide_window()
 
 func clear_comparison_stats():
 	# clear bonus avg stats
@@ -181,3 +194,8 @@ func clear_stats():
 	for child in $BaseStats.get_children():
 		if child.visible:
 			child.queue_free()
+
+func hide_window():
+	$ItemBackground/ItemTexture.material = null
+	remove_shader = false
+	self.hide()

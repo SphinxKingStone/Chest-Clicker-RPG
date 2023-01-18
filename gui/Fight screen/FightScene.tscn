@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/enemy_animation/skeleton_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://assets/enemy_animation/character_frames.tres" type="SpriteFrames" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/ui/progress_bars/life_over.png" type="Texture" id=4]
 [ext_resource path="res://assets/forest_icon.png" type="Texture" id=5]
 [ext_resource path="res://gui/UI/Scenes/DamageText.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=7]
 [ext_resource path="res://gui/Fight screen/FightScene.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -60,6 +61,7 @@ margin_top = 930.0
 margin_right = 604.694
 margin_bottom = 990.0
 rect_rotation = -16.0
+custom_fonts/font = ExtResource( 7 )
 text = "up"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -71,6 +73,7 @@ margin_top = 1000.0
 margin_right = 622.694
 margin_bottom = 1060.0
 rect_rotation = 0.094179
+custom_fonts/font = ExtResource( 7 )
 text = "mid"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -82,6 +85,7 @@ margin_top = 1070.0
 margin_right = 622.694
 margin_bottom = 1130.0
 rect_rotation = 16.0
+custom_fonts/font = ExtResource( 7 )
 text = "down"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -100,7 +104,7 @@ position = Vector2( 560, 344 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 2
+frame = 9
 playing = true
 flip_h = true
 
@@ -109,7 +113,7 @@ position = Vector2( 180, 335 )
 scale = Vector2( 7, 7 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="player_health" type="TextureProgress" parent="."]
@@ -159,3 +163,17 @@ valign = 1
 
 [node name="DamageTextPopUp" parent="." instance=ExtResource( 6 )]
 position = Vector2( 166, 256 )
+
+[node name="DamageTextPopUp2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 166, 256 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 179.714
+margin_top = 623.712
+margin_right = 578.714
+margin_bottom = 711.712
+custom_fonts/font = ExtResource( 7 )
+text = "0 means block or dodge"
+__meta__ = {
+"_edit_use_anchors_": false
+}

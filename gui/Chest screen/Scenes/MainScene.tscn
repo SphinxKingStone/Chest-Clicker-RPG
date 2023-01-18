@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
@@ -18,6 +18,22 @@
 size = 36
 outline_size = 1
 outline_color = Color( 0.290196, 0.454902, 0.290196, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 5 )
@@ -119,4 +135,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="clr_save2" type="Button" parent="."]
+margin_left = 544.0
+margin_top = 12.0
+margin_right = 652.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 2 )
+text = "sfx"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clr_save3" type="Button" parent="."]
+margin_left = 434.0
+margin_top = 12.0
+margin_right = 532.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 3 )
+text = "music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="clr_save" to="." method="_on_clr_save_pressed"]
+[connection signal="pressed" from="clr_save2" to="." method="_on_clr_save2_pressed"]
+[connection signal="pressed" from="clr_save3" to="." method="_on_clr_save3_pressed"]

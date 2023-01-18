@@ -17,14 +17,14 @@ func play_random_music():
 	play_music(ResourceManager.MUSIC[selection])
 	prev_music = selection
 
-func play_sound(sound, delay = 0):
+func play_sound(sound, delay = 0, volume_adj = 0):
 	if delay > 0:
 		yield(get_tree().create_timer(delay), "timeout")
 	
 	var player = AudioStreamPlayer.new()
 	player.autoplay = false
 	player.set_stream(sound)
-	player.set_volume_db(Settings.sounds_volume)
+	player.set_volume_db(Settings.sounds_volume + volume_adj)
 	player.play()
 	add_child(player)
 	

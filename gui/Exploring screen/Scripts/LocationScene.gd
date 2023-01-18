@@ -5,16 +5,25 @@ var selected_location = "forest"
 func _ready():
 	$BackButton.connect("pressed", self, "on_back_pressed")
 	generate_enemies()
+	$EnemyInfo/Name.text = "Name"
+	$EnemyInfo/Level.text =  "Level"
+#	$EnemyInfo/Icon.texture = null
 
 func on_back_pressed():
 	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 
+var clicked = 0
 func on_enemy_pressed(enemy):
+	clicked += 1
 	$EnemyInfo/Name.text = enemy.name
 	$EnemyInfo/Level.text = str(tr("LEVEL"), " ", enemy.level)
 	$EnemyInfo/Icon.self_modulate = enemy.shade
+	if clicked > 1 and Fighting.enemy == enemy:
+		Fighting.enemy = enemy
+		SceneTransition.change_scene("res://gui/Fight screen/FightScene.tscn")
+		clicked = 0
+		return
 	Fighting.enemy = enemy
-	SceneTransition.change_scene("res://gui/Fight screen/FightScene.tscn")
 
 func generate_enemies():
 	var enemy_amount = ItemGenerator.rng.randi_range(4, 7)
