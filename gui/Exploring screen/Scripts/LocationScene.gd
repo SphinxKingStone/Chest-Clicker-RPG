@@ -8,6 +8,8 @@ func _ready():
 	$EnemyInfo/Name.text = "Name"
 	$EnemyInfo/Level.text =  "Level"
 #	$EnemyInfo/Icon.texture = null
+	$EnemyInfo/Attack.visible = false
+	$EnemyInfo/Attack.connect("pressed", self, "on_attack_pressed")
 
 func on_back_pressed():
 	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
@@ -15,6 +17,7 @@ func on_back_pressed():
 var clicked = 0
 func on_enemy_pressed(enemy):
 	clicked += 1
+	$EnemyInfo/Attack.visible = true
 	$EnemyInfo/Name.text = enemy.name
 	$EnemyInfo/Level.text = str(tr("LEVEL"), " ", enemy.level)
 	$EnemyInfo/Icon.self_modulate = enemy.shade
@@ -24,6 +27,10 @@ func on_enemy_pressed(enemy):
 		clicked = 0
 		return
 	Fighting.enemy = enemy
+
+func on_attack_pressed():
+	clicked = 0
+	SceneTransition.change_scene("res://gui/Fight screen/FightScene.tscn")
 
 func generate_enemies():
 	var enemy_amount = ItemGenerator.rng.randi_range(4, 7)
