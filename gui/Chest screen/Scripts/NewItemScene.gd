@@ -110,29 +110,29 @@ func show_item(item = ItemGenerator.item):
 				difference = current_stat - stats_if_equipped[eq_stat]
 				bonus_node.set("custom_colors/font_color", ResourceManager.bonus_text_red)
 				if eq_stat in ["dodge", "critical", "block", "bonus_rarity"]:
-					bonus_text = " (-" + str(difference) + "%)"
+					bonus_text = "(-" + str(difference) + "%)"
 				else:
-					bonus_text = " (-" + str(difference) + ")"
+					bonus_text = "(-" + str(difference) + ")"
 			else:
 				difference = stats_if_equipped[eq_stat] - current_stat
 				bonus_node.set("custom_colors/font_color", ResourceManager.bonus_text_green)
 				if eq_stat in ["dodge", "critical", "block", "bonus_rarity"]:
-					bonus_text = " (+" + str(difference) + "%)"
+					bonus_text = "(+" + str(difference) + "%)"
 				else:
-					bonus_text = " (+" + str(difference) + ")"
+					bonus_text = "(+" + str(difference) + ")"
 			bonus_node.text = bonus_text
 	
 	# Show difference if item equipped in avg stats
-	var current_avg_dmg =  Character.get_average_damage(Character.stats)
-	var if_equipped_avg_dmg = Character.get_average_damage(stats_if_equipped)
-	if current_avg_dmg < if_equipped_avg_dmg:
-		var diff = if_equipped_avg_dmg - current_avg_dmg
-		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(diff) + ")" 
-		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.bonus_text_green)
-	elif current_avg_dmg > if_equipped_avg_dmg:
-		var diff = current_avg_dmg - if_equipped_avg_dmg
-		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (-" + str(diff) + ")" 
-		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.bonus_text_red)
+#	var current_avg_dmg =  Character.get_average_damage(Character.stats)
+#	var if_equipped_avg_dmg = Character.get_average_damage(stats_if_equipped)
+#	if current_avg_dmg < if_equipped_avg_dmg:
+#		var diff = if_equipped_avg_dmg - current_avg_dmg
+#		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (+" + str(diff) + ")" 
+#		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.bonus_text_green)
+#	elif current_avg_dmg > if_equipped_avg_dmg:
+#		var diff = current_avg_dmg - if_equipped_avg_dmg
+#		get_parent().get_node("AverageStats/Attack/AttackBonus").text = " (-" + str(diff) + ")" 
+#		get_parent().get_node("AverageStats/Attack/AttackBonus").set("custom_colors/font_color", ResourceManager.bonus_text_red)
 	
 	# Check for ring selection
 	if item.category == "ring":
@@ -180,8 +180,8 @@ func save_item():
 
 func clear_comparison_stats():
 	# clear bonus avg stats
-	get_parent().get_node("AverageStats/Attack/AttackBonus").text = ""
-	get_parent().get_node("AverageStats/Health/HealthBonus").text = ""
+#	get_parent().get_node("AverageStats/Attack/AttackBonus").text = ""
+#	get_parent().get_node("AverageStats/Health/HealthBonus").text = ""
 	
 	# Clearing bonus text in stats
 	get_parent().get_node("StatsScene").clear_bonus_text()

@@ -16,11 +16,11 @@ func update_stats():
 		node.text = value
 	
 	# updating avg stats
-	for key in stats:
-		if key == "damage":
-			get_parent().get_node("AverageStats/Attack/AttackValue").text = str(Character.get_average_damage(Character.stats))
-		if key == "life":
-			get_parent().get_node("AverageStats/Health/HealthValue").text = str(stats[key])
+#	for key in stats:
+#		if key == "damage":
+#			get_parent().get_node("AverageStats/Attack/AttackValue").text = str(Character.get_average_damage(Character.stats))
+#		if key == "life":
+#			get_parent().get_node("AverageStats/Health/HealthValue").text = str(stats[key])
 
 func get_stat_value_node(stat):
 	return get_node("ScrollContainer/VBoxContainer/" + stat + "Panel/" + stat + "/" + stat + "Value")

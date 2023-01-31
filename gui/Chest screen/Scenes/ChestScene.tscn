@@ -1,9 +1,14 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/ChestScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/chests/Chest spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://assets/particle materials/green_color_ramp.tres" type="Texture" id=3]
 [ext_resource path="res://assets/images/chests/Gold Chest spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://assets/Bronze Chest Frame 4.png" type="Texture" id=5]
+[ext_resource path="res://assets/Bronze Chest Frame 2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Bronze Chest Frame3.png" type="Texture" id=7]
+[ext_resource path="res://assets/Bronze Chest Frame 5.png" type="Texture" id=8]
+[ext_resource path="res://assets/Open & Close.png" type="Texture" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -59,7 +64,27 @@ region = Rect2( 968, 0, 242, 172 )
 atlas = ExtResource( 4 )
 region = Rect2( 1210, 0, 242, 172 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 9 )
+region = Rect2( 192, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 9 )
+region = Rect2( 208, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 9 )
+region = Rect2( 224, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 9 )
+region = Rect2( 240, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 9 )
+region = Rect2( 256, 0, 16, 32 )
+
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": false,
@@ -70,41 +95,17 @@ animations = [ {
 "loop": true,
 "name": "open_gold",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "23",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "12",
+"speed": 5.0
 } ]
-
-[sub_resource type="Curve" id=14]
-_data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
-
-[sub_resource type="ParticlesMaterial" id=16]
-emission_shape = 2
-emission_box_extents = Vector3( 20, 10, 1 )
-flag_disable_z = true
-direction = Vector3( 90, -90, 0 )
-spread = 30.0
-gravity = Vector3( 10, 70, 0 )
-initial_velocity = 150.0
-initial_velocity_random = 0.35
-angular_velocity = 45.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 35.0
-angle = 150.0
-angle_random = 0.2
-scale = 25.0
-scale_random = 0.75
-scale_curve = SubResource( 15 )
-color_ramp = ExtResource( 3 )
-
-[sub_resource type="Gradient" id=17]
-offsets = PoolRealArray( 0, 0.303704, 0.496296, 0.740741, 1 )
-colors = PoolColorArray( 0.239029, 0.941406, 0.250004, 1, 0.0392157, 0.756863, 0.133333, 0.219608, 0.694051, 0.824219, 0.157761, 1, 0.709804, 0.792157, 0.145098, 0.513726, 0.0392157, 0.756863, 0.133333, 1 )
-
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
 
 [sub_resource type="Curve" id=19]
 _data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
@@ -129,9 +130,43 @@ linear_accel = 35.0
 angle = 150.0
 angle_random = 0.2
 scale = 25.0
-scale_random = 0.2
+scale_random = 0.75
 scale_curve = SubResource( 20 )
-color_ramp = SubResource( 18 )
+color_ramp = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.303704, 0.496296, 0.740741, 1 )
+colors = PoolColorArray( 0.239029, 0.941406, 0.250004, 1, 0.0392157, 0.756863, 0.133333, 0.219608, 0.694051, 0.824219, 0.157761, 1, 0.709804, 0.792157, 0.145098, 0.513726, 0.0392157, 0.756863, 0.133333, 1 )
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+
+[sub_resource type="Curve" id=24]
+_data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
+
+[sub_resource type="ParticlesMaterial" id=26]
+emission_shape = 2
+emission_box_extents = Vector3( 20, 10, 1 )
+flag_disable_z = true
+direction = Vector3( 90, -90, 0 )
+spread = 30.0
+gravity = Vector3( 10, 70, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.35
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 35.0
+angle = 150.0
+angle_random = 0.2
+scale = 25.0
+scale_random = 0.2
+scale_curve = SubResource( 25 )
+color_ramp = SubResource( 23 )
 
 [node name="ChestScene" type="Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -155,8 +190,10 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 13 )
-animation = "open"
+position = Vector2( 40, -20 )
+scale = Vector2( 12, 12 )
+frames = SubResource( 18 )
+animation = "12"
 centered = false
 
 [node name="ParticlesLeft" type="Particles2D" parent="."]
@@ -165,7 +202,7 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 16 )
+process_material = SubResource( 21 )
 
 [node name="ParticlesRight" type="Particles2D" parent="."]
 position = Vector2( 145, 105 )
@@ -173,6 +210,6 @@ z_index = 1
 emitting = false
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 21 )
+process_material = SubResource( 26 )
 
 [connection signal="gui_input" from="helper/Panel" to="." method="_on_Panel_gui_input"]

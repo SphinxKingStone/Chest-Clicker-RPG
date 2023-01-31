@@ -27,7 +27,7 @@ func on_click():
 	if ItemGenerator.gold_chest:
 		AnimSprite.animation = "open_gold"
 	else:
-		AnimSprite.animation = "open"
+		AnimSprite.animation = "12"
 
 func set_frame_and_stop(aSprite, frame = 0):
 	if aSprite.is_playing():

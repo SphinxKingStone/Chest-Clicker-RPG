@@ -37,7 +37,7 @@ func start_fight():
 	# test fighting
 	Fighting.initiate_fight(Character, enemy)
 	$enemy_health/Label.text = str(enemy.stats.life) + "/" + str(enemy.stats.life)
-	$player_health/Label.text = str(stepify(Character.stats.life, 1.0)) + "/" + str(stepify(Character.stats.life, 1.0))
+	$player_health/Label.text = str(Character.stats.life) + "/" + str(Character.stats.life)
 	
 	if turn == "enemy":
 		$attack_up.disabled = true
@@ -95,7 +95,7 @@ func enemy_attack():
 	enemy_attack_animation()
 
 func on_player_got_hit():
-	$player_health/Label.text = str(Fighting.get_hp("player")) + "/" + str(stepify(Character.stats.life, 1.0))
+	$player_health/Label.text = str(Fighting.get_hp("player")) + "/" + str(Character.stats.life, 1.0)
 	$player_health.value = Fighting.get_hp("player") / Character.stats.life * 1000
 
 func on_enemy_got_hit():

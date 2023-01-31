@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/main_font_40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://gui/Chest screen/Scripts/GearLevel.gd" type="Script" id=2]
 
 [sub_resource type="Gradient" id=1]
@@ -18,37 +18,30 @@ colors = PoolColorArray( 0.807843, 0.807843, 0.807843, 1, 0.0392157, 0.756863, 0
 gradient = SubResource( 3 )
 width = 300
 
-[sub_resource type="DynamicFont" id=5]
-size = 40
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0, 0.303704, 0.496296, 0.740741, 1 )
 colors = PoolColorArray( 0.857724, 0.941406, 0.239029, 1, 0.688182, 0.756863, 0.0392157, 0.219608, 0.694051, 0.824219, 0.157761, 1, 0.709804, 0.792157, 0.145098, 0.513726, 0.921569, 0.867647, 0.0588235, 1 )
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 0.654545 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=9]
 _data = [ Vector2( 0.118715, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.990223, 0.0306859 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
+[sub_resource type="CurveTexture" id=10]
 width = 128
-curve = SubResource( 10 )
+curve = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=11]
 lifetime_randomness = 0.66
 trail_divisor = 16
-trail_size_modifier = SubResource( 11 )
+trail_size_modifier = SubResource( 10 )
 emission_shape = 2
 emission_box_extents = Vector3( 20, 10, 1 )
 flag_disable_z = true
@@ -66,8 +59,8 @@ angle = 150.0
 angle_random = 0.2
 scale = 25.0
 scale_random = 0.2
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 7 )
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
 
 [node name="GearLevel" type="Panel"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -75,6 +68,9 @@ margin_top = 350.0
 margin_right = 348.0
 margin_bottom = 443.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GearLevelBar" type="TextureProgress" parent="."]
 margin_left = 16.0
@@ -93,7 +89,7 @@ __meta__ = {
 margin_left = 16.0
 margin_right = 237.0
 margin_bottom = 41.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.807843, 0.807843, 0.807843, 0.807843 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Gear Level: 0"
@@ -104,6 +100,6 @@ z_index = 1
 emitting = false
 amount = 122
 lifetime = 2.0
-process_material = SubResource( 12 )
+process_material = SubResource( 11 )
 
 [node name="Tween" type="Tween" parent="."]

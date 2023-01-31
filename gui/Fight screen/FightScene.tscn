@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/ui/progress_bars/life_over.png" type="Texture" id=4]
 [ext_resource path="res://assets/forest_icon.png" type="Texture" id=5]
 [ext_resource path="res://gui/UI/Scenes/DamageText.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/fonts/main_font_40.tres" type="DynamicFont" id=7]
 [ext_resource path="res://gui/Fight screen/FightScene.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFontData" id=1]

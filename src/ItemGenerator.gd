@@ -61,7 +61,7 @@ func generate_base_stats():
 	for stat in item.base_stats_data:
 		var stat_name = stat
 		var stat_value = ItemGenerator.rng.randf_range(item.base_stats_data[stat][0], item.base_stats_data[stat][1])
-		stat_value = stepify(stat_value, 0.1)
+		stat_value = stepify(stat_value, 1.0)
 		var base_stat = {"name": stat_name, "value": stat_value}
 		generated_stats.append(base_stat)
 	
@@ -91,7 +91,8 @@ func generate_stats():
 		
 		var selected_stat = stats_pool[stat_name][stat_tier]
 		var stat_value = ItemGenerator.rng.randf_range(selected_stat.min, selected_stat.max)
-		stat_value = stepify(stat_value, 0.1)
+		stat_value = stepify(stat_value, 1.0)
+#		stat_value = stepify(stat_value, 0.1)
 #		var stat = [stat_name, stat_value]
 		var stat = {"name": stat_name, "value": stat_value, "tier": stat_tier}
 		generated_stats.append(stat)
@@ -104,11 +105,11 @@ func roll_rarity():
 	var rng_number = rng.randi_range(1, 100 + min_number) # 1 and 100 are both possible
 	
 	var rarity
-	if rng_number > 150:
+	if rng_number > 149:
 		rarity = "RED"
 	elif rng_number > 138:
 		rarity = "YELLOW"
-	elif rng_number > 130:
+	elif rng_number > 127: # 3 or 4% at all blues
 		rarity = "PURPLE"
 	elif rng_number > 113: # 7% at all greens
 		rarity = "BLUE"
