@@ -15,11 +15,11 @@ __meta__ = {
 scale = Vector2( 5, 5 )
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 2
+frame = 5
 playing = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color( 1, 1, 1, 0.168627 )
+[node name="bg" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -5.0
 margin_top = -5.0
 margin_right = 125.0

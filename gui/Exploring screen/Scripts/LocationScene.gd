@@ -16,12 +16,15 @@ func on_back_pressed():
 
 var clicked = 0
 func on_enemy_pressed(enemy):
+	for ch in $map_bg/ScrollContainer/map.get_children():
+		ch.get_node("bg").modulate = Color(1,1,1,0)
+	
 	clicked += 1
 	$EnemyInfo/Attack.visible = true
 	$EnemyInfo/Name.text = enemy.name
 	$EnemyInfo/Level.text = str(tr("LEVEL"), " ", enemy.level)
 	$EnemyInfo/Icon.self_modulate = enemy.shade
-	if clicked > 1 and Fighting.enemy == enemy:
+	if clicked > 1 and Fighting.enemy.unique_id == enemy.unique_id:
 		Fighting.enemy = enemy
 		SceneTransition.change_scene("res://gui/Fight screen/FightScene.tscn")
 		clicked = 0

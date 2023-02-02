@@ -3,7 +3,7 @@ extends Node
 var music_volume = -30
 var sounds_volume = -5
 #var test_mode = true
-var test_mode = true
+var test_mode = false
 var language = "en"
 #var language = "ru"
 
