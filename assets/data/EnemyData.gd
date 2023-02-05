@@ -38,6 +38,12 @@ var enemies = {
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)
 				position_offset = Vector2(-49, -16)
+			},
+			death = {
+				fight_scale = Vector2(7, 7),
+				location_scale = Vector2(5, 5),
+#				position = Vector2(511, 323)
+				position_offset = Vector2(-49, -16)
 			}
 		}
 	},
@@ -74,6 +80,12 @@ var enemies = {
 				position_offset = Vector2(21, 0)
 			},
 			attack = {
+				fight_scale = Vector2(7, 7),
+				location_scale = Vector2(5, 5),
+#				position = Vector2(511, 323)
+				position_offset = Vector2(-49, -16)
+			},
+			death = {
 				fight_scale = Vector2(7, 7),
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)
@@ -118,6 +130,12 @@ var enemies = {
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)
 				position_offset = Vector2(-49, -16)
+			},
+			death = {
+				fight_scale = Vector2(7, 7),
+				location_scale = Vector2(5, 5),
+#				position = Vector2(511, 323)
+				position_offset = Vector2(-49, -16)
 			}
 		}
 	},
@@ -154,6 +172,12 @@ var enemies = {
 				position_offset = Vector2(21, 0)
 			},
 			attack = {
+				fight_scale = Vector2(7, 7),
+				location_scale = Vector2(5, 5),
+#				position = Vector2(511, 323)
+				position_offset = Vector2(-49, -16)
+			},
+			death = {
 				fight_scale = Vector2(7, 7),
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)
@@ -198,6 +222,12 @@ var enemies = {
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)
 				position_offset = Vector2(-49, -16)
+			},
+			death = {
+				fight_scale = Vector2(7, 7),
+				location_scale = Vector2(5, 5),
+#				position = Vector2(511, 323)
+				position_offset = Vector2(-49, -16)
 			}
 		}
 	},
@@ -234,6 +264,12 @@ var enemies = {
 				position_offset = Vector2(21, 0)
 			},
 			attack = {
+				fight_scale = Vector2(7, 7),
+				location_scale = Vector2(5, 5),
+#				position = Vector2(511, 323)
+				position_offset = Vector2(-49, -16)
+			},
+			death = {
 				fight_scale = Vector2(7, 7),
 				location_scale = Vector2(5, 5),
 #				position = Vector2(511, 323)

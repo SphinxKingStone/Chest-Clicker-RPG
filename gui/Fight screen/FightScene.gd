@@ -95,7 +95,7 @@ func enemy_attack():
 	enemy_attack_animation()
 
 func on_player_got_hit():
-	$player_health/Label.text = str(Fighting.get_hp("player")) + "/" + str(Character.stats.life, 1.0)
+	$player_health/Label.text = str(Fighting.get_hp("player")) + "/" + str(Character.stats.life)
 	$player_health.value = Fighting.get_hp("player") / Character.stats.life * 1000
 
 func on_enemy_got_hit():
@@ -154,6 +154,9 @@ func show_damage_number(entity, number):
 func enemy_attack_frame():
 	# only for skeleton
 	if $Enemy.animation == "attack" and $Enemy.frame == 8:
+		if Fighting.get_hp("player") <= 0:
+			player_death()
+			return
 		$Player.play("hit")
 		show_damage_number("character", Fighting.last_damage_calculated_data.damage)
 		yield($Player, "animation_finished")
@@ -216,9 +219,18 @@ func distance_to_enemy():
 	return enemy_left_pos - char_right_pos + 90
 
 func turn_changed(turn):
-	if turn.empty():
+	if turn == null:
 		return
-	self.turn = turn[0]
+	self.turn = turn
+
+func player_death():
+	$Player.play("death")
+	show_damage_number("character", Fighting.last_damage_calculated_data.damage)
+	yield($Player, "animation_finished")
+	emit_signal("player_got_hit")
+	yield(get_tree().create_timer(1.2), "timeout")
+	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/LocationScene.tscn")
 
 func defeat():
-	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/LocationScene.tscn")
+	pass
+#	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/LocationScene.tscn")
