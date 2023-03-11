@@ -6,7 +6,7 @@ var enemies = {
 		name = "SKELETON",
 		stats = {
 			"damage": 8, 
-			"life": 200,  
+			"life": 200,
 			"defense": 100, # 10% neg
 			"strength": 0,  
 			"dexterity": 0,  

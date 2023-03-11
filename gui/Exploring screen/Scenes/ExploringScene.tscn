@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/STIXTwoText-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/forest_icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/bushes.png" type="Texture" id=3]
 [ext_resource path="res://gui/Exploring screen/Scripts/ExploringScene.gd" type="Script" id=4]
+[ext_resource path="res://assets/2.png" type="Texture" id=5]
+[ext_resource path="res://assets/1.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -23,14 +25,6 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 34
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 40
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -168,10 +162,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackButton" type="Button" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 160.0
-margin_bottom = 70.0
-custom_fonts/font = SubResource( 4 )
-text = "Back"
+[node name="BackButton" type="TextureButton" parent="."]
+margin_left = -30.0
+margin_top = 20.0
+margin_right = 214.0
+margin_bottom = 131.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
