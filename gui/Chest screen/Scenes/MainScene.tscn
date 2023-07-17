@@ -13,8 +13,8 @@
 [ext_resource path="res://gui/Chest screen/Scenes/GearLevel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/images/coins/coins_5.png" type="Texture" id=12]
 [ext_resource path="res://assets/Shaders/4CornerGradientForBackground.tres" type="Material" id=13]
-[ext_resource path="res://assets/theophile-curto-twfbetc-x4size.jpg" type="Texture" id=14]
 [ext_resource path="res://assets/fonts/main_font_36.tres" type="DynamicFont" id=15]
+[ext_resource path="res://assets/desktop-wallpaper-black-night-stars-winter-mountain-iphone-dark-night-mountains-thumbnail.jpg" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -48,15 +48,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
-visible = false
-modulate = Color( 0.258824, 0.215686, 0.215686, 1 )
+[node name="Image" type="TextureRect" parent="Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 121.0
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 expand = true
 stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tint" type="ColorRect" parent="Background/Image"]
+self_modulate = Color( 0, 0, 0, 0.709804 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
