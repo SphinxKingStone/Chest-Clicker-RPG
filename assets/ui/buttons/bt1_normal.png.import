@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desktop-wallpaper-black-night-stars-winter-mountain-iphone-dark-night-mountains-thumbnail.jpg-286253eb7b7aa7f31b4b2abb0b80f5d7.stex"
+path="res://.import/bt1_normal.png-9296a0a5dc2fbce90d16038eaa282b49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/desktop-wallpaper-black-night-stars-winter-mountain-iphone-dark-night-mountains-thumbnail.jpg"
-dest_files=[ "res://.import/desktop-wallpaper-black-night-stars-winter-mountain-iphone-dark-night-mountains-thumbnail.jpg-286253eb7b7aa7f31b4b2abb0b80f5d7.stex" ]
+source_file="res://assets/ui/buttons/bt1_normal.png"
+dest_files=[ "res://.import/bt1_normal.png-9296a0a5dc2fbce90d16038eaa282b49.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

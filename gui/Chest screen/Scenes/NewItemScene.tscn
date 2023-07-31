@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/NewItemScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/main_font_40.tres" type="DynamicFont" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/fonts/main_font_32.tres" type="DynamicFont" id=10]
 [ext_resource path="res://assets/fonts/main_font_24.tres" type="DynamicFont" id=11]
 [ext_resource path="res://assets/fonts/main_font_56.tres" type="DynamicFont" id=12]
+[ext_resource path="res://assets/ui/buttons/bt3_normal.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/buttons/bt3_pressed.png" type="Texture" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.501961, 0.501961, 0.501961, 1 )
@@ -78,26 +80,23 @@ margin_top = 520.0
 margin_right = 708.0
 margin_bottom = 620.0
 custom_constants/separation = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="SaveButton" type="Button" parent="HBoxContainer"]
+[node name="SaveButton" type="TextureButton" parent="HBoxContainer"]
 margin_right = 226.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 2 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+expand = true
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/SaveButton"]
 self_modulate = Color( 1, 1, 1, 0.156863 )
+margin_top = 10.0
 margin_right = 223.0
-margin_bottom = 100.0
+margin_bottom = 90.0
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="HBoxContainer/SaveButton"]
 margin_right = 223.0
@@ -107,21 +106,21 @@ custom_fonts/font = ExtResource( 2 )
 text = "SAVE"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="SellButton" type="Button" parent="HBoxContainer"]
+[node name="SellButton" type="TextureButton" parent="HBoxContainer"]
 margin_left = 236.0
 margin_right = 462.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 2 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+expand = true
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/SellButton"]
 self_modulate = Color( 1, 1, 1, 0.156863 )
+margin_top = 10.0
 margin_right = 223.0
-margin_bottom = 100.0
+margin_bottom = 90.0
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
@@ -141,17 +140,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EquipButton" type="Button" parent="HBoxContainer"]
+[node name="EquipButton" type="TextureButton" parent="HBoxContainer"]
 margin_left = 472.0
 margin_right = 698.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 2 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+expand = true
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/EquipButton"]
 self_modulate = Color( 1, 1, 1, 0.156863 )
+margin_top = 10.0
 margin_right = 223.0
-margin_bottom = 100.0
+margin_bottom = 90.0
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
@@ -207,8 +209,8 @@ margin_left = 15.0
 margin_top = 20.0
 margin_right = 703.0
 margin_bottom = 85.0
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+custom_fonts/font = ExtResource( 12 )
 text = "Astral Axe"
 align = 1
 __meta__ = {
@@ -296,8 +298,8 @@ alignment = 1
 margin_left = 45.0
 margin_right = 299.0
 margin_bottom = 33.0
-custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+custom_fonts/font = ExtResource( 10 )
 text = "Crit Chance: +10%"
 align = 1
 __meta__ = {
@@ -309,8 +311,8 @@ margin_left = 303.0
 margin_top = 4.0
 margin_right = 339.0
 margin_bottom = 29.0
-custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0.945098, 0.847059, 0.435294, 1 )
+custom_fonts/font = ExtResource( 11 )
 text = "(t2)"
 align = 1
 __meta__ = {

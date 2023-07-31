@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/images/coins/coins_5.png" type="Texture" id=12]
 [ext_resource path="res://assets/Shaders/4CornerGradientForBackground.tres" type="Material" id=13]
 [ext_resource path="res://assets/fonts/main_font_36.tres" type="DynamicFont" id=15]
-[ext_resource path="res://assets/desktop-wallpaper-black-night-stars-winter-mountain-iphone-dark-night-mountains-thumbnail.jpg" type="Texture" id=16]
+[ext_resource path="res://assets/good_bg_no_rights.jpg" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -59,7 +59,7 @@ __meta__ = {
 }
 
 [node name="Tint" type="ColorRect" parent="Background/Image"]
-self_modulate = Color( 0, 0, 0, 0.709804 )
+self_modulate = Color( 0, 0, 0, 0.705882 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -129,10 +129,10 @@ margin_left = 70.0
 margin_top = 20.0
 margin_right = 232.0
 margin_bottom = 57.0
-custom_fonts/font = ExtResource( 15 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 0
+custom_fonts/font = ExtResource( 15 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
