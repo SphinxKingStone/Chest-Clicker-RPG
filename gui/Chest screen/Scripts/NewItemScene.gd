@@ -24,17 +24,17 @@ func show_item(item = ItemGenerator.item):
 			$HBoxContainer/EquipButton.disabled = Character.get_equipment()["left_hand"].category == "two_handed"
 	
 	# Temporary audio part
-	var adj = -8
-	if item.rarity == "GREEN":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/okay.wav"), 0, adj)
-	elif item.rarity == "BLUE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/decent.wav"), 0, adj)
-	elif item.rarity == "PURPLE":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/goodish.wav"), 0, adj)
-	elif item.rarity == "YELLOW":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/good.wav"), 0, adj)
-	elif item.rarity == "RED":
-		Audio.play_sound(load("res://assets/Sounds/Sounds/items/very good.wav"), 0, adj)
+#	var adj = -8
+#	if item.rarity == "GREEN":
+#		Audio.play_sound(load("res://assets/Sounds/Sounds/whoosh2.mp3"), 0, adj)
+#	elif item.rarity == "BLUE":
+#		Audio.play_sound(load("res://assets/Sounds/Sounds/whoosh1.mp3"), 0, adj)
+#	elif item.rarity == "PURPLE":
+#		Audio.play_sound(load("res://assets/Sounds/Sounds/items/goodish.wav"), 0, adj)
+#	elif item.rarity == "YELLOW":
+#		Audio.play_sound(load("res://assets/Sounds/Sounds/items/good.wav"), 0, adj)
+#	elif item.rarity == "RED":
+#		Audio.play_sound(load("res://assets/Sounds/Sounds/items/very good.wav"), 0, adj)
 	
 	# Temporary progress check
 	Progress.track_item(item)
@@ -46,7 +46,7 @@ func show_item(item = ItemGenerator.item):
 	# Setting new items texture, name and other stuff
 	$ItemBackground/ItemTexture.texture = item.texture
 	$ItemName.text = item.name
-	$Cost.text = str(item.cost)
+	$CostContainer/Cost.text = str(item.cost)
 	$ItemCategoy.text = item.category.to_upper()
 	$ItemRarity.text = item.rarity.to_upper()
 	
@@ -154,6 +154,8 @@ func _process(delta):
 	my_time += delta
 
 func sell_item():
+	if Progress.last_item_new_rarity:
+		ConfirmationDialog.n
 	clear_comparison_stats()
 	
 	Character.Inventory.silver += ItemGenerator.item.cost

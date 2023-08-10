@@ -36,9 +36,6 @@ font_data = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="Panel" parent="."]
 material = ExtResource( 13 )
@@ -120,9 +117,6 @@ margin_bottom = 60.0
 texture = ExtResource( 12 )
 expand = true
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Amount" type="Label" parent="."]
 margin_left = 70.0

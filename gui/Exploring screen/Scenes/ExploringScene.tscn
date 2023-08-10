@@ -4,8 +4,9 @@
 [ext_resource path="res://assets/forest_icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/bushes.png" type="Texture" id=3]
 [ext_resource path="res://gui/Exploring screen/Scripts/ExploringScene.gd" type="Script" id=4]
-[ext_resource path="res://assets/2.png" type="Texture" id=5]
-[ext_resource path="res://assets/1.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/buttons/bt3_normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/buttons/bt3_pressed.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/main_font_36.tres" type="DynamicFont" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -17,14 +18,6 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 34
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -99,16 +92,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VisitButton" type="Button" parent="ScrollContainer/VBoxContainer/Forest"]
+[node name="VisitButton" type="TextureButton" parent="ScrollContainer/VBoxContainer/Forest"]
 margin_left = 485.0
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 705.0
-margin_bottom = 70.0
-custom_fonts/font = SubResource( 3 )
+margin_bottom = 69.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Forest/VisitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 7 )
 text = "Visit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+align = 1
+valign = 1
 
 [node name="Bushes" type="Panel" parent="ScrollContainer/VBoxContainer"]
 margin_top = 84.0
@@ -151,26 +150,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VisitButton" type="Button" parent="ScrollContainer/VBoxContainer/Bushes"]
+[node name="VisitButton" type="TextureButton" parent="ScrollContainer/VBoxContainer/Bushes"]
 margin_left = 485.0
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 705.0
-margin_bottom = 70.0
-custom_fonts/font = SubResource( 3 )
+margin_bottom = 69.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Bushes/VisitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 7 )
 text = "Visit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+align = 1
+valign = 1
 
 [node name="BackButton" type="TextureButton" parent="."]
-margin_left = -30.0
-margin_top = 20.0
-margin_right = 214.0
-margin_bottom = 131.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 70.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 expand = true
-stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Label" type="Label" parent="BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 7 )
+text = "BACK"
+align = 1
+valign = 1

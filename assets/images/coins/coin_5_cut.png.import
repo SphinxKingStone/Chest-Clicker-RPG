@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bt1_normal.png-9296a0a5dc2fbce90d16038eaa282b49.stex"
+path="res://.import/coin_5_cut.png-dc9b9a39041a1ecf58e70be2dc6e875b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/buttons/bt1_normal.png"
-dest_files=[ "res://.import/bt1_normal.png-9296a0a5dc2fbce90d16038eaa282b49.stex" ]
+source_file="res://assets/images/coins/coin_5_cut.png"
+dest_files=[ "res://.import/coin_5_cut.png-dc9b9a39041a1ecf58e70be2dc6e875b.stex" ]
 
 [params]
 

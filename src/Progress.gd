@@ -1,6 +1,7 @@
 extends Node
 
 var highest_rarity = 1
+var last_item_new_rarity = false
 var total_chests = 0
 var total_items = 0
 var total_rarities = {
@@ -18,8 +19,10 @@ func _ready():
 func track_item(item):
 	total_items += 1
 	total_rarities[item.rarity] += 1
+	last_item_new_rarity = false
 	
 	if highest_rarity < ItemsData.ITEM_LEVEL[item.rarity]:
+		last_item_new_rarity = true
 		Input.vibrate_handheld(50)
 		highest_rarity = ItemsData.ITEM_LEVEL[item.rarity]
 		print_debug("New Rarity!")
