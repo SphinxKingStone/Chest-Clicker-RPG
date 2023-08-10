@@ -104,6 +104,9 @@ func roll_rarity():
 	update_min_number()
 	var rng_number = rng.randi_range(1, 100 + min_number) # 1 and 100 are both possible
 	
+	# this part just adds a small chance to get higher rarity that you're allowed you
+	rng.randi_range(1, 20)
+	
 	var rarity
 	if rng_number > 149:
 		rarity = "RED"
