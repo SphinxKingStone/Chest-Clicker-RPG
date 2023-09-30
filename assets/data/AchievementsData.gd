@@ -166,7 +166,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all",
+			amount = "all_or_higher",
 			rarity = "WHITE"
 		}],
 		rewards = [{
@@ -181,7 +181,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all",
+			amount = "all_or_higher",
 			rarity = "GREEN"
 		}],
 		rewards = [{
@@ -196,7 +196,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all",
+			amount = "all_or_higher",
 			rarity = "BLUE"
 		}],
 		rewards = [{
@@ -211,7 +211,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all",
+			amount = "all_or_higher",
 			rarity = "PURPLE"
 		}],
 		rewards = [{
@@ -226,7 +226,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all",
+			amount = "all_or_higher",
 			rarity = "YELLOW"
 		}],
 		rewards = [{
@@ -241,7 +241,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all",
+			amount = "all_or_higher",
 			rarity = "RED"
 		}],
 		rewards = [{
