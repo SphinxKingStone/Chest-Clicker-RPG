@@ -4,7 +4,8 @@ var player
 var enemy
 var last_damage_calculated_data = {
 	"damage": 0,
-	"type": "none"
+	"type": "none",
+	"block_damage": 0,
 }
 
 signal turn_change
@@ -40,27 +41,32 @@ func calculate_attack(entity):
 	return stepify(damage, 0.1)
 
 func calculate_damage_taken(entity, recieving_damage):
+	last_damage_calculated_data.type = "none"
 	var stats = entity.stats
 	var defense_negate = recieving_damage * stats["defense"] / 1000.0
 	defense_negate += ItemGenerator.rng.randf_range(-0.15, 0.15) * defense_negate # some rng for attack value
 	var damage_taken = recieving_damage
 	damage_taken -= defense_negate
 	
+	var block_damage = 0
 	if ItemGenerator.rng.randi_range(1, 100) < stats.dodge:
 		damage_taken = 0
-		last_damage_calculated_data.type = "dodged"
-		print_debug("dodged")
+		last_damage_calculated_data.type = "dodge"
 	elif ItemGenerator.rng.randi_range(1, 100) < stats.block:
-		damage_taken -= damage_taken * (0.2 + (stats.endurance / 10) / 100) 
-		last_damage_calculated_data.type = "blocked"
-		print_debug("blocked")
-		# it was blocked
+		block_damage = damage_taken * (0.2 + (stats.endurance / 10) / 100) 
+		damage_taken -= block_damage
+		last_damage_calculated_data.type = "block"
 	
 	if damage_taken < 0:
 		damage_taken = 0
 	
-	last_damage_calculated_data.damage = stepify(damage_taken, 1.0)
-	last_damage_calculated_data.type = "none"
+	if last_damage_calculated_data.type == "none":
+		last_damage_calculated_data.damage = stepify(damage_taken, 1.0)
+	if last_damage_calculated_data.type == "block":
+		last_damage_calculated_data.damage = stepify(damage_taken, 1.0)
+		last_damage_calculated_data.block_amage = stepify(block_damage, 1.0)
+	
+	
 	
 	return stepify(damage_taken, 0.1)
 

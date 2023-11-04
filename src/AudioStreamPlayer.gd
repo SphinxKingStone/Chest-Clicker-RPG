@@ -7,8 +7,11 @@ func _init():
 
 func play_music(music):
 	self.set_stream(music)
-	self.set_volume_db(Settings.music_volume)
+	update_music_volume(Settings.music_volume)
 	self.play()
+
+func update_music_volume(volume):
+	self.set_volume_db(Settings.music_volume)
 
 func play_random_music():
 	var selection = "BACKGROUND"+ str(ItemGenerator.rng.randi_range(1, 4))

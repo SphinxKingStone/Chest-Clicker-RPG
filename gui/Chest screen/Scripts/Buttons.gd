@@ -22,14 +22,10 @@ func toggle_button(button):
 				SceneTransition.change_scene("res://gui/UI/Scenes/AchievementsScene.tscn")
 			"Exploring":
 				SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
+			"Settings":
+				get_parent().set_scene_visability(get_parent().get_node("SettingsScene"), true)
 		
-		#makes bg darker
-		var bg = button.get_node("Background")
-		bg.set("custom_styles/panel", load("res://assets/StyleBoxes/button_background_pressed.tres"))
-		
-		#shifts icon down
-		button.rect_position += Vector2(2, 2)
-		bg.rect_position -= Vector2(2, 2)
+		show_button_pressed(button, true)
 	else:
 		match button.name:
 			"Equipment":
@@ -38,11 +34,18 @@ func toggle_button(button):
 				get_parent().set_scene_visability(get_parent().get_node("ChestScene"), true)
 				yield(get_parent().set_scene_visability(get_parent().get_node("InventoryScene"), false), "completed")
 				get_parent().get_node("EquipmentScene").set_ring_selection_visability(false)
+			"Settings":
+				get_parent().set_scene_visability(get_parent().get_node("SettingsScene"), false)
 		
-		#makes bg lighter
-		var bg = button.get_node("Background")
-		bg.set("custom_styles/panel", load("res://assets/StyleBoxes/button_background_normal.tres"))
-		
-		#shifts icon back up
+		show_button_pressed(button, false)
+
+func show_button_pressed(button, pressed):
+	var bg = button.get_node("Background")
+	if pressed:
+		button.rect_position += Vector2(2, 2)
+		bg.rect_position -= Vector2(2, 2)
+		bg.set("custom_styles/panel", load("res://assets/StyleBoxes/button_background_pressed.tres"))
+	else:
 		button.rect_position -= Vector2(2, 2)
 		bg.rect_position += Vector2(2, 2)
+		bg.set("custom_styles/panel", load("res://assets/StyleBoxes/button_background_normal.tres"))

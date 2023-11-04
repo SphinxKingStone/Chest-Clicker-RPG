@@ -63,9 +63,6 @@ margin_bottom = 990.0
 rect_rotation = -16.0
 custom_fonts/font = ExtResource( 7 )
 text = "up"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="attack_mid" type="Button" parent="."]
 margin_left = 362.694
@@ -95,9 +92,7 @@ __meta__ = {
 margin_top = 456.0
 margin_right = 720.0
 margin_bottom = 476.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+disabled = true
 
 [node name="Enemy" type="AnimatedSprite" parent="."]
 position = Vector2( 560, 344 )
@@ -166,14 +161,3 @@ position = Vector2( 166, 256 )
 
 [node name="DamageTextPopUp2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 166, 256 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 179.714
-margin_top = 623.712
-margin_right = 578.714
-margin_bottom = 711.712
-custom_fonts/font = ExtResource( 7 )
-text = "0 means block or dodge"
-__meta__ = {
-"_edit_use_anchors_": false
-}

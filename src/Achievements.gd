@@ -39,13 +39,13 @@ func check_req_progress(req):
 
 func check_req_equipment(req): # TODO doesn't work with 2 handed weapons
 	if req.has("amount"):
-		if req.amount == "all_or_higher":
+		if req.amount == "all":
 			var equpment_dict = Character.get_equipment()
 			for eq in equpment_dict.values():
 				if eq != null:
-					var req_rar = ItemsData.ITEM_LEVEL[req.rarity]
-					var eq_rar = ItemsData.ITEM_LEVEL[eq.rarity]
-					if eq_rar < req_rar:
+					var req_rarity = ItemsData.ITEM_LEVEL[req.rarity]
+					var eq_rarity = ItemsData.ITEM_LEVEL[eq.rarity]
+					if eq_rarity != req_rarity:
 						return false
 				else:
 					return false

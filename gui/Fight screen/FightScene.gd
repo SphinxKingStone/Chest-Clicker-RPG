@@ -117,37 +117,46 @@ func enemy_attack_animation():
 
 # Animation
 func player_attack_frame():
+	# different animations have impact of different frames and here we do some stuff when we are at impact
 	match $Player.animation:
 		"attack_down":
 			if $Player.frame == 2:
 				play_enemy_animation("hit")
-				show_damage_number("enemy", Fighting.last_damage_calculated_data.damage)
+				show_damage_pop_up("enemy", Fighting.last_damage_calculated_data)
 				yield($Enemy, "animation_finished")
 				emit_signal("enemy_got_hit")
 				play_enemy_animation("idle")
 		"attack_mid":
 			if $Player.frame == 1:
 				play_enemy_animation("hit")
-				show_damage_number("enemy", Fighting.last_damage_calculated_data.damage)
+				show_damage_pop_up("enemy", Fighting.last_damage_calculated_data)
 				yield($Enemy, "animation_finished")
 				emit_signal("enemy_got_hit")
 				play_enemy_animation("idle")
 		"attack_up":
 			if $Player.frame == 2:
 				play_enemy_animation("hit")
-				show_damage_number("enemy", Fighting.last_damage_calculated_data.damage)
+				show_damage_pop_up("enemy", Fighting.last_damage_calculated_data)
 				yield($Enemy, "animation_finished")
 				emit_signal("enemy_got_hit")
 				play_enemy_animation("idle")
 
-func show_damage_number(entity, number):
+func show_damage_pop_up(entity, last_damage_calculated_data):
+	var text = ""
+	match last_damage_calculated_data.type:
+		"none":
+			text = last_damage_calculated_data.damage
+		"dodge":
+			text = "dodge"
+		"block":
+			text = str(last_damage_calculated_data.damage, " (block)")
 	if entity == "enemy":
 		$DamageTextPopUp2.position = Vector2(562, 256)
-		$DamageTextPopUp2/DamageText.text = str(number)
+		$DamageTextPopUp2/DamageText.text = str(text)
 		$DamageTextPopUp2/DamageText/AnimationPlayer.play("TextShowUp")
 	elif entity == "character":
 		$DamageTextPopUp.position = Vector2(142, 256)
-		$DamageTextPopUp/DamageText.text = str(number)
+		$DamageTextPopUp/DamageText.text = str(text)
 		$DamageTextPopUp/DamageText/AnimationPlayer.play("TextShowUp")
 
 # Animation
@@ -158,7 +167,7 @@ func enemy_attack_frame():
 			player_death()
 			return
 		$Player.play("hit")
-		show_damage_number("character", Fighting.last_damage_calculated_data.damage)
+		show_damage_pop_up("character", Fighting.last_damage_calculated_data)
 		yield($Player, "animation_finished")
 		emit_signal("player_got_hit")
 		$Player.play("idle")
@@ -225,7 +234,7 @@ func turn_changed(turn):
 
 func player_death():
 	$Player.play("death")
-	show_damage_number("character", Fighting.last_damage_calculated_data.damage)
+	show_damage_pop_up("character", Fighting.last_damage_calculated_data)
 	yield($Player, "animation_finished")
 	emit_signal("player_got_hit")
 	yield(get_tree().create_timer(1.2), "timeout")

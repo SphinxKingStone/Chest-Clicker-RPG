@@ -1,8 +1,10 @@
 extends Node
 
-var music_volume = -30
-var sounds_volume = -5
-var test_mode = false
+const music_basic_volume = -35
+const sounds_basic_volume = -5
+
+var music_volume = 0
+var sounds_volume = 0
 #var test_mode = true
 var language = "en"
 #var language = "ru"
@@ -10,6 +12,11 @@ var language = "en"
 
 
 func _ready():
-	if test_mode:
-		music_volume = -100
-		sounds_volume = -100
+	music_volume = music_basic_volume
+	sounds_volume = sounds_basic_volume
+
+func set_music_volume(volume):
+	music_volume = volume + music_basic_volume
+
+func set_sounds_volume(volume):
+	sounds_volume = volume + sounds_basic_volume

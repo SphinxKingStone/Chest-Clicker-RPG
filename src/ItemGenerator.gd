@@ -49,7 +49,7 @@ func generate_item():
 	return item
 
 func update_min_number():
-	min_number = 0
+	min_number = 100
 	for equipped_item in Character.Equipment.get_equipment().values():
 		if equipped_item != null:
 			min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]
@@ -104,8 +104,9 @@ func roll_rarity():
 	update_min_number()
 	var rng_number = rng.randi_range(1, 100 + min_number) # 1 and 100 are both possible
 	
-	# this part just adds a small chance to get higher rarity that you're allowed you
-	rng.randi_range(1, 20)
+	# this part just adds a small chance to get higher rarity than you're allowed you
+	if rng.randi_range(1, 20) > 19:
+		rng_number += 5
 	
 	var rarity
 	if rng_number > 149:

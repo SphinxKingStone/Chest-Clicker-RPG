@@ -1,6 +1,6 @@
 extends Node
 
-var achievements = {
+var achievements = { # TODO add gear level achievements
 	green_1 = {
 		name = "GREEN_1",
 		description = "GREEN_1_DESCRIPTION",
@@ -166,7 +166,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all_or_higher",
+			amount = "all",
 			rarity = "WHITE"
 		}],
 		rewards = [{
@@ -181,7 +181,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all_or_higher",
+			amount = "all",
 			rarity = "GREEN"
 		}],
 		rewards = [{
@@ -196,7 +196,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all_or_higher",
+			amount = "all",
 			rarity = "BLUE"
 		}],
 		rewards = [{
@@ -211,7 +211,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all_or_higher",
+			amount = "all",
 			rarity = "PURPLE"
 		}],
 		rewards = [{
@@ -226,7 +226,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all_or_higher",
+			amount = "all",
 			rarity = "YELLOW"
 		}],
 		rewards = [{
@@ -241,7 +241,7 @@ var achievements = {
 		reqs = [{
 			category = "equipment",
 			variable = "gear",
-			amount = "all_or_higher",
+			amount = "all",
 			rarity = "RED"
 		}],
 		rewards = [{

@@ -46,9 +46,6 @@ margin_right = 710.0
 margin_bottom = 600.0
 custom_styles/panel = ExtResource( 1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PlaceForButtons" type="Panel" parent="."]
 margin_left = 5.0
@@ -75,8 +72,8 @@ margin_left = 12.0
 margin_right = 67.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 55, 55 )
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_pressed = Color( 0.521569, 0.521569, 0.521569, 1 )
+custom_fonts/font = SubResource( 1 )
 toggle_mode = true
 pressed = true
 text = "ALL"
@@ -324,9 +321,6 @@ margin_top = 121.09
 margin_right = 388.508
 margin_bottom = 331.09
 custom_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBox" type="VBoxContainer" parent="Menu"]
 margin_left = 5.0
@@ -342,8 +336,8 @@ __meta__ = {
 margin_right = 290.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
-custom_fonts/font = SubResource( 3 )
 custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 3 )
 text = "INFO"
 align = 2
 
@@ -361,8 +355,8 @@ margin_top = 70.0
 margin_right = 290.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 0, 60 )
-custom_fonts/font = SubResource( 3 )
 custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 3 )
 text = "EQUIP"
 align = 2
 
@@ -381,8 +375,8 @@ margin_top = 140.0
 margin_right = 290.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 60 )
-custom_fonts/font = SubResource( 3 )
 custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 3 )
 text = "SELL"
 align = 2
 

@@ -19,7 +19,7 @@ func on_click():
 	emit_particles(new_item.rarity)
 	AnimSprite.play()
 	var creak = load("res://assets/Sounds/Sounds/creak1.wav")
-	Audio.play_sound(creak)
+	Audio.play_sound(creak, 0, -7)
 	yield(AnimSprite, "animation_finished")
 	openning = false
 	emit_signal("chest_opened")

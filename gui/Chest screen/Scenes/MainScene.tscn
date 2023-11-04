@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://gui/Chest screen/Scripts/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://gui/Chest screen/Scenes/ChestScene.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://gui/Chest screen/Scenes/GearLevel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/images/coins/coins_5.png" type="Texture" id=12]
 [ext_resource path="res://assets/Shaders/4CornerGradientForBackground.tres" type="Material" id=13]
+[ext_resource path="res://gui/UI/Scenes/SettingsScene.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/fonts/main_font_36.tres" type="DynamicFont" id=15]
 [ext_resource path="res://assets/good_bg_no_rights.jpg" type="Texture" id=16]
 
@@ -169,6 +170,17 @@ text = "music"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SettingsScene" parent="." instance=ExtResource( 14 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -533.333
+margin_right = 300.0
+margin_bottom = 533.333
 
 [connection signal="pressed" from="clr_save" to="." method="_on_clr_save_pressed"]
 [connection signal="pressed" from="clr_save2" to="." method="_on_clr_save2_pressed"]
