@@ -24,6 +24,8 @@ func toggle_button(button):
 				SceneTransition.change_scene("res://gui/Exploring screen/Scenes/ExploringScene.tscn")
 			"Settings":
 				get_parent().set_scene_visability(get_parent().get_node("SettingsScene"), true)
+				button.pressed = false
+				return
 		
 		show_button_pressed(button, true)
 	else:
@@ -36,6 +38,7 @@ func toggle_button(button):
 				get_parent().get_node("EquipmentScene").set_ring_selection_visability(false)
 			"Settings":
 				get_parent().set_scene_visability(get_parent().get_node("SettingsScene"), false)
+				return
 		
 		show_button_pressed(button, false)
 

@@ -15,6 +15,8 @@ func slider_change(value_changed, slider, type):
 			Audio.update_music_volume(Settings.music_volume)
 		"effects":
 			Settings.set_sounds_volume(volume)
+		"creak":
+			Settings.set_creak_volume(volume)
 
 func exit_pressed():
 	hide()

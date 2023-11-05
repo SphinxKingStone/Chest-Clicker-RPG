@@ -34,3 +34,16 @@ func play_sound(sound, delay = 0, volume_adj = 0):
 	yield(player, "finished")
 	remove_child(player)
 	player.queue_free()
+
+func play_creak_sound():
+	var player = AudioStreamPlayer.new()
+	player.autoplay = false
+	var creak = load("res://assets/Sounds/Sounds/creak1.wav")
+	player.set_stream(creak)
+	player.set_volume_db(Settings.creak_volume)
+	player.play()
+	add_child(player)
+	
+	yield(player, "finished")
+	remove_child(player)
+	player.queue_free()

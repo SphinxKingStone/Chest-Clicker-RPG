@@ -34,9 +34,6 @@ pressed = true
 texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="Panel" parent="Equipment"]
 show_behind_parent = true
