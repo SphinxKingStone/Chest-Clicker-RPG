@@ -16,7 +16,7 @@ func _ready():
 	Achievements.connect("new_achievement", self, "new_achievement")
 	Audio.play_random_music()
 	ItemGenerator.update_min_number()
-	$GearLevel.update_bar()
+	$GearLevel.update_bar(0)
 	Character.update_stats()
 	$StatsScene.update_stats()
 

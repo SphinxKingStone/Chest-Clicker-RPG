@@ -150,6 +150,8 @@ func show_damage_pop_up(entity, last_damage_calculated_data):
 			text = "dodge"
 		"block":
 			text = str(last_damage_calculated_data.damage, " (block)")
+		"crit":
+			text = str(last_damage_calculated_data.damage, " (crit)")
 	if entity == "enemy":
 		$DamageTextPopUp2.position = Vector2(562, 256)
 		$DamageTextPopUp2/DamageText.text = str(text)

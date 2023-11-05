@@ -49,7 +49,7 @@ func generate_item():
 	return item
 
 func update_min_number():
-	min_number = 25
+	min_number = 251
 	for equipped_item in Character.Equipment.get_equipment().values():
 		if equipped_item != null:
 			min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]

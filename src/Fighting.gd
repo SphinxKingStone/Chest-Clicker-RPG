@@ -34,14 +34,13 @@ func calculate_attack(entity):
 	if ItemGenerator.rng.randi_range(1, 100) < stats["critical"]:
 		crit_dmg = damage * bonus_dmg_to_crit
 		damage = crit_dmg
-		print_debug("crit")
+		last_damage_calculated_data.type = "crit"
 	
 	damage += bonus_dmg
 	
-	return stepify(damage, 0.1)
+	return stepify(damage, 1)
 
 func calculate_damage_taken(entity, recieving_damage):
-	last_damage_calculated_data.type = "none"
 	var stats = entity.stats
 	var defense_negate = recieving_damage * stats["defense"] / 1000.0
 	defense_negate += ItemGenerator.rng.randf_range(-0.15, 0.15) * defense_negate # some rng for attack value
@@ -60,17 +59,16 @@ func calculate_damage_taken(entity, recieving_damage):
 	if damage_taken < 0:
 		damage_taken = 0
 	
-	if last_damage_calculated_data.type == "none":
+	if last_damage_calculated_data.type == "none" or last_damage_calculated_data.type == "crit":
 		last_damage_calculated_data.damage = stepify(damage_taken, 1.0)
 	if last_damage_calculated_data.type == "block":
 		last_damage_calculated_data.damage = stepify(damage_taken, 1.0)
 		last_damage_calculated_data.block_amage = stepify(block_damage, 1.0)
 	
-	
-	
-	return stepify(damage_taken, 0.1)
+	return stepify(damage_taken, 1)
 
 func attack(attacking, receiving, attack_type):
+	last_damage_calculated_data.type = "none"
 	var calc_attack = calculate_attack(attacking)
 	var calc_dmg_taken = calculate_damage_taken(receiving, calc_attack)
 	print_debug(calc_dmg_taken)
