@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Break_Jar_v1_wav.wav-9fb07f995424181be5f6c00c8420b7ad.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Break_Jar_02/Break_Jar_v1_wav.wav"
+dest_files=[ "res://.import/Break_Jar_v1_wav.wav-9fb07f995424181be5f6c00c8420b7ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

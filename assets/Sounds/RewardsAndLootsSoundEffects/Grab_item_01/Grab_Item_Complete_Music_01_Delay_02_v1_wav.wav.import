@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Grab_Item_Complete_Music_01_Delay_02_v1_wav.wav-550ce52f70374caa0200903fff20b821.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Grab_item_01/Grab_Item_Complete_Music_01_Delay_02_v1_wav.wav"
+dest_files=[ "res://.import/Grab_Item_Complete_Music_01_Delay_02_v1_wav.wav-550ce52f70374caa0200903fff20b821.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

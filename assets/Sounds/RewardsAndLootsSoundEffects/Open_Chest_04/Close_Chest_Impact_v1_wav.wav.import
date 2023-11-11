@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Close_Chest_Impact_v1_wav.wav-467be673b5da0e2b801568c2cd29b894.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Open_Chest_04/Close_Chest_Impact_v1_wav.wav"
+dest_files=[ "res://.import/Close_Chest_Impact_v1_wav.wav-467be673b5da0e2b801568c2cd29b894.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

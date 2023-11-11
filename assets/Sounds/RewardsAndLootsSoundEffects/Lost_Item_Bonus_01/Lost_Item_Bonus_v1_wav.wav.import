@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Lost_Item_Bonus_v1_wav.wav-2a0d05ac435c22d8473a8020e8aef245.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Lost_Item_Bonus_01/Lost_Item_Bonus_v1_wav.wav"
+dest_files=[ "res://.import/Lost_Item_Bonus_v1_wav.wav-2a0d05ac435c22d8473a8020e8aef245.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

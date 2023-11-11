@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Open_Cabinet_Door_Complete_Music_02_v1_wav.wav-637ce0302b27b6d0ad522ed879c10b40.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Open_Cabinet_Door_01/Open_Cabinet_Door_Complete_Music_02_v1_wav.wav"
+dest_files=[ "res://.import/Open_Cabinet_Door_Complete_Music_02_v1_wav.wav-637ce0302b27b6d0ad522ed879c10b40.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

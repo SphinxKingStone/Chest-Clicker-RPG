@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Find_Item_Music_02_v1_wav.wav-7f0cde1b060e28aafa841e63e32f6649.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Find_Item_05/Find_Item_Music_02_v1_wav.wav"
+dest_files=[ "res://.import/Find_Item_Music_02_v1_wav.wav-7f0cde1b060e28aafa841e63e32f6649.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

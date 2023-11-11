@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Found_Money_Music_02_v1_wav.wav-388f6a5d86d2b8b8164ca43bf9a9045a.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Found_Money_02/Found_Money_Music_02_v1_wav.wav"
+dest_files=[ "res://.import/Found_Money_Music_02_v1_wav.wav-388f6a5d86d2b8b8164ca43bf9a9045a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

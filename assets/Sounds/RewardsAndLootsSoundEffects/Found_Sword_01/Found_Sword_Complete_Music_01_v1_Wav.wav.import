@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Found_Sword_Complete_Music_01_v1_Wav.wav-c6e3442bb372aa3fe8c835cd269c3192.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Found_Sword_01/Found_Sword_Complete_Music_01_v1_Wav.wav"
+dest_files=[ "res://.import/Found_Sword_Complete_Music_01_v1_Wav.wav-c6e3442bb372aa3fe8c835cd269c3192.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

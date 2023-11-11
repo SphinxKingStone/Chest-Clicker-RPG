@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Find_Gel_Gore_03_v1_wav.wav-76dd598671fb95bc5e0cbc8d471fb3a6.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/RewardsAndLootsSoundEffects/Find_Gel_01/Find_Gel_Gore_03_v1_wav.wav"
+dest_files=[ "res://.import/Find_Gel_Gore_03_v1_wav.wav-76dd598671fb95bc5e0cbc8d471fb3a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

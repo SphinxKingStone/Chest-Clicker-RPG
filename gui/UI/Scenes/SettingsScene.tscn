@@ -76,7 +76,8 @@ custom_icons/grabber = ExtResource( 7 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 5 )
-value = 100.0
+max_value = 20.0
+value = 20.0
 
 [node name="EffectsLabel" type="Label" parent="VBoxContainer"]
 margin_top = 83.0
@@ -96,7 +97,8 @@ custom_icons/grabber = ExtResource( 7 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 5 )
-value = 100.0
+max_value = 20.0
+value = 20.0
 
 [node name="CreakLabel" type="Label" parent="VBoxContainer"]
 margin_top = 166.0
@@ -116,7 +118,8 @@ custom_icons/grabber = ExtResource( 7 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 5 )
-value = 100.0
+max_value = 20.0
+value = 20.0
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
