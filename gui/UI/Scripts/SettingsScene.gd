@@ -2,13 +2,17 @@ extends Control
 
 
 func _ready():
-	$VBoxContainer/MusicSlider.connect("drag_ended", self, "slider_change", [$VBoxContainer/MusicSlider, "music"])
-	$VBoxContainer/EffectsSlider.connect("drag_ended", self, "slider_change", [$VBoxContainer/EffectsSlider, "effects"])
-	$VBoxContainer/CreakSlider.connect("drag_ended", self, "slider_change", [$VBoxContainer/CreakSlider, "creak"])
+	$VBoxContainer/MusicSlider.connect("value_changed", self, "slider_change", [$VBoxContainer/MusicSlider, "music"])
+	$VBoxContainer/EffectsSlider.connect("value_changed", self, "slider_change", [$VBoxContainer/EffectsSlider, "effects"])
+	$VBoxContainer/CreakSlider.connect("value_changed", self, "slider_change", [$VBoxContainer/CreakSlider, "creak"])
 	$BackButton.connect("pressed", self, "exit_pressed")
 
 func slider_change(value_changed, slider, type):
-	var volume = slider.value - 50 # 50 = middle = 0 change
+	var volume = (slider.value - 100) / 4
+	
+	# if volume slider set to minimum then mute
+	if volume <= -25:
+		volume = -100
 	match type:
 		"music":
 			Settings.set_music_volume(volume)

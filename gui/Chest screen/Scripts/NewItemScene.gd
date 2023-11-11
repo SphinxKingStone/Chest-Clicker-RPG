@@ -154,8 +154,8 @@ func _process(delta):
 	my_time += delta
 
 func sell_item():
-	if Progress.last_item_new_rarity:
-		ConfirmationDialog.n
+#	if Progress.last_item_new_rarity:
+#		ConfirmationDialog.n
 	clear_comparison_stats()
 	
 	Character.Inventory.silver += ItemGenerator.item.cost
