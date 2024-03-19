@@ -1,6 +1,6 @@
 extends Panel
 
-var current_gear_level = 0
+var current_gear_level = -1
 
 func _ready():
 	Character.connect("item_equipped", self, "update_bar")
@@ -18,7 +18,8 @@ func update_bar(anim_speed = 0.25):
 	if new_gear_level > current_gear_level:
 		$Tween.interpolate_property($GearLevelBar, "value", old_value, 1000, anim_speed * ((1000 - old_value) / 100), Tween.TRANS_CUBIC, Tween.EASE_OUT)
 		yield($Tween, "tween_completed")
-		level_up_firework()
+		if current_gear_level != -1:
+			level_up_firework()
 		# stupid fix but meh it's 7 AM
 		if new_gear_level != 6:
 			$Tween.interpolate_property($GearLevelBar, "value", 0, new_value, anim_speed * (new_value / 100), Tween.TRANS_CUBIC, Tween.EASE_OUT)
