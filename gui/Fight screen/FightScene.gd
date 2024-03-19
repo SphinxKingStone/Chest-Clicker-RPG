@@ -52,6 +52,10 @@ func start_fight():
 
 # Functional
 func on_player_finished_attacking():
+	if Fighting.get_hp("enemy") <= 0:
+		enemy_death()
+		return
+	
 	#just some delay so fight is not too fast
 	yield(get_tree().create_timer(0.5), "timeout")
 	
@@ -240,6 +244,14 @@ func player_death():
 	yield($Player, "animation_finished")
 	emit_signal("player_got_hit")
 	yield(get_tree().create_timer(1.2), "timeout")
+	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/LocationScene.tscn")
+
+func enemy_death():
+	$Enemy.play("death")
+	show_damage_pop_up("enemy", Fighting.last_damage_calculated_data)
+	yield($Enemy, "animation_finished")
+#	emit_signal("enemy_got_hit")
+	yield(get_tree().create_timer(0.7), "timeout")
 	SceneTransition.change_scene("res://gui/Exploring screen/Scenes/LocationScene.tscn")
 
 func defeat():

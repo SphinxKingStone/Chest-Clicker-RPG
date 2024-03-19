@@ -1,6 +1,7 @@
 extends Node
 
-var save_files = ["user://inventory.save", "user://equipment.save", "user://progress.save", "user://achievements.save"]
+var save_files = ["user://inventory.save", "user://equipment.save", "user://progress.save", "user://achievements.save", "user://settings.save"]
+#var dev_save_files = ["user://dev/inventory.save", "user://dev/equipment.save", "user://dev/progress.save", "user://dev/achievements.save", "user://dev/settings.save"]
 const autosave_timer = 10
 
 func _init():
@@ -9,7 +10,7 @@ func _init():
 
 func _ready():
 	# timer that autosaves game
-	load_game()
+#	load_game()
 	var timer = Timer.new()
 	timer.set_wait_time(autosave_timer)
 	timer.connect("timeout", self, "save_game")
@@ -45,6 +46,12 @@ func save_game():
 			# save achievements progress
 			"user://achievements.save":
 				save_game_file.store_var(Achievements.completed_achievements)
+			
+			# save settings
+			"user://settings.save":
+				save_game_file.store_var(Settings.music_volume - Settings.music_basic_volume)
+				save_game_file.store_var(Settings.sounds_volume - Settings.sounds_basic_volume)
+				save_game_file.store_var(Settings.creak_volume - Settings.creak_basic_volume)
 		
 		# close file
 		save_game_file.close()
@@ -81,6 +88,12 @@ func load_game():
 			# load achievement progress
 			"user://achievements.save":
 				Achievements.completed_achievements = save_game_file.get_var()
+			
+			# load settings
+			"user://settings.save":
+				Settings.set_music_volume(save_game_file.get_var())
+				Settings.set_sounds_volume(save_game_file.get_var())
+				Settings.set_creak_volume(save_game_file.get_var())
 		
 		# close file
 		save_game_file.close()

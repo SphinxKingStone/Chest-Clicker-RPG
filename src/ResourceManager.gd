@@ -59,6 +59,10 @@ const SOUNDS = {
 	"OPEN_INVENTORY": preload("res://assets/Sounds/Sounds/open_inventory.wav"),
 	"MARK1": preload("res://assets/Sounds/Sounds/Check_Box_Mark_1.wav"),
 	"UNMARK1": preload("res://assets/Sounds/Sounds/Check_Box_UnMark_1.wav"),
+	"CREAK1": preload("res://assets/Sounds/Sounds/creak1.wav"),
+	"CREAK2": preload("res://assets/Sounds/Sounds/creak2.wav"),
+	"CREAK3": preload("res://assets/Sounds/Sounds/creak3.wav"),
+	"ACHIEVEMENT": preload("res://assets/Sounds/Sounds/achievement.wav"),
 }
 
 const MUSIC = {
@@ -66,7 +70,7 @@ const MUSIC = {
 	"BACKGROUND1": preload("res://assets/Sounds/Music/bg1.ogg"),
 	"BACKGROUND2": preload("res://assets/Sounds/Music/bg2.ogg"),
 	"BACKGROUND3": preload("res://assets/Sounds/Music/bg3.ogg"),
-	"BACKGROUND4": preload("res://assets/Sounds/Music/bg4.ogg"),
+#	"BACKGROUND4": preload("res://assets/Sounds/Music/bg4.ogg"),
 }
 
 const NODES = {

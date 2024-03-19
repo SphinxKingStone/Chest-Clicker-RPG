@@ -18,6 +18,7 @@ func update_bar(anim_speed = 0.25):
 	if new_gear_level > current_gear_level:
 		$Tween.interpolate_property($GearLevelBar, "value", old_value, 1000, anim_speed * ((1000 - old_value) / 100), Tween.TRANS_CUBIC, Tween.EASE_OUT)
 		yield($Tween, "tween_completed")
+		level_up_firework()
 		# stupid fix but meh it's 7 AM
 		if new_gear_level != 6:
 			$Tween.interpolate_property($GearLevelBar, "value", 0, new_value, anim_speed * (new_value / 100), Tween.TRANS_CUBIC, Tween.EASE_OUT)
@@ -40,3 +41,24 @@ func update_bar(anim_speed = 0.25):
 		$GearLevelText.set("custom_colors/font_color", ResourceManager.rarity_color[int(new_gear_level)])
 		
 	current_gear_level = new_gear_level
+
+func level_up_firework():
+	var firework_count_max = 11
+	var firework_count = 1
+	
+	$Firework.visible = true
+	
+	while firework_count < firework_count_max:
+		$Firework.material.set_shader_param("firework_count", firework_count)
+		yield(get_tree().create_timer(0.275), "timeout")
+		firework_count += 1
+		
+	#yield(get_tree().create_timer(3), "timeout")
+	
+	while firework_count > 1:
+		$Firework.material.set_shader_param("firework_count", firework_count)
+		yield(get_tree().create_timer(0.2), "timeout")
+		firework_count -= 1
+	yield(get_tree().create_timer(0.4), "timeout")
+	
+	$Firework.visible = false

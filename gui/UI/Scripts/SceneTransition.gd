@@ -19,5 +19,6 @@ func change_scene(target):
 #		pass
 	
 	get_tree().change_scene(target)
+#	get_tree().call_deferred("add_child", target)
 	
 	$AnimationPlayer.play_backwards("dissolve")

@@ -11,6 +11,7 @@ func _init():
 	self.connect("tree_exiting", SaveManager, "save_game")
 
 func _ready():
+	SaveManager.load_game()
 	$EquipmentScene.update_equipment()
 	$Amount.text = str(Character.Inventory.silver)
 	Achievements.connect("new_achievement", self, "new_achievement")
@@ -55,6 +56,7 @@ func new_achievement(ach):
 	pop_up.rect_position.y -= pop_up.rect_size.y
 	pop_up.rect_position.x = 100
 	pop_up.appear()
+	Audio.play_sound(ResourceManager.SOUNDS["ACHIEVEMENT"])
 
 func set_scene_visability(scene, visability, speed = 0.075):
 	var tw = Tween.new()

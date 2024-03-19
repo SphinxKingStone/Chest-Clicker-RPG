@@ -2,7 +2,7 @@ extends Node
 
 const music_basic_volume = -35
 const sounds_basic_volume = -5
-const creak_basic_volume = -7
+const creak_basic_volume = -14
 
 var music_volume = 0
 var sounds_volume = 0
