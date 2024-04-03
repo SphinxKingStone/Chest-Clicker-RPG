@@ -35,6 +35,9 @@ func check_achievements():
 func check_req_progress(req):
 	if req.has("field"):
 		return Progress[req.variable][req.field] >= req.amount
+	if req.has("stat"):
+		if req.stat == "any":
+			 return Progress[req.variable][req.tier] >= req.amount
 	return Progress[req.variable] >= req.amount
 
 func check_req_equipment(req): # TODO doesn't work with 2 handed weapons

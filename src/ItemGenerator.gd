@@ -21,11 +21,10 @@ func generate_item():
 		var second_r
 		for i in 5:
 			second_r = roll_rarity()
-			if ItemsData.ITEM_LEVEL[second_r] >  ItemsData.ITEM_LEVEL[rarity]:
+			if ItemsData.ITEM_LEVEL[second_r] > ItemsData.ITEM_LEVEL[rarity]:
 				rarity = second_r
-				gold_chest = false
 				break
-			gold_chest = false
+		gold_chest = false
 		if ItemsData.ITEM_LEVEL[rarity] <= Character.get_gear_level(): # if we didn't roll anything good guaranties rarity = grear level
 			rarity = ItemsData.ITEM_RARITY[Character.get_gear_level()]
 		if rarity == "WHITE": # when no items guarantees a green item
@@ -43,7 +42,7 @@ func generate_item():
 	generated_items_amount += 1
 	
 	# testing for gold_chest
-	if rng.randi_range(1, 1000) > 990: #950
+	if rng.randi_range(1, 1000) > 990 - floor(Character.get_stat_value('bonus_rarity') / 5):
 		gold_chest = true
 	
 	return item
@@ -55,6 +54,9 @@ func update_min_number():
 			min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]
 			if equipped_item.category == "two_handed":
 				min_number += ItemsData.ITEM_LEVEL[equipped_item.rarity]
+	
+	# apply bonus from bonus_rarity
+	min_number += floor(Character.get_stat_value('bonus_rarity') / 10)
 
 func generate_base_stats():
 	var generated_stats = []
@@ -100,11 +102,13 @@ func generate_stats():
 	return generated_stats
 
 func roll_rarity():
-#	min_number = 43
+#	min_number = 143
 	update_min_number()
 	var rng_number = rng.randi_range(1, 100 + min_number) # 1 and 100 are both possible
 	
 	# this part just adds a small chance to get higher rarity than you're allowed you
+	# you have to hit 5% chance roll and only if you have high enough rng_number already you'll get 
+	# 5 bonus to it that might get you a higher rarity than you can get
 	if rng.randi_range(1, 20) > 19:
 		rng_number += 5
 	

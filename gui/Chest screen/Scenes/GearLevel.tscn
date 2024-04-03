@@ -146,9 +146,6 @@ max_value = 1000.0
 texture_under = SubResource( 2 )
 texture_progress = SubResource( 4 )
 nine_patch_stretch = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GearLevelText" type="Label" parent="."]
 margin_left = 16.0

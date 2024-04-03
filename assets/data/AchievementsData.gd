@@ -249,4 +249,36 @@ var achievements = { # TODO add gear level achievements
 			amount = 20000
 		}]
 	},
+	
+	exalted_t7 = {
+		name = "EXALTED_T7",
+		description = "EXALTED_T7_DESCRIPTION",
+		reqs = [{
+			category = "progress",
+			variable = "total_tiers",
+			stat = "any",
+			tier = "T7",
+			amount = 1
+		}],
+		rewards = [{
+			type = "silver",
+			amount = 5000
+		}]
+	},
+	
+	exalted_t8 = {
+		name = "EXALTED_T8",
+		description = "EXALTED_T8_DESCRIPTION",
+		reqs = [{
+			category = "progress",
+			variable = "total_tiers",
+			stat = "any",
+			tier = "T8",
+			amount = 1
+		}],
+		rewards = [{
+			type = "silver",
+			amount = 15000
+		}]
+	},
 }
